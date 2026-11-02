@@ -919,6 +919,8 @@ body {
 }
 
 .mac-screenshot-constrained {
+    /* Reserve the lazy image's aspect ratio before its intrinsic size is known. */
+    width: 100%;
     max-width: 400px;
     margin: 0 auto;
 }
