@@ -62,7 +62,7 @@
   "voice.aria": "Ajustes de voz y reproducción",
   "voice.label": "Voz y reproducción",
   "voice.title": "Elige cómo suena LoudScript.",
-  "voice.body": "Elige una voz, ajusta la velocidad de lectura y activa el formato con IA si quieres una entonación más fluida.",
+  "voice.body": "Elige una voz y ajusta la velocidad de lectura.",
   "voice.item.manage": "Gestiona las voces descargadas en LoudScript",
   "voice.item.fallback": "Usa las voces de Apple como alternativa",
   "voice.item.speed": "Cambia la velocidad en cualquier momento",

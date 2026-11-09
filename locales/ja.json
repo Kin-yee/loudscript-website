@@ -62,7 +62,7 @@
   "voice.aria": "音声と再生の設定",
   "voice.label": "音声と再生",
   "voice.title": "LoudScriptの声をカスタマイズ。",
-  "voice.body": "声と読み上げ速度を選び、より自然な区切りにしたい場合はAI整形を有効にできます。",
+  "voice.body": "声と読み上げ速度を選べます。",
   "voice.item.manage": "ダウンロードした音声をLoudScriptで管理",
   "voice.item.fallback": "Appleの声を予備として使用",
   "voice.item.speed": "いつでも読み上げ速度を変更",
