@@ -131,10 +131,9 @@
                             sends the text it is about to read aloud to LoudScript's server, which runs on Cloudflare.
                             The server passes the text through OpenRouter to an AI model provider that OpenRouter lists
                             as zero data retention, which means the provider does not keep the text or train on it. The
-                            server returns the formatted text and does not store it. With each request the app also
-                            sends an Apple DeviceCheck token, which lets the server confirm the request comes from a
-                            genuine Apple device without identifying you, and the server keeps your IP address for up
-                            to one minute to limit how many requests it accepts. None of this happens when AI formatting
+                            server returns the formatted text and does not store it. To limit how many requests it
+                            accepts, the server keeps the times of requests from your IP address for up to one day. None
+                            of this happens when AI formatting
                             is off, unavailable, or skipped by the app's formatting rules.
                             Translation and summaries in the iPhone app send the text you choose to OpenRouter and the
                             selected model provider.
