@@ -1666,24 +1666,34 @@ body {
     color: rgba(255, 255, 255, 0.5);
 }
 
-/* Scroll Reveal Animation */
+/* Content stays visible without JavaScript or an IntersectionObserver callback.
+   The observer only adds a decorative entrance animation. */
 .mac-reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
+    opacity: 1;
+    transform: none;
 }
 
 .mac-reveal.mac-visible {
-    opacity: 1;
-    transform: translateY(0);
+    animation: mac-reveal-in 0.7s ease backwards;
 }
 
-.mac-features .mac-reveal:nth-child(2) { transition-delay: 0.08s; }
-.mac-features .mac-reveal:nth-child(3) { transition-delay: 0.16s; }
-.mac-features .mac-reveal:nth-child(4) { transition-delay: 0.24s; }
+@keyframes mac-reveal-in {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
 
-.mac-steps .mac-reveal:nth-child(2) { transition-delay: 0.08s; }
-.mac-steps .mac-reveal:nth-child(3) { transition-delay: 0.16s; }
+.mac-features .mac-reveal:nth-child(2) { animation-delay: 0.08s; }
+.mac-features .mac-reveal:nth-child(3) { animation-delay: 0.16s; }
+.mac-features .mac-reveal:nth-child(4) { animation-delay: 0.24s; }
+
+.mac-steps .mac-reveal:nth-child(2) { animation-delay: 0.08s; }
+.mac-steps .mac-reveal:nth-child(3) { animation-delay: 0.16s; }
 
 /* Follow the visitor's system appearance while keeping dark mode as the default. */
 @media (prefers-color-scheme: light) {
@@ -1990,10 +2000,11 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .mac-reveal {
+    .mac-reveal,
+    .mac-reveal.mac-visible {
         opacity: 1;
         transform: none;
-        transition: none;
+        animation: none;
     }
 
     .release-entry::before,
