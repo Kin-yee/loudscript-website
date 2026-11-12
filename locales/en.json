@@ -62,7 +62,7 @@
   "voice.aria": "Voice and playback settings",
   "voice.label": "Voice & Playback",
   "voice.title": "Choose how LoudScript sounds.",
-  "voice.body": "Choose a voice, set the reading speed, and turn on AI formatting if you want smoother phrasing.",
+  "voice.body": "Choose a voice and set the reading speed.",
   "voice.item.manage": "Manage downloaded voices in LoudScript",
   "voice.item.fallback": "Use Apple voices as a fallback",
   "voice.item.speed": "Change the speed at any time",

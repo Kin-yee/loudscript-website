@@ -62,7 +62,7 @@
   "voice.aria": "語音與播放設定",
   "voice.label": "語音與播放",
   "voice.title": "自訂 LoudScript 的朗讀方式。",
-  "voice.body": "選擇語音、調整語速，並可開啟 AI 格式化，讓語句更流暢。",
+  "voice.body": "選擇語音、調整語速。",
   "voice.item.manage": "在 LoudScript 中管理已下載的語音",
   "voice.item.fallback": "使用 Apple 語音作為後備",
   "voice.item.speed": "隨時調整語速",

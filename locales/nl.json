@@ -62,7 +62,7 @@
   "voice.aria": "Instellingen voor stem en afspelen",
   "voice.label": "Stem en afspelen",
   "voice.title": "Bepaal hoe LoudScript klinkt.",
-  "voice.body": "Kies een stem, stel de leessnelheid in en schakel AI-opmaak in als je natuurlijkere zinnen wilt.",
+  "voice.body": "Kies een stem en stel de leessnelheid in.",
   "voice.item.manage": "Beheer gedownloade stemmen in LoudScript",
   "voice.item.fallback": "Gebruik Apple-stemmen als reserveoptie",
   "voice.item.speed": "Wijzig de snelheid wanneer je wilt",

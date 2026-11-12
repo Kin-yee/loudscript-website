@@ -62,7 +62,7 @@
   "voice.aria": "Stimm- und Wiedergabeeinstellungen",
   "voice.label": "Stimme & Wiedergabe",
   "voice.title": "Bestimme, wie LoudScript klingt.",
-  "voice.body": "Wähle eine Stimme, stelle die Sprechgeschwindigkeit ein und aktiviere bei Bedarf die KI-Formatierung für flüssigere Formulierungen.",
+  "voice.body": "Wähle eine Stimme und stelle die Sprechgeschwindigkeit ein.",
   "voice.item.manage": "Verwalte heruntergeladene Stimmen in LoudScript",
   "voice.item.fallback": "Nutze Apple-Stimmen als Ausweichoption",
   "voice.item.speed": "Ändere die Geschwindigkeit jederzeit",
