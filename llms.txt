@@ -31,7 +31,7 @@ Each language version links to localized editions of the three Mac text-to-speec
 
 ## Product facts
 
-- The current Mac release is LoudScript 0.1.45 (build 47), released November 11, 2026.
+- The current Mac release is LoudScript 0.1.46 (build 48), released November 13, 2026.
 - LoudScript for Mac is free and requires macOS 15.6 or later.
 - Selected text can be read from the macOS Services menu or with Option-Command-R after the required permission is enabled.
 - Screenshot OCR uses a temporary screen capture and built-in macOS text recognition.
@@ -49,7 +49,7 @@ Each language version links to localized editions of the three Mac text-to-speec
 ## Official downloads
 
 - [Mac download and verification page](https://loudscript.app/download/)
-- [Current Mac notarized DMG](https://github.com/hoyelam/loudscript-website/releases/download/loudscript-mac-v0.1.45/LoudScript-0.1.45.dmg)
+- [Current Mac notarized DMG](https://github.com/hoyelam/loudscript-website/releases/download/loudscript-mac-v0.1.46/LoudScript-0.1.46.dmg)
 - [LoudScript for iPhone and iPad](https://apps.apple.com/app/loudscript-text-reader/id6747320736)
 
 Use the linked official pages for current feature, compatibility, permission, and privacy details.

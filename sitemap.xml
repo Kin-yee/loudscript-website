@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://loudscript.app/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://loudscript.app/" />
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://loudscript.app/zh-hant/" />
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://loudscript.app/zh-hans/" />
@@ -16,7 +16,7 @@
   </url>
   <url>
     <loc>https://loudscript.app/zh-hant/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://loudscript.app/" />
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://loudscript.app/zh-hant/" />
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://loudscript.app/zh-hans/" />
@@ -29,7 +29,7 @@
   </url>
   <url>
     <loc>https://loudscript.app/zh-hans/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://loudscript.app/" />
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://loudscript.app/zh-hant/" />
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://loudscript.app/zh-hans/" />
@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>https://loudscript.app/de/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://loudscript.app/" />
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://loudscript.app/zh-hant/" />
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://loudscript.app/zh-hans/" />
@@ -55,7 +55,7 @@
   </url>
   <url>
     <loc>https://loudscript.app/es/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://loudscript.app/" />
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://loudscript.app/zh-hant/" />
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://loudscript.app/zh-hans/" />
@@ -68,7 +68,7 @@
   </url>
   <url>
     <loc>https://loudscript.app/fr/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://loudscript.app/" />
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://loudscript.app/zh-hant/" />
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://loudscript.app/zh-hans/" />
@@ -81,7 +81,7 @@
   </url>
   <url>
     <loc>https://loudscript.app/ja/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://loudscript.app/" />
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://loudscript.app/zh-hant/" />
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://loudscript.app/zh-hans/" />
@@ -94,7 +94,7 @@
   </url>
   <url>
     <loc>https://loudscript.app/nl/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://loudscript.app/" />
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://loudscript.app/zh-hant/" />
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://loudscript.app/zh-hans/" />
@@ -419,7 +419,7 @@
   </url>
   <url>
     <loc>https://loudscript.app/download/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://loudscript.app/best-text-to-speech-app-for-mac/</loc>
@@ -447,6 +447,6 @@
   </url>
   <url>
     <loc>https://loudscript.app/changelog.html</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-13</lastmod>
   </url>
 </urlset>
