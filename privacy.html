@@ -50,7 +50,7 @@
                 <div class="flex-grid">
                     <div class="col-text">
                         <p class="privacyContent">
-                            Last updated 21 May, 2026
+                            Last updated 12 November, 2026
                         </p>
                         <p class="privacyContent">
                             Welcome to LoudScript, built by Ho Ye Lam ("LoudScript", "Kin-Yee", "we", "us", or "our").
@@ -126,11 +126,18 @@
                     <div class="col-text">
                         <h2 class="sectionHeading">Third-Party AI Processing</h2>
                         <p class="privacyContent">
-                            LoudScript may offer AI-assisted features, including AI formatting before speech. When AI
-                            formatting is enabled and available, the text being formatted may be sent to OpenRouter and
-                            the selected downstream model provider so the text can be rewritten for clearer display and
-                            more natural speech. This does not happen when AI formatting is disabled, unavailable, or
-                            skipped by the app's formatting rules.
+                            LoudScript may offer AI-assisted features, including AI formatting before speech. AI
+                            formatting in the Mac app is off until you turn it on in Settings. When it is on, the app
+                            sends the text it is about to read aloud to LoudScript's server, which runs on Cloudflare.
+                            The server passes the text through OpenRouter to an AI model provider that OpenRouter lists
+                            as zero data retention, which means the provider does not keep the text or train on it. The
+                            server returns the formatted text and does not store it. To limit how many requests it
+                            accepts, the server keeps the times of requests from your IP address for up to one day. Its
+                            request logs, which Cloudflare keeps for a few days, record the size and timing of each
+                            request and may include your IP address, but not the text. None of this happens when AI
+                            formatting is off, unavailable, or skipped by the app's formatting rules.
+                            Translation and summaries in the iPhone app send the text you choose to OpenRouter and the
+                            selected model provider.
                         </p>
                         <p class="privacyContent">
                             Text sent for AI formatting is transmitted for the purpose of providing the requested
