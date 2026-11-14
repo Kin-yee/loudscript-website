@@ -5,7 +5,7 @@ const record = JSON.parse(readFileSync(new URL("../data/latest-mac-release.json"
 export const siteLastModified = record.siteLastModified;
 export const guideLastModified = Object.freeze({
   "read-selected-text-aloud-mac": "2026-08-20",
-  "screenshot-ocr-text-to-speech-mac": "2026-08-20",
-  "offline-text-to-speech-mac": "2026-08-20"
+  "screenshot-ocr-text-to-speech-mac": "2026-11-14",
+  "offline-text-to-speech-mac": "2026-11-14"
 });
 export const latestMacRelease = Object.freeze(record.latestMacRelease);

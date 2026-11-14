@@ -5,7 +5,7 @@
     <script defer src="/js/language-menu.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Compare offline text-to-speech engines for Mac in LoudScript: Apple voices, Supertonic, Kokoro, and PocketTTS, with hardware and download requirements.">
+    <meta name="description" content="Compare offline text-to-speech engines for Mac in LoudScript: Apple voices, Supertonic, Kokoro, PocketTTS, and Phonon, with hardware and download requirements.">
     <meta name="author" content="Ho Ye Lam">
     <meta name="robots" content="index, follow">
 
@@ -14,7 +14,7 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://loudscript.app/offline-text-to-speech-mac/">
     <meta property="og:image" content="https://loudscript.app/images/mac/mac-playback-settings.png">
-    <meta property="og:description" content="Compare four on-device speech engines by Mac compatibility, language support, maturity, and download size.">
+    <meta property="og:description" content="Compare five on-device speech engines by Mac compatibility, language support, maturity, and download size.">
     <meta property="og:locale" content="en_US">
     <meta property="og:locale:alternate" content="zh_TW">
     <meta property="og:locale:alternate" content="zh_CN">
@@ -26,7 +26,7 @@
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Offline Text-to-Speech for Mac | LoudScript">
-    <meta name="twitter:description" content="Choose between Apple, Supertonic, Kokoro, and PocketTTS voices that run locally on your Mac.">
+    <meta name="twitter:description" content="Choose between Apple, Supertonic, Kokoro, PocketTTS, and Phonon voices that run locally on your Mac.">
     <meta name="twitter:image" content="https://loudscript.app/images/mac/mac-playback-settings.png">
 
     <link rel="canonical" href="https://loudscript.app/offline-text-to-speech-mac/">
@@ -57,9 +57,9 @@
           "inLanguage": "en",
           "@id": "https://loudscript.app/offline-text-to-speech-mac/#article",
           "headline": "Offline text-to-speech for Mac: compare LoudScript's local engines",
-          "description": "A practical comparison of Apple, Supertonic, Kokoro, and PocketTTS in LoudScript for Mac.",
+          "description": "A practical comparison of Apple, Supertonic, Kokoro, PocketTTS, and Phonon in LoudScript for Mac.",
           "datePublished": "2026-08-04",
-          "dateModified": "2026-08-20",
+          "dateModified": "2026-11-14",
           "author": { "@type": "Person", "@id": "https://loudscript.app/#creator", "name": "Ho Ye Lam", "url": "https://hoyelam.com/" },
           "publisher": { "@type": "Organization", "@id": "https://loudscript.app/#organization", "name": "Kin-Yee", "url": "https://loudscript.app/" },
           "mainEntityOfPage": "https://loudscript.app/offline-text-to-speech-mac/"
@@ -139,8 +139,8 @@
             <header class="seo-hero">
                 <p class="seo-breadcrumb"><a href="/">LoudScript</a> / Offline voices guide</p>
                 <h1>Offline text-to-speech for Mac</h1>
-                <p class="seo-lede">LoudScript offers four speech engines that synthesize text on your Mac. Compare compatibility, languages, model size, and maturity before choosing the voice technology that fits your workflow.</p>
-                <p class="seo-byline">By <a href="https://hoyelam.com/" rel="author">Ho Ye Lam</a> · Updated August 20, 2026</p>
+                <p class="seo-lede">LoudScript offers five speech engines that synthesize text on your Mac. Compare compatibility, languages, model size, and maturity before choosing the voice technology that fits your workflow.</p>
+                <p class="seo-byline">By <a href="https://hoyelam.com/" rel="author">Ho Ye Lam</a> · Updated November 14, 2026</p>
             </header>
 
             <section class="seo-section" aria-labelledby="comparison">
@@ -183,6 +183,13 @@
                                 <td>Apple silicon</td>
                                 <td>English, German, Spanish, French, Italian, Portuguese</td>
                                 <td>About 1GB</td>
+                                <td>Stable</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Phonon</strong></td>
+                                <td>Intel and Apple silicon</td>
+                                <td>English, 25 US and UK voices</td>
+                                <td>About 175MB</td>
                                 <td>Beta</td>
                             </tr>
                         </tbody>
@@ -200,7 +207,9 @@
                 <h3>Try Kokoro for compact English and Mandarin speech</h3>
                 <p>Kokoro is a beta option for Apple silicon. It provides English and Mandarin voice catalogs through a compact Core ML model.</p>
                 <h3>Try PocketTTS for six-language expressive speech</h3>
-                <p>PocketTTS is a larger beta model for Apple silicon with voices across English, German, Spanish, French, Italian, and Portuguese.</p>
+                <p>PocketTTS is a larger model for Apple silicon with voices across English, German, Spanish, French, Italian, and Portuguese.</p>
+                <h3>Try Phonon for compact English speech</h3>
+                <p>Phonon is a compact beta model for English. It reads numbers, prices, links, and abbreviations naturally and offers 25 US and UK voices.</p>
             </section>
 
             <section class="seo-section" aria-labelledby="offline-meaning">
@@ -212,6 +221,7 @@
             <section class="seo-section" aria-labelledby="use-engines">
                 <h2 id="use-engines">Use local voices across Mac apps</h2>
                 <p>Your selected speech engine works with manually entered text, selected text from other apps, screenshot OCR, reading history, and the floating playback overlay.</p>
+                <p>With Apple voices or a downloaded Supertonic model, you can also export speech as a WAV audio file.</p>
                 <div class="seo-related">
                     <a href="/read-selected-text-aloud-mac/">Read selected text aloud</a>
                     <a href="/screenshot-ocr-text-to-speech-mac/">Read screenshots with OCR</a>

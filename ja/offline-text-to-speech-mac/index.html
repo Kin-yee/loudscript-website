@@ -5,7 +5,7 @@
     <script defer src="/js/language-menu.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="LoudScriptのMac向けオフライン音声読み上げエンジン、Appleの声、Supertonic、Kokoro、PocketTTSを、対応ハードウェアやダウンロード要件とともに比較します。">
+    <meta name="description" content="LoudScriptのMac向けオフライン音声読み上げエンジン、Appleの声、Supertonic、Kokoro、PocketTTS、Phononを、対応ハードウェアやダウンロード要件とともに比較します。">
     <meta name="author" content="Ho Ye Lam">
     <meta name="robots" content="index, follow">
 
@@ -14,7 +14,7 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://loudscript.app/ja/offline-text-to-speech-mac/">
     <meta property="og:image" content="https://loudscript.app/images/mac/mac-playback-settings.png">
-    <meta property="og:description" content="4つのデバイス内音声エンジンを、Macの互換性、対応言語、完成度、ダウンロードサイズで比較します。">
+    <meta property="og:description" content="5つのデバイス内音声エンジンを、Macの互換性、対応言語、完成度、ダウンロードサイズで比較します。">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:locale:alternate" content="en_US">
     <meta property="og:locale:alternate" content="zh_TW">
@@ -26,7 +26,7 @@
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Macのオフライン音声読み上げ｜LoudScript">
-    <meta name="twitter:description" content="Mac上でローカルに動作するApple、Supertonic、Kokoro、PocketTTSの声から選べます。">
+    <meta name="twitter:description" content="Mac上でローカルに動作するApple、Supertonic、Kokoro、PocketTTS、Phononの声から選べます。">
     <meta name="twitter:image" content="https://loudscript.app/images/mac/mac-playback-settings.png">
 
     <link rel="canonical" href="https://loudscript.app/ja/offline-text-to-speech-mac/">
@@ -57,9 +57,9 @@
           "inLanguage": "ja",
           "@id": "https://loudscript.app/ja/offline-text-to-speech-mac/#article",
           "headline": "Macのオフライン音声読み上げ: LoudScriptのローカルエンジンを比較",
-          "description": "Mac版LoudScriptで使えるApple、Supertonic、Kokoro、PocketTTSの実用的な比較です。",
+          "description": "Mac版LoudScriptで使えるApple、Supertonic、Kokoro、PocketTTS、Phononの実用的な比較です。",
           "datePublished": "2026-08-04",
-          "dateModified": "2026-08-20",
+          "dateModified": "2026-11-14",
           "author": { "@type": "Person", "@id": "https://loudscript.app/#creator", "name": "Ho Ye Lam", "url": "https://hoyelam.com/" },
           "publisher": { "@type": "Organization", "@id": "https://loudscript.app/#organization", "name": "Kin-Yee", "url": "https://loudscript.app/" },
           "mainEntityOfPage": "https://loudscript.app/ja/offline-text-to-speech-mac/"
@@ -139,8 +139,8 @@
             <header class="seo-hero">
                 <p class="seo-breadcrumb"><a href="/ja/">LoudScript</a> / オフライン音声ガイド</p>
                 <h1>Macのオフライン音声読み上げ</h1>
-                <p class="seo-lede">LoudScriptには、Mac上でテキストを音声に変換する4つのエンジンがあります。互換性、対応言語、モデルサイズ、完成度を比較して、用途に合う音声技術を選べます。</p>
-                <p class="seo-byline">作成者: <a href="https://hoyelam.com/" rel="author">Ho Ye Lam</a> · 2026年8月20日更新</p>
+                <p class="seo-lede">LoudScriptには、Mac上でテキストを音声に変換する5つのエンジンがあります。互換性、対応言語、モデルサイズ、完成度を比較して、用途に合う音声技術を選べます。</p>
+                <p class="seo-byline">作成者: <a href="https://hoyelam.com/" rel="author">Ho Ye Lam</a> · 2026年11月14日更新</p>
             </header>
 
             <section class="seo-section" aria-labelledby="comparison">
@@ -183,6 +183,13 @@
                                 <td>Appleシリコン</td>
                                 <td>英語、ドイツ語、スペイン語、フランス語、イタリア語、ポルトガル語</td>
                                 <td>約1GB</td>
+                                <td>安定版</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Phonon</strong></td>
+                                <td>IntelおよびAppleシリコン</td>
+                                <td>英語（米国・英国の25種類の声）</td>
+                                <td>約175MB</td>
                                 <td>ベータ版</td>
                             </tr>
                         </tbody>
@@ -200,7 +207,9 @@
                 <h3>コンパクトな英語・中国語音声ならKokoro</h3>
                 <p>KokoroはAppleシリコン向けのベータ版です。コンパクトなCore MLモデルで英語と中国語（標準語）の音声を利用できます。</p>
                 <h3>6言語の表現豊かな音声ならPocketTTS</h3>
-                <p>PocketTTSはAppleシリコン向けの大容量ベータモデルで、英語、ドイツ語、スペイン語、フランス語、イタリア語、ポルトガル語の声を収録しています。</p>
+                <p>PocketTTSはAppleシリコン向けの大容量モデルで、英語、ドイツ語、スペイン語、フランス語、イタリア語、ポルトガル語の声を収録しています。</p>
+                <h3>コンパクトな英語音声ならPhonon</h3>
+                <p>Phononは英語向けのコンパクトなベータモデルです。数字、価格、リンク、略語を自然に読み上げ、米国と英国の25種類の声を利用できます。</p>
             </section>
 
             <section class="seo-section" aria-labelledby="offline-meaning">
@@ -212,6 +221,7 @@
             <section class="seo-section" aria-labelledby="use-engines">
                 <h2 id="use-engines">Macアプリ全体でローカル音声を使う</h2>
                 <p>選択した音声エンジンは、手入力したテキスト、ほかのアプリで選択したテキスト、スクリーンショットOCR、読み上げ履歴、フローティングプレーヤーで利用できます。</p>
+                <p>Appleの声またはダウンロードしたSupertonicモデルを使うと、音声をWAVオーディオファイルとして書き出すこともできます。</p>
                 <div class="seo-related">
                     <a href="/ja/read-selected-text-aloud-mac/">選択したテキストを読み上げる</a>
                     <a href="/ja/screenshot-ocr-text-to-speech-mac/">OCRでスクリーンショットを読み上げる</a>
