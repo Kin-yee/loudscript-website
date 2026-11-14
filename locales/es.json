@@ -123,7 +123,7 @@
   "faq.offline.question": "¿Funciona LoudScript sin conexión?",
   "faq.offline.answer": "Sí. Las voces de Apple funcionan en el Mac. Supertonic, Kokoro, PocketTTS y Phonon también funcionan localmente después de descargar sus modelos. El formato con IA puede enviar texto al proveedor de IA que elijas cuando está activado.",
   "faq.export.question": "¿Puede LoudScript guardar la voz como archivo de audio?",
-  "faq.export.answer": "Sí. Con las voces de Apple o un modelo Supertonic descargado, LoudScript exporta la voz como archivo WAV. Kokoro, PocketTTS y Phonon no exportan audio. LoudScript nombra el archivo según el documento, el título de origen o la primera frase, y luego lo muestra en el Finder.",
+  "faq.export.answer": "Sí. Con las voces de Apple o un modelo Supertonic descargado, LoudScript exporta la voz como archivo WAV. Kokoro, PocketTTS y Phonon no exportan audio. LoudScript sugiere un nombre de archivo según el documento, el título de origen o la primera frase, y luego muestra el archivo guardado en el Finder.",
   "faq.support.question": "¿Qué modelos de Mac son compatibles con LoudScript?",
   "faq.support.answer": "LoudScript requiere macOS 15.6 o posterior. Las voces de Apple y Supertonic funcionan en Mac con Intel o chip de Apple. Kokoro y PocketTTS requieren un Mac con chip de Apple. Phonon necesita macOS 15 o posterior y se ha probado en Mac con chip de Apple.",
   "cta.title": "Empieza a escuchar en tu Mac.",

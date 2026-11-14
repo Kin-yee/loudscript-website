@@ -123,7 +123,7 @@
   "faq.offline.question": "Werkt LoudScript offline?",
   "faq.offline.answer": "Ja. Apple-stemmen werken op je Mac. Supertonic, Kokoro, PocketTTS en Phonon werken na het downloaden van hun modellen ook lokaal. AI-opmaak kan tekst naar je gekozen AI-aanbieder sturen als je die functie inschakelt.",
   "faq.export.question": "Kan LoudScript spraak als audiobestand bewaren?",
-  "faq.export.answer": "Ja. Met Apple-stemmen of een gedownload Supertonic-model exporteert LoudScript spraak als WAV-bestand. Kokoro, PocketTTS en Phonon exporteren geen audio. LoudScript geeft het bestand de naam van het document, de brontitel of de eerste zin en toont het daarna in de Finder.",
+  "faq.export.answer": "Ja. Met Apple-stemmen of een gedownload Supertonic-model exporteert LoudScript spraak als WAV-bestand. Kokoro, PocketTTS en Phonon exporteren geen audio. LoudScript stelt een bestandsnaam voor op basis van het document, de brontitel of de eerste zin en toont het bewaarde bestand daarna in de Finder.",
   "faq.support.question": "Welke Macs ondersteunen LoudScript?",
   "faq.support.answer": "LoudScript vereist macOS 15.6 of nieuwer. Apple-stemmen en Supertonic ondersteunen Macs met Intel en Apple silicon. Kokoro en PocketTTS vereisen Apple silicon. Phonon vereist macOS 15 of nieuwer en is getest op Macs met Apple silicon.",
   "cta.title": "Begin met luisteren op je Mac.",

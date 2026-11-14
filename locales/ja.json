@@ -123,7 +123,7 @@
   "faq.offline.question": "LoudScriptはオフラインで使えますか？",
   "faq.offline.answer": "はい。Appleの声はMac上で動作します。Supertonic、Kokoro、PocketTTS、Phononもモデルのダウンロード後はローカルで動作します。AI整形を有効にすると、選択したAIプロバイダへテキストが送信される場合があります。",
   "faq.export.question": "読み上げ音声をオーディオファイルとして保存できますか？",
-  "faq.export.answer": "はい。Appleの声またはダウンロードしたSupertonicモデルを使うと、音声をWAVファイルに書き出せます。Kokoro、PocketTTS、Phononは音声の書き出しに対応していません。ファイル名は書類名、ソースのタイトル、または最初の文から付けられ、保存後にFinderで表示されます。",
+  "faq.export.answer": "はい。Appleの声またはダウンロードしたSupertonicモデルを使うと、音声をWAVファイルに書き出せます。Kokoro、PocketTTS、Phononは音声の書き出しに対応していません。書類名、ソースのタイトル、または最初の文からファイル名が提案され、保存後にFinderで表示されます。",
   "faq.support.question": "LoudScriptに対応しているMacは？",
   "faq.support.answer": "LoudScriptにはmacOS 15.6以降が必要です。Appleの声とSupertonicはIntel搭載MacとAppleシリコン搭載Macに対応し、KokoroとPocketTTSにはAppleシリコンが必要です。PhononにはmacOS 15以降が必要で、Appleシリコン搭載Macで動作を確認しています。",
   "cta.title": "Macで読み上げを始めましょう。",
