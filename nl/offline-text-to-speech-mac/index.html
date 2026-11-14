@@ -5,7 +5,7 @@
     <script defer src="/js/language-menu.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vergelijk offline tekst-naar-spraak-engines voor Mac in LoudScript: Apple-stemmen, Supertonic, Kokoro en PocketTTS, inclusief systeem- en downloadvereisten.">
+    <meta name="description" content="Vergelijk offline tekst-naar-spraak-engines voor Mac in LoudScript: Apple-stemmen, Supertonic, Kokoro, PocketTTS en Phonon, inclusief systeem- en downloadvereisten.">
     <meta name="author" content="Ho Ye Lam">
     <meta name="robots" content="index, follow">
 
@@ -14,7 +14,7 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://loudscript.app/nl/offline-text-to-speech-mac/">
     <meta property="og:image" content="https://loudscript.app/images/mac/mac-playback-settings.png">
-    <meta property="og:description" content="Vergelijk vier lokale spraakengines op Mac-compatibiliteit, taalondersteuning, ontwikkelingsfase en downloadgrootte.">
+    <meta property="og:description" content="Vergelijk vijf lokale spraakengines op Mac-compatibiliteit, taalondersteuning, ontwikkelingsfase en downloadgrootte.">
     <meta property="og:locale" content="nl_NL">
     <meta property="og:locale:alternate" content="en_US">
     <meta property="og:locale:alternate" content="zh_TW">
@@ -26,7 +26,7 @@
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Offline tekst-naar-spraak voor Mac | LoudScript">
-    <meta name="twitter:description" content="Kies uit stemmen van Apple, Supertonic, Kokoro en PocketTTS die lokaal op je Mac werken.">
+    <meta name="twitter:description" content="Kies uit stemmen van Apple, Supertonic, Kokoro, PocketTTS en Phonon die lokaal op je Mac werken.">
     <meta name="twitter:image" content="https://loudscript.app/images/mac/mac-playback-settings.png">
 
     <link rel="canonical" href="https://loudscript.app/nl/offline-text-to-speech-mac/">
@@ -57,9 +57,9 @@
           "inLanguage": "nl",
           "@id": "https://loudscript.app/nl/offline-text-to-speech-mac/#article",
           "headline": "Offline tekst-naar-spraak voor Mac: vergelijk de lokale engines van LoudScript",
-          "description": "Een praktische vergelijking van Apple, Supertonic, Kokoro en PocketTTS in LoudScript voor Mac.",
+          "description": "Een praktische vergelijking van Apple, Supertonic, Kokoro, PocketTTS en Phonon in LoudScript voor Mac.",
           "datePublished": "2026-08-04",
-          "dateModified": "2026-08-20",
+          "dateModified": "2026-11-14",
           "author": { "@type": "Person", "@id": "https://loudscript.app/#creator", "name": "Ho Ye Lam", "url": "https://hoyelam.com/" },
           "publisher": { "@type": "Organization", "@id": "https://loudscript.app/#organization", "name": "Kin-Yee", "url": "https://loudscript.app/" },
           "mainEntityOfPage": "https://loudscript.app/nl/offline-text-to-speech-mac/"
@@ -139,8 +139,8 @@
             <header class="seo-hero">
                 <p class="seo-breadcrumb"><a href="/nl/">LoudScript</a> / Handleiding voor offline stemmen</p>
                 <h1>Offline tekst-naar-spraak voor Mac</h1>
-                <p class="seo-lede">LoudScript biedt vier spraakengines die tekst op je Mac omzetten in spraak. Vergelijk compatibiliteit, talen, modelgrootte en ontwikkelingsfase voordat je de technologie kiest die bij je werkwijze past.</p>
-                <p class="seo-byline">Door <a href="https://hoyelam.com/" rel="author">Ho Ye Lam</a> · Bijgewerkt op 20 augustus 2026</p>
+                <p class="seo-lede">LoudScript biedt vijf spraakengines die tekst op je Mac omzetten in spraak. Vergelijk compatibiliteit, talen, modelgrootte en ontwikkelingsfase voordat je de technologie kiest die bij je werkwijze past.</p>
+                <p class="seo-byline">Door <a href="https://hoyelam.com/" rel="author">Ho Ye Lam</a> · Bijgewerkt op 14 november 2026</p>
             </header>
 
             <section class="seo-section" aria-labelledby="comparison">
@@ -183,6 +183,13 @@
                                 <td>Apple silicon</td>
                                 <td>Engels, duits, spaans, frans, italiaans en portugees</td>
                                 <td>Ongeveer 1 GB</td>
+                                <td>Stabiel</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Phonon</strong></td>
+                                <td>Apple silicon (macOS 15 of nieuwer)</td>
+                                <td>Engels, 25 Amerikaanse en Britse stemmen</td>
+                                <td>Ongeveer 175 MB</td>
                                 <td>Bèta</td>
                             </tr>
                         </tbody>
@@ -200,7 +207,9 @@
                 <h3>Probeer Kokoro voor compacte Engelse en Mandarijnse stemmen</h3>
                 <p>Kokoro is een bètaoptie voor Apple silicon. Het compacte Core ML-model biedt Engelse en mandarijnse stemcatalogi.</p>
                 <h3>Probeer PocketTTS voor expressieve spraak in zes talen</h3>
-                <p>PocketTTS is een groter bètamodel voor Apple silicon met stemmen in het engels, duits, spaans, frans, italiaans en portugees.</p>
+                <p>PocketTTS is een groter model voor Apple silicon met stemmen in het Engels, Duits, Spaans, Frans, Italiaans en Portugees.</p>
+                <h3>Probeer Phonon voor compacte Engelse stemmen</h3>
+                <p>Phonon is een compact bètamodel voor het Engels. Het leest getallen, prijzen, links en afkortingen natuurlijk voor en biedt 25 Amerikaanse en Britse stemmen.</p>
             </section>
 
             <section class="seo-section" aria-labelledby="offline-meaning">
@@ -212,6 +221,7 @@
             <section class="seo-section" aria-labelledby="use-engines">
                 <h2 id="use-engines">Gebruik lokale stemmen in Mac-apps</h2>
                 <p>De gekozen spraakengine werkt met handmatig ingevoerde tekst, geselecteerde tekst uit andere apps, OCR van schermafbeeldingen, leesgeschiedenis en de zwevende afspeelknoppen.</p>
+                <p>Met Apple-stemmen of een gedownload Supertonic-model kun je spraak ook exporteren als WAV-audiobestand.</p>
                 <div class="seo-related">
                     <a href="/nl/read-selected-text-aloud-mac/">Laat geselecteerde tekst voorlezen</a>
                     <a href="/nl/screenshot-ocr-text-to-speech-mac/">Lees schermafbeeldingen met OCR</a>

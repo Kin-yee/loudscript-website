@@ -52,9 +52,7 @@ const locales = [
 ];
 const routes = [
   { route: "", lastModified: siteLastModified },
-  { route: "read-selected-text-aloud-mac", lastModified: guideLastModified },
-  { route: "screenshot-ocr-text-to-speech-mac", lastModified: guideLastModified },
-  { route: "offline-text-to-speech-mac", lastModified: guideLastModified }
+  ...Object.entries(guideLastModified).map(([route, lastModified]) => ({ route, lastModified }))
 ];
 const staticPages = [
   { route: "download/", lastModified: siteLastModified },
@@ -65,7 +63,7 @@ const staticPages = [
   { route: "loudscript-mac-vs-ios/", lastModified: "2026-08-20" },
   { route: "privacy.html", lastModified: "2026-05-21" },
   { route: "tos.html", lastModified: "2026-05-21" },
-  { route: "support.html", lastModified: "2026-08-04" },
+  { route: "support.html", lastModified: "2026-11-14" },
   { route: "changelog.html", lastModified: changelogLastModified }
 ];
 

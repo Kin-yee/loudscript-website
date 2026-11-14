@@ -5,7 +5,7 @@
     <script defer src="/js/language-menu.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Comparez les moteurs de synthèse vocale hors ligne sur Mac de LoudScript : voix Apple, Supertonic, Kokoro et PocketTTS, avec leurs prérequis et tailles.">
+    <meta name="description" content="Comparez les moteurs de synthèse vocale hors ligne sur Mac de LoudScript : voix Apple, Supertonic, Kokoro, PocketTTS et Phonon, avec leurs prérequis et tailles.">
     <meta name="author" content="Ho Ye Lam">
     <meta name="robots" content="index, follow">
 
@@ -14,7 +14,7 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://loudscript.app/fr/offline-text-to-speech-mac/">
     <meta property="og:image" content="https://loudscript.app/images/mac/mac-playback-settings.png">
-    <meta property="og:description" content="Comparez quatre moteurs vocaux locaux selon leur compatibilité Mac, les langues prises en charge, leur maturité et leur taille.">
+    <meta property="og:description" content="Comparez cinq moteurs vocaux locaux selon leur compatibilité Mac, les langues prises en charge, leur maturité et leur taille.">
     <meta property="og:locale" content="fr_FR">
     <meta property="og:locale:alternate" content="en_US">
     <meta property="og:locale:alternate" content="zh_TW">
@@ -26,7 +26,7 @@
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Synthèse vocale hors ligne sur Mac | LoudScript">
-    <meta name="twitter:description" content="Choisissez parmi les voix Apple, Supertonic, Kokoro et PocketTTS exécutées localement sur votre Mac.">
+    <meta name="twitter:description" content="Choisissez parmi les voix Apple, Supertonic, Kokoro, PocketTTS et Phonon exécutées localement sur votre Mac.">
     <meta name="twitter:image" content="https://loudscript.app/images/mac/mac-playback-settings.png">
 
     <link rel="canonical" href="https://loudscript.app/fr/offline-text-to-speech-mac/">
@@ -57,9 +57,9 @@
           "inLanguage": "fr",
           "@id": "https://loudscript.app/fr/offline-text-to-speech-mac/#article",
           "headline": "Synthèse vocale hors ligne sur Mac : comparez les moteurs locaux de LoudScript",
-          "description": "Un comparatif pratique d’Apple, Supertonic, Kokoro et PocketTTS dans LoudScript pour Mac.",
+          "description": "Un comparatif pratique d’Apple, Supertonic, Kokoro, PocketTTS et Phonon dans LoudScript pour Mac.",
           "datePublished": "2026-08-04",
-          "dateModified": "2026-08-20",
+          "dateModified": "2026-11-14",
           "author": { "@type": "Person", "@id": "https://loudscript.app/#creator", "name": "Ho Ye Lam", "url": "https://hoyelam.com/" },
           "publisher": { "@type": "Organization", "@id": "https://loudscript.app/#organization", "name": "Kin-Yee", "url": "https://loudscript.app/" },
           "mainEntityOfPage": "https://loudscript.app/fr/offline-text-to-speech-mac/"
@@ -139,8 +139,8 @@
             <header class="seo-hero">
                 <p class="seo-breadcrumb"><a href="/fr/">LoudScript</a> / Guide des voix hors ligne</p>
                 <h1>Synthèse vocale hors ligne sur Mac</h1>
-                <p class="seo-lede">LoudScript propose quatre moteurs qui synthétisent la parole sur votre Mac. Comparez la compatibilité, les langues, la taille des modèles et leur maturité avant de choisir la technologie adaptée à votre usage.</p>
-                <p class="seo-byline">Par <a href="https://hoyelam.com/" rel="author">Ho Ye Lam</a> · Mis à jour le 20 août 2026</p>
+                <p class="seo-lede">LoudScript propose cinq moteurs qui synthétisent la parole sur votre Mac. Comparez la compatibilité, les langues, la taille des modèles et leur maturité avant de choisir la technologie adaptée à votre usage.</p>
+                <p class="seo-byline">Par <a href="https://hoyelam.com/" rel="author">Ho Ye Lam</a> · Mis à jour le 14 novembre 2026</p>
             </header>
 
             <section class="seo-section" aria-labelledby="comparison">
@@ -183,6 +183,13 @@
                                 <td>Puce Apple</td>
                                 <td>Anglais, allemand, espagnol, français, italien et portugais</td>
                                 <td>Environ 1 Go</td>
+                                <td>Stable</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Phonon</strong></td>
+                                <td>Puce Apple (macOS 15 ou version ultérieure)</td>
+                                <td>Anglais, 25 voix américaines et britanniques</td>
+                                <td>Environ 175 Mo</td>
                                 <td>Bêta</td>
                             </tr>
                         </tbody>
@@ -200,7 +207,9 @@
                 <h3>Essayez Kokoro pour des voix compactes en anglais et en mandarin</h3>
                 <p>Kokoro est une option bêta pour les Mac à puce Apple. Son modèle Core ML compact propose des catalogues de voix en anglais et en mandarin.</p>
                 <h3>Essayez PocketTTS pour des voix expressives en six langues</h3>
-                <p>PocketTTS est un modèle bêta plus volumineux pour les Mac à puce Apple, avec des voix en anglais, allemand, espagnol, français, italien et portugais.</p>
+                <p>PocketTTS est un modèle plus volumineux pour les Mac à puce Apple, avec des voix en anglais, allemand, espagnol, français, italien et portugais.</p>
+                <h3>Essayez Phonon pour des voix anglaises compactes</h3>
+                <p>Phonon est un modèle bêta compact pour l’anglais. Il lit naturellement les nombres, les prix, les liens et les abréviations, et propose 25 voix américaines et britanniques.</p>
             </section>
 
             <section class="seo-section" aria-labelledby="offline-meaning">
@@ -212,6 +221,7 @@
             <section class="seo-section" aria-labelledby="use-engines">
                 <h2 id="use-engines">Utiliser des voix locales dans les apps Mac</h2>
                 <p>Le moteur vocal choisi fonctionne avec le texte saisi manuellement, le texte sélectionné dans d’autres apps, l’OCR de capture d’écran, l’historique et le lecteur flottant.</p>
+                <p>Avec les voix Apple ou un modèle Supertonic téléchargé, vous pouvez aussi exporter la voix dans un fichier audio WAV.</p>
                 <div class="seo-related">
                     <a href="/fr/read-selected-text-aloud-mac/">Écouter du texte sélectionné</a>
                     <a href="/fr/screenshot-ocr-text-to-speech-mac/">Lire des captures avec l’OCR</a>

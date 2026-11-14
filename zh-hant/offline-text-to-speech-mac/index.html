@@ -5,7 +5,7 @@
     <script defer src="/js/language-menu.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="比較 LoudScript 的 Mac 離線文字轉語音引擎：Apple 語音、Supertonic、Kokoro 與 PocketTTS，包括硬體與下載需求。">
+    <meta name="description" content="比較 LoudScript 的 Mac 離線文字轉語音引擎：Apple 語音、Supertonic、Kokoro、PocketTTS 與 Phonon，包括硬體與下載需求。">
     <meta name="author" content="Ho Ye Lam">
     <meta name="robots" content="index, follow">
 
@@ -14,7 +14,7 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://loudscript.app/zh-hant/offline-text-to-speech-mac/">
     <meta property="og:image" content="https://loudscript.app/images/mac/mac-playback-settings.png">
-    <meta property="og:description" content="依 Mac 相容性、語言支援、成熟度與下載大小，比較四款裝置端語音引擎。">
+    <meta property="og:description" content="依 Mac 相容性、語言支援、成熟度與下載大小，比較五款裝置端語音引擎。">
     <meta property="og:locale" content="zh_TW">
     <meta property="og:locale:alternate" content="en_US">
     <meta property="og:locale:alternate" content="zh_CN">
@@ -26,7 +26,7 @@
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Mac 離線文字轉語音引擎比較｜LoudScript">
-    <meta name="twitter:description" content="選擇可在 Mac 本機執行的 Apple、Supertonic、Kokoro 與 PocketTTS 語音。">
+    <meta name="twitter:description" content="選擇可在 Mac 本機執行的 Apple、Supertonic、Kokoro、PocketTTS 與 Phonon 語音。">
     <meta name="twitter:image" content="https://loudscript.app/images/mac/mac-playback-settings.png">
 
     <link rel="canonical" href="https://loudscript.app/zh-hant/offline-text-to-speech-mac/">
@@ -57,9 +57,9 @@
           "inLanguage": "zh-Hant",
           "@id": "https://loudscript.app/zh-hant/offline-text-to-speech-mac/#article",
           "headline": "Mac 離線文字轉語音：比較 LoudScript 的本機引擎",
-          "description": "實用比較 LoudScript Mac 版中的 Apple、Supertonic、Kokoro 與 PocketTTS。",
+          "description": "實用比較 LoudScript Mac 版中的 Apple、Supertonic、Kokoro、PocketTTS 與 Phonon。",
           "datePublished": "2026-08-04",
-          "dateModified": "2026-08-20",
+          "dateModified": "2026-11-14",
           "author": { "@type": "Person", "@id": "https://loudscript.app/#creator", "name": "Ho Ye Lam", "url": "https://hoyelam.com/" },
           "publisher": { "@type": "Organization", "@id": "https://loudscript.app/#organization", "name": "Kin-Yee", "url": "https://loudscript.app/" },
           "mainEntityOfPage": "https://loudscript.app/zh-hant/offline-text-to-speech-mac/"
@@ -139,8 +139,8 @@
             <header class="seo-hero">
                 <p class="seo-breadcrumb"><a href="/zh-hant/">LoudScript</a> / 離線語音指南</p>
                 <h1>Mac 離線文字轉語音</h1>
-                <p class="seo-lede">LoudScript 提供四款可在 Mac 上合成文字的語音引擎。選擇適合工作流程的語音技術前，可先比較相容性、語言、模型大小與成熟度。</p>
-                <p class="seo-byline">作者：<a href="https://hoyelam.com/" rel="author">Ho Ye Lam</a> · 更新於 2026 年 8 月 20 日</p>
+                <p class="seo-lede">LoudScript 提供五款可在 Mac 上合成文字的語音引擎。選擇適合工作流程的語音技術前，可先比較相容性、語言、模型大小與成熟度。</p>
+                <p class="seo-byline">作者：<a href="https://hoyelam.com/" rel="author">Ho Ye Lam</a> · 更新於 2026 年 11 月 14 日</p>
             </header>
 
             <section class="seo-section" aria-labelledby="comparison">
@@ -183,6 +183,13 @@
                                 <td>Apple 晶片</td>
                                 <td>英文、德文、西班牙文、法文、義大利文、葡萄牙文</td>
                                 <td>約 1 GB</td>
+                                <td>穩定版</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Phonon</strong></td>
+                                <td>Apple 晶片（macOS 15 或以上版本）</td>
+                                <td>英文，25 種美式與英式英文語音</td>
+                                <td>約 175 MB</td>
                                 <td>測試版</td>
                             </tr>
                         </tbody>
@@ -200,7 +207,9 @@
                 <h3>需要精簡的英文與普通話語音，可試用 Kokoro</h3>
                 <p>Kokoro 是適用於 Apple 晶片的測試版選項，透過精簡的 Core ML 模型提供英文與普通話語音目錄。</p>
                 <h3>需要六種語言的自然表現力，可試用 PocketTTS</h3>
-                <p>PocketTTS 是適用於 Apple 晶片的較大型測試版模型，提供英文、德文、西班牙文、法文、義大利文與葡萄牙文語音。</p>
+                <p>PocketTTS 是適用於 Apple 晶片的較大型模型，提供英文、德文、西班牙文、法文、義大利文與葡萄牙文語音。</p>
+                <h3>需要精簡的英文語音，可試用 Phonon</h3>
+                <p>Phonon 是精簡的英文測試版模型，能自然朗讀數字、價格、連結與縮寫，並提供 25 種美式與英式英文語音。</p>
             </section>
 
             <section class="seo-section" aria-labelledby="offline-meaning">
@@ -212,6 +221,7 @@
             <section class="seo-section" aria-labelledby="use-engines">
                 <h2 id="use-engines">在各種 Mac App 中使用本機語音</h2>
                 <p>你選擇的語音引擎可用於手動輸入的文字、其他 App 中選取的文字、截圖 OCR、朗讀記錄與浮動播放控制項。</p>
+                <p>使用 Apple 語音或已下載的 Supertonic 模型時，你也可以將語音匯出為 WAV 音訊檔。</p>
                 <div class="seo-related">
                     <a href="/zh-hant/read-selected-text-aloud-mac/">朗讀選取的文字</a>
                     <a href="/zh-hant/screenshot-ocr-text-to-speech-mac/">使用 OCR 朗讀截圖</a>

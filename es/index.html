@@ -71,7 +71,7 @@
           "@id": "https://loudscript.app/es/#webpage",
           "url": "https://loudscript.app/es/",
           "name": "Texto a voz para Mac: app gratuita | LoudScript",
-          "dateModified": "2026-11-13",
+          "dateModified": "2026-11-14",
           "isPartOf": { "@id": "https://loudscript.app/#website" },
           "about": { "@id": "https://loudscript.app/es/#mac-app" },
           "mainEntity": { "@id": "https://loudscript.app/es/#mac-app" },
@@ -115,7 +115,7 @@
           "applicationCategory": "UtilitiesApplication",
           "applicationSubCategory": "Text-to-speech reader",
           "softwareVersion": "0.1.46",
-          "dateModified": "2026-11-13",
+          "dateModified": "2026-11-14",
           "installUrl": "https://loudscript.app/download/",
           "releaseNotes": "https://loudscript.app/changelog.html#version-0-1-46",
           "processorRequirements": "Intel or Apple silicon Mac; some downloadable voices require Apple silicon",
@@ -125,7 +125,8 @@
             "Leer texto seleccionado desde cualquier app del Mac",
             "Extraer y leer texto de capturas de pantalla mediante OCR",
             "Importar páginas concretas de un PDF y seguir el texto hablado en el documento",
-            "Voces locales de Apple, Supertonic, Kokoro y PocketTTS",
+            "Voces locales de Apple, Supertonic, Kokoro, PocketTTS y Phonon",
+            "Exportar la voz como archivos de audio WAV",
             "Controles flotantes de reproducción e historial de lectura"
           ],
           "offers": {
@@ -248,9 +249,9 @@
                 <p>Captura texto de imágenes y apps y escúchalo.</p>
             </article>
             <article class="mac-feature-card mac-reveal">
-                <span class="mac-feature-label">Cuatro motores de voz</span>
+                <span class="mac-feature-label">Cinco motores de voz</span>
                 <h2>Elige la voz que prefieras.</h2>
-                <p>Usa las voces de Apple o descarga Supertonic, Kokoro o PocketTTS.</p>
+                <p>Usa las voces de Apple o descarga Supertonic, Kokoro, PocketTTS o Phonon.</p>
             </article>
             <article class="mac-feature-card mac-reveal">
                 <span class="mac-feature-label">Reproducción en segundo plano</span>
@@ -293,6 +294,7 @@
                     <li>Gestiona las voces descargadas en LoudScript</li>
                     <li>Usa las voces de Apple como alternativa</li>
                     <li>Cambia la velocidad en cualquier momento</li>
+                    <li>Guarda la voz como archivo de audio WAV</li>
                 </ul>
             </div>
             <div class="mac-detail-img">
@@ -423,11 +425,15 @@
                 </details>
                 <details>
                     <summary>¿Funciona LoudScript sin conexión?</summary>
-                    <p>Sí. Las voces de Apple funcionan en el Mac. Supertonic, Kokoro y PocketTTS también funcionan localmente después de descargar sus modelos. El formato con IA puede enviar texto al proveedor de IA que elijas cuando está activado.</p>
+                    <p>Sí. Las voces de Apple funcionan en el Mac. Supertonic, Kokoro, PocketTTS y Phonon también funcionan localmente después de descargar sus modelos. El formato con IA puede enviar texto al proveedor de IA que elijas cuando está activado.</p>
+                </details>
+                <details>
+                    <summary>¿Puede LoudScript guardar la voz como archivo de audio?</summary>
+                    <p>Sí. Con las voces de Apple o un modelo Supertonic descargado, LoudScript exporta la voz como archivo WAV. Kokoro, PocketTTS y Phonon no exportan audio. LoudScript sugiere un nombre de archivo según el documento, el título de origen o la primera frase, y luego muestra el archivo guardado en el Finder.</p>
                 </details>
                 <details>
                     <summary>¿Qué modelos de Mac son compatibles con LoudScript?</summary>
-                    <p>LoudScript requiere macOS 15.6 o posterior. Las voces de Apple y Supertonic funcionan en Mac con Intel o chip de Apple. Kokoro y PocketTTS requieren un Mac con chip de Apple.</p>
+                    <p>LoudScript requiere macOS 15.6 o posterior. Las voces de Apple y Supertonic funcionan en Mac con Intel o chip de Apple. Kokoro y PocketTTS requieren un Mac con chip de Apple. Phonon necesita macOS 15 o posterior y se ha probado en Mac con chip de Apple.</p>
                 </details>
             </div>
         </section>
