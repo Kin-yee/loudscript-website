@@ -52,9 +52,9 @@ const locales = [
 ];
 const routes = [
   { route: "", lastModified: siteLastModified },
-  { route: "read-selected-text-aloud-mac", lastModified: guideLastModified },
-  { route: "screenshot-ocr-text-to-speech-mac", lastModified: guideLastModified },
-  { route: "offline-text-to-speech-mac", lastModified: guideLastModified }
+  { route: "read-selected-text-aloud-mac", lastModified: guideLastModified["read-selected-text-aloud-mac"] },
+  { route: "screenshot-ocr-text-to-speech-mac", lastModified: guideLastModified["screenshot-ocr-text-to-speech-mac"] },
+  { route: "offline-text-to-speech-mac", lastModified: guideLastModified["offline-text-to-speech-mac"] }
 ];
 const staticPages = [
   { route: "download/", lastModified: siteLastModified },

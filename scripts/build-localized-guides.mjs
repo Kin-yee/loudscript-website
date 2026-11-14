@@ -1,7 +1,7 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { guideLastModified, guideLastModifiedDisplay } from "./site-metadata.mjs";
+import { guideLastModified } from "./site-metadata.mjs";
 
 const siteRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const german = JSON.parse(
@@ -278,9 +278,12 @@ function enhanceEnglish(html, guide) {
       '    <script defer data-domain="loudscript.app" src="https://plausible.io/js/script.js"></script>\n    <script defer src="/js/language-menu.js"></script>'
     );
   }
+  const lastModified = guideLastModified[guide.route];
+  const lastModifiedDisplay = new Date(`${lastModified}T00:00:00Z`)
+    .toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
   html = html
-    .replace(/"dateModified": "\d{4}-\d{2}-\d{2}"/, `"dateModified": "${guideLastModified}"`)
-    .replace(/Updated [A-Z][a-z]+ \d{1,2}, \d{4}/, `Updated ${guideLastModifiedDisplay}`);
+    .replace(/"dateModified": "\d{4}-\d{2}-\d{2}"/, `"dateModified": "${lastModified}"`)
+    .replace(/Updated [A-Z][a-z]+ \d{1,2}, \d{4}/, `Updated ${lastModifiedDisplay}`);
   html = html.replace(/\n\s*<link rel="alternate" hreflang="[^"]+" href="[^"]+">/g, "");
   html = html.replace(
     `    <link rel="canonical" href="https://loudscript.app/${guide.route}/">`,

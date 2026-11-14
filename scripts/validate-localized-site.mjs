@@ -450,7 +450,7 @@ for (const guide of guideRoutes) {
     const breadcrumb = jsonLd["@graph"].find((entry) => entry["@type"] === "BreadcrumbList");
     assert(mainEntity?.inLanguage === locale.lang, `${output}: schema language is incorrect`);
     assert(mainEntity?.mainEntityOfPage === canonical, `${output}: schema canonical is incorrect`);
-    assert(mainEntity?.dateModified === guideLastModified, `${output}: schema modification date is stale`);
+    assert(mainEntity?.dateModified === guideLastModified[guide.route], `${output}: schema modification date is stale`);
     assert(breadcrumb?.itemListElement?.[1]?.item === canonical, `${output}: breadcrumb canonical is incorrect`);
 
     if (locale.id !== "en") {
@@ -464,27 +464,27 @@ for (const guide of guideRoutes) {
       ];
       for (const phrase of untranslated) assert(!html.includes(phrase), `${output}: untranslated English remains: ${phrase}`);
       if (locale.id === "de") {
-        for (const phrase of ["How to ", "What if ", "Updated August", ">Read selected text<", ">Download DMG<"]) {
+        for (const phrase of ["How to ", "What if ", "Updated ", ">Read selected text<", ">Download DMG<"]) {
           assert(!html.includes(phrase), `${output}: untranslated English remains in German copy: ${phrase}`);
         }
       }
       if (locale.id === "es") {
-        for (const phrase of ["How to ", "What if ", "Updated August", ">Read selected text<", ">Download DMG<"]) {
+        for (const phrase of ["How to ", "What if ", "Updated ", ">Read selected text<", ">Download DMG<"]) {
           assert(!html.includes(phrase), `${output}: untranslated English remains in Spanish copy: ${phrase}`);
         }
       }
       if (locale.id === "fr") {
-        for (const phrase of ["How to ", "What if ", "Updated August", ">Read selected text<", ">Download DMG<"]) {
+        for (const phrase of ["How to ", "What if ", "Updated ", ">Read selected text<", ">Download DMG<"]) {
           assert(!html.includes(phrase), `${output}: untranslated English remains in French copy: ${phrase}`);
         }
       }
       if (locale.id === "ja") {
-        for (const phrase of ["How to ", "What if ", "Updated August", ">Read selected text<", ">Download DMG<"]) {
+        for (const phrase of ["How to ", "What if ", "Updated ", ">Read selected text<", ">Download DMG<"]) {
           assert(!html.includes(phrase), `${output}: untranslated English remains in Japanese copy: ${phrase}`);
         }
       }
       if (locale.id === "nl") {
-        for (const phrase of ["How to ", "What if ", "Updated August", ">Read selected text<", ">Download DMG<"]) {
+        for (const phrase of ["How to ", "What if ", "Updated ", ">Read selected text<", ">Download DMG<"]) {
           assert(!html.includes(phrase), `${output}: untranslated English remains in Dutch copy: ${phrase}`);
         }
       }
@@ -548,7 +548,7 @@ for (const guide of guideRoutes) {
   for (const [, canonical] of alternates.slice(0, 8)) {
     const blockMatch = sitemap.match(new RegExp(`<url>\\s*<loc>${escapeRegExp(canonical)}<\\/loc>([\\s\\S]*?)<\\/url>`));
     assert(blockMatch, `Sitemap lacks ${canonical}`);
-    assert(blockMatch[1].includes(`<lastmod>${guideLastModified}</lastmod>`), `Sitemap block for ${canonical} has a stale lastmod`);
+    assert(blockMatch[1].includes(`<lastmod>${guideLastModified[guide.route]}</lastmod>`), `Sitemap block for ${canonical} has a stale lastmod`);
     for (const [lang, href] of alternates) {
       assert(blockMatch[1].includes(`hreflang="${lang}" href="${href}"`), `Sitemap block for ${canonical} lacks ${lang} alternate`);
     }
