@@ -6,7 +6,7 @@
     "test:hero-images": "node --test scripts/test-hero-image-sizes.mjs",
     "build": "node scripts/build-release-pages.mjs && node scripts/build-localized-landing.mjs && node scripts/build-localized-guides.mjs && node scripts/build-sitemap.mjs",
     "pretest": "npm run build",
-    "test": "npm run test:release && npm run test:template-indexing && node scripts/validate-localized-site.mjs",
+    "test": "npm run test:release && npm run test:template-indexing && node scripts/validate-robots.mjs && node scripts/validate-localized-site.mjs",
     "test:template-indexing": "node scripts/validate-template-indexing.mjs",
     "test:release": "node --test scripts/test-set-latest-mac-release.mjs"
   }
