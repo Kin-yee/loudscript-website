@@ -147,5 +147,7 @@
   "footer.selectedGuide": "Selected Text Guide",
   "footer.ocrGuide": "OCR Guide",
   "footer.offline": "Offline Voices",
+  "footer.pdfGuide": "PDF Guide",
+  "footer.chooserGuide": "Choose a Mac TTS App",
   "footer.credit": "Made by"
 }

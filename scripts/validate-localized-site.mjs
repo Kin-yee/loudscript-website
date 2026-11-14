@@ -1,6 +1,7 @@
 import { access, readFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { guideSourcePattern, localizedGuideText } from "./build-localized-guides.mjs";
 import { guideLastModified, latestMacRelease, siteLastModified } from "./site-metadata.mjs";
 import { releasePages, renderReleasePage, releasedDisplayUS } from "./release-pages.mjs";
 
@@ -89,14 +90,14 @@ const localeSpecs = [
 const guideRoutes = [
   { route: "read-selected-text-aloud-mac", schemaType: "HowTo", keywords: { en: "selected text", "zh-Hant": "朗讀", "zh-Hans": "朗读", de: "ausgewählten Text", es: "texto seleccionado", fr: "texte sélectionné", ja: "選択したテキスト", nl: "geselecteerde tekst" } },
   { route: "screenshot-ocr-text-to-speech-mac", schemaType: "HowTo", keywords: { en: "OCR", "zh-Hant": "OCR", "zh-Hans": "OCR", de: "OCR", es: "OCR", fr: "OCR", ja: "OCR", nl: "OCR" } },
-  { route: "offline-text-to-speech-mac", schemaType: "TechArticle", keywords: { en: "Offline Text-to-Speech", "zh-Hant": "離線文字轉語音", "zh-Hans": "离线文本转语音", de: "Offline-Text-to-Speech", es: "texto a voz sin conexión", fr: "synthèse vocale hors ligne", ja: "オフライン音声読み上げ", nl: "offline tekst-naar-spraak" } }
+  { route: "offline-text-to-speech-mac", schemaType: "TechArticle", keywords: { en: "Offline Text-to-Speech", "zh-Hant": "離線文字轉語音", "zh-Hans": "离线文本转语音", de: "Offline-Text-to-Speech", es: "texto a voz sin conexión", fr: "synthèse vocale hors ligne", ja: "オフライン音声読み上げ", nl: "offline tekst-naar-spraak" } },
+  { route: "best-text-to-speech-app-for-mac", schemaType: "TechArticle", keywords: { en: "text-to-speech app", "zh-Hant": "文字轉語音 App", "zh-Hans": "文本转语音 App", de: "Text vorlesen", es: "texto a voz", fr: "synthèse vocale", ja: "読み上げアプリ", nl: "tekst-naar-spraak" } },
+  { route: "read-pdf-aloud-mac", schemaType: "HowTo", keywords: { en: "PDF aloud", "zh-Hant": "朗讀 PDF", "zh-Hans": "朗读 PDF", de: "PDF vorlesen", es: "PDF en voz alta", fr: "PDF à voix haute", ja: "PDFを読み上げ", nl: "pdf voorlezen" } }
 ];
 const firstPartySeoPages = [
   { route: "download", schemaType: "SoftwareApplication", titlePhrase: "Download LoudScript for Mac", lastModified: siteLastModified },
-  { route: "best-text-to-speech-app-for-mac", schemaType: "TechArticle", titlePhrase: "Text-to-Speech App for Mac", lastModified: "2026-11-14" },
   { route: "speechify-alternative-mac", schemaType: "TechArticle", titlePhrase: "Speechify Alternative for Mac", lastModified: "2026-11-14" },
   { route: "elevenreader-mac", schemaType: "TechArticle", titlePhrase: "ElevenReader Mac App", lastModified: "2026-11-14" },
-  { route: "read-pdf-aloud-mac", schemaType: "HowTo", titlePhrase: "Read a PDF Aloud on Mac", lastModified: "2026-11-14" },
   { route: "loudscript-mac-vs-ios", schemaType: "TechArticle", titlePhrase: "LoudScript for Mac vs iPhone and iPad", lastModified: "2026-08-20" },
   { route: "kokoro-tts-mac", schemaType: "TechArticle", titlePhrase: "Kokoro TTS on Mac", lastModified: "2026-11-14" },
   { route: "text-to-audio-file-mac", schemaType: "HowTo", titlePhrase: "Save Text to Speech as an Audio File on Mac", lastModified: "2026-11-14" }
@@ -262,6 +263,10 @@ for (const spec of localeSpecs) {
     `${spec.output}: language navigation does not identify the current locale`
   );
   assert((html.match(/<nav class="mac-language-menu"/g) || []).length === 1, `${spec.output}: expected one language menu`);
+  for (const guide of guideRoutes) {
+    assert(html.includes(`href="/${spec.prefix}${guide.route}/" hreflang="${spec.lang}"`), `${spec.output}: guide link to ${guide.route} is not localized`);
+    if (spec.prefix) assert(!html.includes(`href="/${guide.route}/"`), `${spec.output}: links to the English ${guide.route} instead of the localized guide`);
+  }
   const languageMenu = html.match(/<nav class="mac-language-menu"[\s\S]*?<\/nav>/)?.[0];
   assert(languageMenu && (languageMenu.match(/<details>/g) || []).length === 1, `${spec.output}: language disclosure is missing`);
   assert((languageMenu.match(/hreflang=/g) || []).length === localeSpecs.length, `${spec.output}: language menu options are incomplete`);
@@ -397,6 +402,7 @@ for (const guide of guideRoutes) {
     ["x-default", `https://loudscript.app/${guide.route}/`]
   ];
 
+  const englishGuide = await readFile(path.join(siteRoot, guide.route, "index.html"), "utf8");
   for (const locale of localeSpecs) {
     const prefix = locale.prefix;
     const output = `${prefix}${guide.route}/index.html`;
@@ -453,6 +459,7 @@ for (const guide of guideRoutes) {
     assert(mainEntity?.inLanguage === locale.lang, `${output}: schema language is incorrect`);
     assert(mainEntity?.mainEntityOfPage === canonical, `${output}: schema canonical is incorrect`);
     assert(mainEntity?.dateModified === guideLastModified[guide.route], `${output}: schema modification date is stale`);
+    assert(breadcrumb?.itemListElement?.[0]?.item === `https://loudscript.app/${prefix}`, `${output}: breadcrumb home is not the ${locale.id} homepage`);
     assert(breadcrumb?.itemListElement?.[1]?.item === canonical, `${output}: breadcrumb canonical is incorrect`);
 
     if (locale.id !== "en") {
@@ -465,6 +472,10 @@ for (const guide of guideRoutes) {
         ">Guides<"
       ];
       for (const phrase of untranslated) assert(!html.includes(phrase), `${output}: untranslated English remains: ${phrase}`);
+      for (const [source] of englishGuide.matchAll(guideSourcePattern)) {
+        const target = localizedGuideText[locale.id][source];
+        assert(html.includes(target), `${output}: translation of "${source}" is missing or was rewritten by another key. Expected "${target}"`);
+      }
       if (locale.id === "de") {
         for (const phrase of ["How to ", "What if ", "Updated ", ">Read selected text<", ">Download DMG<"]) {
           assert(!html.includes(phrase), `${output}: untranslated English remains in German copy: ${phrase}`);
@@ -492,7 +503,10 @@ for (const guide of guideRoutes) {
       }
       const localePrefix = `/${locale.prefix}`;
       for (const related of guideRoutes) {
-        assert(html.includes(`href="${localePrefix}${related.route}/"`), `${output}: missing localized link to ${related.route}`);
+        if (englishGuide.includes(`href="/${related.route}/"`)) {
+          assert(html.includes(`href="${localePrefix}${related.route}/"`), `${output}: missing localized link to ${related.route}`);
+        }
+        assert(!new RegExp(`href="/${related.route}/"(?! lang="en")`).test(html), `${output}: links to the English ${related.route} instead of the localized guide`);
       }
     }
 

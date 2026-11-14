@@ -147,5 +147,7 @@
   "footer.selectedGuide": "選択テキストガイド",
   "footer.ocrGuide": "OCRガイド",
   "footer.offline": "オフライン音声",
+  "footer.pdfGuide": "PDFガイド",
+  "footer.chooserGuide": "読み上げアプリの選び方",
   "footer.credit": "制作"
 }

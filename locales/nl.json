@@ -147,5 +147,7 @@
   "footer.selectedGuide": "Handleiding voor geselecteerde tekst",
   "footer.ocrGuide": "OCR-handleiding",
   "footer.offline": "Offline stemmen",
+  "footer.pdfGuide": "Pdf-gids",
+  "footer.chooserGuide": "Een tekst-naar-spraak-app kiezen",
   "footer.credit": "Gemaakt door"
 }

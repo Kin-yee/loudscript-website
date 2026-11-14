@@ -147,5 +147,7 @@
   "footer.selectedGuide": "Guide du texte sélectionné",
   "footer.ocrGuide": "Guide OCR",
   "footer.offline": "Voix hors ligne",
+  "footer.pdfGuide": "Guide PDF",
+  "footer.chooserGuide": "Choisir une app de synthèse vocale",
   "footer.credit": "Créé par"
 }
