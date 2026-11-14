@@ -166,7 +166,7 @@ const offline = {
   "Built in": { zhHant: "內建", zhHans: "内置" },
   "Stable": { zhHant: "穩定版", zhHans: "稳定版" },
   "Multilingual selectable voice styles": { zhHant: "多語言，可選擇語音風格", zhHans: "多语言，可选择语音风格" },
-  "About 400MB": { zhHant: "約 400 MB", zhHans: "约 400 MB" },
+  "About 420 MB": { zhHant: "約 420 MB", zhHans: "约 420 MB" },
   "Apple silicon": { zhHant: "Apple 晶片", zhHans: "Apple 芯片" },
   "English and Mandarin": { zhHant: "英文與普通話", zhHans: "英语和普通话" },
   "About 320MB": { zhHant: "約 320 MB", zhHans: "约 320 MB" },
