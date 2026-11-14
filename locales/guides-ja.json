@@ -140,6 +140,7 @@
   "Apple voices are already part of macOS, require no separate model installation, and work on Intel and Apple silicon. Available languages depend on the voices installed under macOS Spoken Content settings.": "Appleの声はmacOSに組み込まれているため、別途モデルをインストールする必要がなく、Intel搭載MacとAppleシリコン搭載Macで動作します。利用できる言語は、macOSの「リーダーと読み上げ」設定にインストールされている声によって異なります。",
   "Choose Supertonic for a downloadable multilingual model": "ダウンロード型の多言語モデルならSupertonic",
   "Supertonic adds selectable voice styles, seeking support, and local multilingual synthesis. It is the downloadable model with support for both Intel and Apple silicon Macs.": "Supertonicは、選択可能な音声スタイル、シーク機能、ローカル多言語音声合成に対応します。Intel搭載MacとAppleシリコン搭載Macの両方で使えるダウンロード型モデルです。",
+  "Set up Kokoro on your Mac without Python": "PythonなしでMacにKokoroを設定する（英語）",
   "Try Kokoro for compact English and Mandarin speech": "コンパクトな英語・中国語音声ならKokoro",
   "Kokoro is a beta option for Apple silicon. It provides English and Mandarin voice catalogs through a compact Core ML model.": "KokoroはAppleシリコン向けのベータ版です。コンパクトなCore MLモデルで英語と中国語（標準語）の音声を利用できます。",
   "Try PocketTTS for six-language expressive speech": "6言語の表現豊かな音声ならPocketTTS",

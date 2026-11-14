@@ -140,6 +140,7 @@
   "Apple voices are already part of macOS, require no separate model installation, and work on Intel and Apple silicon. Available languages depend on the voices installed under macOS Spoken Content settings.": "Las voces de Apple forman parte de macOS, no requieren instalar otro modelo y funcionan en Mac Intel y con chip de Apple. Los idiomas disponibles dependen de las voces instaladas en los ajustes «Lectura y voz» de macOS.",
   "Choose Supertonic for a downloadable multilingual model": "Elige Supertonic si quieres un modelo multilingüe descargable",
   "Supertonic adds selectable voice styles, seeking support, and local multilingual synthesis. It is the downloadable model with support for both Intel and Apple silicon Macs.": "Supertonic ofrece estilos de voz seleccionables, desplazamiento por la reproducción y síntesis multilingüe local. Es el modelo descargable compatible tanto con Mac Intel como con chip de Apple.",
+  "Set up Kokoro on your Mac without Python": "Configura Kokoro en tu Mac sin Python (en inglés)",
   "Try Kokoro for compact English and Mandarin speech": "Prueba Kokoro para voces compactas en inglés y mandarín",
   "Kokoro is a beta option for Apple silicon. It provides English and Mandarin voice catalogs through a compact Core ML model.": "Kokoro es una opción beta para Mac con chip de Apple. Ofrece catálogos de voces en inglés y mandarín mediante un modelo Core ML compacto.",
   "Try PocketTTS for six-language expressive speech": "Prueba PocketTTS para voces expresivas en seis idiomas",

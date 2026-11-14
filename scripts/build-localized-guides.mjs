@@ -179,6 +179,7 @@ const offline = {
   "Apple voices are already part of macOS, require no separate model installation, and work on Intel and Apple silicon. Available languages depend on the voices installed under macOS Spoken Content settings.": { zhHant: "Apple 語音已內建於 macOS，不需要另外安裝模型，並可在 Intel 與 Apple 晶片 Mac 上運作。可用語言取決於 macOS「朗讀內容」設定中已安裝的語音。", zhHans: "Apple 语音已内置于 macOS，无需另外安装模型，并可在 Intel 和 Apple 芯片 Mac 上运行。可用语言取决于 macOS“朗读内容”设置中已安装的语音。" },
   "Choose Supertonic for a downloadable multilingual model": { zhHant: "需要可下載的多語言模型，可選 Supertonic", zhHans: "需要可下载的多语言模型，可选 Supertonic" },
   "Supertonic adds selectable voice styles, seeking support, and local multilingual synthesis. It is the downloadable model with support for both Intel and Apple silicon Macs.": { zhHant: "Supertonic 提供可選擇的語音風格、跳轉播放支援與本機多語言合成。它是同時支援 Intel 與 Apple 晶片 Mac 的可下載模型。", zhHans: "Supertonic 提供可选择的语音风格、跳转播放支持和本地多语言合成。它是同时支持 Intel 和 Apple 芯片 Mac 的可下载模型。" },
+  "Set up Kokoro on your Mac without Python": { zhHant: "在 Mac 上設定 Kokoro，無需 Python（英文頁面）", zhHans: "在 Mac 上设置 Kokoro，无需 Python（英文页面）" },
   "Try Kokoro for compact English and Mandarin speech": { zhHant: "需要精簡的英文與普通話語音，可試用 Kokoro", zhHans: "需要小巧的英语和普通话语音，可试用 Kokoro" },
   "Kokoro is a beta option for Apple silicon. It provides English and Mandarin voice catalogs through a compact Core ML model.": { zhHant: "Kokoro 是適用於 Apple 晶片的測試版選項，透過精簡的 Core ML 模型提供英文與普通話語音目錄。", zhHans: "Kokoro 是适用于 Apple 芯片的测试版选项，通过小巧的 Core ML 模型提供英语和普通话语音目录。" },
   "Try PocketTTS for six-language expressive speech": { zhHant: "需要六種語言的自然表現力，可試用 PocketTTS", zhHans: "需要六种语言的自然表现力，可试用 PocketTTS" },
@@ -279,8 +280,8 @@ function languageNavigation(route, current, ariaLabel) {
 function enhanceEnglish(html, guide) {
   if (!html.includes('/js/language-menu.js')) {
     html = html.replace(
-      '    <script defer data-domain="loudscript.app" src="https://plausible.io/js/script.js"></script>',
-      '    <script defer data-domain="loudscript.app" src="https://plausible.io/js/script.js"></script>\n    <script defer src="/js/language-menu.js"></script>'
+      '    <script defer data-domain="loudscript.app" src="https://plausible.io/js/script.outbound-links.js"></script>',
+      '    <script defer data-domain="loudscript.app" src="https://plausible.io/js/script.outbound-links.js"></script>\n    <script defer src="/js/language-menu.js"></script>'
     );
   }
   const lastModified = guideLastModified[guide.route];
