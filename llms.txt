@@ -43,7 +43,7 @@ Each language version links to localized editions of the three Mac text-to-speec
 - Apple voices and downloaded speech models synthesize speech locally.
 - LoudScript has five speech engines: Apple voices built into macOS, and the downloadable Supertonic, Kokoro, PocketTTS, and Phonon models.
 - Phonon is a compact English model in beta, about 175 MB, with 25 US and UK English voices. It reads numbers, prices, links, and abbreviations naturally.
-- Apple voices and Supertonic support Intel and Apple silicon Macs. Kokoro, PocketTTS, and Phonon require Apple silicon.
+- Apple voices, Supertonic, and PocketTTS support Intel and Apple silicon Macs. Kokoro and Phonon require Apple silicon.
 - LoudScript exports speech as WAV audio files with Apple voices or a downloaded Supertonic model. It suggests a filename from the document, source title, or first sentence, and shows the saved file in Finder.
 - Optional AI formatting is separate from local speech and can send the text being formatted to a third-party provider when enabled.
 - Raw speech text, OCR output, and source-app identity are not sent to product analytics.
