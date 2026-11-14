@@ -93,7 +93,7 @@ const guideRoutes = [
 ];
 const firstPartySeoPages = [
   { route: "download", schemaType: "SoftwareApplication", titlePhrase: "Download LoudScript for Mac", lastModified: siteLastModified },
-  { route: "best-text-to-speech-app-for-mac", schemaType: "TechArticle", titlePhrase: "Text-to-Speech App for Mac", lastModified: "2026-08-20" },
+  { route: "best-text-to-speech-app-for-mac", schemaType: "TechArticle", titlePhrase: "Text-to-Speech App for Mac", lastModified: "2026-11-14" },
   { route: "read-pdf-aloud-mac", schemaType: "HowTo", titlePhrase: "Read a PDF Aloud on Mac", lastModified: "2026-08-20" },
   { route: "loudscript-mac-vs-ios", schemaType: "TechArticle", titlePhrase: "LoudScript for Mac vs iPhone and iPad", lastModified: "2026-08-20" }
 ];
