@@ -23,7 +23,8 @@ const guides = [
   { route: "read-selected-text-aloud-mac", schemaType: "HowTo" },
   { route: "screenshot-ocr-text-to-speech-mac", schemaType: "HowTo" },
   { route: "offline-text-to-speech-mac", schemaType: "TechArticle" },
-  { route: "best-text-to-speech-app-for-mac", schemaType: "TechArticle" }
+  { route: "best-text-to-speech-app-for-mac", schemaType: "TechArticle" },
+  { route: "read-pdf-aloud-mac", schemaType: "HowTo" }
 ];
 
 const common = {
@@ -360,6 +361,56 @@ const chooser = {
   ">Download</a>": { zhHant: ">下載</a>", zhHans: ">下载</a>" }
 };
 
+const pdf = {
+  "Learn how to read a PDF aloud on Mac with LoudScript. Import up to 50 pages, listen with local voices, and follow synchronized highlighting in the document.": { zhHant: "了解如何使用 LoudScript 在 Mac 上朗讀 PDF。一次可匯入最多 50 頁，以本機語音聆聽，並在原始文件中跟隨同步反白的句子。", zhHans: "了解如何使用 LoudScript 在 Mac 上朗读 PDF。一次可导入最多 50 页，用本地语音收听，并在原始文档中跟随同步高亮标记的句子。" },
+  "How to Read a PDF Aloud on Mac | LoudScript": { zhHant: "如何在 Mac 上朗讀 PDF｜LoudScript", zhHans: "如何在 Mac 上朗读 PDF｜LoudScript" },
+  "Import selected PDF pages, listen on your Mac, and follow the current sentence in the original document.": { zhHant: "匯入選取的 PDF 頁面，在 Mac 上聆聽，並在原始文件中跟隨目前朗讀的句子。", zhHans: "导入所选 PDF 页面，在 Mac 上收听，并在原始文档中跟随当前朗读的句子。" },
+  "A step-by-step guide to PDF text-to-speech with synchronized highlighting.": { zhHant: "使用同步反白朗讀 PDF 的逐步指南。", zhHans: "使用同步高亮标记朗读 PDF 的分步指南。" },
+  "How to read a PDF aloud on Mac": { zhHant: "如何在 Mac 上朗讀 PDF", zhHans: "如何在 Mac 上朗读 PDF" },
+  "Import PDF pages into LoudScript and follow synchronized highlighting while listening.": { zhHant: "將 PDF 頁面匯入 LoudScript，聆聽時跟隨同步反白。", zhHans: "将 PDF 页面导入 LoudScript，收听时跟随同步高亮标记。" },
+  "Open a PDF": { zhHant: "開啟 PDF", zhHans: "打开 PDF" },
+  "Open LoudScript and choose the PDF you want to hear.": { zhHant: "開啟 LoudScript，選擇你想聆聽的 PDF。", zhHans: "打开 LoudScript，选择你想收听的 PDF。" },
+  "Choose pages": { zhHant: "選擇頁面", zhHans: "选择页面" },
+  "Select up to 50 consecutive pages to import.": { zhHant: "選擇最多 50 個連續頁面進行匯入。", zhHans: "选择最多 50 个连续页面进行导入。" },
+  "Start playback": { zhHant: "開始播放", zhHans: "开始播放" },
+  "Choose a voice and press Play to hear the extracted text.": { zhHant: "選擇語音並按下 Play，聆聽擷取的文字。", zhHans: "选择语音并按下 Play，收听提取的文本。" },
+  "Follow the document": { zhHant: "跟隨文件", zhHans: "跟随文档" },
+  "Use synchronized highlighting to follow the current sentence in the original PDF and extracted text.": { zhHant: "使用同步反白，在原始 PDF 與擷取的文字中跟隨目前朗讀的句子。", zhHans: "使用同步高亮标记，在原始 PDF 和提取的文本中跟随当前朗读的句子。" },
+  "Read a PDF aloud on Mac": { zhHant: "在 Mac 上朗讀 PDF", zhHans: "在 Mac 上朗读 PDF" },
+  " / PDF reading guide": { zhHant: " / PDF 朗讀指南", zhHans: " / PDF 朗读指南" },
+  "Import the pages you need, listen with a local voice, and follow the current sentence in the original PDF and extracted text.": { zhHant: "匯入你需要的頁面，以本機語音聆聽，並在原始 PDF 與擷取的文字中跟隨目前朗讀的句子。", zhHans: "导入你需要的页面，用本地语音收听，并在原始 PDF 和提取的文本中跟随当前朗读的句子。" },
+  "Read a PDF in four steps": { zhHant: "四個步驟朗讀 PDF", zhHans: "四个步骤朗读 PDF" },
+  "Open the PDF": { zhHant: "開啟 PDF", zhHans: "打开 PDF" },
+  " from LoudScript.": { zhHant: "：從 LoudScript 開啟。", zhHans: "：从 LoudScript 打开。" },
+  "Choose a page range.": { zhHant: "選擇頁面範圍。", zhHans: "选择页面范围。" },
+  " Each import can contain up to 50 consecutive pages.": { zhHant: "每次匯入最多可包含 50 個連續頁面。", zhHans: "每次导入最多可包含 50 个连续页面。" },
+  "Select a voice and press Play.": { zhHant: "選擇語音並按下 Play。", zhHans: "选择语音并按下 Play。" },
+  " Apple voices and downloaded speech models synthesize on your Mac.": { zhHant: "Apple 語音與下載的語音模型會在你的 Mac 上合成語音。", zhHans: "Apple 语音和下载的语音模型会在你的 Mac 上合成语音。" },
+  "Follow the highlighting.": { zhHant: "跟隨反白。", zhHans: "跟随高亮标记。" },
+  " LoudScript marks the current sentence in both the document and extracted-text views.": { zhHant: "LoudScript 會在文件檢視與擷取文字檢視中同時標示目前朗讀的句子。", zhHans: "LoudScript 会在文档视图和提取文本视图中同时标记当前朗读的句子。" },
+  "What kind of PDFs work?": { zhHant: "哪些 PDF 可以使用？", zhHans: "哪些 PDF 可以使用？" },
+  "LoudScript extracts text from the pages you choose. It can also recognize words on image-based pages with Apple’s on-device Vision text recognition, so scanned reading material is supported when the print is clear enough.": { zhHant: "LoudScript 會從你選擇的頁面擷取文字。對於以圖片構成的頁面，它也能透過 Apple 在裝置上執行的 Vision 文字辨識來辨識文字，因此只要印刷夠清晰，也支援掃描的閱讀資料。", zhHans: "LoudScript 会从你选择的页面提取文本。对于由图片构成的页面，它也能通过 Apple 在设备上运行的 Vision 文本识别来识别文字，因此只要印刷足够清晰，也支持扫描的阅读材料。" },
+  "Recognition accuracy depends on scan quality, language, layout, and handwriting. Password-protected or damaged files may need to be unlocked or repaired first.": { zhHant: "辨識準確度取決於掃描品質、語言、版面與手寫內容。受密碼保護或損毀的檔案，可能需要先解鎖或修復。", zhHans: "识别准确度取决于扫描质量、语言、版面和手写内容。受密码保护或损坏的文件，可能需要先解锁或修复。" },
+  "PDF privacy and processing": { zhHant: "PDF 隱私權與處理方式", zhHans: "PDF 隐私与处理方式" },
+  "PDF text extraction, OCR, and speech synthesis use local macOS frameworks or speech models downloaded to your Mac. LoudScript does not send raw PDF text to product analytics.": { zhHant: "PDF 文字擷取、OCR 與語音合成皆使用本機 macOS 框架，或已下載到你 Mac 上的語音模型。LoudScript 不會將 PDF 原始文字傳送至產品分析服務。", zhHans: "PDF 文本提取、OCR 和语音合成都使用本地 macOS 框架，或已下载到你 Mac 上的语音模型。LoudScript 不会将 PDF 原始文本发送到产品分析服务。" },
+  "Optional AI formatting is separate. If you enable it, the text being formatted goes through LoudScript's server to an AI model provider. See the ": { zhHant: "選用的 AI 格式化功能是獨立的。如果你啟用它，要格式化的文字會經由 LoudScript 的伺服器傳送至 AI 模型供應商。確切的界線請參閱", zhHans: "可选的 AI 格式化功能是独立的。如果你启用它，要格式化的文本会经由 LoudScript 的服务器发送到 AI 模型提供商。确切的边界请参阅" },
+  " for the exact boundary.": { zhHant: "。", zhHans: "。" },
+  "When LoudScript is a good PDF reader": { zhHant: "LoudScript 適合當 PDF 閱讀器的情況", zhHans: "LoudScript 适合用作 PDF 阅读器的情况" },
+  "You want to keep the original page visible while listening.": { zhHant: "你想在聆聽時保持原始頁面可見。", zhHans: "你想在收听时保持原始页面可见。" },
+  "You need a focused page range instead of importing a whole book.": { zhHant: "你只需要特定頁面範圍，而不是匯入整本書。", zhHans: "你只需要特定页面范围，而不是导入整本书。" },
+  "You want local speech and reading history in a native Mac app.": { zhHant: "你想在原生 Mac App 中使用本機語音與朗讀歷史。", zhHans: "你想在原生 Mac App 中使用本地语音和朗读历史记录。" },
+  "You need highlighting that follows playback across pages.": { zhHant: "你需要能跨頁跟隨播放的反白。", zhHans: "你需要能跨页跟随播放的高亮标记。" },
+  "It is not an audiobook editor and does not currently position itself as a studio tool for exporting narrated audio files.": { zhHant: "它不是有聲書編輯器，目前也不定位為輸出旁白音訊檔的錄音室工具。", zhHans: "它不是有声书编辑器，目前也不定位为导出旁白音频文件的录音棚工具。" },
+  "Try PDF text-to-speech on Mac": { zhHant: "在 Mac 上試用 PDF 文字轉語音", zhHans: "在 Mac 上试用 PDF 文本转语音" },
+  "LoudScript is free for macOS 15.6 or later and supports Intel and Apple silicon Macs.": { zhHant: "LoudScript 免費提供，適用於 macOS 15.6 或以上版本，並支援 Intel 與 Apple 晶片 Mac。", zhHans: "LoudScript 免费提供，适用于 macOS 15.6 或更高版本，并支持 Intel 和 Apple 芯片 Mac。" },
+  "Related Mac reading guides": { zhHant: "相關的 Mac 朗讀指南", zhHans: "相关的 Mac 朗读指南" },
+  "Read on-screen text with OCR": { zhHant: "使用 OCR 朗讀螢幕上的文字", zhHans: "使用 OCR 朗读屏幕上的文本" },
+  "Compare offline voices": { zhHant: "比較離線語音", zhHans: "对比离线语音" },
+  "Choose a Mac TTS app": { zhHant: "挑選 Mac 文字轉語音 App", zhHans: "选择 Mac 文本转语音 App" },
+  "Save text as an audio file": { zhHant: "將文字儲存為音訊檔（英文頁面）", zhHans: "将文本存储为音频文件（英文页面）" },
+  "Use Kokoro without Python": { zhHant: "不用 Python 使用 Kokoro（英文頁面）", zhHans: "无需 Python 使用 Kokoro（英文页面）" }
+};
+
 const locales = [
   { id: "zh-Hant", key: "zhHant", prefix: "/zh-hant", ogLocale: "zh_TW", ogAlternates: ["en_US", "zh_CN", "de_DE", "es_ES", "fr_FR", "ja_JP", "nl_NL"], languageAria: "語言選擇" },
   { id: "zh-Hans", key: "zhHans", prefix: "/zh-hans", ogLocale: "zh_CN", ogAlternates: ["en_US", "zh_TW", "de_DE", "es_ES", "fr_FR", "ja_JP", "nl_NL"], languageAria: "语言选择" },
@@ -370,7 +421,7 @@ const locales = [
   { id: "nl", key: "nl", prefix: "/nl", ogLocale: "nl_NL", ogAlternates: ["en_US", "zh_TW", "zh_CN", "de_DE", "es_ES", "fr_FR", "ja_JP"], languageAria: "Taalkeuze" }
 ];
 
-const translations = { ...common, ...selected, ...ocr, ...offline, ...chooser };
+const translations = { ...common, ...selected, ...ocr, ...offline, ...chooser, ...pdf };
 const sourceKeys = Object.keys(translations).sort();
 const externalTranslations = { de: german, es: spanish, fr: french, ja: japanese, nl: dutch };
 for (const [localeId, localized] of Object.entries(externalTranslations)) {

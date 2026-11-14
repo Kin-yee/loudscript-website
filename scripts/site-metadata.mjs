@@ -7,6 +7,7 @@ export const guideLastModified = Object.freeze({
   "read-selected-text-aloud-mac": "2026-08-20",
   "screenshot-ocr-text-to-speech-mac": "2026-11-14",
   "offline-text-to-speech-mac": "2026-11-14",
-  "best-text-to-speech-app-for-mac": "2026-11-14"
+  "best-text-to-speech-app-for-mac": "2026-11-14",
+  "read-pdf-aloud-mac": "2026-11-14"
 });
 export const latestMacRelease = Object.freeze(record.latestMacRelease);
