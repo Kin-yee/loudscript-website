@@ -159,6 +159,7 @@ const offline = {
   "Status": { zhHant: "狀態", zhHans: "状态" },
   "Apple System": { zhHant: "Apple 系統語音", zhHans: "Apple 系统语音" },
   "Intel and Apple silicon": { zhHant: "Intel 與 Apple 晶片", zhHans: "Intel 和 Apple 芯片" },
+  "Apple silicon (macOS 15 or later)": { zhHant: "Apple 晶片（macOS 15 或以上版本）", zhHans: "Apple 芯片（macOS 15 或更高版本）" },
   "Uses voices installed in macOS": { zhHant: "使用 macOS 已安裝的語音", zhHans: "使用 macOS 已安装的语音" },
   "Built in": { zhHant: "內建", zhHans: "内置" },
   "Stable": { zhHant: "穩定版", zhHans: "稳定版" },

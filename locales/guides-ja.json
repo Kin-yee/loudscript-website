@@ -120,6 +120,7 @@
   "Status": "状態",
   "Apple System": "Appleシステム音声",
   "Intel and Apple silicon": "IntelおよびAppleシリコン",
+  "Apple silicon (macOS 15 or later)": "Appleシリコン（macOS 15以降）",
   "Uses voices installed in macOS": "macOSにインストール済みの声を使用",
   "Built in": "内蔵",
   "Stable": "安定版",

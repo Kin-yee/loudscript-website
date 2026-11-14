@@ -125,7 +125,7 @@
   "faq.export.question": "LoudScript 可以将语音存储为音频文件吗？",
   "faq.export.answer": "可以。使用 Apple 语音或已下载的 Supertonic 模型时，LoudScript 可将语音导出为 WAV 文件。Kokoro、PocketTTS 和 Phonon 不支持导出音频。LoudScript 会根据文稿名称、来源标题或第一句话为文件命名，并在存储后于“访达”中显示文件。",
   "faq.support.question": "哪些 Mac 支持 LoudScript？",
-  "faq.support.answer": "LoudScript 需要 macOS 15.6 或更高版本。Apple 语音、Supertonic 和 Phonon 支持基于 Intel 的 Mac 和搭载 Apple 芯片的 Mac；Kokoro 和 PocketTTS 则需要搭载 Apple 芯片的 Mac。",
+  "faq.support.answer": "LoudScript 需要 macOS 15.6 或更高版本。Apple 语音和 Supertonic 支持基于 Intel 的 Mac 和搭载 Apple 芯片的 Mac；Kokoro 和 PocketTTS 则需要搭载 Apple 芯片的 Mac。Phonon 需要 macOS 15 或更高版本，并已在搭载 Apple 芯片的 Mac 上测试。",
   "cta.title": "开始在 Mac 上聆听。",
   "cta.body": "免费下载，已通过 Apple 公证。无需 App Store 账户。",
   "cta.aria": "下载 LoudScript Mac 版",

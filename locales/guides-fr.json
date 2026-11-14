@@ -120,6 +120,7 @@
   "Status": "État",
   "Apple System": "Voix système Apple",
   "Intel and Apple silicon": "Intel et puce Apple",
+  "Apple silicon (macOS 15 or later)": "Puce Apple (macOS 15 ou version ultérieure)",
   "Uses voices installed in macOS": "Utilise les voix installées dans macOS",
   "Built in": "Intégré",
   "Stable": "Stable",

@@ -125,7 +125,7 @@
   "faq.export.question": "Kan LoudScript spraak als audiobestand bewaren?",
   "faq.export.answer": "Ja. Met Apple-stemmen of een gedownload Supertonic-model exporteert LoudScript spraak als WAV-bestand. Kokoro, PocketTTS en Phonon exporteren geen audio. LoudScript geeft het bestand de naam van het document, de brontitel of de eerste zin en toont het daarna in de Finder.",
   "faq.support.question": "Welke Macs ondersteunen LoudScript?",
-  "faq.support.answer": "LoudScript vereist macOS 15.6 of nieuwer. Apple-stemmen, Supertonic en Phonon ondersteunen Macs met Intel en Apple silicon. Kokoro en PocketTTS vereisen Apple silicon.",
+  "faq.support.answer": "LoudScript vereist macOS 15.6 of nieuwer. Apple-stemmen en Supertonic ondersteunen Macs met Intel en Apple silicon. Kokoro en PocketTTS vereisen Apple silicon. Phonon vereist macOS 15 of nieuwer en is getest op Macs met Apple silicon.",
   "cta.title": "Begin met luisteren op je Mac.",
   "cta.body": "Gratis, rechtstreeks en genotariseerd te downloaden. Geen App Store-account nodig.",
   "cta.aria": "Download LoudScript voor Mac",

@@ -63,7 +63,7 @@ const staticPages = [
   { route: "loudscript-mac-vs-ios/", lastModified: "2026-08-20" },
   { route: "privacy.html", lastModified: "2026-05-21" },
   { route: "tos.html", lastModified: "2026-05-21" },
-  { route: "support.html", lastModified: "2026-08-04" },
+  { route: "support.html", lastModified: "2026-11-14" },
   { route: "changelog.html", lastModified: changelogLastModified }
 ];
 
