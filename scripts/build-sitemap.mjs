@@ -56,7 +56,6 @@ const routes = [
 ];
 const staticPages = [
   { route: "download/", lastModified: siteLastModified },
-  { route: "best-text-to-speech-app-for-mac/", lastModified: "2026-11-14" },
   { route: "speechify-alternative-mac/", lastModified: "2026-11-14" },
   { route: "elevenreader-mac/", lastModified: "2026-11-14" },
   { route: "read-pdf-aloud-mac/", lastModified: "2026-11-14" },

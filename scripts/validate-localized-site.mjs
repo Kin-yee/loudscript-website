@@ -89,11 +89,11 @@ const localeSpecs = [
 const guideRoutes = [
   { route: "read-selected-text-aloud-mac", schemaType: "HowTo", keywords: { en: "selected text", "zh-Hant": "朗讀", "zh-Hans": "朗读", de: "ausgewählten Text", es: "texto seleccionado", fr: "texte sélectionné", ja: "選択したテキスト", nl: "geselecteerde tekst" } },
   { route: "screenshot-ocr-text-to-speech-mac", schemaType: "HowTo", keywords: { en: "OCR", "zh-Hant": "OCR", "zh-Hans": "OCR", de: "OCR", es: "OCR", fr: "OCR", ja: "OCR", nl: "OCR" } },
-  { route: "offline-text-to-speech-mac", schemaType: "TechArticle", keywords: { en: "Offline Text-to-Speech", "zh-Hant": "離線文字轉語音", "zh-Hans": "离线文本转语音", de: "Offline-Text-to-Speech", es: "texto a voz sin conexión", fr: "synthèse vocale hors ligne", ja: "オフライン音声読み上げ", nl: "offline tekst-naar-spraak" } }
+  { route: "offline-text-to-speech-mac", schemaType: "TechArticle", keywords: { en: "Offline Text-to-Speech", "zh-Hant": "離線文字轉語音", "zh-Hans": "离线文本转语音", de: "Offline-Text-to-Speech", es: "texto a voz sin conexión", fr: "synthèse vocale hors ligne", ja: "オフライン音声読み上げ", nl: "offline tekst-naar-spraak" } },
+  { route: "best-text-to-speech-app-for-mac", schemaType: "TechArticle", keywords: { en: "text-to-speech app", "zh-Hant": "文字轉語音 App", "zh-Hans": "文本转语音 App", de: "Text vorlesen", es: "texto a voz", fr: "synthèse vocale", ja: "読み上げアプリ", nl: "tekst-naar-spraak" } }
 ];
 const firstPartySeoPages = [
   { route: "download", schemaType: "SoftwareApplication", titlePhrase: "Download LoudScript for Mac", lastModified: siteLastModified },
-  { route: "best-text-to-speech-app-for-mac", schemaType: "TechArticle", titlePhrase: "Text-to-Speech App for Mac", lastModified: "2026-11-14" },
   { route: "speechify-alternative-mac", schemaType: "TechArticle", titlePhrase: "Speechify Alternative for Mac", lastModified: "2026-11-14" },
   { route: "elevenreader-mac", schemaType: "TechArticle", titlePhrase: "ElevenReader Mac App", lastModified: "2026-11-14" },
   { route: "read-pdf-aloud-mac", schemaType: "HowTo", titlePhrase: "Read a PDF Aloud on Mac", lastModified: "2026-11-14" },
