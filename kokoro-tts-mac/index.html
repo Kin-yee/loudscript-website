@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://plausible.io" crossorigin>
+    <script defer data-domain="loudscript.app" src="https://plausible.io/js/script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Use Kokoro text-to-speech on a Mac without Python. LoudScript downloads Kokoro as a 320 MB model for Apple silicon and reads English and Mandarin offline.">
+    <meta name="author" content="Ho Ye Lam">
+    <meta name="robots" content="index, follow">
+    <meta property="og:site_name" content="LoudScript">
+    <meta property="og:title" content="Kokoro TTS on Mac Without Python | LoudScript">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://loudscript.app/kokoro-tts-mac/">
+    <meta property="og:image" content="https://loudscript.app/images/mac/mac-playback-settings.png">
+    <meta property="og:description" content="Download Kokoro inside a native Mac app, then compare it with PocketTTS, Supertonic, and Phonon.">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kokoro TTS on Mac Without Python">
+    <meta name="twitter:description" content="Run Kokoro on an Apple silicon Mac with no Python setup.">
+    <meta name="twitter:image" content="https://loudscript.app/images/mac/mac-playback-settings.png">
+    <link rel="canonical" href="https://loudscript.app/kokoro-tts-mac/">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="color-scheme" content="dark light">
+    <title>Kokoro TTS on Mac Without Python | LoudScript</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechArticle",
+          "@id": "https://loudscript.app/kokoro-tts-mac/#article",
+          "url": "https://loudscript.app/kokoro-tts-mac/",
+          "headline": "Kokoro TTS on Mac without Python",
+          "description": "How to run the Kokoro text-to-speech model on a Mac through LoudScript, with requirements, languages, and a comparison with PocketTTS, Supertonic, and Phonon.",
+          "datePublished": "2026-11-14",
+          "dateModified": "2026-11-14",
+          "inLanguage": "en",
+          "about": [
+            { "@type": "Thing", "name": "Kokoro text-to-speech", "sameAs": "https://huggingface.co/hexgrad/Kokoro-82M" },
+            { "@type": "SoftwareApplication", "name": "LoudScript for Mac", "operatingSystem": "macOS 15.6 or later", "applicationCategory": "UtilitiesApplication", "url": "https://loudscript.app/" }
+          ],
+          "author": { "@id": "https://loudscript.app/#creator" },
+          "publisher": { "@id": "https://loudscript.app/#organization" },
+          "mainEntityOfPage": "https://loudscript.app/kokoro-tts-mac/"
+        },
+        { "@type": "Person", "@id": "https://loudscript.app/#creator", "name": "Ho Ye Lam", "alternateName": "Hoye Lam", "url": "https://hoyelam.com/" },
+        { "@type": "Organization", "@id": "https://loudscript.app/#organization", "name": "Kin-Yee", "url": "https://loudscript.app/" },
+        { "@type": "BreadcrumbList", "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "LoudScript", "item": "https://loudscript.app/" },
+          { "@type": "ListItem", "position": 2, "name": "Kokoro TTS on Mac", "item": "https://loudscript.app/kokoro-tts-mac/" }
+        ] }
+      ]
+    }
+    </script>
+</head>
+<body class="mac-page">
+    <main class="mac-shell">
+        <header class="mac-nav">
+            <a href="/" class="mac-brand" aria-label="Go to LoudScript home page"><img src="/images/loudscript-icon-88.webp" class="mac-brand-logo" alt="LoudScript app icon" width="44" height="44"><span>LoudScript</span></a>
+            <nav class="mac-nav-links" aria-label="Page navigation"><a href="/">Overview</a><a href="/#guides">Guides</a><a href="/support.html">Support</a><a href="/download/" class="mac-nav-cta">Download DMG</a></nav>
+        </header>
+        <article class="seo-page">
+            <header class="seo-hero">
+                <p class="seo-breadcrumb"><a href="/">LoudScript</a> / Kokoro guide</p>
+                <h1>Kokoro TTS on Mac without Python</h1>
+                <p class="seo-lede">LoudScript runs Kokoro as an in-app model download. You do not need Python, pip, or Terminal. Kokoro needs an Apple silicon Mac and speaks English and Mandarin in LoudScript.</p>
+                <p class="seo-byline">By <a href="https://hoyelam.com/" rel="author">Ho Ye Lam</a> · Updated November 14, 2026</p>
+            </header>
+            <section class="seo-section" aria-labelledby="kokoro-steps">
+                <h2 id="kokoro-steps">How do I use Kokoro on a Mac without Python?</h2>
+                <p>Install LoudScript, download Kokoro from its Models settings, and select Kokoro as the speech model. Speech then runs on your Mac.</p>
+                <ol class="seo-steps"><li><strong>Install LoudScript.</strong> It is a free, notarized DMG from the <a href="/download/">download page</a>.</li><li><strong>Open the Models settings.</strong> Open Settings and select the Models tab, or choose Manage Models… from the Speech Model menu.</li><li><strong>Click Download (320 MB) next to Kokoro.</strong> If Apple System is still your speech model, LoudScript switches to Kokoro when the download finishes.</li><li><strong>Choose a language and voice.</strong> Expand Model Details under Kokoro to pick English or Mandarin and a voice.</li><li><strong>Press Play.</strong> Kokoro reads typed or pasted text, selected text from other apps, screenshot OCR, and PDF pages.</li></ol>
+            </section>
+            <section class="seo-section" aria-labelledby="kokoro-requirements">
+                <h2 id="kokoro-requirements">What does Kokoro need on a Mac?</h2>
+                <ul><li><strong>An Apple silicon Mac.</strong> On an Intel Mac, LoudScript shows “Requires an Apple silicon Mac.” and disables the download.</li><li><strong>macOS 15.6 or later.</strong> This is LoudScript’s own requirement.</li><li><strong>About 320 MB to download.</strong> LoudScript checks for the download size plus 512 MB of free space before it installs a model.</li><li><strong>A network connection for the download only.</strong> After that, Kokoro synthesizes speech on your Mac.</li></ul>
+                <p>Kokoro carries a Beta label in LoudScript. You can remove the model from the Models tab at any time.</p>
+            </section>
+            <section class="seo-section" aria-labelledby="kokoro-languages">
+                <h2 id="kokoro-languages">Which languages does Kokoro speak in LoudScript?</h2>
+                <p>English and Mandarin. The upstream Kokoro v1.0 release lists 8 languages and 54 voices, but LoudScript offers the English and Mandarin voices only.</p>
+                <p>For other languages, use Apple System voices, Supertonic, or PocketTTS. The table below lists each model’s languages.</p>
+            </section>
+            <section class="seo-section" aria-labelledby="kokoro-compare">
+                <h2 id="kokoro-compare">How does Kokoro compare with PocketTTS, Supertonic, and Phonon?</h2>
+                <p>All four are optional downloads that synthesize speech on your Mac. They differ in languages, size, maturity, and whether LoudScript can save their audio to a file.</p>
+                <div class="seo-table-wrap"><table class="seo-table"><thead><tr><th scope="col">Model</th><th scope="col">Languages in LoudScript</th><th scope="col">Download</th><th scope="col">Status</th><th scope="col">Export Audio</th><th scope="col">Made by and license</th></tr></thead><tbody>
+                    <tr><th scope="row">Kokoro</th><td>English, Mandarin</td><td>320 MB</td><td>Beta</td><td>No</td><td>hexgrad, Apache-2.0</td></tr>
+                    <tr><th scope="row">PocketTTS</th><td>English, German, Spanish, French, Italian, Portuguese</td><td>1 GB</td><td>Stable</td><td>No</td><td>Kyutai, CC-BY-4.0 weights</td></tr>
+                    <tr><th scope="row">Supertonic</th><td>31 languages</td><td>419 MB</td><td>Stable</td><td>Yes, WAV</td><td>Supertone, OpenRAIL-M</td></tr>
+                    <tr><th scope="row">Phonon</th><td>English</td><td>175 MB</td><td>Beta</td><td>No</td><td>Gradium, Apache-2.0</td></tr>
+                </tbody></table></div>
+                <p>Download sizes are the estimates LoudScript shows on each Download button. Kokoro needs Apple silicon. Supertonic runs on Intel and Apple silicon Macs. Phonon needs macOS 15 or later.</p>
+                <ul><li><strong>Kokoro</strong> suits compact English or Mandarin speech on Apple silicon.</li><li><strong>PocketTTS</strong> covers six European languages with expressive voices. It is the largest download.</li><li><strong>Supertonic</strong> has the widest language list and is the only downloaded model that can export audio.</li><li><strong>Phonon</strong> is the newest model, added in LoudScript 0.1.45. It is a compact English model that reads numbers, prices, links, and abbreviations naturally. Gradium built it on Kyutai’s Pocket TTS.</li></ul>
+                <p>The <a href="/offline-text-to-speech-mac/">offline voices guide</a> also covers Apple System voices.</p>
+            </section>
+            <section class="seo-section" aria-labelledby="kokoro-export">
+                <h2 id="kokoro-export">Can I save Kokoro speech as an audio file?</h2>
+                <p>Not in LoudScript today. Export Audio works with Apple System voices and an installed Supertonic model. LoudScript hides the Export Audio button while Kokoro, PocketTTS, or Phonon is the speech model.</p>
+                <p>See <a href="/text-to-audio-file-mac/">how to save text to speech as an audio file on Mac</a> for the steps.</p>
+            </section>
+            <section class="seo-section" aria-labelledby="kokoro-offline">
+                <h2 id="kokoro-offline">Does Kokoro in LoudScript work offline?</h2>
+                <p>Yes, after the download. LoudScript runs a Core ML conversion of Kokoro-82M made by FluidInference, and synthesis happens on your Mac. Model downloads and app updates still need a network connection.</p>
+                <p>Optional AI formatting is separate. When you turn it on, the text being formatted can go to an AI provider. The <a href="/privacy.html">privacy policy</a> states the exact boundary.</p>
+            </section>
+            <section class="seo-section" aria-labelledby="kokoro-python">
+                <h2 id="kokoro-python">How else can I run Kokoro on a Mac?</h2>
+                <p>Install the upstream Python package. Choose this route if you want every Kokoro language and voice, scripting, or batch audio files.</p>
+                <code class="seo-code">pip install kokoro soundfile</code>
+                <ul><li>Kokoro uses espeak-ng for English words outside its dictionary and for some other languages. The README gives install steps for Linux and Windows. On a Mac, Homebrew packages it as <code>espeak-ng</code>.</li><li>Mandarin needs an extra package, <code>misaki[zh]</code>.</li><li>On Apple silicon, the README suggests setting <code>PYTORCH_ENABLE_MPS_FALLBACK=1</code> to use the GPU.</li><li>The model card’s example writes 24 kHz WAV files.</li></ul>
+                <p>The Python route gives you more control. LoudScript gives you Kokoro in a native Mac app with no setup.</p>
+            </section>
+            <section class="seo-section" aria-labelledby="kokoro-sources">
+                <h2 id="kokoro-sources">Sources</h2>
+                <ul><li><a href="https://huggingface.co/hexgrad/Kokoro-82M" rel="noopener">Kokoro-82M model card</a> on Hugging Face: license, 82 million parameters, languages and voices.</li><li><a href="https://github.com/hexgrad/kokoro" rel="noopener">hexgrad/kokoro</a> on GitHub: Python package, espeak-ng, and Apple silicon notes.</li><li><a href="https://huggingface.co/gradium/phonon-31m-en" rel="noopener">Phonon 31M English model card</a> on Hugging Face.</li><li><a href="/changelog.html">LoudScript changelog</a>: model releases and status changes.</li></ul>
+            </section>
+            <section class="seo-section seo-callout" aria-labelledby="kokoro-download">
+                <h2 id="kokoro-download">Try Kokoro on your Mac</h2>
+                <p>LoudScript is free for macOS 15.6 or later. Kokoro needs an Apple silicon Mac.</p>
+                <a href="/download/" class="mac-btn mac-btn-primary">Download LoudScript for Mac</a>
+            </section>
+            <section class="seo-section" aria-labelledby="kokoro-more"><h2 id="kokoro-more">Related Mac guides</h2><div class="seo-related"><a href="/offline-text-to-speech-mac/">Compare offline voices</a><a href="/text-to-audio-file-mac/">Save text as an audio file</a><a href="/read-selected-text-aloud-mac/">Read selected text aloud</a><a href="/read-pdf-aloud-mac/">Read a PDF aloud</a></div></section>
+        </article>
+    </main>
+    <footer class="mac-footer"><nav class="mac-footer-links" aria-label="Footer navigation"><a href="/">LoudScript</a><a href="/download/">Download</a><a href="/loudscript-mac-vs-ios/">Mac vs iOS</a><a href="/support.html">Support</a><a href="/privacy.html">Privacy</a></nav><p class="mac-footer-credit">Made by <a href="https://hoyelam.com/" rel="author">Hoye Lam</a> · ©2026 Kin-Yee</p></footer>
+</body>
+</html>
