@@ -137,7 +137,7 @@
   "faq.export.question": "LoudScript peut-il enregistrer la voix dans un fichier audio ?",
   "faq.export.answer": "Oui. Avec les voix Apple ou un modèle Supertonic téléchargé, LoudScript exporte la voix au format WAV. Kokoro, PocketTTS et Phonon n’exportent pas d’audio. LoudScript suggère un nom de fichier d’après le document, le titre de la source ou la première phrase, puis affiche le fichier enregistré dans le Finder.",
   "faq.support.question": "Quels modèles de Mac sont compatibles avec LoudScript ?",
-  "faq.support.answer": "LoudScript nécessite macOS 15.6 ou une version ultérieure. Les voix Apple et Supertonic fonctionnent sur les Mac Intel et à puce Apple. Kokoro et PocketTTS nécessitent un Mac à puce Apple. Phonon nécessite macOS 15 ou une version ultérieure et a été testé sur des Mac à puce Apple.",
+  "faq.support.answer": "LoudScript nécessite macOS 15.6 ou une version ultérieure. Les voix Apple et Supertonic fonctionnent sur les Mac Intel et à puce Apple. Kokoro, PocketTTS et Phonon nécessitent un Mac à puce Apple.",
   "cta.title": "Commencez à écouter sur votre Mac.",
   "cta.body": "Téléchargement direct, gratuit et notarisé par Apple. Aucun compte App Store requis.",
   "cta.aria": "Télécharger LoudScript pour Mac",

@@ -137,7 +137,7 @@
   "faq.export.question": "読み上げ音声をオーディオファイルとして保存できますか？",
   "faq.export.answer": "はい。Appleの声またはダウンロードしたSupertonicモデルを使うと、音声をWAVファイルに書き出せます。Kokoro、PocketTTS、Phononは音声の書き出しに対応していません。書類名、ソースのタイトル、または最初の文からファイル名が提案され、保存後にFinderで表示されます。",
   "faq.support.question": "LoudScriptに対応しているMacは？",
-  "faq.support.answer": "LoudScriptにはmacOS 15.6以降が必要です。Appleの声とSupertonicはIntel搭載MacとAppleシリコン搭載Macに対応し、KokoroとPocketTTSにはAppleシリコンが必要です。PhononにはmacOS 15以降が必要で、Appleシリコン搭載Macで動作を確認しています。",
+  "faq.support.answer": "LoudScriptにはmacOS 15.6以降が必要です。Appleの声とSupertonicはIntel搭載MacとAppleシリコン搭載Macに対応し、Kokoro、PocketTTS、PhononにはAppleシリコンが必要です。",
   "cta.title": "Macで読み上げを始めましょう。",
   "cta.body": "無料の公証済みDMGを直接ダウンロードできます。App Storeアカウントは不要です。",
   "cta.aria": "Mac版LoudScriptをダウンロード",
