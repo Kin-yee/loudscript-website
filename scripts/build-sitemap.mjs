@@ -61,6 +61,8 @@ const staticPages = [
   { route: "elevenreader-mac/", lastModified: "2026-11-14" },
   { route: "read-pdf-aloud-mac/", lastModified: "2026-08-20" },
   { route: "loudscript-mac-vs-ios/", lastModified: "2026-08-20" },
+  { route: "kokoro-tts-mac/", lastModified: "2026-11-14" },
+  { route: "text-to-audio-file-mac/", lastModified: "2026-11-14" },
   { route: "privacy.html", lastModified: "2026-05-21" },
   { route: "tos.html", lastModified: "2026-05-21" },
   { route: "support.html", lastModified: "2026-11-14" },
