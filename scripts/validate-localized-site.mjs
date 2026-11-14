@@ -1,6 +1,7 @@
 import { access, readFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { guideSourcePattern, localizedGuideText } from "./build-localized-guides.mjs";
 import { guideLastModified, latestMacRelease, siteLastModified } from "./site-metadata.mjs";
 import { releasePages, renderReleasePage, releasedDisplayUS } from "./release-pages.mjs";
 
@@ -470,6 +471,10 @@ for (const guide of guideRoutes) {
         ">Guides<"
       ];
       for (const phrase of untranslated) assert(!html.includes(phrase), `${output}: untranslated English remains: ${phrase}`);
+      for (const [source] of englishGuide.matchAll(guideSourcePattern)) {
+        const target = localizedGuideText[locale.id][source];
+        assert(html.includes(target), `${output}: translation of "${source}" is missing or was rewritten by another key. Expected "${target}"`);
+      }
       if (locale.id === "de") {
         for (const phrase of ["How to ", "What if ", "Updated ", ">Read selected text<", ">Download DMG<"]) {
           assert(!html.includes(phrase), `${output}: untranslated English remains in German copy: ${phrase}`);

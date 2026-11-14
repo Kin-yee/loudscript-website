@@ -1,3 +1,4 @@
+import { realpathSync } from "node:fs";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -435,6 +436,16 @@ for (const [localeId, localized] of Object.entries(externalTranslations)) {
 
 const englishOnlyLink = /href="\/(?:speechify-alternative-mac\/|elevenreader-mac\/|kokoro-tts-mac\/|text-to-audio-file-mac\/|loudscript-mac-vs-ios\/|support\.html|privacy\.html)"(?! hreflang=)/g;
 
+export const localizedGuideText = Object.fromEntries(locales.map((locale) => [
+  locale.id,
+  Object.fromEntries(Object.entries(translations).map(([source, targets]) => [source, externalTranslations[locale.id]?.[source] ?? targets[locale.key]]))
+]));
+// One pass, longest source first, so a short source never rewrites text that a longer source already translated.
+export const guideSourcePattern = new RegExp(
+  Object.keys(translations).sort((a, b) => b.length - a.length).map((source) => source.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|"),
+  "g"
+);
+
 function replaceAllLiteral(source, search, replacement) {
   return source.split(search).join(replacement);
 }
@@ -534,9 +545,7 @@ function localize(base, guide, locale) {
     .replace('    <meta property="og:locale" content="en_US">\n    <meta property="og:locale:alternate" content="zh_TW">\n    <meta property="og:locale:alternate" content="zh_CN">\n    <meta property="og:locale:alternate" content="de_DE">\n    <meta property="og:locale:alternate" content="es_ES">\n    <meta property="og:locale:alternate" content="fr_FR">\n    <meta property="og:locale:alternate" content="ja_JP">\n    <meta property="og:locale:alternate" content="nl_NL">', `    <meta property="og:locale" content="${locale.ogLocale}">\n${locale.ogAlternates.map((value) => `    <meta property="og:locale:alternate" content="${value}">`).join("\n")}`)
     .replace(/\s*<!-- GUIDE_LANGUAGE_NAV_START -->[\s\S]*?<!-- GUIDE_LANGUAGE_NAV_END -->/, `\n${languageNavigation(guide.route, locale.id, locale.languageAria)}`);
 
-  for (const [source, targets] of Object.entries(translations).sort((a, b) => b[0].length - a[0].length)) {
-    html = replaceAllLiteral(html, source, externalTranslations[locale.id]?.[source] ?? targets[locale.key]);
-  }
+  html = html.replace(guideSourcePattern, (source) => localizedGuideText[locale.id][source]);
 
   const canonical = `https://loudscript.app/${guide.route}/`;
   html = replaceAllLiteral(html, canonical, `https://loudscript.app${locale.prefix}/${guide.route}/`);
@@ -567,16 +576,18 @@ function localize(base, guide, locale) {
   return html;
 }
 
-for (const guide of guides) {
-  const sourcePath = path.join(siteRoot, guide.route, "index.html");
-  const english = enhanceEnglish(await readFile(sourcePath, "utf8"), guide);
-  await writeFile(sourcePath, english, "utf8");
-  console.log(`Built ${guide.route}/index.html`);
+if (process.argv[1] && realpathSync(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  for (const guide of guides) {
+    const sourcePath = path.join(siteRoot, guide.route, "index.html");
+    const english = enhanceEnglish(await readFile(sourcePath, "utf8"), guide);
+    await writeFile(sourcePath, english, "utf8");
+    console.log(`Built ${guide.route}/index.html`);
 
-  for (const locale of locales) {
-    const outputPath = path.join(siteRoot, locale.prefix.slice(1), guide.route, "index.html");
-    await mkdir(path.dirname(outputPath), { recursive: true });
-    await writeFile(outputPath, localize(english, guide, locale), "utf8");
-    console.log(`Built ${path.relative(siteRoot, outputPath)}`);
+    for (const locale of locales) {
+      const outputPath = path.join(siteRoot, locale.prefix.slice(1), guide.route, "index.html");
+      await mkdir(path.dirname(outputPath), { recursive: true });
+      await writeFile(outputPath, localize(english, guide, locale), "utf8");
+      console.log(`Built ${path.relative(siteRoot, outputPath)}`);
+    }
   }
 }
