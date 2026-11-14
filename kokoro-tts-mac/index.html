@@ -5,7 +5,7 @@
     <script defer data-domain="loudscript.app" src="https://plausible.io/js/script.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Use Kokoro text-to-speech on a Mac without Python. LoudScript downloads Kokoro as a 320 MB model for Apple silicon and reads English and Mandarin offline.">
+    <meta name="description" content="Use Kokoro text-to-speech on a Mac without Python. LoudScript downloads Kokoro inside the app and runs its English and Mandarin voices on Apple silicon Macs.">
     <meta name="author" content="Ho Ye Lam">
     <meta name="robots" content="index, follow">
     <meta property="og:site_name" content="LoudScript">
@@ -72,16 +72,16 @@
             <section class="seo-section" aria-labelledby="kokoro-steps">
                 <h2 id="kokoro-steps">How do I use Kokoro on a Mac without Python?</h2>
                 <p>Install LoudScript, download Kokoro from its Models settings, and select Kokoro as the speech model. Speech then runs on your Mac.</p>
-                <ol class="seo-steps"><li><strong>Install LoudScript.</strong> It is a free, notarized DMG from the <a href="/download/">download page</a>.</li><li><strong>Open the Models settings.</strong> Open Settings and select the Models tab, or choose Manage Models… from the Speech Model menu.</li><li><strong>Click Download (320 MB) next to Kokoro.</strong> If Apple System is still your speech model, LoudScript switches to Kokoro when the download finishes.</li><li><strong>Choose a language and voice.</strong> Expand Model Details under Kokoro to pick English or Mandarin and a voice.</li><li><strong>Press Play.</strong> Kokoro reads typed or pasted text, selected text from other apps, screenshot OCR, and PDF pages.</li></ol>
+                <ol class="seo-steps"><li><strong>Install LoudScript.</strong> It is a free, notarized DMG from the <a href="/download/">download page</a>.</li><li><strong>Open the Models settings.</strong> Open Settings and select the Models tab, or choose Manage Models… from the speech model menu in the playback bar (it shows the current model’s name).</li><li><strong>Click Download (320 MB) next to Kokoro.</strong> If Apple System is still your speech model, LoudScript switches to Kokoro when the download finishes.</li><li><strong>Choose a language and voice.</strong> Expand Model Details under Kokoro to pick English or Mandarin and a voice. Mandarin is a separate model pack, so download Kokoro again after you choose Mandarin. Each English voice other than Heart downloads its voice pack the first time you use it.</li><li><strong>Press Play.</strong> Kokoro reads typed or pasted text, selected text from other apps, screenshot OCR, and PDF pages.</li></ol>
             </section>
             <section class="seo-section" aria-labelledby="kokoro-requirements">
                 <h2 id="kokoro-requirements">What does Kokoro need on a Mac?</h2>
-                <ul><li><strong>An Apple silicon Mac.</strong> On an Intel Mac, LoudScript shows “Requires an Apple silicon Mac.” and disables the download.</li><li><strong>macOS 15.6 or later.</strong> This is LoudScript’s own requirement.</li><li><strong>About 320 MB to download.</strong> LoudScript checks for the download size plus 512 MB of free space before it installs a model.</li><li><strong>A network connection for the download only.</strong> After that, Kokoro synthesizes speech on your Mac.</li></ul>
+                <ul><li><strong>An Apple silicon Mac.</strong> On an Intel Mac, LoudScript shows “Requires an Apple silicon Mac.” and disables the download.</li><li><strong>macOS 15.6 or later.</strong> This is LoudScript’s own requirement.</li><li><strong>About 320 MB to download.</strong> LoudScript checks for the download size plus 512 MB of free space before it installs a model.</li><li><strong>A network connection for each download.</strong> That covers the model, the separate Mandarin model pack, and each English voice pack the first time you use that voice. After that, Kokoro synthesizes speech on your Mac.</li></ul>
                 <p>Kokoro carries a Beta label in LoudScript. You can remove the model from the Models tab at any time.</p>
             </section>
             <section class="seo-section" aria-labelledby="kokoro-languages">
                 <h2 id="kokoro-languages">Which languages does Kokoro speak in LoudScript?</h2>
-                <p>English and Mandarin. The upstream Kokoro v1.0 release lists 8 languages and 54 voices, but LoudScript offers the English and Mandarin voices only.</p>
+                <p>English and Mandarin. LoudScript includes all 28 English voices from Kokoro v1.0 and 100 Mandarin voices from Kokoro v1.1-zh.</p>
                 <p>For other languages, use Apple System voices, Supertonic, or PocketTTS. The table below lists each model’s languages.</p>
             </section>
             <section class="seo-section" aria-labelledby="kokoro-compare">
@@ -90,10 +90,10 @@
                 <div class="seo-table-wrap"><table class="seo-table"><thead><tr><th scope="col">Model</th><th scope="col">Languages in LoudScript</th><th scope="col">Download</th><th scope="col">Status</th><th scope="col">Export Audio</th><th scope="col">Made by and license</th></tr></thead><tbody>
                     <tr><th scope="row">Kokoro</th><td>English, Mandarin</td><td>320 MB</td><td>Beta</td><td>No</td><td>hexgrad, Apache-2.0</td></tr>
                     <tr><th scope="row">PocketTTS</th><td>English, German, Spanish, French, Italian, Portuguese</td><td>1 GB</td><td>Stable</td><td>No</td><td>Kyutai, CC-BY-4.0 weights</td></tr>
-                    <tr><th scope="row">Supertonic</th><td>31 languages</td><td>419 MB</td><td>Stable</td><td>Yes, WAV</td><td>Supertone, OpenRAIL-M</td></tr>
+                    <tr><th scope="row">Supertonic</th><td>31 languages</td><td>About 420 MB</td><td>Stable</td><td>Yes, WAV</td><td>Supertone, OpenRAIL-M</td></tr>
                     <tr><th scope="row">Phonon</th><td>English</td><td>175 MB</td><td>Beta</td><td>No</td><td>Gradium, Apache-2.0</td></tr>
                 </tbody></table></div>
-                <p>Download sizes are the estimates LoudScript shows on each Download button. Kokoro needs Apple silicon. Supertonic runs on Intel and Apple silicon Macs. Phonon needs macOS 15 or later.</p>
+                <p>Download sizes are what LoudScript estimates on each Download button. Kokoro needs Apple silicon. Supertonic runs on Intel and Apple silicon Macs. Phonon has been tested on Apple silicon Macs.</p>
                 <ul><li><strong>Kokoro</strong> suits compact English or Mandarin speech on Apple silicon.</li><li><strong>PocketTTS</strong> covers six European languages with expressive voices. It is the largest download.</li><li><strong>Supertonic</strong> has the widest language list and is the only downloaded model that can export audio.</li><li><strong>Phonon</strong> is the newest model, added in LoudScript 0.1.45. It is a compact English model that reads numbers, prices, links, and abbreviations naturally. Gradium built it on Kyutai’s Pocket TTS.</li></ul>
                 <p>The <a href="/offline-text-to-speech-mac/">offline voices guide</a> also covers Apple System voices.</p>
             </section>
@@ -104,7 +104,7 @@
             </section>
             <section class="seo-section" aria-labelledby="kokoro-offline">
                 <h2 id="kokoro-offline">Does Kokoro in LoudScript work offline?</h2>
-                <p>Yes, after the download. LoudScript runs a Core ML conversion of Kokoro-82M made by FluidInference, and synthesis happens on your Mac. Model downloads and app updates still need a network connection.</p>
+                <p>Yes, once the model and the voice you use are downloaded. LoudScript runs Core ML conversions of Kokoro made by FluidInference, and synthesis happens on your Mac. Model and voice downloads and app updates still need a network connection.</p>
                 <p>Optional AI formatting is separate. When you turn it on, the text being formatted can go to an AI provider. The <a href="/privacy.html">privacy policy</a> states the exact boundary.</p>
             </section>
             <section class="seo-section" aria-labelledby="kokoro-python">
@@ -116,7 +116,7 @@
             </section>
             <section class="seo-section" aria-labelledby="kokoro-sources">
                 <h2 id="kokoro-sources">Sources</h2>
-                <ul><li><a href="https://huggingface.co/hexgrad/Kokoro-82M" rel="noopener">Kokoro-82M model card</a> on Hugging Face: license, 82 million parameters, languages and voices.</li><li><a href="https://github.com/hexgrad/kokoro" rel="noopener">hexgrad/kokoro</a> on GitHub: Python package, espeak-ng, and Apple silicon notes.</li><li><a href="https://huggingface.co/gradium/phonon-31m-en" rel="noopener">Phonon 31M English model card</a> on Hugging Face.</li><li><a href="/changelog.html">LoudScript changelog</a>: model releases and status changes.</li></ul>
+                <ul><li><a href="https://huggingface.co/hexgrad/Kokoro-82M" rel="noopener">Kokoro-82M model card</a> on Hugging Face: license, 82 million parameters, languages and voices.</li><li><a href="https://huggingface.co/FluidInference/kokoro-82m-coreml" rel="noopener">FluidInference kokoro-82m-coreml</a> on Hugging Face: the Core ML conversions of Kokoro v1.0 and Kokoro v1.1-zh that LoudScript downloads.</li><li><a href="https://github.com/hexgrad/kokoro" rel="noopener">hexgrad/kokoro</a> on GitHub: Python package, espeak-ng, and Apple silicon notes.</li><li><a href="https://huggingface.co/gradium/phonon-31m-en" rel="noopener">Phonon 31M English model card</a> on Hugging Face.</li><li><a href="/changelog.html">LoudScript changelog</a>: model releases and status changes.</li></ul>
             </section>
             <section class="seo-section seo-callout" aria-labelledby="kokoro-download">
                 <h2 id="kokoro-download">Try Kokoro on your Mac</h2>
