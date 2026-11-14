@@ -2,7 +2,7 @@
 
 ## State
 
-The landing page and all three SEO guides support English, Traditional Chinese under `/zh-hant/`, Simplified Chinese under `/zh-hans/`, German under `/de/`, Spanish under `/es/`, French under `/fr/`, Japanese under `/ja/`, and Dutch under `/nl/`. Changelog, support, terms, and privacy pages remain English and are marked with `EN` on localized landing pages.
+The landing page and five SEO guides (selected text, screenshot OCR, offline voices, the app comparison, and PDF reading) support English, Traditional Chinese under `/zh-hant/`, Simplified Chinese under `/zh-hans/`, German under `/de/`, Spanish under `/es/`, French under `/fr/`, Japanese under `/ja/`, and Dutch under `/nl/`. Changelog, support, terms, and privacy pages remain English and are marked with `EN` on localized landing pages. The other guides also remain English. Localized guides mark links to them with `hreflang="en"` and name the language in the link text.
 
 ## Edit and build
 
@@ -26,6 +26,8 @@ Generated files are committed because the site deploys as static files:
 - `read-selected-text-aloud-mac/index.html` and all seven localized variants
 - `screenshot-ocr-text-to-speech-mac/index.html` and all seven localized variants
 - `offline-text-to-speech-mac/index.html` and all seven localized variants
+- `best-text-to-speech-app-for-mac/index.html` and all seven localized variants
+- `read-pdf-aloud-mac/index.html` and all seven localized variants
 
 ## Traditional Chinese glossary
 

@@ -262,6 +262,10 @@ for (const spec of localeSpecs) {
     `${spec.output}: language navigation does not identify the current locale`
   );
   assert((html.match(/<nav class="mac-language-menu"/g) || []).length === 1, `${spec.output}: expected one language menu`);
+  for (const guide of guideRoutes) {
+    assert(html.includes(`href="/${spec.prefix}${guide.route}/" hreflang="${spec.lang}"`), `${spec.output}: guide link to ${guide.route} is not localized`);
+    if (spec.prefix) assert(!html.includes(`href="/${guide.route}/"`), `${spec.output}: links to the English ${guide.route} instead of the localized guide`);
+  }
   const languageMenu = html.match(/<nav class="mac-language-menu"[\s\S]*?<\/nav>/)?.[0];
   assert(languageMenu && (languageMenu.match(/<details>/g) || []).length === 1, `${spec.output}: language disclosure is missing`);
   assert((languageMenu.match(/hreflang=/g) || []).length === localeSpecs.length, `${spec.output}: language menu options are incomplete`);

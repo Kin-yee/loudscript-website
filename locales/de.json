@@ -147,5 +147,7 @@
   "footer.selectedGuide": "Anleitung: ausgewählter Text",
   "footer.ocrGuide": "OCR-Anleitung",
   "footer.offline": "Offline-Stimmen",
+  "footer.pdfGuide": "PDF-Anleitung",
+  "footer.chooserGuide": "Mac-App zum Vorlesen wählen",
   "footer.credit": "Entwickelt von"
 }

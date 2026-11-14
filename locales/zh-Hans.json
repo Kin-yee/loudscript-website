@@ -147,5 +147,7 @@
   "footer.selectedGuide": "所选文本指南",
   "footer.ocrGuide": "OCR 指南",
   "footer.offline": "离线语音",
+  "footer.pdfGuide": "PDF 指南",
+  "footer.chooserGuide": "选择文本转语音 App",
   "footer.credit": "制作："
 }

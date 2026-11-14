@@ -147,5 +147,7 @@
   "footer.selectedGuide": "選取文字指南",
   "footer.ocrGuide": "OCR 指南",
   "footer.offline": "離線語音",
+  "footer.pdfGuide": "PDF 指南",
+  "footer.chooserGuide": "挑選文字轉語音 App",
   "footer.credit": "製作："
 }
