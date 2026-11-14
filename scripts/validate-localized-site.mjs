@@ -96,7 +96,7 @@ const firstPartySeoPages = [
   { route: "best-text-to-speech-app-for-mac", schemaType: "TechArticle", titlePhrase: "Text-to-Speech App for Mac", lastModified: "2026-11-14" },
   { route: "speechify-alternative-mac", schemaType: "TechArticle", titlePhrase: "Speechify Alternative for Mac", lastModified: "2026-11-14" },
   { route: "elevenreader-mac", schemaType: "TechArticle", titlePhrase: "ElevenReader Mac App", lastModified: "2026-11-14" },
-  { route: "read-pdf-aloud-mac", schemaType: "HowTo", titlePhrase: "Read a PDF Aloud on Mac", lastModified: "2026-08-20" },
+  { route: "read-pdf-aloud-mac", schemaType: "HowTo", titlePhrase: "Read a PDF Aloud on Mac", lastModified: "2026-11-14" },
   { route: "loudscript-mac-vs-ios", schemaType: "TechArticle", titlePhrase: "LoudScript for Mac vs iPhone and iPad", lastModified: "2026-08-20" },
   { route: "kokoro-tts-mac", schemaType: "TechArticle", titlePhrase: "Kokoro TTS on Mac", lastModified: "2026-11-14" },
   { route: "text-to-audio-file-mac", schemaType: "HowTo", titlePhrase: "Save Text to Speech as an Audio File on Mac", lastModified: "2026-11-14" }
