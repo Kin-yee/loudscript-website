@@ -557,7 +557,7 @@ function localize(base, guide, locale) {
   html = html
     .replaceAll('href="/"', `href="${locale.prefix}/"`)
     .replaceAll('href="/#guides"', `href="${locale.prefix}/#guides"`)
-    .replaceAll('"item": "https://loudscript.app/"', `"item": "https://loudscript.app${locale.prefix}/"`);
+    .replace(/("item":\s*)"https:\/\/loudscript\.app\/"/g, `$1"https://loudscript.app${locale.prefix}/"`);
   for (const related of guides) {
     html = html.replaceAll(`href="/${related.route}/"`, `href="${locale.prefix}/${related.route}/"`);
   }

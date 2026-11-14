@@ -459,6 +459,7 @@ for (const guide of guideRoutes) {
     assert(mainEntity?.inLanguage === locale.lang, `${output}: schema language is incorrect`);
     assert(mainEntity?.mainEntityOfPage === canonical, `${output}: schema canonical is incorrect`);
     assert(mainEntity?.dateModified === guideLastModified[guide.route], `${output}: schema modification date is stale`);
+    assert(breadcrumb?.itemListElement?.[0]?.item === `https://loudscript.app/${prefix}`, `${output}: breadcrumb home is not the ${locale.id} homepage`);
     assert(breadcrumb?.itemListElement?.[1]?.item === canonical, `${output}: breadcrumb canonical is incorrect`);
 
     if (locale.id !== "en") {
