@@ -1,0 +1,50 @@
+name: IndexNow
+
+on:
+  push:
+    branches: [master]
+    paths: ["**.html"]
+
+permissions:
+  contents: read
+  pages: read
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Wait for GitHub Pages to publish this commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for _ in $(seq 1 60); do
+            out="$(gh api "repos/${{ github.repository }}/pages/builds/latest" --jq '.commit + " " + .status')" || { sleep 15; continue; }
+            read -r commit status <<< "$out"
+            echo "Pages build: $commit $status"
+            if [ "$status" = built ] && git fetch -q origin master \
+              && git merge-base --is-ancestor "${{ github.sha }}" "$commit" 2>/dev/null; then
+              exit 0
+            fi
+            sleep 15
+          done
+          echo "Pages did not publish ${{ github.sha }} in time" >&2
+          exit 1
+      - name: Submit changed pages
+        shell: bash
+        run: |
+          before="${{ github.event.before }}"
+          if git cat-file -e "$before^{commit}" 2>/dev/null; then
+            range="$before"
+          else
+            range="HEAD~1"
+          fi
+          git diff --name-only "$range" "${{ github.sha }}" -- '*.html'
+          git diff -z --name-only "$range" "${{ github.sha }}" -- '*.html' \
+            | xargs -0 node scripts/submit-indexnow.mjs

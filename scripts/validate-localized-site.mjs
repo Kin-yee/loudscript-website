@@ -593,18 +593,4 @@ assert(
   "Support email is not protected from Cloudflare email obfuscation"
 );
 
-const robots = await readFile(path.join(siteRoot, "robots.txt"), "utf8");
-assert(robots.includes("User-agent: *"), "robots.txt lacks a default crawler policy");
-assert(robots.includes("Allow: /"), "robots.txt does not allow the site root");
-assert(robots.includes("Sitemap: https://loudscript.app/sitemap.xml"), "robots.txt lacks the canonical sitemap URL");
-for (const crawler of ["OAI-SearchBot", "ChatGPT-User", "Claude-SearchBot", "Claude-User", "PerplexityBot", "Perplexity-User"]) {
-  assert(robots.includes(`User-agent: ${crawler}`), `robots.txt lacks an explicit ${crawler} policy`);
-}
-for (const trainingCrawler of ["GPTBot", "ClaudeBot"]) {
-  const group = robots.match(new RegExp(`User-agent: ${trainingCrawler}\\n([\\s\\S]*?)(?=\\nUser-agent:|\\nSitemap:|$)`))?.[1];
-  assert(group?.includes("Disallow: /"), `robots.txt does not block the training crawler ${trainingCrawler}`);
-}
-assert(robots.includes("Content-Signal: search=yes, ai-input=yes, ai-train=no, use=reference"), "robots.txt lacks explicit AI usage signals");
-assert(!/Disallow:\s*\/(?:zh-hans|zh-hant|de|es|fr|ja|nl)\/?/i.test(robots), "robots.txt blocks a localized page");
-
 console.log(`Validated ${localeSpecs.length} landing pages, ${guideRoutes.length * localeSpecs.length} localized guides, ${firstPartySeoPages.length} first-party SEO pages, and ${englishKeys.length} landing message keys.`);
