@@ -279,8 +279,8 @@ function languageNavigation(route, current, ariaLabel) {
 function enhanceEnglish(html, guide) {
   if (!html.includes('/js/language-menu.js')) {
     html = html.replace(
-      '    <script defer data-domain="loudscript.app" src="https://plausible.io/js/script.js"></script>',
-      '    <script defer data-domain="loudscript.app" src="https://plausible.io/js/script.js"></script>\n    <script defer src="/js/language-menu.js"></script>'
+      '    <script defer data-domain="loudscript.app" src="https://plausible.io/js/script.outbound-links.js"></script>',
+      '    <script defer data-domain="loudscript.app" src="https://plausible.io/js/script.outbound-links.js"></script>\n    <script defer src="/js/language-menu.js"></script>'
     );
   }
   const lastModified = guideLastModified[guide.route];
