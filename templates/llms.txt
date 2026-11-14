@@ -7,6 +7,8 @@
 - [LoudScript homepage](https://loudscript.app/): Product overview and Mac download.
 - [Download LoudScript for Mac](https://loudscript.app/download/): Current version, notarized DMG, requirements, file size, and SHA-256 checksum.
 - [Choose a text-to-speech app for Mac](https://loudscript.app/best-text-to-speech-app-for-mac/): Disclosed, dated comparison of eight Mac text-to-speech apps, including macOS Read & Speak, LoudScript, Speechify, NaturalReader, ElevenReader, Voice Dream Reader, Aloud and Sandbook.
+- [Free Speechify alternative for Mac](https://loudscript.app/speechify-alternative-mac/): Disclosed comparison of Speechify and LoudScript on Mac by price, offline use, selected text, PDFs and audio export.
+- [ElevenReader on Mac](https://loudscript.app/elevenreader-mac/): What ElevenReader offers on a Mac today and where a native Mac reader fits.
 - [Read a PDF aloud on Mac](https://loudscript.app/read-pdf-aloud-mac/): PDF import, local OCR, synchronized highlighting, and privacy details.
 - [LoudScript for Mac vs iPhone and iPad](https://loudscript.app/loudscript-mac-vs-ios/): Platform, installation, pricing-model, and workflow differences.
 - [Read selected text aloud on Mac](https://loudscript.app/read-selected-text-aloud-mac/): Services-menu and keyboard-shortcut guide.
