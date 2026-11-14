@@ -220,6 +220,8 @@ for (const [localeId, localized] of Object.entries(externalTranslations)) {
   }
 }
 
+const englishOnlyLink = /href="\/(?:speechify-alternative-mac\/|elevenreader-mac\/|kokoro-tts-mac\/|text-to-audio-file-mac\/|loudscript-mac-vs-ios\/|support\.html|privacy\.html)"(?! hreflang=)/g;
+
 function replaceAllLiteral(source, search, replacement) {
   return source.split(search).join(replacement);
 }
@@ -288,7 +290,7 @@ function enhanceEnglish(html, guide) {
   const lastModifiedDisplay = new Date(`${lastModified}T00:00:00Z`)
     .toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
   html = html
-    .replace(/"dateModified": "\d{4}-\d{2}-\d{2}"/, `"dateModified": "${lastModified}"`)
+    .replace(/("dateModified":\s*)"\d{4}-\d{2}-\d{2}"/, `$1"${lastModified}"`)
     .replace(/Updated [A-Z][a-z]+ \d{1,2}, \d{4}/, `Updated ${lastModifiedDisplay}`);
   html = html.replace(/\n\s*<link rel="alternate" hreflang="[^"]+" href="[^"]+">/g, "");
   html = html.replace(
@@ -300,14 +302,14 @@ function enhanceEnglish(html, guide) {
     '    <meta property="og:locale" content="en_US">',
     '    <meta property="og:locale" content="en_US">\n    <meta property="og:locale:alternate" content="zh_TW">\n    <meta property="og:locale:alternate" content="zh_CN">\n    <meta property="og:locale:alternate" content="de_DE">\n    <meta property="og:locale:alternate" content="es_ES">\n    <meta property="og:locale:alternate" content="fr_FR">\n    <meta property="og:locale:alternate" content="ja_JP">\n    <meta property="og:locale:alternate" content="nl_NL">'
   );
-  if (!html.includes('"inLanguage": "en"')) {
+  if (!/"inLanguage":\s*"en"/.test(html)) {
     html = html.replace(`          "@type": "${guide.schemaType}",`, `          "@type": "${guide.schemaType}",\n          "inLanguage": "en",`);
   }
   const nav = languageNavigation(guide.route, "en", "Language selection");
   if (/\s*<!-- GUIDE_LANGUAGE_NAV_START -->[\s\S]*?<!-- GUIDE_LANGUAGE_NAV_END -->/.test(html)) {
     html = html.replace(/\s*<!-- GUIDE_LANGUAGE_NAV_START -->[\s\S]*?<!-- GUIDE_LANGUAGE_NAV_END -->/, `\n${nav}`);
   } else {
-    html = html.replace(/(            <nav class="mac-nav-links"[\s\S]*?            <\/nav>)/, `$1\n${nav}`);
+    html = html.replace(/(<nav class="mac-nav-links"[\s\S]*?<\/nav>)/, `$1\n${nav}`);
   }
   return html;
 }
@@ -315,7 +317,7 @@ function enhanceEnglish(html, guide) {
 function localize(base, guide, locale) {
   let html = base
     .replace('<html lang="en">', `<html lang="${locale.id}">`)
-    .replace('"inLanguage": "en"', `"inLanguage": "${locale.id}"`)
+    .replace(/("inLanguage":\s*)"en"/, `$1"${locale.id}"`)
     .replace('    <meta property="og:locale" content="en_US">\n    <meta property="og:locale:alternate" content="zh_TW">\n    <meta property="og:locale:alternate" content="zh_CN">\n    <meta property="og:locale:alternate" content="de_DE">\n    <meta property="og:locale:alternate" content="es_ES">\n    <meta property="og:locale:alternate" content="fr_FR">\n    <meta property="og:locale:alternate" content="ja_JP">\n    <meta property="og:locale:alternate" content="nl_NL">', `    <meta property="og:locale" content="${locale.ogLocale}">\n${locale.ogAlternates.map((value) => `    <meta property="og:locale:alternate" content="${value}">`).join("\n")}`)
     .replace(/\s*<!-- GUIDE_LANGUAGE_NAV_START -->[\s\S]*?<!-- GUIDE_LANGUAGE_NAV_END -->/, `\n${languageNavigation(guide.route, locale.id, locale.languageAria)}`);
 
@@ -337,9 +339,7 @@ function localize(base, guide, locale) {
   for (const related of guides) {
     html = html.replaceAll(`href="/${related.route}/"`, `href="${locale.prefix}/${related.route}/"`);
   }
-  html = html
-    .replaceAll('href="/support.html"', 'href="/support.html" hreflang="en"')
-    .replaceAll('href="/privacy.html"', 'href="/privacy.html" hreflang="en"');
+  html = html.replace(englishOnlyLink, '$& hreflang="en"');
   if (locale.id === "ja") {
     html = html
       .replaceAll('<strong>Option-Command-R</strong>.</li>', '<strong>Option-Command-R</strong>を押します。</li>')

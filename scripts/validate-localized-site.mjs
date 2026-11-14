@@ -397,6 +397,7 @@ for (const guide of guideRoutes) {
     ["x-default", `https://loudscript.app/${guide.route}/`]
   ];
 
+  const englishGuide = await readFile(path.join(siteRoot, guide.route, "index.html"), "utf8");
   for (const locale of localeSpecs) {
     const prefix = locale.prefix;
     const output = `${prefix}${guide.route}/index.html`;
@@ -492,7 +493,10 @@ for (const guide of guideRoutes) {
       }
       const localePrefix = `/${locale.prefix}`;
       for (const related of guideRoutes) {
-        assert(html.includes(`href="${localePrefix}${related.route}/"`), `${output}: missing localized link to ${related.route}`);
+        if (englishGuide.includes(`href="/${related.route}/"`)) {
+          assert(html.includes(`href="${localePrefix}${related.route}/"`), `${output}: missing localized link to ${related.route}`);
+        }
+        assert(!new RegExp(`href="/${related.route}/"(?! lang="en")`).test(html), `${output}: links to the English ${related.route} instead of the localized guide`);
       }
     }
 
