@@ -71,7 +71,7 @@
           "@id": "https://loudscript.app/#webpage",
           "url": "https://loudscript.app/",
           "name": "Free Text-to-Speech App for Mac | LoudScript",
-          "dateModified": "2026-11-13",
+          "dateModified": "2026-11-14",
           "isPartOf": { "@id": "https://loudscript.app/#website" },
           "about": { "@id": "https://loudscript.app/#mac-app" },
           "mainEntity": { "@id": "https://loudscript.app/#mac-app" },
@@ -115,7 +115,7 @@
           "applicationCategory": "UtilitiesApplication",
           "applicationSubCategory": "Text-to-speech reader",
           "softwareVersion": "0.1.46",
-          "dateModified": "2026-11-13",
+          "dateModified": "2026-11-14",
           "installUrl": "https://loudscript.app/download/",
           "releaseNotes": "https://loudscript.app/changelog.html#version-0-1-46",
           "processorRequirements": "Intel or Apple silicon Mac; some downloadable voices require Apple silicon",
@@ -125,7 +125,8 @@
             "Read selected text from any Mac app",
             "Extract and read text from screenshots with OCR",
             "Import selected PDF pages and follow the spoken text in the document",
-            "On-device Apple, Supertonic, Kokoro, and PocketTTS speech",
+            "On-device Apple, Supertonic, Kokoro, PocketTTS, and Phonon speech",
+            "Export speech as WAV audio files",
             "Floating playback controls and reading history"
           ],
           "offers": {
@@ -248,9 +249,9 @@
                 <p>Capture text from images and apps, then listen to it.</p>
             </article>
             <article class="mac-feature-card mac-reveal">
-                <span class="mac-feature-label">Four Speech Engines</span>
+                <span class="mac-feature-label">Five Speech Engines</span>
                 <h2>Choose the voice you prefer.</h2>
-                <p>Use Apple voices or download Supertonic, Kokoro, or PocketTTS.</p>
+                <p>Use Apple voices or download Supertonic, Kokoro, PocketTTS, or Phonon.</p>
             </article>
             <article class="mac-feature-card mac-reveal">
                 <span class="mac-feature-label">Background Playback</span>
@@ -293,6 +294,7 @@
                     <li>Manage downloaded voices in LoudScript</li>
                     <li>Use Apple voices as a fallback</li>
                     <li>Change the speed at any time</li>
+                    <li>Save speech as a WAV audio file</li>
                 </ul>
             </div>
             <div class="mac-detail-img">
@@ -423,11 +425,15 @@
                 </details>
                 <details>
                     <summary>Does LoudScript work offline?</summary>
-                    <p>Yes. Apple voices work on your Mac. Supertonic, Kokoro, and PocketTTS also work locally after you download their models. AI formatting may send text to your chosen AI provider when enabled.</p>
+                    <p>Yes. Apple voices work on your Mac. Supertonic, Kokoro, PocketTTS, and Phonon also work locally after you download their models. AI formatting may send text to your chosen AI provider when enabled.</p>
+                </details>
+                <details>
+                    <summary>Can LoudScript save speech as an audio file?</summary>
+                    <p>Yes. LoudScript exports speech as a WAV file when you use Apple voices or a downloaded Supertonic model. Kokoro, PocketTTS, and Phonon do not export audio. LoudScript names the file after the document, source title, or first sentence, then shows it in Finder.</p>
                 </details>
                 <details>
                     <summary>Which Macs support LoudScript?</summary>
-                    <p>LoudScript requires macOS 15.6 or later. Apple voices and Supertonic support Intel and Apple silicon Macs. Kokoro and PocketTTS require Apple silicon.</p>
+                    <p>LoudScript requires macOS 15.6 or later. Apple voices, Supertonic, and Phonon support Intel and Apple silicon Macs. Kokoro and PocketTTS require Apple silicon.</p>
                 </details>
             </div>
         </section>

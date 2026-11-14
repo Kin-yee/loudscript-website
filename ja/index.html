@@ -71,7 +71,7 @@
           "@id": "https://loudscript.app/ja/#webpage",
           "url": "https://loudscript.app/ja/",
           "name": "Mac向けテキスト読み上げアプリ（無料）｜LoudScript",
-          "dateModified": "2026-11-13",
+          "dateModified": "2026-11-14",
           "isPartOf": { "@id": "https://loudscript.app/#website" },
           "about": { "@id": "https://loudscript.app/ja/#mac-app" },
           "mainEntity": { "@id": "https://loudscript.app/ja/#mac-app" },
@@ -115,7 +115,7 @@
           "applicationCategory": "UtilitiesApplication",
           "applicationSubCategory": "Text-to-speech reader",
           "softwareVersion": "0.1.46",
-          "dateModified": "2026-11-13",
+          "dateModified": "2026-11-14",
           "installUrl": "https://loudscript.app/download/",
           "releaseNotes": "https://loudscript.app/changelog.html#version-0-1-46",
           "processorRequirements": "Intel or Apple silicon Mac; some downloadable voices require Apple silicon",
@@ -125,7 +125,8 @@
             "あらゆるMacアプリで選択したテキストを読み上げ",
             "OCRでスクリーンショットの文字を抽出して読み上げ",
             "必要なPDFページを読み込み、文書上で読み上げ箇所を確認",
-            "Apple、Supertonic、Kokoro、PocketTTSによるデバイス上の音声合成",
+            "Apple、Supertonic、Kokoro、PocketTTS、Phononによるデバイス上の音声合成",
+            "音声をWAVオーディオファイルに書き出し",
             "フローティング再生コントロールと読み上げ履歴"
           ],
           "offers": {
@@ -248,9 +249,9 @@
                 <p>画像やアプリから文字を取り込み、そのまま音声で聞けます。</p>
             </article>
             <article class="mac-feature-card mac-reveal">
-                <span class="mac-feature-label">4つの音声エンジン</span>
+                <span class="mac-feature-label">5つの音声エンジン</span>
                 <h2>好みの声を選べます。</h2>
-                <p>Appleの声を使うか、Supertonic、Kokoro、PocketTTSをダウンロードできます。</p>
+                <p>Appleの声を使うか、Supertonic、Kokoro、PocketTTS、Phononをダウンロードできます。</p>
             </article>
             <article class="mac-feature-card mac-reveal">
                 <span class="mac-feature-label">バックグラウンド再生</span>
@@ -293,6 +294,7 @@
                     <li>ダウンロードした音声をLoudScriptで管理</li>
                     <li>Appleの声を予備として使用</li>
                     <li>いつでも読み上げ速度を変更</li>
+                    <li>音声をWAVファイルとして保存</li>
                 </ul>
             </div>
             <div class="mac-detail-img">
@@ -423,11 +425,15 @@
                 </details>
                 <details>
                     <summary>LoudScriptはオフラインで使えますか？</summary>
-                    <p>はい。Appleの声はMac上で動作します。Supertonic、Kokoro、PocketTTSもモデルのダウンロード後はローカルで動作します。AI整形を有効にすると、選択したAIプロバイダへテキストが送信される場合があります。</p>
+                    <p>はい。Appleの声はMac上で動作します。Supertonic、Kokoro、PocketTTS、Phononもモデルのダウンロード後はローカルで動作します。AI整形を有効にすると、選択したAIプロバイダへテキストが送信される場合があります。</p>
+                </details>
+                <details>
+                    <summary>読み上げ音声をオーディオファイルとして保存できますか？</summary>
+                    <p>はい。Appleの声またはダウンロードしたSupertonicモデルを使うと、音声をWAVファイルに書き出せます。Kokoro、PocketTTS、Phononは音声の書き出しに対応していません。ファイル名は書類名、ソースのタイトル、または最初の文から付けられ、保存後にFinderで表示されます。</p>
                 </details>
                 <details>
                     <summary>LoudScriptに対応しているMacは？</summary>
-                    <p>LoudScriptにはmacOS 15.6以降が必要です。Appleの声とSupertonicはIntel搭載MacとAppleシリコン搭載Macに対応し、KokoroとPocketTTSにはAppleシリコンが必要です。</p>
+                    <p>LoudScriptにはmacOS 15.6以降が必要です。Appleの声、Supertonic、PhononはIntel搭載MacとAppleシリコン搭載Macに対応し、KokoroとPocketTTSにはAppleシリコンが必要です。</p>
                 </details>
             </div>
         </section>

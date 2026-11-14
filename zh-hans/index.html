@@ -71,7 +71,7 @@
           "@id": "https://loudscript.app/zh-hans/#webpage",
           "url": "https://loudscript.app/zh-hans/",
           "name": "Mac 文本转语音 App（免费）｜LoudScript",
-          "dateModified": "2026-11-13",
+          "dateModified": "2026-11-14",
           "isPartOf": { "@id": "https://loudscript.app/#website" },
           "about": { "@id": "https://loudscript.app/zh-hans/#mac-app" },
           "mainEntity": { "@id": "https://loudscript.app/zh-hans/#mac-app" },
@@ -115,7 +115,7 @@
           "applicationCategory": "UtilitiesApplication",
           "applicationSubCategory": "Text-to-speech reader",
           "softwareVersion": "0.1.46",
-          "dateModified": "2026-11-13",
+          "dateModified": "2026-11-14",
           "installUrl": "https://loudscript.app/download/",
           "releaseNotes": "https://loudscript.app/changelog.html#version-0-1-46",
           "processorRequirements": "Intel or Apple silicon Mac; some downloadable voices require Apple silicon",
@@ -125,7 +125,8 @@
             "朗读任何 Mac App 中的所选文本",
             "使用 OCR 提取并朗读截屏中的文本",
             "导入选定的 PDF 页面，并在原始文稿中同步查看朗读位置",
-            "Apple、Supertonic、Kokoro 和 PocketTTS 语音均在 Mac 本地运行",
+            "Apple、Supertonic、Kokoro、PocketTTS 和 Phonon 语音均在 Mac 本地运行",
+            "将语音导出为 WAV 音频文件",
             "浮动播放控制和朗读历史记录"
           ],
           "offers": {
@@ -248,9 +249,9 @@
                 <p>提取图片或 App 界面中的文本，然后聆听内容。</p>
             </article>
             <article class="mac-feature-card mac-reveal">
-                <span class="mac-feature-label">四种语音引擎</span>
+                <span class="mac-feature-label">五种语音引擎</span>
                 <h2>选择你喜欢的语音。</h2>
-                <p>使用 Apple 语音，或下载 Supertonic、Kokoro 或 PocketTTS。</p>
+                <p>使用 Apple 语音，或下载 Supertonic、Kokoro、PocketTTS 或 Phonon。</p>
             </article>
             <article class="mac-feature-card mac-reveal">
                 <span class="mac-feature-label">后台播放</span>
@@ -293,6 +294,7 @@
                     <li>在 LoudScript 中管理已下载的语音</li>
                     <li>使用 Apple 语音作为备用</li>
                     <li>随时调整语速</li>
+                    <li>将语音存储为 WAV 音频文件</li>
                 </ul>
             </div>
             <div class="mac-detail-img">
@@ -423,11 +425,15 @@
                 </details>
                 <details>
                     <summary>LoudScript 可以离线使用吗？</summary>
-                    <p>可以。Apple 语音直接在 Mac 上运行。下载模型后，Supertonic、Kokoro 和 PocketTTS 也能在本地运行。启用 AI 格式化时，文本可能会发送给你选择的 AI 服务商。</p>
+                    <p>可以。Apple 语音直接在 Mac 上运行。下载模型后，Supertonic、Kokoro、PocketTTS 和 Phonon 也能在本地运行。启用 AI 格式化时，文本可能会发送给你选择的 AI 服务商。</p>
+                </details>
+                <details>
+                    <summary>LoudScript 可以将语音存储为音频文件吗？</summary>
+                    <p>可以。使用 Apple 语音或已下载的 Supertonic 模型时，LoudScript 可将语音导出为 WAV 文件。Kokoro、PocketTTS 和 Phonon 不支持导出音频。LoudScript 会根据文稿名称、来源标题或第一句话为文件命名，并在存储后于“访达”中显示文件。</p>
                 </details>
                 <details>
                     <summary>哪些 Mac 支持 LoudScript？</summary>
-                    <p>LoudScript 需要 macOS 15.6 或更高版本。Apple 语音和 Supertonic 支持基于 Intel 的 Mac 和搭载 Apple 芯片的 Mac；Kokoro 和 PocketTTS 则需要搭载 Apple 芯片的 Mac。</p>
+                    <p>LoudScript 需要 macOS 15.6 或更高版本。Apple 语音、Supertonic 和 Phonon 支持基于 Intel 的 Mac 和搭载 Apple 芯片的 Mac；Kokoro 和 PocketTTS 则需要搭载 Apple 芯片的 Mac。</p>
                 </details>
             </div>
         </section>

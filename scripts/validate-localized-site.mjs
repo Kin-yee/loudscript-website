@@ -309,7 +309,7 @@ for (const spec of localeSpecs) {
   );
   assert(!jsonLd["@graph"].some((entry) => entry["@type"] === "FAQPage"), `${spec.output}: obsolete FAQPage schema remains`);
   const faqList = html.match(/<div class="mac-faq-list">([\s\S]*?)<\/div>/)?.[1];
-  assert(faqList && (faqList.match(/<details>/g) || []).length === 5, `${spec.output}: visible FAQ content is incomplete`);
+  assert(faqList && (faqList.match(/<details>/g) || []).length === 6, `${spec.output}: visible FAQ content is incomplete`);
 
   for (const labelledBy of html.matchAll(/aria-labelledby="([^"]+)"/g)) {
     assert(new RegExp(`\\bid=["']${escapeRegExp(labelledBy[1])}["']`).test(html), `${spec.output}: missing aria-labelledby target ${labelledBy[1]}`);

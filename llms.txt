@@ -13,7 +13,7 @@
 - [LoudScript for Mac vs iPhone and iPad](https://loudscript.app/loudscript-mac-vs-ios/): Platform, installation, pricing-model, and workflow differences.
 - [Read selected text aloud on Mac](https://loudscript.app/read-selected-text-aloud-mac/): Services-menu and keyboard-shortcut guide.
 - [Screenshot OCR text-to-speech](https://loudscript.app/screenshot-ocr-text-to-speech-mac/): Screen capture, OCR, permissions, and privacy.
-- [Offline text-to-speech engines](https://loudscript.app/offline-text-to-speech-mac/): Apple, Supertonic, Kokoro, and PocketTTS comparison.
+- [Offline text-to-speech engines](https://loudscript.app/offline-text-to-speech-mac/): Apple, Supertonic, Kokoro, PocketTTS, and Phonon comparison.
 - [Support](https://loudscript.app/support.html): Contact and troubleshooting links.
 - [Changelog](https://loudscript.app/changelog.html): Current and previous LoudScript for Mac releases.
 - [Privacy policy](https://loudscript.app/privacy.html): Local storage, analytics, OCR, and optional AI processing.
@@ -39,7 +39,10 @@ Each language version links to localized editions of the three Mac text-to-speec
 - Screenshot OCR uses a temporary screen capture and built-in macOS text recognition.
 - PDF imports support page-range selection and synchronized highlighting in the original document and extracted text.
 - Apple voices and downloaded speech models synthesize speech locally.
-- Apple voices and Supertonic support Intel and Apple silicon Macs. Kokoro and PocketTTS require Apple silicon.
+- LoudScript has five speech engines: Apple voices built into macOS, and the downloadable Supertonic, Kokoro, PocketTTS, and Phonon models.
+- Phonon is a compact English model in beta, about 175 MB, with 25 US and UK English voices. It reads numbers, prices, links, and abbreviations naturally.
+- Apple voices, Supertonic, and Phonon support Intel and Apple silicon Macs. Kokoro and PocketTTS require Apple silicon.
+- LoudScript exports speech as WAV audio files with Apple voices or a downloaded Supertonic model. It suggests a filename from the document, source title, or first sentence, and shows the saved file in Finder.
 - Optional AI formatting is separate from local speech and can send the text being formatted to a third-party provider when enabled.
 - Raw speech text, OCR output, and source-app identity are not sent to product analytics.
 
