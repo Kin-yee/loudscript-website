@@ -92,6 +92,7 @@
 
 body {
     position: relative;
+    min-height: 100vh;
     margin: 0;
     text-align: center;
     font-family: var(--font-body);
@@ -230,6 +231,11 @@ body::after {
 .mac-page img {
     display: block;
     max-width: 100%;
+}
+
+/* Japanese has no spaces, so lines break between phrases instead of mid-word. */
+.mac-page:lang(ja) {
+    word-break: auto-phrase;
 }
 
 .mac-page :focus-visible {
@@ -713,6 +719,9 @@ body::after {
     margin: 0 -0.2em;
     padding: 0.08em 0.2em;
     border-radius: 0.3em;
+    /* A Chinese word can wrap mid-word; each piece keeps its own rounded box. */
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
 }
 
 .ov-word.is-spoken {
