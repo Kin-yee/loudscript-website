@@ -236,6 +236,7 @@ body::after {
 /* Japanese has no spaces, so lines break between phrases instead of mid-word. */
 .mac-page:lang(ja) {
     word-break: auto-phrase;
+    overflow-wrap: anywhere;
 }
 
 .mac-page :focus-visible {
@@ -2176,7 +2177,7 @@ body::after {
     .mac-audience-grid,
     .mac-guide-grid,
     .seo-related {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .mac-faq-list summary {
