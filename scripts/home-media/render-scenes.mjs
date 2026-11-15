@@ -74,13 +74,13 @@ const scenes = [
     name: "guide-offline-voices", ...guide, theme: "dark",
     layers: [
       { kind: "panel", still: "model-menu-composite", crop: [236, 560, 684, 160], at: [30, 160, 940] },
-      { kind: "lift", still: "model-menu-composite", crop: [691, 609, 175, 165], radius: 9, at: [610, 215, 290] },
+      { kind: "lift", still: "model-menu-composite", crop: [691, 609, 175, 165], radius: 9, at: [636, 226, 270] },
     ],
   },
   {
     name: "guide-pdf", ...guide, theme: "light",
     layers: [
-      { kind: "panel", still: "pdf-playing", crop: [700, 145, 400, 450], at: [70, 40, 480] },
+      { kind: "panel", still: "pdf-playing", crop: [702, 166, 398, 429], at: [70, 50, 480] },
       { kind: "callout", still: "pdf-playing", crop: [8, 458, 214, 80], at: [520, 240, 420] },
     ],
   },
@@ -93,7 +93,7 @@ const scenes = [
   {
     name: "guide-audio-file", ...guide, theme: "light",
     layers: [
-      { kind: "panel", still: "export-main", crop: [250, 272, 680, 428], at: [70, 80, 860] },
+      { kind: "panel", still: "export-main", crop: [250, 272, 680, 428], at: [70, 50, 860] },
     ],
   },
   {
