@@ -7,7 +7,7 @@ import { fileURLToPath } from "node:url";
 // browser can pair new markup with an old stylesheet. A content hash in each
 // reference makes every deploy fetch the files its markup was written against.
 const siteRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const assetReference = /(["'])\/((?:css|js)\/[\w.-]+\.(?:css|js))(?:\?v=[0-9a-f]*)?\1/g;
+const assetReference = /(["'])\/?((?:css|js)\/[\w.-]+\.(?:css|js))(?:\?v=[0-9a-f]*)?\1/g;
 const skippedDirectories = new Set([".git", "node_modules"]);
 
 async function htmlFiles(directory) {
