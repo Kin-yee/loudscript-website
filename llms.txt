@@ -16,7 +16,7 @@
 - [Offline text-to-speech engines](https://loudscript.app/offline-text-to-speech-mac/): Apple, Supertonic, Kokoro, PocketTTS, and Phonon comparison.
 - [Kokoro TTS on Mac without Python](https://loudscript.app/kokoro-tts-mac/): Kokoro as an in-app download, requirements, languages, and a comparison with PocketTTS, Supertonic, and Phonon.
 - [Save text to speech as an audio file on Mac](https://loudscript.app/text-to-audio-file-mac/): The macOS say command and LoudScript's WAV export, with formats, filenames, and supported voices.
-- [LoudScript for Mac help](https://loudscript.app/help/): Step-by-step help with screenshots for turning on AI formatting, downloading, switching, and removing speech models, changing voices, shortcuts, and reading speed, and allowing permissions.
+- [LoudScript for Mac help](https://loudscript.app/help/): Step-by-step help with screenshots for turning on AI formatting, downloading and removing speech models, changing voices, the keyboard shortcuts, and allowing permissions.
 - [Support](https://loudscript.app/support.html): Contact and troubleshooting links.
 - [Changelog](https://loudscript.app/changelog.html): Current and previous LoudScript for Mac releases.
 - [Privacy policy](https://loudscript.app/privacy.html): Local storage, analytics, OCR, and optional AI processing.

@@ -16,7 +16,6 @@ Take the UI lock other agents use (mkdir /tmp/loudscript-mac-ui.lock) first.
     $V --instance help stop
     $V --instance help perf seed --model phonon
     $V --instance help perf seed --model supertonic
-    defaults write $D speechFormatting.isEnabled -bool true
     $V --instance help launch
     python3 scripts/mac-help-media/capture.py --pass seeded --out /tmp/mac-help-raw
     python3 scripts/mac-help-media/record.py --out /tmp/mac-help-raw
@@ -24,9 +23,9 @@ Take the UI lock other agents use (mkdir /tmp/loudscript-mac-ui.lock) first.
     python3 scripts/mac-help-media/stills.py --raw /tmp/mac-help-raw --site .
     $V --instance help cleanup --confirm
 
-The seeded pass sends the sample text to the live AI formatting API and plays
-under a second of speech. Everything is driven through Accessibility actions on
-the app's own windows, never synthetic mouse moves, and captured by window ID.
+Nothing is played aloud or sent to the AI formatting API. Everything is driven
+through Accessibility actions on the app's own windows, never synthetic mouse
+moves, and captured by window ID.
 """
 
 import argparse
@@ -62,11 +61,6 @@ def window_id(pid: int, name: str) -> int:
     sys.exit(f"no on-screen window named {name!r}: {[w['name'] for w in windows]}")
 
 
-# Each flaw is one only AI formatting fixes. LoudScript already joins words split
-# across lines on its own, so a hyphenated sample would not show a difference.
-SAMPLE_TEXT = "The report was was published in March.[1] It recieved wide attention from readers Most of them read it on their phones."
-
-
 def windows_of(pid: int) -> list[dict]:
     if not WINDOW_LISTER.exists():
         subprocess.run(["swiftc", "-O", str(HERE / "windows.swift"), "-o", str(WINDOW_LISTER)], check=True)
@@ -86,21 +80,6 @@ def capture_with_menu(pid: int, path: Path) -> None:
     time.sleep(0.4)
     subprocess.run(["screencapture", "-o", "-x", f"-l{menus[0]['id']}", str(path)], check=True)
     print(path)
-
-
-def set_composer_text(process: str, text: str) -> None:
-    osascript(process, f"""
-set candidates to entire contents of window "LoudScript"
-repeat with candidate in candidates
-    try
-        if (value of attribute "AXIdentifier" of candidate as text) is "main-composer-editor" then
-            set value of candidate to "{text}"
-            return
-        end if
-    end try
-end repeat
-error "composer not found"
-""")
 
 
 def ax_press(process: str, condition: str, window: str = "LoudScript") -> None:
@@ -123,25 +102,6 @@ error "no matching element"
 
 def press(process: str, role: str, name: str, window: str = "LoudScript") -> None:
     ax_press(process, f'role of candidate is "{role}" and (name of candidate as text) is "{name}"', window)
-
-
-def press_id(process: str, identifier: str) -> None:
-    ax_press(process, f'(value of attribute "AXIdentifier" of candidate as text) is "{identifier}"')
-
-
-def wait_for_description(process: str, description: str) -> None:
-    osascript(process, f"""
-repeat 150 times
-    set candidates to entire contents of window "LoudScript"
-    repeat with candidate in candidates
-        try
-            if (description of candidate as text) is "{description}" then return
-        end try
-    end repeat
-    delay 0.1
-end repeat
-error "{description} never appeared"
-""")
 
 
 def dismiss_menu(process: str) -> None:
@@ -202,25 +162,6 @@ def shot_settings(process: str, pid: int, out: Path, tab: str, name: str) -> Non
     capture(pid, tab, out / f"{name}.png")
 
 
-def shot_model_menu(process: str, pid: int, out: Path) -> None:
-    set_composer_text(process, SAMPLE_TEXT)
-    press(process, "AXMenuButton", "Speech Model")
-    capture_with_menu(pid, out / "main-model-menu.png")
-    dismiss_menu(process)
-
-
-def shot_formatted(process: str, pid: int, out: Path) -> None:
-    """Needs AI formatting on and SAMPLE_TEXT in the composer. Stops playback as
-    soon as the formatted read exists."""
-    press_id(process, "main-playback-button")
-    wait_for_description(process, "Formatted")
-    press_id(process, "main-stop-button")
-    ax_press(process, '(description of candidate as text) is "Hide Overview"')
-    capture(pid, "LoudScript", out / "main-formatted.png")
-    ax_press(process, 'role of candidate is "AXRadioButton" and (description of candidate as text) is "Original"')
-    capture(pid, "LoudScript", out / "main-original.png")
-
-
 def shot_model_remove_menu(process: str, pid: int, out: Path) -> None:
     open_settings(process)
     settings_tab(process, "Models")
@@ -231,9 +172,8 @@ def shot_model_remove_menu(process: str, pid: int, out: Path) -> None:
 
 PASSES = {
     "fresh": [lambda *a, tab=tab, name=name: shot_settings(*a, tab, name) for tab, name in [
-        ("General", "settings-general"), ("Models", "settings-models"), ("Shortcuts", "settings-shortcuts"),
-        ("Permissions", "settings-permissions"), ("Playback", "settings-playback")]],
-    "seeded": [shot_model_menu, shot_formatted, shot_model_remove_menu],
+        ("Models", "settings-models"), ("Permissions", "settings-permissions")]],
+    "seeded": [shot_model_remove_menu],
 }
 
 
