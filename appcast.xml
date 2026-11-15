@@ -3,13 +3,13 @@
     <channel>
         <title>LoudScript</title>
         <item>
-            <title>0.1.46</title>
-            <pubDate>Fri, 13 Nov 2026 22:25:12 +0100</pubDate>
+            <title>0.1.47</title>
+            <pubDate>Sun, 15 Nov 2026 10:07:14 +0100</pubDate>
             <link>https://loudscript.app</link>
-            <sparkle:version>48</sparkle:version>
-            <sparkle:shortVersionString>0.1.46</sparkle:shortVersionString>
+            <sparkle:version>49</sparkle:version>
+            <sparkle:shortVersionString>0.1.47</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>15.6</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/hoyelam/loudscript-website/releases/download/loudscript-mac-v0.1.46/LoudScript-0.1.46.dmg" length="49843000" type="application/octet-stream" sparkle:edSignature="cbAAkAHeGKajVWqmyGKRL+26f/mrBIGaCAOOc/QhYKHr/AXrHVi0JCR7GXV0msAjo/B8WqXyuziX/9N7GjBJDw=="/>
+            <enclosure url="https://github.com/hoyelam/loudscript-website/releases/download/loudscript-mac-v0.1.47/LoudScript-0.1.47.dmg" length="49844779" type="application/octet-stream" sparkle:edSignature="isJIEiZrQjQraGWeEDnTzA2XrqgF6DYw5RgdoxHuOmK+vxBLtL3CoZ52KA3sN2hCSjPQcyDlLac6+k1EYLdtDQ=="/>
         </item>
     </channel>
 </rss>
