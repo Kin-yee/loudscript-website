@@ -5,6 +5,7 @@
     <script defer data-domain="loudscript.app" src="https://plausible.io/js/script.outbound-links.js"></script>
     <script defer src="/js/language-menu.js?v=bbf7c372f4"></script>
     <script defer src="/js/home-demo.js?v=a99d87672d"></script>
+    <script defer src="/js/overture.js?v=494e460dec"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -44,7 +45,7 @@
     <link rel="alternate" hreflang="nl" href="https://loudscript.app/nl/">
     <link rel="alternate" hreflang="x-default" href="https://loudscript.app/">
     <link rel="icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/css/styles.css?v=2f7f8c64ad">
+    <link rel="stylesheet" href="/css/styles.css?v=1868736ac5">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -221,6 +222,18 @@
                 </a>
             </div>
             <p class="mac-note">Descarga DMG notarizada por Apple. Requiere macOS 15.6 o posterior.</p>
+
+            <div class="ov-player" data-state="idle">
+                <button type="button" class="ov-keys" data-label-play="Play the sample" data-label-stop="Stop the sample" aria-label="Play the sample">
+                    <span class="ov-key" data-key="alt"><span class="ov-key-face"><svg viewBox="0 0 24 24"><path d="M3 5h6l6 14h6M14 5h7"/></svg></span></span>
+                    <span class="ov-key" data-key="meta"><span class="ov-key-face"><svg viewBox="0 0 24 24"><path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3"/></svg></span></span>
+                    <span class="ov-key" data-key="r"><span class="ov-key-face">R</span></span>
+                </button>
+                <p class="ov-quote" lang="es"><span class="ov-quote-text">¡Te damos la bienvenida! Selecciona texto en cualquier aplicación, pulsa el atajo y lo escucharás en voz alta.</span><span class="ov-quote-lit" aria-hidden="true"></span></p>
+                <div class="ov-voices" role="group" aria-label="Sample voice" hidden></div>
+                <p class="ov-hint" role="status" data-idle="Press ⌥⌘R or tap the keys." data-played="That’s it. The same keys work in Safari, Mail, PDFs and everywhere else." data-error="The sample could not play. Tap the keys to try again.">Press ⌥⌘R or tap the keys.</p>
+                <script type="application/json" class="ov-samples">[{"voice":"supertonic","label":"Supertonic","lang":"es","src":"/audio/supertonic.v3.es.m4a","text":"¡Te damos la bienvenida! Selecciona texto en cualquier aplicación, pulsa el atajo y lo escucharás en voz alta.","words":[{"start":0,"end":0.16,"from":0,"to":3},{"start":0.16,"end":0.44,"from":4,"to":9},{"start":0.44,"end":0.62,"from":10,"to":12},{"start":0.62,"end":1.31,"from":13,"to":24},{"start":1.821,"end":2.34,"from":25,"to":35},{"start":2.34,"end":2.74,"from":36,"to":41},{"start":2.74,"end":3,"from":42,"to":44},{"start":3,"end":3.32,"from":45,"to":54},{"start":3.32,"end":4.2,"from":55,"to":66},{"start":4.411,"end":4.76,"from":67,"to":72},{"start":4.76,"end":4.88,"from":73,"to":75},{"start":4.88,"end":5.437,"from":76,"to":81},{"start":5.826,"end":5.9,"from":82,"to":83},{"start":5.9,"end":6.04,"from":84,"to":86},{"start":6.04,"end":6.84,"from":87,"to":97},{"start":6.84,"end":7,"from":98,"to":100},{"start":7,"end":7.22,"from":101,"to":104},{"start":7.22,"end":7.936,"from":105,"to":110}]},{"voice":"kokoro","label":"Kokoro","lang":"en","src":"/audio/kokoro.82m.en.m4a","text":"Welcome! Select text in any app, press the shortcut, and hear it read aloud.","words":[{"start":0,"end":0.645,"from":0,"to":8},{"start":1.485,"end":1.72,"from":9,"to":15},{"start":1.72,"end":2.06,"from":16,"to":20},{"start":2.06,"end":2.28,"from":21,"to":23},{"start":2.28,"end":2.44,"from":24,"to":27},{"start":2.44,"end":2.746,"from":28,"to":32},{"start":3.017,"end":3.16,"from":33,"to":38},{"start":3.16,"end":3.34,"from":39,"to":42},{"start":3.34,"end":3.852,"from":43,"to":52},{"start":4.037,"end":4.12,"from":53,"to":56},{"start":4.12,"end":4.32,"from":57,"to":61},{"start":4.32,"end":4.42,"from":62,"to":64},{"start":4.42,"end":4.58,"from":65,"to":69},{"start":4.58,"end":5.029,"from":70,"to":76}]}]</script>
+            </div>
 
             <div class="mac-hero-screenshots">
                 <figure class="mac-screenshot mac-screenshot-main">

@@ -160,6 +160,11 @@ if (template.split(templateRobots).length !== 2) {
 const englishMessages = JSON.parse(
   await readFile(path.join(siteRoot, "locales", "en.json"), "utf8")
 );
+// Built by scripts/build-voice-samples.mjs: the clips each page's reading-key
+// demo can play, with the timing of every word.
+const voiceSamples = JSON.parse(
+  await readFile(path.join(siteRoot, "data", "voice-samples.json"), "utf8")
+);
 
 for (const locale of locales) {
   const messages = JSON.parse(
@@ -202,6 +207,13 @@ for (const locale of locales) {
   for (const { source, target } of replacements) {
     html = replaceAllLiteral(html, source, target);
   }
+
+  // The sample sentence goes in after the messages, so a translation can never rewrite part of it.
+  const samples = voiceSamples[locale.id];
+  html = html
+    .replace("{{heroSampleLang}}", () => samples[0].lang)
+    .replace("{{heroSampleText}}", () => escapeHtml(samples[0].text))
+    .replace("{{{heroSamples}}}", () => JSON.stringify(samples).replaceAll("<", "\\u003c"));
 
   if (/\{\{{?[^{}]+}?\}\}/.test(html)) {
     throw new Error(`Unresolved template token in ${locale.id} output`);

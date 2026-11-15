@@ -545,6 +545,196 @@ body::after {
     font-size: 1.0625rem;
 }
 
+/* Reading key: the onboarding's shortcut screen. Pressing the keys plays a
+   voice and lights the sentence word by word. */
+.ov-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 64px;
+}
+
+.ov-keys {
+    --key: 100px;
+    display: inline-flex;
+    gap: calc(var(--key) * 0.13);
+    margin: 0;
+    padding: 0 0 calc(var(--key) * 0.07);
+    border: 0;
+    border-radius: calc(var(--key) * 0.2);
+    background: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+.ov-key {
+    position: relative;
+    display: block;
+    width: var(--key);
+    height: var(--key);
+}
+
+/* The slab under the key. The face sinks onto it when the key goes down. */
+.ov-key::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: calc(var(--key) * 0.2);
+    background: var(--key-edge);
+    box-shadow: inset 0 0 0 0.5px rgb(255 255 255 / 0.1);
+    transform: translateY(7%);
+}
+
+.ov-key-face {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    border: 1px solid transparent;
+    border-radius: calc(var(--key) * 0.2);
+    background:
+        linear-gradient(var(--key-top), var(--key-bottom)) padding-box,
+        linear-gradient(rgb(255 255 255 / 0.28), rgb(255 255 255 / 0.06)) border-box;
+    box-shadow: 0 calc(var(--key) * 0.1) calc(var(--key) * 0.2) var(--key-shadow);
+    color: var(--key-text);
+    font-family: var(--font-display);
+    font-size: calc(var(--key) * 0.42);
+    font-weight: 600;
+    line-height: 1;
+    transition: transform 0.09s ease-out, box-shadow 0.09s ease-out, color 0.09s ease-out;
+}
+
+.ov-key-face::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border: 2px solid var(--accent);
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.09s ease-out;
+}
+
+.ov-key-face svg {
+    width: 46%;
+    height: 46%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.ov-key.is-down .ov-key-face,
+.ov-keys.is-flash .ov-key-face,
+.ov-keys:active .ov-key-face {
+    color: var(--accent);
+    box-shadow: 0 0 calc(var(--key) * 0.4) rgb(237 134 52 / 0.55);
+    transform: translateY(5%);
+}
+
+.ov-key.is-down .ov-key-face::after,
+.ov-keys.is-flash .ov-key-face::after,
+.ov-keys:active .ov-key-face::after {
+    opacity: 1;
+}
+
+.ov-quote {
+    position: relative;
+    max-width: 580px;
+    margin: 32px 0 0;
+    padding: 18px 24px;
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-s);
+    background: var(--surface);
+    color: var(--text);
+    font-family: var(--font-display);
+    font-size: clamp(1.1rem, 1.7vw, 1.3rem);
+    font-weight: 500;
+    line-height: 1.6;
+    text-wrap: balance;
+}
+
+/* The lit sentence is drawn over the real one, which stays in place for
+   screen readers and for pages where the script has not run. */
+.ov-quote-lit {
+    position: absolute;
+    inset: 0;
+    padding: inherit;
+    text-wrap: inherit;
+    pointer-events: none;
+}
+
+.ov-player:not(.is-enhanced) .ov-quote-lit {
+    display: none;
+}
+
+.ov-player.is-enhanced .ov-quote-text {
+    color: transparent;
+}
+
+.ov-word {
+    margin: 0 -0.2em;
+    padding: 0.08em 0.2em;
+    border-radius: 0.3em;
+}
+
+.ov-word.is-spoken {
+    color: var(--spoken);
+}
+
+.ov-word.is-current {
+    position: relative;
+    background: var(--accent);
+    color: var(--on-accent);
+}
+
+.ov-voices {
+    display: flex;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.ov-voices[hidden] {
+    display: none;
+}
+
+.ov-voice {
+    padding: 7px 15px;
+    border: 0;
+    border-radius: 999px;
+    background: none;
+    box-shadow: inset 0 0 0 1px var(--hairline);
+    color: var(--muted);
+    font-family: inherit;
+    font-size: 0.86rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.16s ease-out, background-color 0.16s ease-out, box-shadow 0.16s ease-out;
+}
+
+.ov-voice:hover {
+    color: var(--text);
+    background: var(--surface-strong);
+}
+
+.ov-voice[aria-pressed="true"] {
+    color: var(--text);
+    background: var(--accent-soft);
+    box-shadow: inset 0 0 0 1.5px var(--accent);
+}
+
+.ov-hint {
+    max-width: 520px;
+    min-height: 1.5em;
+    margin: 18px 0 0;
+    color: var(--muted);
+    font-size: 0.98rem;
+    line-height: 1.5;
+    text-wrap: balance;
+}
+
 /* Screenshots */
 .mac-hero-screenshots {
     position: relative;
@@ -1532,6 +1722,13 @@ body::after {
     .mac-page *::after {
         transition: none;
     }
+
+    /* Keys still light, but they do not travel. */
+    .ov-key.is-down .ov-key-face,
+    .ov-keys.is-flash .ov-key-face,
+    .ov-keys:active .ov-key-face {
+        transform: none;
+    }
 }
 
 /* Responsive — Small Tablet */
@@ -1619,6 +1816,22 @@ body::after {
 
     .mac-intro {
         font-size: 1.02rem;
+    }
+
+    .ov-player {
+        margin-top: 48px;
+    }
+
+    .ov-keys {
+        --key: 80px;
+    }
+
+    .ov-quote {
+        padding: 16px 18px;
+    }
+
+    .ov-hint {
+        min-height: 3em;
     }
 
     .mac-hero-screenshots {

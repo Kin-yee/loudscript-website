@@ -5,6 +5,7 @@
     <script defer data-domain="loudscript.app" src="https://plausible.io/js/script.outbound-links.js"></script>
     <script defer src="/js/language-menu.js?v=bbf7c372f4"></script>
     <script defer src="/js/home-demo.js?v=a99d87672d"></script>
+    <script defer src="/js/overture.js?v=494e460dec"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -38,7 +39,7 @@
     <link rel="alternate" hreflang="nl" href="https://loudscript.app/nl/">
     <link rel="alternate" hreflang="x-default" href="https://loudscript.app/">
     <link rel="icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/css/styles.css?v=2f7f8c64ad">
+    <link rel="stylesheet" href="/css/styles.css?v=1868736ac5">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -160,7 +161,7 @@
                 <span class="mac-eyebrow">LoudScript for Mac</span>
                 <span class="mac-free-badge">FREE</span>
             </div>
-            <h1 class="mac-title">Listen to any text<br>on your Mac</h1>
+            <h1 class="mac-title">Hear any text<br>on your Mac.</h1>
             <p class="mac-intro">
                 Listen to selected text, screenshots, and PDFs with natural voices while you keep working.
             </p>
@@ -173,6 +174,18 @@
                 </a>
             </div>
             <p class="mac-note">Notarized DMG download. Requires macOS 15.6 or later.</p>
+
+            <div class="ov-player" data-state="idle">
+                <button type="button" class="ov-keys" data-label-play="Play the sample" data-label-stop="Stop the sample" aria-label="Play the sample">
+                    <span class="ov-key" data-key="alt"><span class="ov-key-face"><svg viewBox="0 0 24 24"><path d="M3 5h6l6 14h6M14 5h7"/></svg></span></span>
+                    <span class="ov-key" data-key="meta"><span class="ov-key-face"><svg viewBox="0 0 24 24"><path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3"/></svg></span></span>
+                    <span class="ov-key" data-key="r"><span class="ov-key-face">R</span></span>
+                </button>
+                <p class="ov-quote" lang="{{heroSampleLang}}"><span class="ov-quote-text">{{heroSampleText}}</span><span class="ov-quote-lit" aria-hidden="true"></span></p>
+                <div class="ov-voices" role="group" aria-label="Sample voice" hidden></div>
+                <p class="ov-hint" role="status" data-idle="Press ⌥⌘R or tap the keys." data-played="That’s it. The same keys work in Safari, Mail, PDFs and everywhere else." data-error="The sample could not play. Tap the keys to try again.">Press ⌥⌘R or tap the keys.</p>
+                <script type="application/json" class="ov-samples">{{{heroSamples}}}</script>
+            </div>
 
             <div class="mac-hero-screenshots">
                 <figure class="mac-screenshot mac-screenshot-main">

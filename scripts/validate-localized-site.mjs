@@ -103,6 +103,7 @@ const firstPartySeoPages = [
   { route: "text-to-audio-file-mac", schemaType: "HowTo", titlePhrase: "Save Text to Speech as an Audio File on Mac", lastModified: "2026-11-14" },
   { route: "help", schemaType: "TechArticle", titlePhrase: "LoudScript for Mac Help", lastModified: "2026-11-15" }
 ];
+const voiceSamples = JSON.parse(await readFile(path.join(siteRoot, "data", "voice-samples.json"), "utf8"));
 const allOgLocales = localeSpecs.map(({ ogLocale }) => ogLocale);
 
 function assert(condition, message) {
@@ -321,6 +322,22 @@ for (const spec of localeSpecs) {
 
   for (const labelledBy of html.matchAll(/aria-labelledby="([^"]+)"/g)) {
     assert(new RegExp(`\\bid=["']${escapeRegExp(labelledBy[1])}["']`).test(html), `${spec.output}: missing aria-labelledby target ${labelledBy[1]}`);
+  }
+
+  const embeddedSamples = html.match(/<script type="application\/json" class="ov-samples">([\s\S]*?)<\/script>/)?.[1];
+  assert(embeddedSamples, `${spec.output}: reading-key samples are missing`);
+  const samples = JSON.parse(embeddedSamples);
+  assert(JSON.stringify(samples) === JSON.stringify(voiceSamples[spec.id]), `${spec.output}: reading-key samples differ from data/voice-samples.json`);
+  for (const sample of samples) {
+    await assertLocalTargetExists(sample.src, outputPath);
+    let previous = { end: 0, to: 0 };
+    for (const word of sample.words) {
+      assert(
+        word.start >= previous.end && word.end > word.start && word.from >= previous.to && word.to > word.from && word.to <= sample.text.length,
+        `${spec.output}: ${sample.voice} sample has a word out of order at ${word.start}s`
+      );
+      previous = word;
+    }
   }
 
   const localUrls = [];
