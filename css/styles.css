@@ -996,11 +996,6 @@ body::after {
     background: var(--surface);
 }
 
-.mac-voice-card:nth-child(n + 4) {
-    grid-column: span 3;
-    min-height: 0;
-}
-
 .mac-voice-card-pick {
     border-color: var(--accent);
     background: var(--accent-soft);
@@ -2126,8 +2121,7 @@ body::after {
         align-items: center;
     }
 
-    .mac-voice-card,
-    .mac-voice-card:nth-child(n + 4) {
+    .mac-voice-card {
         grid-column: 1 / -1;
         min-height: 0;
     }
