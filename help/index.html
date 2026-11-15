@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://plausible.io" crossorigin>
+    <script defer data-domain="loudscript.app" src="https://plausible.io/js/script.outbound-links.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Step-by-step help for LoudScript on Mac: turn on AI formatting, download and switch speech models, change voices and shortcuts, and allow permissions.">
+    <meta name="author" content="Ho Ye Lam">
+    <meta name="robots" content="index, follow">
+    <meta property="og:site_name" content="LoudScript">
+    <meta property="og:title" content="LoudScript for Mac Help | LoudScript">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://loudscript.app/help/">
+    <meta property="og:image" content="https://loudscript.app/images/mac/mac-main-window.png">
+    <meta property="og:description" content="How to turn on AI formatting, manage speech models and voices, change shortcuts, and allow permissions in LoudScript for Mac.">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LoudScript for Mac Help">
+    <meta name="twitter:description" content="Turn on AI formatting, manage speech models and voices, and change shortcuts in LoudScript for Mac.">
+    <meta name="twitter:image" content="https://loudscript.app/images/mac/mac-main-window.png">
+    <link rel="canonical" href="https://loudscript.app/help/">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="color-scheme" content="dark light">
+    <title>LoudScript for Mac Help: AI Formatting, Models, and Shortcuts | LoudScript</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechArticle",
+          "@id": "https://loudscript.app/help/#article",
+          "url": "https://loudscript.app/help/",
+          "headline": "LoudScript for Mac help",
+          "description": "How to turn on AI formatting, download, switch, and remove speech models, change voices, keyboard shortcuts, and reading speed, and allow the permissions LoudScript for Mac uses.",
+          "datePublished": "2026-11-15",
+          "dateModified": "2026-11-15",
+          "inLanguage": "en",
+          "image": "https://loudscript.app/images/mac/help/turn-on-ai-formatting-poster.webp",
+          "author": { "@id": "https://loudscript.app/#creator" },
+          "publisher": { "@id": "https://loudscript.app/#organization" },
+          "mainEntityOfPage": "https://loudscript.app/help/",
+          "about": { "@type": "SoftwareApplication", "name": "LoudScript for Mac", "operatingSystem": "macOS 15.6 or later" }
+        },
+        { "@type": "Person", "@id": "https://loudscript.app/#creator", "name": "Ho Ye Lam", "alternateName": "Hoye Lam", "url": "https://hoyelam.com/" },
+        { "@type": "Organization", "@id": "https://loudscript.app/#organization", "name": "Kin-Yee", "url": "https://loudscript.app/" },
+        { "@type": "BreadcrumbList", "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "LoudScript", "item": "https://loudscript.app/" },
+          { "@type": "ListItem", "position": 2, "name": "Help", "item": "https://loudscript.app/help/" }
+        ] }
+      ]
+    }
+    </script>
+</head>
+<body class="mac-page">
+    <main class="mac-shell">
+        <header class="mac-nav">
+            <a href="/" class="mac-brand" aria-label="Go to LoudScript home page"><img src="/images/loudscript-icon-88.webp" class="mac-brand-logo" alt="LoudScript app icon" width="44" height="44"><span>LoudScript</span></a>
+            <nav class="mac-nav-links" aria-label="Page navigation"><a href="/">Overview</a><a href="/#guides">Guides</a><a href="/support.html">Support</a><a href="/download/" class="mac-nav-cta">Download DMG</a></nav>
+        </header>
+        <article class="seo-page">
+            <header class="seo-hero">
+                <p class="seo-breadcrumb"><a href="/">LoudScript</a> / Help</p>
+                <h1>LoudScript for Mac help</h1>
+                <p class="seo-lede">Step-by-step answers for the settings people ask about most, including the ones that start turned off. Every screenshot and clip comes from LoudScript 0.1.47.</p>
+                <p class="seo-byline">By <a href="https://hoyelam.com/" rel="author">Ho Ye Lam</a> · Updated November 15, 2026</p>
+            </header>
+
+            <nav class="seo-section" aria-labelledby="help-topics">
+                <h2 id="help-topics">Jump to a topic</h2>
+                <div class="seo-related">
+                    <a href="#ai-formatting">Turn on AI formatting</a>
+                    <a href="#download-model">Download a speech model</a>
+                    <a href="#switch-model">Switch speech models</a>
+                    <a href="#remove-model">Change a voice or remove a model</a>
+                    <a href="#selected-text">Read selected text in other apps</a>
+                    <a href="#screen-text">Read text from the screen</a>
+                    <a href="#shortcuts">Change keyboard shortcuts</a>
+                    <a href="#speed">Change the reading speed</a>
+                    <a href="#launch-at-login">Open at login or change the language</a>
+                    <a href="#all-settings">Find any other setting</a>
+                </div>
+            </nav>
+
+            <section class="seo-section" aria-labelledby="ai-formatting">
+                <h2 id="ai-formatting">How do I turn on AI formatting?</h2>
+                <p>AI formatting is off when you install LoudScript. Turn it on, and LoudScript tidies text before it reads it aloud. It fixes clear typos, doubled words, and missing full stops, and it removes footnote markers such as [1]. It does not change your wording.</p>
+                <ol class="seo-steps">
+                    <li><strong>Open Settings.</strong> Choose LoudScript › Settings, or press <kbd>⌘</kbd> <kbd>,</kbd>.</li>
+                    <li><strong>Click Playback</strong> in the toolbar at the top of the Settings window.</li>
+                    <li><strong>Scroll down to Read Aloud.</strong> In the AI Formatting card, turn on <strong>Use AI Formatting Before Speaking</strong>.</li>
+                </ol>
+                <figure class="seo-figure seo-figure-narrow">
+                    <video controls muted playsinline preload="none" width="560" height="608" poster="/images/mac/help/turn-on-ai-formatting-poster.webp" aria-label="Screen recording: Settings opens on General, Playback is clicked, the window scrolls to AI Formatting, and Use AI Formatting Before Speaking is turned on.">
+                        <source src="/images/mac/help/turn-on-ai-formatting.mp4" type="video/mp4">
+                    </video>
+                    <figcaption>Settings › Playback › AI Formatting. The clip is about 7 seconds long and has no sound.</figcaption>
+                </figure>
+                <h3>What changes when AI formatting is on</h3>
+                <p>While LoudScript formats the text, the player shows <strong>Formatting</strong>. Then it starts reading. Each formatted read gets a <strong>Formatted | Original</strong> switch above the text. Click <strong>Original</strong> to see the text exactly as you gave it. Switching while LoudScript is reading stops playback.</p>
+                <figure class="seo-figure">
+                    <a href="/images/mac/help/ai-formatting-formatted.webp"><img src="/images/mac/help/ai-formatting-formatted.webp" width="630" height="155" loading="lazy" alt="LoudScript main window showing a read with Formatted selected. The text reads: The report was published in March. It received wide attention from readers. Most of them read it on their phones."></a>
+                    <figcaption>Formatted: the doubled “was” and the [1] marker are gone, “recieved” is corrected, and a full stop is added.</figcaption>
+                </figure>
+                <figure class="seo-figure">
+                    <a href="/images/mac/help/ai-formatting-original.webp"><img src="/images/mac/help/ai-formatting-original.webp" width="630" height="155" loading="lazy" alt="The same read with Original selected. The text reads: The report was was published in March.[1] It recieved wide attention from readers Most of them read it on their phones."></a>
+                    <figcaption>Original: the text exactly as it was pasted.</figcaption>
+                </figure>
+                <h3>What to know before you turn it on</h3>
+                <ul>
+                    <li><strong>It needs an internet connection.</strong> LoudScript sends the text to its server, which passes it to an AI model provider. The app says: “Your text is sent to our server for formatting and is never stored.” See the <a href="/privacy.html">privacy policy</a> for details.</li>
+                    <li><strong>Reading can start a moment later</strong>, because formatting happens first.</li>
+                    <li><strong>If formatting fails, LoudScript reads the original text.</strong> This happens when you are offline, when the server is busy or returns an error, or when it does not answer within 12 seconds. In a very long text, some parts may be read unformatted.</li>
+                    <li><strong>Some text is never formatted.</strong> LoudScript skips text with fewer than three words and text that looks like code.</li>
+                    <li><strong>It applies to new reads.</strong> That includes text you type or paste, the Services menu, the Read Shortcut, and screen captures. Replaying a read from History does not format it again.</li>
+                    <li><strong>Imported PDFs are not formatted.</strong> To format text from a PDF, copy it and paste it into LoudScript.</li>
+                    <li><strong>LoudScript always joins words split across lines.</strong> A word that a PDF broke with a hyphen at the end of a line is read as one word, with AI formatting on or off.</li>
+                    <li><strong>It needs no account.</strong> There is nothing to sign in to or buy.</li>
+                </ul>
+            </section>
+
+            <section class="seo-section" aria-labelledby="download-model">
+                <h2 id="download-model">How do I download a speech model?</h2>
+                <p>Apple System voices are built into macOS and need no download. Supertonic, Kokoro, PocketTTS, and Phonon are speech models that you download once. They then run on your Mac without an internet connection.</p>
+                <ol class="seo-steps">
+                    <li><strong>Open Settings › Models.</strong> Or click the model name in the player bar and choose <strong>Manage Models…</strong>.</li>
+                    <li><strong>Click Download</strong> next to the model you want. The button shows the download size.</li>
+                    <li><strong>Wait for the progress bar to finish.</strong> Click <strong>Cancel</strong> to stop the download.</li>
+                </ol>
+                <p>If Apple System is your current model and nothing is playing, LoudScript switches to the new model when the download finishes. Otherwise, click <strong>Use</strong> next to the model.</p>
+                <figure class="seo-figure seo-figure-narrow">
+                    <a href="/images/mac/help/settings-models-download.webp"><img src="/images/mac/help/settings-models-download.webp" width="560" height="590" loading="lazy" alt="Settings window, Models tab, showing No models downloaded. Apple System is marked Active. Supertonic and Kokoro each have a Download button with the size in brackets."></a>
+                    <figcaption>Settings › Models before any download.</figcaption>
+                </figure>
+                <p>Until Supertonic is downloaded, the bottom of the History sidebar shows an <strong>Install offline voice</strong> card. Click it to download Supertonic, or close it.</p>
+                <div class="seo-table-wrap"><table class="seo-table"><thead><tr><th scope="col">Model</th><th scope="col">Download</th><th scope="col">Languages</th><th scope="col">Macs</th></tr></thead><tbody>
+                    <tr><th scope="row">Apple System</th><td>Built in</td><td>Every language with an Apple voice on your Mac</td><td>Intel and Apple silicon</td></tr>
+                    <tr><th scope="row">Supertonic</th><td>419.4 MB</td><td>31 languages</td><td>Intel and Apple silicon</td></tr>
+                    <tr><th scope="row">Kokoro (beta)</th><td>320 MB</td><td>English and Mandarin Chinese</td><td>Apple silicon only</td></tr>
+                    <tr><th scope="row">PocketTTS</th><td>1 GB</td><td>English, French, German, Italian, Portuguese, and Spanish</td><td>Intel and Apple silicon</td></tr>
+                    <tr><th scope="row">Phonon (beta)</th><td>175 MB</td><td>English</td><td>Apple silicon only</td></tr>
+                </tbody></table></div>
+                <p>A download needs its own size plus 512 MB of free disk space, so unpacking never fills your disk. On an Intel-based Mac, Kokoro and Phonon show “Requires an Apple silicon Mac.” and cannot be downloaded. The <a href="/offline-text-to-speech-mac/">offline voices guide</a> compares how each model sounds.</p>
+            </section>
+
+            <section class="seo-section" aria-labelledby="switch-model">
+                <h2 id="switch-model">How do I switch speech models?</h2>
+                <p>Click the model name in the player bar at the bottom of the main window, then choose a model. The list shows Apple System and the models you have downloaded.</p>
+                <figure class="seo-figure">
+                    <a href="/images/mac/help/speech-model-menu.webp"><img src="/images/mac/help/speech-model-menu.webp" width="450" height="180" loading="lazy" alt="LoudScript player bar with the speech model menu open. It lists Apple System, Supertonic with a check mark, and Phonon, followed by Manage Models."></a>
+                    <figcaption>The speech model menu in the player bar.</figcaption>
+                </figure>
+                <p>You can also switch models in these places:</p>
+                <ul>
+                    <li>The menu bar, while the main window is in front: Playback › Speech Model.</li>
+                    <li>Settings › Models: click <strong>Use</strong> next to a downloaded model. The current model shows <strong>Active</strong>.</li>
+                    <li>Settings › Playback: the Speech Model menu.</li>
+                </ul>
+                <p>Switching models while LoudScript is reading stops playback. Press play to start again with the new model.</p>
+            </section>
+
+            <section class="seo-section" aria-labelledby="remove-model">
+                <h2 id="remove-model">How do I change a voice or remove a model?</h2>
+                <p>Each model keeps its own voice. Both tasks are in Settings › Models.</p>
+                <h3>Change the voice</h3>
+                <ol class="seo-steps">
+                    <li><strong>Open Settings › Models.</strong></li>
+                    <li><strong>Click Model Details</strong> under the model. It is already open for the active model.</li>
+                    <li><strong>Choose a voice</strong> from the <strong>Voice</strong> menu.</li>
+                </ol>
+                <p>Kokoro and PocketTTS also have a <strong>Language</strong> menu. Changing the language may download a model pack. Kokoro downloads a new voice the first time you use it. For Apple System, <strong>Manage Voices…</strong> opens the macOS voice settings, where you can download more Apple voices.</p>
+                <h3>Remove a model</h3>
+                <ol class="seo-steps">
+                    <li><strong>Open Settings › Models.</strong> The heading shows how much space your downloaded models use.</li>
+                    <li><strong>Click the ⋯ button</strong> next to the model, then choose <strong>Remove…</strong>.</li>
+                    <li><strong>Click Remove</strong> to confirm.</li>
+                </ol>
+                <p>If you remove the active model, LoudScript uses Apple System instead. You can download the model again later. Apple System is part of macOS and cannot be removed.</p>
+                <figure class="seo-figure seo-figure-narrow">
+                    <a href="/images/mac/help/settings-models-installed.webp"><img src="/images/mac/help/settings-models-installed.webp" width="584" height="515" loading="lazy" alt="Settings window, Models tab, with downloaded models using 574.7 MB. Supertonic is Active, its Model Details are open with a Voice menu set to M1, and its ⋯ menu is open showing Remove."></a>
+                    <figcaption>Supertonic’s Voice menu and its ⋯ menu with Remove….</figcaption>
+                </figure>
+            </section>
+
+            <section class="seo-section" aria-labelledby="selected-text">
+                <h2 id="selected-text">How do I let LoudScript read selected text in other apps?</h2>
+                <p>Select text in any app, then use one of these:</p>
+                <ul>
+                    <li><strong>The Services menu.</strong> Control-click the selection and choose Services › <strong>Read with LoudScript</strong>. This needs no extra permission.</li>
+                    <li><strong>The Read Shortcut,</strong> <kbd>⌥</kbd> <kbd>⌘</kbd> <kbd>R</kbd> by default. This needs Selected Text access, which uses macOS Accessibility permission.</li>
+                </ul>
+                <p>To allow Selected Text access:</p>
+                <ol class="seo-steps">
+                    <li><strong>Open Settings › Permissions.</strong></li>
+                    <li><strong>Click Open Accessibility Settings</strong> if Selected Text Access shows Not Granted.</li>
+                    <li><strong>Turn on LoudScript</strong> in the list in System Settings, then go back to LoudScript.</li>
+                </ol>
+                <figure class="seo-figure seo-figure-narrow">
+                    <a href="/images/mac/help/settings-permissions.webp"><img src="/images/mac/help/settings-permissions.webp" width="560" height="310" loading="lazy" alt="Settings window, Permissions tab. Selected Text Access and Onscreen Text Access both show Granted."></a>
+                    <figcaption>Settings › Permissions after you allow both permissions.</figcaption>
+                </figure>
+                <p>The <a href="/read-selected-text-aloud-mac/">selected text guide</a> covers both methods in more detail.</p>
+            </section>
+
+            <section class="seo-section" aria-labelledby="screen-text">
+                <h2 id="screen-text">How do I read text from the screen or an image?</h2>
+                <p>Press the Read Shortcut with nothing selected. Drag over the text on screen. LoudScript recognizes the text on your Mac and reads it.</p>
+                <p>This needs Screen Recording permission. macOS asks for it the first time. If you said no, LoudScript shows a <strong>Screen Recording Required</strong> alert. Click <strong>Open Settings</strong> in the alert, or open Settings › Permissions and click <strong>Open Screen Recording Settings</strong> next to Onscreen Text Access. Turn on LoudScript. If macOS asks you to quit and reopen LoudScript, do that, then try again.</p>
+                <p>The <a href="/screenshot-ocr-text-to-speech-mac/">screenshot OCR guide</a> explains what LoudScript captures and keeps.</p>
+            </section>
+
+            <section class="seo-section" aria-labelledby="shortcuts">
+                <h2 id="shortcuts">How do I change the keyboard shortcuts?</h2>
+                <ol class="seo-steps">
+                    <li><strong>Open Settings › Shortcuts.</strong></li>
+                    <li><strong>Click the shortcut</strong> you want to change. The button changes to “Press keys”.</li>
+                    <li><strong>Press the new key combination.</strong> It must include <kbd>⌘</kbd>, <kbd>⌥</kbd>, or <kbd>⌃</kbd>. Press <kbd>Esc</kbd> to cancel.</li>
+                </ol>
+                <figure class="seo-figure seo-figure-narrow">
+                    <a href="/images/mac/help/settings-shortcuts.webp"><img src="/images/mac/help/settings-shortcuts.webp" width="560" height="500" loading="lazy" alt="Settings window, Shortcuts tab, showing Read Shortcut set to Option-Command-R, Play/Pause Shortcut set to Option-Command-P, and a Restore Defaults button."></a>
+                    <figcaption>The default shortcuts.</figcaption>
+                </figure>
+                <ul>
+                    <li><strong>Read Shortcut,</strong> <kbd>⌥</kbd> <kbd>⌘</kbd> <kbd>R</kbd>, reads the current selection from any app.</li>
+                    <li><strong>Play/Pause Shortcut,</strong> <kbd>⌥</kbd> <kbd>⌘</kbd> <kbd>P</kbd>, pauses or resumes speech. When nothing is playing, it works like the Read Shortcut. It reads the selected text, or lets you drag over text on screen.</li>
+                    <li><kbd>Esc</kbd> stops speech while the floating player is on screen. You cannot change this key.</li>
+                </ul>
+                <p>If macOS cannot register a shortcut, another app may already use it. Choose a different one. <strong>Restore Defaults</strong> resets both shortcuts.</p>
+            </section>
+
+            <section class="seo-section" aria-labelledby="speed">
+                <h2 id="speed">How do I change the reading speed?</h2>
+                <p>Click the speed button in the player bar. It shows the current speed, such as 1x. Drag the slider. You can also change it in Settings › Playback › Speaking Rate. Both controls change the same setting.</p>
+                <p>The speed goes from 0.5x to 2x in steps of 0.05. Audio you export uses the same speed.</p>
+                <figure class="seo-figure seo-figure-narrow">
+                    <a href="/images/mac/help/settings-playback-rate.webp"><img src="/images/mac/help/settings-playback-rate.webp" width="560" height="565" loading="lazy" alt="Settings window, Playback tab, showing the Speech Model menu set to Apple System with a Manage Models button, and the Speaking Rate slider at 1x."></a>
+                    <figcaption>Settings › Playback.</figcaption>
+                </figure>
+            </section>
+
+            <section class="seo-section" aria-labelledby="launch-at-login">
+                <h2 id="launch-at-login">How do I open LoudScript at login or change its language?</h2>
+                <p>Both settings are in Settings › General.</p>
+                <ul>
+                    <li><strong>Launch at login</strong> is off by default. Turn it on to open LoudScript when you sign in to your Mac.</li>
+                    <li><strong>Application Language</strong> follows your Mac by default. LoudScript is available in English, Spanish, German, French, Dutch, Simplified Chinese, and Traditional Chinese. After you choose a language, click <strong>Relaunch Now</strong>.</li>
+                </ul>
+                <figure class="seo-figure seo-figure-narrow">
+                    <a href="/images/mac/help/settings-general.webp"><img src="/images/mac/help/settings-general.webp" width="560" height="450" loading="lazy" alt="Settings window, General tab, showing Application Language set to System Default and the Launch at login switch turned off."></a>
+                    <figcaption>Settings › General.</figcaption>
+                </figure>
+            </section>
+
+            <section class="seo-section" aria-labelledby="all-settings">
+                <h2 id="all-settings">Where do I find every other setting?</h2>
+                <div class="seo-table-wrap"><table class="seo-table"><thead><tr><th scope="col">Setting</th><th scope="col">Where</th><th scope="col">Default</th></tr></thead><tbody>
+                    <tr><th scope="row">Light or dark theme</th><td>Settings › Appearance › Theme</td><td>System</td></tr>
+                    <tr><th scope="row">Floating player size</th><td>Click <strong>Use Compact Player</strong> or <strong>Show Text Player</strong> in the floating player</td><td>Text player</td></tr>
+                    <tr><th scope="row">Clear reading history</th><td>Settings › General › Reading History › Clear History…, or History › Clear History…</td><td>History is kept</td></tr>
+                    <tr><th scope="row">Reset listening statistics</th><td>Settings › General › Lifetime Usage › Reset Statistics…</td><td>Statistics are kept</td></tr>
+                    <tr><th scope="row">Export audio</th><td>Export Audio button in the player bar, with Apple System or Supertonic. See the <a href="/text-to-audio-file-mac/">audio file guide</a>.</td><td>Not applicable</td></tr>
+                    <tr><th scope="row">Import a PDF</th><td>File › Import PDF…, or drag the PDF onto the window. See the <a href="/read-pdf-aloud-mac/">PDF guide</a>.</td><td>Not applicable</td></tr>
+                    <tr><th scope="row">Updates</th><td>LoudScript › Check for Updates…</td><td>Checks automatically</td></tr>
+                </tbody></table></div>
+            </section>
+
+            <section class="seo-section seo-callout" aria-labelledby="help-contact">
+                <h2 id="help-contact">Still stuck?</h2>
+                <p>Email <!--email_off--><a href="mailto:hoyelam@kin-yee.com">hoyelam@kin-yee.com</a><!--/email_off-->. Include your LoudScript and macOS versions and what you expected to happen. The <a href="/support.html">support page</a> lists more ways to get help.</p>
+            </section>
+
+            <section class="seo-section" aria-labelledby="help-more"><h2 id="help-more">Related Mac guides</h2><div class="seo-related"><a href="/read-selected-text-aloud-mac/">Read selected text aloud</a><a href="/offline-text-to-speech-mac/">Compare offline voices</a><a href="/read-pdf-aloud-mac/">Read a PDF aloud</a><a href="/text-to-audio-file-mac/">Save speech as an audio file</a></div></section>
+        </article>
+    </main>
+    <footer class="mac-footer"><nav class="mac-footer-links" aria-label="Footer navigation"><a href="/">LoudScript</a><a href="/download/">Download</a><a href="/changelog.html">Changelog</a><a href="/support.html">Support</a><a href="/privacy.html">Privacy</a></nav><p class="mac-footer-credit">Made by <a href="https://hoyelam.com/" rel="author">Hoye Lam</a> · ©2026 Kin-Yee</p></footer>
+</body>
+</html>
