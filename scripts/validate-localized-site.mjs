@@ -583,7 +583,7 @@ assert(releaseEntries.length >= 3, "Changelog lacks the three latest timeline re
 assert(releaseEntries[0].includes(`id="${latestReleaseId}"`), "Changelog latest timeline entry is stale");
 assert(releaseEntries.slice(0, 3).every((entry) => /\sopen(?:\s|>)/.test(entry)), "Changelog must open the three latest releases by default");
 assert(releaseEntries.slice(3).every((entry) => !/\sopen(?:\s|>)/.test(entry)), "Changelog must collapse older releases by default");
-assert(changelog.includes('<script defer src="/js/changelog.js"></script>'), "Changelog lacks its deep-link behavior script");
+assert(/<script defer src="\/js\/changelog\.js(\?v=[0-9a-f]+)?"><\/script>/.test(changelog), "Changelog lacks its deep-link behavior script");
 const currentReleaseYear = releaseYears[0];
 const currentYearReleaseCount = releaseYears.filter((year) => year === currentReleaseYear).length;
 const currentYearReleaseLabel = currentYearReleaseCount === 1 ? "release" : "releases";
