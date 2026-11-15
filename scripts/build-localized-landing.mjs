@@ -183,6 +183,7 @@ for (const locale of locales) {
     .replaceAll("{{pdfGuideUrl}}", `${locale.guidePrefix}/read-pdf-aloud-mac/`)
     .replaceAll("{{chooserGuideUrl}}", `${locale.guidePrefix}/best-text-to-speech-app-for-mac/`)
     .replaceAll("{{platformGuideUrl}}", "/loudscript-mac-vs-ios/")
+    .replaceAll("{{iosAppStoreUrl}}", "https://apps.apple.com/app/loudscript-text-reader/id6747320736")
     .replaceAll("{{ogLocale}}", locale.ogLocale)
     .replaceAll("{{siteLastModified}}", siteLastModified)
     .replaceAll("{{latestMacVersion}}", latestMacRelease.version)
