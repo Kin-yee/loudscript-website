@@ -22,15 +22,16 @@ if (player) {
     };
     let state = "idle";
     let sample = samples[0];
-    let wordSpans = [];
-    let litWord = -1;
+    let sentences = [];
+    let litSentence = -1;
     let frame = 0;
     let flash = 0;
 
-    const lightWord = (index) => {
-        if (index === litWord) return;
-        litWord = index;
-        wordSpans.forEach((span, position) => {
+    // Like the app, the current sentence is lit, not the current word.
+    const lightSentence = (index) => {
+        if (index === litSentence) return;
+        litSentence = index;
+        sentences.forEach(({ span }, position) => {
             span.classList.toggle("is-spoken", position < index);
             span.classList.toggle("is-current", position === index);
         });
@@ -39,8 +40,8 @@ if (player) {
     const followAudio = () => {
         const time = audio.currentTime;
         let index = -1;
-        while (index + 1 < sample.words.length && sample.words[index + 1].start <= time) index++;
-        lightWord(index);
+        while (index + 1 < sentences.length && sentences[index + 1].start <= time) index++;
+        lightSentence(index);
         frame = requestAnimationFrame(followAudio);
     };
 
@@ -51,7 +52,7 @@ if (player) {
         player.dataset.state = state;
         cancelAnimationFrame(frame);
         if (state === "reading") followAudio();
-        else lightWord(-1);
+        else lightSentence(-1);
         if (state === "loading") {
             stopPreview();
             audio.currentTime = 0;
@@ -69,18 +70,23 @@ if (player) {
         audio.src = sample.src;
         quote.lang = sample.lang;
         quoteText.textContent = sample.text;
+        sentences = [];
+        for (const word of sample.words) {
+            const open = sentences.at(-1);
+            if (open && !open.closed) open.to = word.to;
+            else sentences.push({ start: word.start, from: word.from, to: word.to });
+            sentences.at(-1).closed = /[.!?。！？]["”’»)]*$/.test(sample.text.slice(word.from, word.to));
+        }
         let end = 0;
-        wordSpans = [];
-        quoteLit.replaceChildren(...sample.words.flatMap(({ from, to }) => {
-            const span = document.createElement("span");
-            span.className = "ov-word";
-            span.textContent = sample.text.slice(from, to);
-            wordSpans.push(span);
-            const gap = sample.text.slice(end, from);
-            end = to;
-            return [gap, span];
+        quoteLit.replaceChildren(...sentences.flatMap((sentence) => {
+            sentence.span = document.createElement("span");
+            sentence.span.className = "ov-sentence";
+            sentence.span.textContent = sample.text.slice(sentence.from, sentence.to);
+            const gap = sample.text.slice(end, sentence.from);
+            end = sentence.to;
+            return [gap, sentence.span];
         }));
-        litWord = -1;
+        litSentence = -1;
         for (const chip of voices.children) chip.setAttribute("aria-pressed", String(chip.dataset.voice === sample.voice));
     };
 

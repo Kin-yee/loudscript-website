@@ -716,20 +716,20 @@ body::after {
     color: transparent;
 }
 
-.ov-word {
+.ov-sentence {
     margin: 0 -0.2em;
     padding: 0.08em 0.2em;
     border-radius: 0.3em;
-    /* A Chinese word can wrap mid-word; each piece keeps its own rounded box. */
+    /* A sentence wraps across lines; each line keeps its own rounded box. */
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
 }
 
-.ov-word.is-spoken {
+.ov-sentence.is-spoken {
     color: var(--spoken);
 }
 
-.ov-word.is-current {
+.ov-sentence.is-current {
     position: relative;
     background: var(--accent);
     color: var(--on-accent);
