@@ -1,16 +1,18 @@
 // Stages real LoudScript for Mac captures into the home page card images.
 //
-//   node scripts/home-media/render-scenes.mjs --raw /tmp/ls-capture/raw [--only proofread,ocr]
+//   node scripts/home-media/render-scenes.mjs --raw <dir> [--only audience-proofread,guide-ocr]
 //
-// --raw holds stills-light/ and stills-dark/: 2304x1440 Retina window captures
-// of the same seeded history in each appearance. Crops are in window points
-// (1152x720). Scenes are laid out on a 1000x625 stage, rendered by headless
-// Chrome at twice the card width, and encoded with cwebp. Needs Google Chrome, magick and cwebp.
+// <dir> holds stills-light/ and stills-dark/: 2304x1440 Retina window captures
+// of the same seeded history in each appearance, plus overlay-alpha.png (the
+// floating player, 840x486 with alpha) and model-menu-composite.png (the main
+// window with its speech model menu open, 2304x1548). Crops are in points.
+// Scenes are laid out on a 1000x625 stage, rendered by headless Chrome at twice
+// the card width, and encoded with cwebp. Needs Google Chrome, magick and cwebp.
 import { execFileSync } from "node:child_process";
-import { mkdirSync, mkdtempSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, mkdtempSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { parseArgs } from "node:util";
 
 const siteRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
@@ -20,21 +22,24 @@ if (!args.raw) throw new Error("--raw <dir with stills-light/ and stills-dark/> 
 
 const audience = { width: 600 };
 const guide = { width: 480 };
+const windowWidth = 1152;
 
 // kind: "window" keeps the macOS window corners, "panel" is a crop through the
-// UI, "callout" is a crop lifted in front, "float" is a transparent capture.
+// UI, "callout" is a crop lifted in front with a card ring, and "lift" is a
+// crop of something that has its own shape (a menu, the floating player),
+// clipped to its corner radius and shadowed without a ring.
 const scenes = [
   {
     name: "audience-proofread", ...audience, theme: "dark",
     layers: [
-      { kind: "panel", still: "proofread-playing", crop: [250, 150, 670, 570], at: [60, 70, 700] },
-      { kind: "callout", still: "proofread-playing", crop: [940, 170, 200, 86], at: [630, 405, 300] },
+      { kind: "panel", still: "proofread-playing", crop: [250, 128, 670, 592], at: [60, 30, 640] },
+      { kind: "callout", still: "proofread-playing", crop: [1036, 172, 104, 82], at: [600, 347, 150] },
     ],
   },
   {
     name: "audience-study", ...audience, theme: "light",
     layers: [
-      { kind: "panel", still: "pdf-playing", crop: [270, 140, 418, 470], at: [70, 60, 470] },
+      { kind: "panel", still: "pdf-playing", crop: [270, 140, 418, 442], at: [70, 60, 470] },
       { kind: "callout", still: "pdf-playing", crop: [710, 170, 384, 420], at: [500, 110, 440] },
     ],
   },
@@ -48,14 +53,13 @@ const scenes = [
   {
     name: "audience-floating", ...audience, theme: "dark",
     layers: [
-      { kind: "window", still: "lecture-playing", crop: [0, 0, 1152, 720], at: [-40, 40, 900], dim: true },
-      { kind: "float", still: "overlay-alpha", size: [420, 243], at: [330, 190, 600] },
+      { kind: "lift", still: "overlay-alpha", stillWidth: 420, crop: [0, 0, 420, 243], radius: 0, at: [170, 115, 660] },
     ],
   },
   {
     name: "guide-selected-text", ...guide, theme: "dark",
     layers: [
-      { kind: "panel", still: "trees-overview", crop: [250, 60, 900, 420], at: [60, 90, 820] },
+      { kind: "panel", still: "trees-overview", crop: [250, 60, 900, 402], at: [60, 90, 820] },
       { kind: "callout", still: "trees-overview", crop: [940, 264, 200, 108], at: [600, 360, 340] },
     ],
   },
@@ -69,14 +73,15 @@ const scenes = [
   {
     name: "guide-offline-voices", ...guide, theme: "dark",
     layers: [
-      { kind: "panel", still: "model-menu-composite", crop: [236, 562, 700, 212], at: [30, 130, 940] },
+      { kind: "panel", still: "model-menu-composite", crop: [236, 560, 684, 160], at: [30, 160, 940] },
+      { kind: "lift", still: "model-menu-composite", crop: [691, 609, 175, 165], radius: 9, at: [610, 215, 290] },
     ],
   },
   {
     name: "guide-pdf", ...guide, theme: "light",
     layers: [
-      { kind: "panel", still: "pdf-playing", crop: [270, 140, 418, 470], at: [60, 70, 440] },
-      { kind: "callout", still: "pdf-playing", crop: [710, 170, 384, 420], at: [480, 120, 460] },
+      { kind: "panel", still: "pdf-playing", crop: [700, 145, 400, 450], at: [70, 40, 480] },
+      { kind: "callout", still: "pdf-playing", crop: [8, 458, 214, 80], at: [520, 240, 420] },
     ],
   },
   {
@@ -113,18 +118,19 @@ const scenes = [
 
 const stage = { width: 1000, height: 625 };
 
+function stillPath(layer, theme) {
+  return path.resolve(args.raw, `stills-${theme}`, `${layer.still}.png`);
+}
+
 function layerHtml(layer, theme) {
-  const src = `file://${path.resolve(args.raw, `stills-${theme}`, `${layer.still}.png`)}`;
   const [left, top, width] = layer.at;
-  if (layer.kind === "float") {
-    const height = (width * layer.size[1]) / layer.size[0];
-    return `<img class="float" src="${src}" style="left:${left}px;top:${top}px;width:${width}px;height:${height}px">`;
-  }
   const [x, y, w, h] = layer.crop;
   const scale = width / w;
-  const classes = ["layer", layer.kind, layer.tilt ? "tilt" : "", layer.dim ? "dim" : ""].join(" ");
-  return `<div class="${classes}" style="left:${left}px;top:${top}px;width:${width}px;height:${h * scale}px;--r:${layer.kind === "window" ? 13 * scale : 0}px">`
-    + `<img src="${src}" style="width:${1152 * scale}px;left:${-x * scale}px;top:${-y * scale}px"></div>`;
+  const radius = layer.kind === "window" ? 13 : layer.radius;
+  const classes = ["layer", layer.kind, layer.tilt ? "tilt" : ""].join(" ");
+  const style = `left:${left}px;top:${top}px;width:${width}px;height:${h * scale}px${radius === undefined ? "" : `;border-radius:${radius * scale}px`}`;
+  const image = `width:${(layer.stillWidth ?? windowWidth) * scale}px;left:${-x * scale}px;top:${-y * scale}px`;
+  return `<div class="${classes}" style="${style}"><img src="${pathToFileURL(stillPath(layer, theme))}" style="${image}"></div>`;
 }
 
 function sceneHtml(scene) {
@@ -141,28 +147,32 @@ function sceneHtml(scene) {
   .dark::after { color: #ffffff; }
   .layer { position: absolute; overflow: hidden; border-radius: 22px; }
   .layer img { position: absolute; max-width: none; }
-  .window { border-radius: var(--r); }
-  .light .layer { box-shadow: 0 0 0 1px rgba(60, 40, 20, 0.10), 0 2px 4px rgba(60, 40, 20, 0.06), 0 24px 48px -12px rgba(80, 50, 20, 0.28); }
-  .dark .layer { box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.10), 0 2px 4px rgba(0, 0, 0, 0.3), 0 28px 60px -12px rgba(0, 0, 0, 0.7); }
+  .light .panel, .light .window { box-shadow: 0 0 0 1px rgba(60, 40, 20, 0.10), 0 2px 4px rgba(60, 40, 20, 0.06), 0 24px 48px -12px rgba(80, 50, 20, 0.28); }
+  .dark .panel, .dark .window { box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.10), 0 2px 4px rgba(0, 0, 0, 0.3), 0 28px 60px -12px rgba(0, 0, 0, 0.7); }
   .callout { border-radius: 18px; }
   .light .callout { box-shadow: 0 0 0 1px rgba(60, 40, 20, 0.12), 0 6px 12px rgba(60, 40, 20, 0.10), 0 36px 70px -16px rgba(80, 50, 20, 0.45); }
   .dark .callout { box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.16), 0 6px 12px rgba(0, 0, 0, 0.35), 0 40px 80px -16px rgba(0, 0, 0, 0.85); }
+  .lift { overflow: hidden; filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.55)) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3)); }
   .tilt { transform: perspective(1800px) rotateY(-9deg) rotateX(5deg) rotateZ(1deg); transform-origin: 40% 50%; }
-  .dim { filter: blur(3px) brightness(0.55) saturate(0.8); }
-  .float { position: absolute; filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 0.5px rgba(255, 255, 255, 0.4)); }
 </style><div class="scene ${scene.theme}">${scene.layers.map((layer) => layerHtml(layer, scene.theme)).join("")}</div>`;
 }
+
+const only = args.only?.split(",");
+const unknown = only?.filter((name) => !scenes.some((scene) => scene.name === name)) ?? [];
+if (unknown.length > 0) throw new Error(`unknown scene: ${unknown.join(", ")}`);
+const selected = scenes.filter((scene) => !only || only.includes(scene.name));
+const missing = selected.flatMap((scene) => scene.layers.map((layer) => stillPath(layer, scene.theme))).filter((file) => !existsSync(file));
+if (missing.length > 0) throw new Error(`missing captures:\n${[...new Set(missing)].join("\n")}`);
 
 const work = mkdtempSync(path.join(tmpdir(), "home-scenes-"));
 const outDir = path.join(siteRoot, "images", "home");
 mkdirSync(outDir, { recursive: true });
-const only = args.only?.split(",");
-for (const scene of scenes.filter((s) => !only || only.some((name) => s.name.endsWith(name)))) {
+for (const scene of selected) {
   const htmlPath = path.join(work, `${scene.name}.html`);
   const pngPath = path.join(work, `${scene.name}.png`);
   writeFileSync(htmlPath, sceneHtml(scene));
-  execFileSync(chrome, ["--headless=new", "--disable-gpu", "--hide-scrollbars", `--force-device-scale-factor=${(2 * scene.width) / stage.width}`, "--allow-file-access-from-files",
-    `--window-size=${stage.width},${stage.height}`, `--screenshot=${pngPath}`, `file://${htmlPath}`], { stdio: "ignore" });
+  execFileSync(chrome, ["--headless=new", "--disable-gpu", "--hide-scrollbars", `--force-device-scale-factor=${(2 * scene.width) / stage.width}`,
+    "--allow-file-access-from-files", `--window-size=${stage.width},${stage.height}`, `--screenshot=${pngPath}`, pathToFileURL(htmlPath).href], { stdio: "ignore" });
   const smallPath = path.join(work, `${scene.name}-${scene.width}.png`);
   execFileSync("magick", [pngPath, "-filter", "Lanczos", "-resize", "50%", smallPath]);
   for (const [source, suffix] of [[pngPath, ""], [smallPath, `-${scene.width}`]]) {
