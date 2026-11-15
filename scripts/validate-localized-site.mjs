@@ -100,7 +100,8 @@ const firstPartySeoPages = [
   { route: "elevenreader-mac", schemaType: "TechArticle", titlePhrase: "ElevenReader Mac App", lastModified: "2026-11-14" },
   { route: "loudscript-mac-vs-ios", schemaType: "TechArticle", titlePhrase: "LoudScript for Mac vs iPhone and iPad", lastModified: "2026-08-20" },
   { route: "kokoro-tts-mac", schemaType: "TechArticle", titlePhrase: "Kokoro TTS on Mac", lastModified: "2026-11-14" },
-  { route: "text-to-audio-file-mac", schemaType: "HowTo", titlePhrase: "Save Text to Speech as an Audio File on Mac", lastModified: "2026-11-14" }
+  { route: "text-to-audio-file-mac", schemaType: "HowTo", titlePhrase: "Save Text to Speech as an Audio File on Mac", lastModified: "2026-11-14" },
+  { route: "help", schemaType: "TechArticle", titlePhrase: "LoudScript for Mac Help", lastModified: "2026-11-15" }
 ];
 const allOgLocales = localeSpecs.map(({ ogLocale }) => ogLocale);
 

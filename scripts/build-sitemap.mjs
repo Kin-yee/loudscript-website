@@ -63,7 +63,8 @@ const staticPages = [
   { route: "text-to-audio-file-mac/", lastModified: "2026-11-14" },
   { route: "privacy.html", lastModified: "2026-05-21" },
   { route: "tos.html", lastModified: "2026-05-21" },
-  { route: "support.html", lastModified: "2026-11-14" },
+  { route: "help/", lastModified: "2026-11-15" },
+  { route: "support.html", lastModified: "2026-11-15" },
   { route: "changelog.html", lastModified: changelogLastModified }
 ];
 
