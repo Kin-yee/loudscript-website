@@ -4,6 +4,7 @@
     <link rel="preconnect" href="https://plausible.io" crossorigin>
     <script defer data-domain="loudscript.app" src="https://plausible.io/js/script.outbound-links.js"></script>
     <script defer src="/js/language-menu.js"></script>
+    <script defer src="/js/home-demo.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -238,29 +239,29 @@
         </section>
 
         <section class="mac-features" aria-label="Wichtigste Funktionen">
-            <article class="mac-feature-card mac-reveal">
+            <article class="mac-feature-card">
                 <span class="mac-feature-label">PDF vorlesen</span>
                 <h2>Hör zu und behalte die Seite im Blick.</h2>
                 <p>Importiere die benötigten Seiten und folge dem gesprochenen Text im Originaldokument.</p>
             </article>
-            <article class="mac-feature-card mac-reveal">
+            <article class="mac-feature-card">
                 <span class="mac-feature-label">Bildschirm-OCR</span>
                 <h2>Lies Text vor, der sich nicht auswählen lässt.</h2>
                 <p>Erfasse Text aus Bildern und Apps und lass ihn dir vorlesen.</p>
             </article>
-            <article class="mac-feature-card mac-reveal">
+            <article class="mac-feature-card">
                 <span class="mac-feature-label">Fünf Sprach-Engines</span>
                 <h2>Wähle die Stimme, die dir gefällt.</h2>
                 <p>Nutze Apple-Stimmen oder lade Supertonic, Kokoro, PocketTTS oder Phonon herunter.</p>
             </article>
-            <article class="mac-feature-card mac-reveal">
+            <article class="mac-feature-card">
                 <span class="mac-feature-label">Wiedergabe im Hintergrund</span>
                 <h2>Hör weiter, während du arbeitest.</h2>
                 <p>Steuere die Wiedergabe über einen kleinen schwebenden Player, ohne das Fenster zu wechseln.</p>
             </article>
         </section>
 
-        <section class="mac-detail mac-reveal" aria-label="Funktion zum Vorlesen von PDFs">
+        <section class="mac-detail" aria-label="Funktion zum Vorlesen von PDFs">
             <div class="mac-detail-text">
                 <span class="mac-section-label">PDF vorlesen</span>
                 <h2>Text und Dokument bleiben zusammen.</h2>
@@ -283,7 +284,7 @@
             </div>
         </section>
 
-        <section class="mac-detail mac-detail-reverse mac-reveal" aria-label="Stimm- und Wiedergabeeinstellungen">
+        <section class="mac-detail mac-detail-reverse" aria-label="Stimm- und Wiedergabeeinstellungen">
             <div class="mac-detail-text">
                 <span class="mac-section-label">Stimme & Wiedergabe</span>
                 <h2>Bestimme, wie LoudScript klingt.</h2>
@@ -307,7 +308,7 @@
             </div>
         </section>
 
-        <section class="mac-detail mac-reveal" aria-label="Funktion für den Leseverlauf">
+        <section class="mac-detail" aria-label="Funktion für den Leseverlauf">
             <div class="mac-detail-text">
                 <span class="mac-section-label">Leseverlauf</span>
                 <h2>Kehre zu allem zurück, was du gehört hast.</h2>
@@ -330,96 +331,125 @@
             </div>
         </section>
 
-        <section class="mac-workflow mac-reveal" aria-label="So funktioniert LoudScript für Mac">
+        <section class="mac-workflow" aria-label="So funktioniert LoudScript für Mac">
             <span class="mac-section-label">So funktioniert es</span>
             <h2>In drei Schritten zum Zuhören.</h2>
-            <div class="mac-steps">
-                <article class="mac-step-card mac-reveal">
-                    <span class="mac-step-num">01</span>
-                    <h3>Text hinzufügen</h3>
-                    <p>Wähle Text aus, erfasse einen Bildschirmbereich, importiere ein PDF oder tippe direkt in LoudScript.</p>
-                </article>
-                <article class="mac-step-card mac-reveal">
-                    <span class="mac-step-num">02</span>
-                    <h3>Zuhören</h3>
-                    <p>Wähle eine Stimme und drücke auf Wiedergabe. Der aktuelle Satz bleibt hervorgehoben.</p>
-                </article>
-                <article class="mac-step-card mac-reveal">
-                    <span class="mac-step-num">03</span>
-                    <h3>Später zurückkehren</h3>
-                    <p>Finde frühere Texte im Verlauf, um sie erneut abzuspielen oder zu kopieren.</p>
-                </article>
+            <div class="mac-demo">
+                <figure class="mac-demo-media">
+                    <picture>
+                        <source media="(max-width: 600px)" srcset="/images/home/how-it-works-poster-720.webp">
+                        <img src="/images/home/how-it-works-poster.webp" alt="LoudScript für Mac liest Text vor und hebt den aktuellen Satz hervor" width="1440" height="900" loading="lazy" decoding="async">
+                    </picture>
+                    <video muted loop playsinline preload="none" aria-hidden="true">
+                        <source src="/images/home/how-it-works-720.mp4" type="video/mp4" media="(max-width: 600px)">
+                        <source src="/images/home/how-it-works.mp4" type="video/mp4">
+                    </video>
+                    <button type="button" class="mac-demo-toggle" data-label-play="Demovideo abspielen" data-label-pause="Demovideo pausieren" aria-label="Demovideo abspielen" hidden>
+                        <svg class="mac-demo-icon-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9l7.5-4.5z"/></svg>
+                        <svg class="mac-demo-icon-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 3h2.5v10H4.5zM9 3h2.5v10H9z"/></svg>
+                    </button>
+                </figure>
+                <div class="mac-steps">
+                    <article class="mac-step-card" data-chapter-start="0" data-chapter-end="4.13">
+                        <span class="mac-step-num">01</span>
+                        <h3>Text hinzufügen</h3>
+                        <p>Wähle Text aus, erfasse einen Bildschirmbereich, importiere ein PDF oder tippe direkt in LoudScript.</p>
+                    </article>
+                    <article class="mac-step-card" data-chapter-start="4.13" data-chapter-end="13.3">
+                        <span class="mac-step-num">02</span>
+                        <h3>Zuhören</h3>
+                        <p>Wähle eine Stimme und drücke auf Wiedergabe. Der aktuelle Satz bleibt hervorgehoben.</p>
+                    </article>
+                    <article class="mac-step-card" data-chapter-start="13.3" data-chapter-end="16.5">
+                        <span class="mac-step-num">03</span>
+                        <h3>Später zurückkehren</h3>
+                        <p>Finde frühere Texte im Verlauf, um sie erneut abzuspielen oder zu kopieren.</p>
+                    </article>
+                </div>
             </div>
         </section>
 
-        <section class="mac-audiences mac-reveal" aria-labelledby="audiences-title">
+        <section class="mac-audiences" aria-labelledby="audiences-title">
             <span class="mac-section-label">Für den Lesealltag gemacht</span>
             <h2 id="audiences-title">Eine Vorlese-App für Mac – für Arbeit, Studium und Barrierefreiheit.</h2>
             <div class="mac-audience-grid">
                 <article class="mac-audience-card">
+                    <img class="mac-card-shot" src="/images/home/audience-proofread.webp" srcset="/images/home/audience-proofread-600.webp 600w, /images/home/audience-proofread.webp 1200w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 1100px) calc(50vw - 82px), 470px" alt="LoudScript liest einen Entwurf vor und hebt den aktuellen Satz hervor" width="1200" height="750" loading="lazy" decoding="async">
                     <h3>Korrekturlesen mit den Ohren</h3>
                     <p>Höre Entwürfe, E-Mails und Skripte an, um fehlende Wörter, holprige Formulierungen und Wiederholungen zu entdecken.</p>
                 </article>
                 <article class="mac-audience-card">
+                    <img class="mac-card-shot" src="/images/home/audience-study.webp" srcset="/images/home/audience-study-600.webp 600w, /images/home/audience-study.webp 1200w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 1100px) calc(50vw - 82px), 470px" alt="LoudScript liest Lernmaterial vor und hebt den aktuellen Abschnitt hervor" width="1200" height="750" loading="lazy" decoding="async">
                     <h3>Lernen, ohne auf den Bildschirm zu starren</h3>
                     <p>Höre ausgewählte Passagen, während du Notizen machst, Lernstoff wiederholst oder deinen Augen eine Pause gönnst.</p>
                 </article>
                 <article class="mac-audience-card">
+                    <img class="mac-card-shot" src="/images/home/audience-ocr.webp" srcset="/images/home/audience-ocr-600.webp 600w, /images/home/audience-ocr.webp 1200w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 1100px) calc(50vw - 82px), 470px" alt="LoudScript liest per Bildschirm-OCR erfassten Text vor, mit Bildschirm-OCR als Auslöser" width="1200" height="750" loading="lazy" decoding="async">
                     <h3>Nicht auswählbaren Text vorlesen</h3>
                     <p>Nutze Bildschirm-OCR, wenn sich Wörter in einem Bild, PDF-Viewer oder einer Oberfläche nicht auswählen lassen.</p>
                 </article>
                 <article class="mac-audience-card">
+                    <img class="mac-card-shot" src="/images/home/audience-floating.webp" srcset="/images/home/audience-floating-600.webp 600w, /images/home/audience-floating.webp 1200w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 1100px) calc(50vw - 82px), 470px" alt="Der schwebende Player von LoudScript liest ein Rezept vor und hebt den aktuellen Satz hervor" width="1200" height="750" loading="lazy" decoding="async">
                     <h3>Weiterarbeiten und zuhören</h3>
                     <p>Der schwebende Player bleibt über deinen Fenstern, während LoudScript im Hintergrund vorliest.</p>
                 </article>
             </div>
         </section>
 
-        <section class="mac-guides mac-reveal" id="guides" aria-labelledby="guides-title">
+        <section class="mac-guides" id="guides" aria-labelledby="guides-title">
             <span class="mac-section-label">Anleitungen zur Sprachausgabe auf dem Mac</span>
             <h2 id="guides-title">Wähle die passende Vorlesemethode.</h2>
             <div class="mac-guide-grid">
                 <a class="mac-guide-card" href="/de/read-selected-text-aloud-mac/" hreflang="de">
+                    <img class="mac-card-shot" src="/images/home/guide-selected-text.webp" srcset="/images/home/guide-selected-text-480.webp 480w, /images/home/guide-selected-text.webp 960w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 900px) calc(50vw - 82px), (max-width: 1100px) calc(33vw - 76px), 292px" alt="" width="960" height="600" loading="lazy" decoding="async">
                     <span>Ausgewählter Text</span>
                     <h3>Ausgewählten Text auf dem Mac vorlesen</h3>
                     <p>Nutze in Browsern, Editoren, E-Mail- und anderen Mac-Apps das Menü „Dienste“ oder Option-Command-R.</p>
                 </a>
                 <a class="mac-guide-card" href="/de/screenshot-ocr-text-to-speech-mac/" hreflang="de">
+                    <img class="mac-card-shot" src="/images/home/guide-ocr.webp" srcset="/images/home/guide-ocr-480.webp 480w, /images/home/guide-ocr.webp 960w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 900px) calc(50vw - 82px), (max-width: 1100px) calc(33vw - 76px), 292px" alt="" width="960" height="600" loading="lazy" decoding="async">
                     <span>Bildschirm-OCR</span>
                     <h3>Bildschirmtext in Sprache umwandeln</h3>
                     <p>Erfasse Wörter, die sich nicht auswählen lassen, erkenne sie mit macOS OCR und höre sie an.</p>
                 </a>
                 <a class="mac-guide-card" href="/de/offline-text-to-speech-mac/" hreflang="de">
+                    <img class="mac-card-shot" src="/images/home/guide-offline-voices.webp" srcset="/images/home/guide-offline-voices-480.webp 480w, /images/home/guide-offline-voices.webp 960w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 900px) calc(50vw - 82px), (max-width: 1100px) calc(33vw - 76px), 292px" alt="" width="960" height="600" loading="lazy" decoding="async">
                     <span>Lokale Stimmen</span>
                     <h3>Offline-Text-to-Speech-Engines vergleichen</h3>
                     <p>Vergleiche unterstützte Macs, Sprachen, Downloadgrößen und Stimmen.</p>
                 </a>
                 <a class="mac-guide-card" href="/de/read-pdf-aloud-mac/" hreflang="de">
+                    <img class="mac-card-shot" src="/images/home/guide-pdf.webp" srcset="/images/home/guide-pdf-480.webp 480w, /images/home/guide-pdf.webp 960w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 900px) calc(50vw - 82px), (max-width: 1100px) calc(33vw - 76px), 292px" alt="" width="960" height="600" loading="lazy" decoding="async">
                     <span>PDF-Vorlesen</span>
                     <h3>PDF auf dem Mac vorlesen</h3>
                     <p>Importiere bis zu 50 Seiten und folge der synchronen Hervorhebung im Originaldokument.</p>
                 </a>
                 <a class="mac-guide-card" href="/de/best-text-to-speech-app-for-mac/" hreflang="de">
+                    <img class="mac-card-shot" src="/images/home/guide-chooser.webp" srcset="/images/home/guide-chooser-480.webp 480w, /images/home/guide-chooser.webp 960w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 900px) calc(50vw - 82px), (max-width: 1100px) calc(33vw - 76px), 292px" alt="" width="960" height="600" loading="lazy" decoding="async">
                     <span>App-Auswahl</span>
                     <h3>Text-to-Speech-App für den Mac auswählen</h3>
                     <p>Vergleiche Arbeitsabläufe, Datenschutzgrenzen, Kompatibilität und Einschränkungen.</p>
                 </a>
                 <a class="mac-guide-card" href="/text-to-audio-file-mac/" hreflang="en">
+                    <img class="mac-card-shot" src="/images/home/guide-audio-file.webp" srcset="/images/home/guide-audio-file-480.webp 480w, /images/home/guide-audio-file.webp 960w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 900px) calc(50vw - 82px), (max-width: 1100px) calc(33vw - 76px), 292px" alt="" width="960" height="600" loading="lazy" decoding="async">
                     <span>Audiodateien <small class="mac-link-language" aria-label="Englische Seite">EN</small></span>
                     <h3>Text als Audiodatei sichern</h3>
                     <p>Exportiere WAV-Dateien mit Apple- und Supertonic-Stimmen oder nutze den macOS-Befehl say.</p>
                 </a>
                 <a class="mac-guide-card" href="/kokoro-tts-mac/" hreflang="en">
+                    <img class="mac-card-shot" src="/images/home/guide-kokoro.webp" srcset="/images/home/guide-kokoro-480.webp 480w, /images/home/guide-kokoro.webp 960w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 900px) calc(50vw - 82px), (max-width: 1100px) calc(33vw - 76px), 292px" alt="" width="960" height="600" loading="lazy" decoding="async">
                     <span>Kokoro-Stimmen <small class="mac-link-language" aria-label="Englische Seite">EN</small></span>
                     <h3>Kokoro-Sprachausgabe auf dem Mac nutzen</h3>
                     <p>Lade Kokoro direkt in LoudScript herunter und nutze es ohne Python auf Macs mit Apple-Chip.</p>
                 </a>
                 <a class="mac-guide-card" href="/speechify-alternative-mac/" hreflang="en">
+                    <img class="mac-card-shot" src="/images/home/guide-speechify.webp" srcset="/images/home/guide-speechify-480.webp 480w, /images/home/guide-speechify.webp 960w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 900px) calc(50vw - 82px), (max-width: 1100px) calc(33vw - 76px), 292px" alt="" width="960" height="600" loading="lazy" decoding="async">
                     <span>Speechify-Alternative <small class="mac-link-language" aria-label="Englische Seite">EN</small></span>
                     <h3>Kostenlose Speechify-Alternative für den Mac</h3>
                     <p>Vergleiche Preis, Offline-Nutzung, ausgewählten Text, PDFs und Audioexport.</p>
                 </a>
                 <a class="mac-guide-card" href="/elevenreader-mac/" hreflang="en">
+                    <img class="mac-card-shot" src="/images/home/guide-elevenreader.webp" srcset="/images/home/guide-elevenreader-480.webp 480w, /images/home/guide-elevenreader.webp 960w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 900px) calc(50vw - 82px), (max-width: 1100px) calc(33vw - 76px), 292px" alt="" width="960" height="600" loading="lazy" decoding="async">
                     <span>ElevenReader auf dem Mac <small class="mac-link-language" aria-label="Englische Seite">EN</small></span>
                     <h3>ElevenReader auf dem Mac nutzen</h3>
                     <p>Sieh dir an, was ElevenReader heute auf dem Mac bietet und wann eine native App besser passt.</p>
@@ -427,7 +457,7 @@
             </div>
         </section>
 
-        <section class="mac-faq mac-reveal" aria-labelledby="faq-title">
+        <section class="mac-faq" aria-labelledby="faq-title">
             <span class="mac-section-label">Häufig gestellte Fragen</span>
             <h2 id="faq-title">Häufige Fragen zu LoudScript für Mac</h2>
             <div class="mac-faq-list">
@@ -458,7 +488,7 @@
             </div>
         </section>
 
-        <section class="mac-final-cta mac-reveal">
+        <section class="mac-final-cta">
             <h2>Hör dir Texte auf deinem Mac an.</h2>
             <p>Kostenloser, notarisierter Direktdownload. Kein App Store-Konto erforderlich.</p>
             <div class="mac-cta-group" role="group" aria-label="LoudScript für Mac laden">
@@ -487,23 +517,5 @@
         </p>
     </footer>
 
-    <script>
-    (function() {
-        var els = document.querySelectorAll('.mac-reveal');
-        if (!('IntersectionObserver' in window)) {
-            els.forEach(function(el) { el.classList.add('mac-visible'); });
-            return;
-        }
-        var observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('mac-visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-        els.forEach(function(el) { observer.observe(el); });
-    })();
-    </script>
 </body>
 </html>

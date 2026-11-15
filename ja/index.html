@@ -4,6 +4,7 @@
     <link rel="preconnect" href="https://plausible.io" crossorigin>
     <script defer data-domain="loudscript.app" src="https://plausible.io/js/script.outbound-links.js"></script>
     <script defer src="/js/language-menu.js"></script>
+    <script defer src="/js/home-demo.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -238,29 +239,29 @@
         </section>
 
         <section class="mac-features" aria-label="主な機能">
-            <article class="mac-feature-card mac-reveal">
+            <article class="mac-feature-card">
                 <span class="mac-feature-label">PDF読み上げ</span>
                 <h2>ページを見ながら聞けます。</h2>
                 <p>必要なページだけを読み込み、元の文書上で読み上げ箇所を追えます。</p>
             </article>
-            <article class="mac-feature-card mac-reveal">
+            <article class="mac-feature-card">
                 <span class="mac-feature-label">画面OCR</span>
                 <h2>選択できない文字も読み上げます。</h2>
                 <p>画像やアプリから文字を取り込み、そのまま音声で聞けます。</p>
             </article>
-            <article class="mac-feature-card mac-reveal">
+            <article class="mac-feature-card">
                 <span class="mac-feature-label">5つの音声エンジン</span>
                 <h2>好みの声を選べます。</h2>
                 <p>Appleの声を使うか、Supertonic、Kokoro、PocketTTS、Phononをダウンロードできます。</p>
             </article>
-            <article class="mac-feature-card mac-reveal">
+            <article class="mac-feature-card">
                 <span class="mac-feature-label">バックグラウンド再生</span>
                 <h2>作業を続けながら聞けます。</h2>
                 <p>ウインドウを切り替えず、小さなフローティングプレーヤーから再生を操作できます。</p>
             </article>
         </section>
 
-        <section class="mac-detail mac-reveal" aria-label="PDF読み上げ機能">
+        <section class="mac-detail" aria-label="PDF読み上げ機能">
             <div class="mac-detail-text">
                 <span class="mac-section-label">PDF読み上げ</span>
                 <h2>テキストと文書を並べて確認。</h2>
@@ -283,7 +284,7 @@
             </div>
         </section>
 
-        <section class="mac-detail mac-detail-reverse mac-reveal" aria-label="音声と再生の設定">
+        <section class="mac-detail mac-detail-reverse" aria-label="音声と再生の設定">
             <div class="mac-detail-text">
                 <span class="mac-section-label">音声と再生</span>
                 <h2>LoudScriptの声をカスタマイズ。</h2>
@@ -307,7 +308,7 @@
             </div>
         </section>
 
-        <section class="mac-detail mac-reveal" aria-label="読み上げ履歴機能">
+        <section class="mac-detail" aria-label="読み上げ履歴機能">
             <div class="mac-detail-text">
                 <span class="mac-section-label">読み上げ履歴</span>
                 <h2>以前聞いた内容にすぐ戻れます。</h2>
@@ -330,96 +331,125 @@
             </div>
         </section>
 
-        <section class="mac-workflow mac-reveal" aria-label="Mac版LoudScriptの使い方">
+        <section class="mac-workflow" aria-label="Mac版LoudScriptの使い方">
             <span class="mac-section-label">使い方</span>
             <h2>3ステップで読み上げ。</h2>
-            <div class="mac-steps">
-                <article class="mac-step-card mac-reveal">
-                    <span class="mac-step-num">01</span>
-                    <h3>テキストを追加</h3>
-                    <p>テキストを選択する、画面を取り込む、PDFを読み込む、またはLoudScriptに直接入力します。</p>
-                </article>
-                <article class="mac-step-card mac-reveal">
-                    <span class="mac-step-num">02</span>
-                    <h3>聞く</h3>
-                    <p>声を選んで再生を押します。読み上げ中の文は常にハイライトされます。</p>
-                </article>
-                <article class="mac-step-card mac-reveal">
-                    <span class="mac-step-num">03</span>
-                    <h3>あとで聞き直す</h3>
-                    <p>履歴から以前の読み上げを探して、再生またはコピーできます。</p>
-                </article>
+            <div class="mac-demo">
+                <figure class="mac-demo-media">
+                    <picture>
+                        <source media="(max-width: 600px)" srcset="/images/home/how-it-works-poster-720.webp">
+                        <img src="/images/home/how-it-works-poster.webp" alt="現在の文をハイライトしながらテキストを読み上げるMac版LoudScript" width="1440" height="900" loading="lazy" decoding="async">
+                    </picture>
+                    <video muted loop playsinline preload="none" aria-hidden="true">
+                        <source src="/images/home/how-it-works-720.mp4" type="video/mp4" media="(max-width: 600px)">
+                        <source src="/images/home/how-it-works.mp4" type="video/mp4">
+                    </video>
+                    <button type="button" class="mac-demo-toggle" data-label-play="デモビデオを再生" data-label-pause="デモビデオを一時停止" aria-label="デモビデオを再生" hidden>
+                        <svg class="mac-demo-icon-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9l7.5-4.5z"/></svg>
+                        <svg class="mac-demo-icon-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 3h2.5v10H4.5zM9 3h2.5v10H9z"/></svg>
+                    </button>
+                </figure>
+                <div class="mac-steps">
+                    <article class="mac-step-card" data-chapter-start="0" data-chapter-end="4.13">
+                        <span class="mac-step-num">01</span>
+                        <h3>テキストを追加</h3>
+                        <p>テキストを選択する、画面を取り込む、PDFを読み込む、またはLoudScriptに直接入力します。</p>
+                    </article>
+                    <article class="mac-step-card" data-chapter-start="4.13" data-chapter-end="13.3">
+                        <span class="mac-step-num">02</span>
+                        <h3>聞く</h3>
+                        <p>声を選んで再生を押します。読み上げ中の文は常にハイライトされます。</p>
+                    </article>
+                    <article class="mac-step-card" data-chapter-start="13.3" data-chapter-end="16.5">
+                        <span class="mac-step-num">03</span>
+                        <h3>あとで聞き直す</h3>
+                        <p>履歴から以前の読み上げを探して、再生またはコピーできます。</p>
+                    </article>
+                </div>
             </div>
         </section>
 
-        <section class="mac-audiences mac-reveal" aria-labelledby="audiences-title">
+        <section class="mac-audiences" aria-labelledby="audiences-title">
             <span class="mac-section-label">日々の読書を快適に</span>
             <h2 id="audiences-title">仕事、学習、アクセシビリティに役立つMac向けテキストリーダー。</h2>
             <div class="mac-audience-grid">
                 <article class="mac-audience-card">
+                    <img class="mac-card-shot" src="/images/home/audience-proofread.webp" srcset="/images/home/audience-proofread-600.webp 600w, /images/home/audience-proofread.webp 1200w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 1100px) calc(50vw - 82px), 470px" alt="現在の文をハイライトしながら下書きを読み上げるLoudScript" width="1200" height="750" loading="lazy" decoding="async">
                     <h3>耳で文章を校正</h3>
                     <p>下書き、メール、台本を聞いて、抜けた単語、不自然な表現、繰り返しを見つけられます。</p>
                 </article>
                 <article class="mac-audience-card">
+                    <img class="mac-card-shot" src="/images/home/audience-study.webp" srcset="/images/home/audience-study-600.webp 600w, /images/home/audience-study.webp 1200w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 1100px) calc(50vw - 82px), 470px" alt="現在の箇所をハイライトしながら学習資料を読み上げるLoudScript" width="1200" height="750" loading="lazy" decoding="async">
                     <h3>画面を見続けずに学習</h3>
                     <p>メモを取るとき、復習するとき、目を休めるときに、選択した文章を聞けます。</p>
                 </article>
                 <article class="mac-audience-card">
+                    <img class="mac-card-shot" src="/images/home/audience-ocr.webp" srcset="/images/home/audience-ocr-600.webp 600w, /images/home/audience-ocr.webp 1200w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 1100px) calc(50vw - 82px), 470px" alt="スクリーンショットOCRで取り込んだテキストを読み上げ、トリガとしてスクリーンショットOCRを表示するLoudScript" width="1200" height="750" loading="lazy" decoding="async">
                     <h3>選択できない文字を読む</h3>
                     <p>画像、PDFビューア、インターフェイス上で文字を選択できない場合は、スクリーンショットOCRを使えます。</p>
                 </article>
                 <article class="mac-audience-card">
+                    <img class="mac-card-shot" src="/images/home/audience-floating.webp" srcset="/images/home/audience-floating-600.webp 600w, /images/home/audience-floating.webp 1200w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 1100px) calc(50vw - 82px), 470px" alt="レシピを読み上げ、現在の文をハイライトするLoudScriptのフローティングプレーヤー" width="1200" height="750" loading="lazy" decoding="async">
                     <h3>聞きながら作業を継続</h3>
                     <p>LoudScriptがバックグラウンドで読み上げている間、フローティングプレーヤーをほかのウインドウの上に表示できます。</p>
                 </article>
             </div>
         </section>
 
-        <section class="mac-guides mac-reveal" id="guides" aria-labelledby="guides-title">
+        <section class="mac-guides" id="guides" aria-labelledby="guides-title">
             <span class="mac-section-label">Macテキスト読み上げガイド</span>
             <h2 id="guides-title">目的に合う読み上げ方法を選べます。</h2>
             <div class="mac-guide-grid">
                 <a class="mac-guide-card" href="/ja/read-selected-text-aloud-mac/" hreflang="ja">
+                    <img class="mac-card-shot" src="/images/home/guide-selected-text.webp" srcset="/images/home/guide-selected-text-480.webp 480w, /images/home/guide-selected-text.webp 960w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 900px) calc(50vw - 82px), (max-width: 1100px) calc(33vw - 76px), 292px" alt="" width="960" height="600" loading="lazy" decoding="async">
                     <span>選択したテキスト</span>
                     <h3>Macで選択したテキストを読み上げる</h3>
                     <p>ブラウザ、エディタ、メールなどのMacアプリで、サービスメニューまたはOption-Command-Rを使います。</p>
                 </a>
                 <a class="mac-guide-card" href="/ja/screenshot-ocr-text-to-speech-mac/" hreflang="ja">
+                    <img class="mac-card-shot" src="/images/home/guide-ocr.webp" srcset="/images/home/guide-ocr-480.webp 480w, /images/home/guide-ocr.webp 960w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 900px) calc(50vw - 82px), (max-width: 1100px) calc(33vw - 76px), 292px" alt="" width="960" height="600" loading="lazy" decoding="async">
                     <span>スクリーンショットOCR</span>
                     <h3>画面上の文字を音声に変換</h3>
                     <p>選択できない文字を取り込み、macOSのOCRで抽出して読み上げます。</p>
                 </a>
                 <a class="mac-guide-card" href="/ja/offline-text-to-speech-mac/" hreflang="ja">
+                    <img class="mac-card-shot" src="/images/home/guide-offline-voices.webp" srcset="/images/home/guide-offline-voices-480.webp 480w, /images/home/guide-offline-voices.webp 960w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 900px) calc(50vw - 82px), (max-width: 1100px) calc(33vw - 76px), 292px" alt="" width="960" height="600" loading="lazy" decoding="async">
                     <span>ローカル音声</span>
                     <h3>オフライン音声読み上げエンジンを比較</h3>
                     <p>対応Mac、言語、ダウンロードサイズ、音声を比較できます。</p>
                 </a>
                 <a class="mac-guide-card" href="/ja/read-pdf-aloud-mac/" hreflang="ja">
+                    <img class="mac-card-shot" src="/images/home/guide-pdf.webp" srcset="/images/home/guide-pdf-480.webp 480w, /images/home/guide-pdf.webp 960w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 900px) calc(50vw - 82px), (max-width: 1100px) calc(33vw - 76px), 292px" alt="" width="960" height="600" loading="lazy" decoding="async">
                     <span>PDF読み上げ</span>
                     <h3>MacでPDFを読み上げる</h3>
                     <p>最大50ページを読み込み、元の文書で同期するハイライトを確認できます。</p>
                 </a>
                 <a class="mac-guide-card" href="/ja/best-text-to-speech-app-for-mac/" hreflang="ja">
+                    <img class="mac-card-shot" src="/images/home/guide-chooser.webp" srcset="/images/home/guide-chooser-480.webp 480w, /images/home/guide-chooser.webp 960w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 900px) calc(50vw - 82px), (max-width: 1100px) calc(33vw - 76px), 292px" alt="" width="960" height="600" loading="lazy" decoding="async">
                     <span>アプリを選ぶ</span>
                     <h3>Mac用テキスト読み上げアプリを選ぶ</h3>
                     <p>ワークフロー、プライバシーの範囲、互換性、制限を比較します。</p>
                 </a>
                 <a class="mac-guide-card" href="/text-to-audio-file-mac/" hreflang="en">
+                    <img class="mac-card-shot" src="/images/home/guide-audio-file.webp" srcset="/images/home/guide-audio-file-480.webp 480w, /images/home/guide-audio-file.webp 960w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 900px) calc(50vw - 82px), (max-width: 1100px) calc(33vw - 76px), 292px" alt="" width="960" height="600" loading="lazy" decoding="async">
                     <span>音声ファイル <small class="mac-link-language" aria-label="英語ページ">EN</small></span>
                     <h3>読み上げ音声をファイルに保存する</h3>
                     <p>AppleとSupertonicの声でWAVファイルを書き出すか、macOSのsayコマンドを使います。</p>
                 </a>
                 <a class="mac-guide-card" href="/kokoro-tts-mac/" hreflang="en">
+                    <img class="mac-card-shot" src="/images/home/guide-kokoro.webp" srcset="/images/home/guide-kokoro-480.webp 480w, /images/home/guide-kokoro.webp 960w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 900px) calc(50vw - 82px), (max-width: 1100px) calc(33vw - 76px), 292px" alt="" width="960" height="600" loading="lazy" decoding="async">
                     <span>Kokoroの声 <small class="mac-link-language" aria-label="英語ページ">EN</small></span>
                     <h3>MacでKokoroの音声読み上げを使う</h3>
                     <p>LoudScript内でKokoroをダウンロードし、Pythonなしで、Appleシリコン搭載Macで使えます。</p>
                 </a>
                 <a class="mac-guide-card" href="/speechify-alternative-mac/" hreflang="en">
+                    <img class="mac-card-shot" src="/images/home/guide-speechify.webp" srcset="/images/home/guide-speechify-480.webp 480w, /images/home/guide-speechify.webp 960w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 900px) calc(50vw - 82px), (max-width: 1100px) calc(33vw - 76px), 292px" alt="" width="960" height="600" loading="lazy" decoding="async">
                     <span>Speechifyの代替 <small class="mac-link-language" aria-label="英語ページ">EN</small></span>
                     <h3>Mac向けの無料Speechify代替アプリ</h3>
                     <p>価格、オフライン利用、選択したテキスト、PDF、音声書き出しを比較します。</p>
                 </a>
                 <a class="mac-guide-card" href="/elevenreader-mac/" hreflang="en">
+                    <img class="mac-card-shot" src="/images/home/guide-elevenreader.webp" srcset="/images/home/guide-elevenreader-480.webp 480w, /images/home/guide-elevenreader.webp 960w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 900px) calc(50vw - 82px), (max-width: 1100px) calc(33vw - 76px), 292px" alt="" width="960" height="600" loading="lazy" decoding="async">
                     <span>MacでのElevenReader <small class="mac-link-language" aria-label="英語ページ">EN</small></span>
                     <h3>MacでElevenReaderを使う</h3>
                     <p>現在MacでElevenReaderが提供している機能と、ネイティブアプリが向いている場面を確認できます。</p>
@@ -427,7 +457,7 @@
             </div>
         </section>
 
-        <section class="mac-faq mac-reveal" aria-labelledby="faq-title">
+        <section class="mac-faq" aria-labelledby="faq-title">
             <span class="mac-section-label">よくある質問</span>
             <h2 id="faq-title">Mac版LoudScriptのよくある質問</h2>
             <div class="mac-faq-list">
@@ -458,7 +488,7 @@
             </div>
         </section>
 
-        <section class="mac-final-cta mac-reveal">
+        <section class="mac-final-cta">
             <h2>Macで読み上げを始めましょう。</h2>
             <p>無料の公証済みDMGを直接ダウンロードできます。App Storeアカウントは不要です。</p>
             <div class="mac-cta-group" role="group" aria-label="Mac版LoudScriptをダウンロード">
@@ -487,23 +517,5 @@
         </p>
     </footer>
 
-    <script>
-    (function() {
-        var els = document.querySelectorAll('.mac-reveal');
-        if (!('IntersectionObserver' in window)) {
-            els.forEach(function(el) { el.classList.add('mac-visible'); });
-            return;
-        }
-        var observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('mac-visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-        els.forEach(function(el) { observer.observe(el); });
-    })();
-    </script>
 </body>
 </html>
