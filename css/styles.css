@@ -1705,6 +1705,10 @@ body {
     background: rgba(96, 66, 245, 0.07);
 }
 
+.seo-section .mac-cta-group {
+    margin: 22px 0 24px;
+}
+
 .seo-related {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
