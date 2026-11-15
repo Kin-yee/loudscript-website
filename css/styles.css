@@ -708,7 +708,8 @@ body::after {
     pointer-events: none;
 }
 
-.ov-player:not(.is-enhanced) .ov-quote-lit {
+.ov-player:not(.is-enhanced) .ov-quote-lit,
+.ov-player:not(.is-enhanced) .ov-hint {
     display: none;
 }
 

@@ -170,7 +170,10 @@ if (player) {
             card.setAttribute("aria-pressed", "true");
             card.setAttribute("aria-label", card.dataset.labelStop);
             preview.src = clip.src;
-            preview.play().catch(stopPreview);
+            // A play() cut short by a quick switch to another card must not stop that card.
+            preview.play().catch(() => {
+                if (playingCard === card) stopPreview();
+            });
         });
     }
 }
