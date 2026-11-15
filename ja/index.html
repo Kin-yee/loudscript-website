@@ -45,7 +45,7 @@
     <link rel="alternate" hreflang="nl" href="https://loudscript.app/nl/">
     <link rel="alternate" hreflang="x-default" href="https://loudscript.app/">
     <link rel="icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/css/styles.css?v=1868736ac5">
+    <link rel="stylesheet" href="/css/styles.css?v=b3fcdd2485">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -251,6 +251,67 @@
             </div>
         </section>
 
+        <section class="mac-ways" aria-labelledby="ways-title">
+            <span class="mac-section-label">Your reading key</span>
+            <h2 id="ways-title">One shortcut, two ways to read.</h2>
+            <div class="mac-way-list">
+                <article class="mac-way">
+                    <span class="mac-way-icon mac-way-icon-selected"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 4H10a2 2 0 0 1 2 2 2 2 0 0 1 2-2h1.5M8.5 20H10a2 2 0 0 0 2-2 2 2 0 0 0 2 2h1.5M12 6v12M9.5 12h5"/></svg></span>
+                    <div>
+                        <h3>Text selected</h3>
+                        <p>LoudScript reads it right away.</p>
+                    </div>
+                </article>
+                <article class="mac-way">
+                    <span class="mac-way-icon mac-way-icon-capture"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8.5V7a3 3 0 0 1 3-3h1.5M15.5 4H17a3 3 0 0 1 3 3v1.5M20 15.5V17a3 3 0 0 1-3 3h-1.5M8.5 20H7a3 3 0 0 1-3-3v-1.5"/></svg></span>
+                    <div>
+                        <h3>Nothing selected</h3>
+                        <p>Drag over any text on screen. macOS asks for Screen Recording the first time.</p>
+                    </div>
+                </article>
+            </div>
+            <ul class="mac-trust">
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/></svg>Reads only on ⌥⌘R</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>Voices run on your Mac</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 5.8v5.4c0 4.4 2.8 8 7 9.8 4.2-1.8 7-5.4 7-9.8V5.8L12 3Z"/></svg>Turn off anytime</li>
+            </ul>
+        </section>
+
+        <section class="mac-voices" aria-labelledby="voices-title">
+            <span class="mac-section-label">5つの音声エンジン</span>
+            <h2 id="voices-title">Pick a voice.</h2>
+            <p class="mac-section-intro">Apple’s voices work right away. The others run fully on your Mac and download in the background. Press play to listen first.</p>
+            <div class="mac-voice-grid">
+                <article class="mac-voice-card">
+                    <h3>Apple</h3>
+                    <p>Built into macOS with the widest language coverage.</p>
+                    <span class="mac-voice-meta">Built in · ready now</span>
+                </article>
+                <article class="mac-voice-card mac-voice-card-pick">
+                    <h3>Supertonic</h3>
+                    <p>Fast multilingual speech with selectable voice styles.</p>
+                    <span class="mac-voice-meta">Recommended · about 420 MB</span>
+                    <button type="button" class="mac-voice-play" data-voice="supertonic" data-label-play="Play Supertonic sample" data-label-stop="Stop Supertonic sample" aria-label="Play Supertonic sample" aria-pressed="false" hidden><svg class="mac-voice-icon-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9l7.5-4.5z"/></svg><svg class="mac-voice-icon-stop" viewBox="0 0 16 16" aria-hidden="true"><rect x="4" y="4" width="8" height="8" rx="1.5"/></svg></button>
+                </article>
+                <article class="mac-voice-card">
+                    <h3>Kokoro</h3>
+                    <p>Compact speech with English and Mandarin voices.</p>
+                    <span class="mac-voice-meta">About 320 MB · Apple silicon</span>
+                    <button type="button" class="mac-voice-play" data-voice="kokoro" data-label-play="Play Kokoro sample" data-label-stop="Stop Kokoro sample" aria-label="Play Kokoro sample" aria-pressed="false" hidden><svg class="mac-voice-icon-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9l7.5-4.5z"/></svg><svg class="mac-voice-icon-stop" viewBox="0 0 16 16" aria-hidden="true"><rect x="4" y="4" width="8" height="8" rx="1.5"/></svg></button>
+                </article>
+                <article class="mac-voice-card">
+                    <h3>PocketTTS</h3>
+                    <p>Expressive speech with selectable voices in six languages.</p>
+                    <span class="mac-voice-meta">About 1 GB</span>
+                </article>
+                <article class="mac-voice-card">
+                    <h3>Phonon</h3>
+                    <p>Compact English speech that reads numbers, prices, links, and abbreviations naturally.</p>
+                    <span class="mac-voice-meta">About 175 MB · Apple silicon</span>
+                </article>
+            </div>
+        </section>
+
         <section class="mac-features" aria-label="主な機能">
             <article class="mac-feature-card">
                 <span class="mac-feature-label">PDF読み上げ</span>
@@ -261,11 +322,6 @@
                 <span class="mac-feature-label">画面OCR</span>
                 <h2>選択できない文字も読み上げます。</h2>
                 <p>画像やアプリから文字を取り込み、そのまま音声で聞けます。</p>
-            </article>
-            <article class="mac-feature-card">
-                <span class="mac-feature-label">5つの音声エンジン</span>
-                <h2>好みの声を選べます。</h2>
-                <p>Appleの声を使うか、Supertonic、Kokoro、PocketTTS、Phononをダウンロードできます。</p>
             </article>
             <article class="mac-feature-card">
                 <span class="mac-feature-label">バックグラウンド再生</span>
@@ -502,6 +558,11 @@
         </section>
 
         <section class="mac-final-cta">
+            <div class="ov-keys ov-keys-small" aria-hidden="true">
+                <span class="ov-key" data-key="alt"><span class="ov-key-face"><svg viewBox="0 0 24 24"><path d="M3 5h6l6 14h6M14 5h7"/></svg></span></span>
+                <span class="ov-key" data-key="meta"><span class="ov-key-face"><svg viewBox="0 0 24 24"><path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3"/></svg></span></span>
+                <span class="ov-key" data-key="r"><span class="ov-key-face">R</span></span>
+            </div>
             <h2>Macで読み上げを始めましょう。</h2>
             <p>無料の公証済みDMGを直接ダウンロードできます。App Storeアカウントは不要です。</p>
             <div class="mac-cta-group" role="group" aria-label="Mac版LoudScriptをダウンロード">
