@@ -4,6 +4,7 @@
     <link rel="preconnect" href="https://plausible.io" crossorigin>
     <script defer data-domain="loudscript.app" src="https://plausible.io/js/script.outbound-links.js"></script>
     <script defer src="/js/language-menu.js"></script>
+    <script defer src="/js/home-demo.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -238,29 +239,29 @@
         </section>
 
         <section class="mac-features" aria-label="主要功能">
-            <article class="mac-feature-card mac-reveal">
+            <article class="mac-feature-card">
                 <span class="mac-feature-label">PDF 朗讀</span>
                 <h2>邊聽邊看原始頁面。</h2>
                 <p>匯入所需頁面，一邊聆聽，一邊在原始 PDF 中同步查看朗讀位置。</p>
             </article>
-            <article class="mac-feature-card mac-reveal">
+            <article class="mac-feature-card">
                 <span class="mac-feature-label">截圖 OCR</span>
                 <h2>朗讀無法選取的文字。</h2>
                 <p>擷取圖片或 App 中的文字，然後聆聽內容。</p>
             </article>
-            <article class="mac-feature-card mac-reveal">
+            <article class="mac-feature-card">
                 <span class="mac-feature-label">五種語音引擎</span>
                 <h2>選擇你喜歡的語音。</h2>
                 <p>使用 Apple 語音，或下載 Supertonic、Kokoro、PocketTTS 或 Phonon。</p>
             </article>
-            <article class="mac-feature-card mac-reveal">
+            <article class="mac-feature-card">
                 <span class="mac-feature-label">背景播放</span>
                 <h2>工作時繼續聆聽。</h2>
                 <p>使用小型浮動播放器控制播放，無需切換視窗。</p>
             </article>
         </section>
 
-        <section class="mac-detail mac-reveal" aria-label="PDF 朗讀功能">
+        <section class="mac-detail" aria-label="PDF 朗讀功能">
             <div class="mac-detail-text">
                 <span class="mac-section-label">PDF 朗讀</span>
                 <h2>讓文字與文件並排呈現。</h2>
@@ -283,7 +284,7 @@
             </div>
         </section>
 
-        <section class="mac-detail mac-detail-reverse mac-reveal" aria-label="語音與播放設定">
+        <section class="mac-detail mac-detail-reverse" aria-label="語音與播放設定">
             <div class="mac-detail-text">
                 <span class="mac-section-label">語音與播放</span>
                 <h2>自訂 LoudScript 的朗讀方式。</h2>
@@ -307,7 +308,7 @@
             </div>
         </section>
 
-        <section class="mac-detail mac-reveal" aria-label="朗讀歷史功能">
+        <section class="mac-detail" aria-label="朗讀歷史功能">
             <div class="mac-detail-text">
                 <span class="mac-section-label">朗讀歷史</span>
                 <h2>隨時重溫聽過的內容。</h2>
@@ -330,96 +331,125 @@
             </div>
         </section>
 
-        <section class="mac-workflow mac-reveal" aria-label="LoudScript Mac 版的運作方式">
+        <section class="mac-workflow" aria-label="LoudScript Mac 版的運作方式">
             <span class="mac-section-label">使用方式</span>
             <h2>三個步驟，開始聆聽。</h2>
-            <div class="mac-steps">
-                <article class="mac-step-card mac-reveal">
-                    <span class="mac-step-num">01</span>
-                    <h3>加入要朗讀的文字</h3>
-                    <p>選取文字、擷取截圖、匯入 PDF，或直接在 LoudScript 中輸入。</p>
-                </article>
-                <article class="mac-step-card mac-reveal">
-                    <span class="mac-step-num">02</span>
-                    <h3>聆聽</h3>
-                    <p>選擇語音並按下「播放」。LoudScript 會同步醒目顯示目前朗讀的句子。</p>
-                </article>
-                <article class="mac-step-card mac-reveal">
-                    <span class="mac-step-num">03</span>
-                    <h3>稍後繼續聽</h3>
-                    <p>從歷史記錄找回朗讀內容，然後重播或複製文字。</p>
-                </article>
+            <div class="mac-demo">
+                <figure class="mac-demo-media">
+                    <picture>
+                        <source media="(max-width: 600px)" srcset="/images/home/how-it-works-poster-720.webp">
+                        <img src="/images/home/how-it-works-poster.webp" alt="LoudScript Mac 版正在朗讀文字，並醒目顯示目前的句子" width="1440" height="900" loading="lazy" decoding="async">
+                    </picture>
+                    <video muted loop playsinline preload="none" aria-hidden="true">
+                        <source src="/images/home/how-it-works-720.mp4" type="video/mp4" media="(max-width: 600px)">
+                        <source src="/images/home/how-it-works.mp4" type="video/mp4">
+                    </video>
+                    <button type="button" class="mac-demo-toggle" data-label-play="播放示範影片" data-label-pause="暫停示範影片" aria-label="播放示範影片" hidden>
+                        <svg class="mac-demo-icon-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9l7.5-4.5z"/></svg>
+                        <svg class="mac-demo-icon-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 3h2.5v10H4.5zM9 3h2.5v10H9z"/></svg>
+                    </button>
+                </figure>
+                <div class="mac-steps">
+                    <article class="mac-step-card" data-chapter-start="0" data-chapter-end="5">
+                        <span class="mac-step-num">01</span>
+                        <h3>加入要朗讀的文字</h3>
+                        <p>選取文字、擷取截圖、匯入 PDF，或直接在 LoudScript 中輸入。</p>
+                    </article>
+                    <article class="mac-step-card" data-chapter-start="5" data-chapter-end="12">
+                        <span class="mac-step-num">02</span>
+                        <h3>聆聽</h3>
+                        <p>選擇語音並按下「播放」。LoudScript 會同步醒目顯示目前朗讀的句子。</p>
+                    </article>
+                    <article class="mac-step-card" data-chapter-start="12" data-chapter-end="18">
+                        <span class="mac-step-num">03</span>
+                        <h3>稍後繼續聽</h3>
+                        <p>從歷史記錄找回朗讀內容，然後重播或複製文字。</p>
+                    </article>
+                </div>
             </div>
         </section>
 
-        <section class="mac-audiences mac-reveal" aria-labelledby="audiences-title">
+        <section class="mac-audiences" aria-labelledby="audiences-title">
             <span class="mac-section-label">為日常閱讀而設計</span>
             <h2 id="audiences-title">專為工作、學習與輔助使用設計的 Mac 文字朗讀器。</h2>
             <div class="mac-audience-grid">
                 <article class="mac-audience-card">
+                    <img class="mac-card-shot" src="/images/home/audience-proofread.webp" srcset="/images/home/audience-proofread-600.webp 600w, /images/home/audience-proofread.webp 1200w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 1100px) calc(50vw - 82px), 470px" alt="LoudScript 正在朗讀草稿，並醒目顯示目前的句子" width="1200" height="750" loading="lazy" decoding="async">
                     <h3>用耳朵校對</h3>
                     <p>聆聽草稿、電子郵件與稿件，找出遺漏文字、不順語句與重複內容。</p>
                 </article>
                 <article class="mac-audience-card">
+                    <img class="mac-card-shot" src="/images/home/audience-study.webp" srcset="/images/home/audience-study-600.webp 600w, /images/home/audience-study.webp 1200w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 1100px) calc(50vw - 82px), 470px" alt="LoudScript 正在朗讀學習資料，並醒目顯示目前的段落" width="1200" height="750" loading="lazy" decoding="async">
                     <h3>不用一直盯著螢幕學習</h3>
                     <p>一邊聆聽選取的段落，一邊做筆記、複習資料，或讓眼睛休息。</p>
                 </article>
                 <article class="mac-audience-card">
+                    <img class="mac-card-shot" src="/images/home/audience-ocr.webp" srcset="/images/home/audience-ocr-600.webp 600w, /images/home/audience-ocr.webp 1200w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 1100px) calc(50vw - 82px), 470px" alt="LoudScript 正在朗讀從截圖擷取的文字，並將截圖顯示為來源" width="1200" height="750" loading="lazy" decoding="async">
                     <h3>朗讀無法選取的文字</h3>
                     <p>當圖片、PDF 閱讀器或其他介面無法選取文字時，使用截圖 OCR 擷取並朗讀內容。</p>
                 </article>
                 <article class="mac-audience-card">
+                    <img class="mac-card-shot" src="/images/home/audience-floating.webp" srcset="/images/home/audience-floating-600.webp 600w, /images/home/audience-floating.webp 1200w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 1100px) calc(50vw - 82px), 470px" alt="LoudScript 浮動播放器在其他視窗上方朗讀" width="1200" height="750" loading="lazy" decoding="async">
                     <h3>邊工作邊聆聽</h3>
                     <p>讓浮動播放器保持在視窗上方，LoudScript 便會在背景繼續朗讀。</p>
                 </article>
             </div>
         </section>
 
-        <section class="mac-guides mac-reveal" id="guides" aria-labelledby="guides-title">
+        <section class="mac-guides" id="guides" aria-labelledby="guides-title">
             <span class="mac-section-label">Mac 文字轉語音指南</span>
             <h2 id="guides-title">選擇你需要的朗讀方式。</h2>
             <div class="mac-guide-grid">
                 <a class="mac-guide-card" href="/zh-hant/read-selected-text-aloud-mac/" hreflang="zh-Hant">
+                    <img class="mac-card-shot" src="/images/home/guide-selected-text.webp" srcset="/images/home/guide-selected-text-480.webp 480w, /images/home/guide-selected-text.webp 960w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 900px) calc(50vw - 82px), (max-width: 1100px) calc(33vw - 76px), 292px" alt="" width="960" height="600" loading="lazy" decoding="async">
                     <span>選取文字</span>
                     <h3>在 Mac 上朗讀選取的文字</h3>
                     <p>在瀏覽器、編輯器、郵件 App 與其他 Mac App 中使用「服務」選單或 Option-Command-R。</p>
                 </a>
                 <a class="mac-guide-card" href="/zh-hant/screenshot-ocr-text-to-speech-mac/" hreflang="zh-Hant">
+                    <img class="mac-card-shot" src="/images/home/guide-ocr.webp" srcset="/images/home/guide-ocr-480.webp 480w, /images/home/guide-ocr.webp 960w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 900px) calc(50vw - 82px), (max-width: 1100px) calc(33vw - 76px), 292px" alt="" width="960" height="600" loading="lazy" decoding="async">
                     <span>截圖 OCR</span>
                     <h3>將螢幕文字轉換成語音</h3>
                     <p>框選無法選取的文字，使用 macOS OCR 辨識後朗讀。</p>
                 </a>
                 <a class="mac-guide-card" href="/zh-hant/offline-text-to-speech-mac/" hreflang="zh-Hant">
+                    <img class="mac-card-shot" src="/images/home/guide-offline-voices.webp" srcset="/images/home/guide-offline-voices-480.webp 480w, /images/home/guide-offline-voices.webp 960w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 900px) calc(50vw - 82px), (max-width: 1100px) calc(33vw - 76px), 292px" alt="" width="960" height="600" loading="lazy" decoding="async">
                     <span>本機語音</span>
                     <h3>比較離線文字轉語音引擎</h3>
                     <p>比較各引擎支援的 Mac 機型、語言、下載大小與語音。</p>
                 </a>
                 <a class="mac-guide-card" href="/zh-hant/read-pdf-aloud-mac/" hreflang="zh-Hant">
+                    <img class="mac-card-shot" src="/images/home/guide-pdf.webp" srcset="/images/home/guide-pdf-480.webp 480w, /images/home/guide-pdf.webp 960w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 900px) calc(50vw - 82px), (max-width: 1100px) calc(33vw - 76px), 292px" alt="" width="960" height="600" loading="lazy" decoding="async">
                     <span>PDF 朗讀</span>
                     <h3>在 Mac 上朗讀 PDF</h3>
                     <p>匯入最多 50 頁，並在原始文件中跟隨同步醒目提示。</p>
                 </a>
                 <a class="mac-guide-card" href="/zh-hant/best-text-to-speech-app-for-mac/" hreflang="zh-Hant">
+                    <img class="mac-card-shot" src="/images/home/guide-chooser.webp" srcset="/images/home/guide-chooser-480.webp 480w, /images/home/guide-chooser.webp 960w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 900px) calc(50vw - 82px), (max-width: 1100px) calc(33vw - 76px), 292px" alt="" width="960" height="600" loading="lazy" decoding="async">
                     <span>選擇 App</span>
                     <h3>選擇 Mac 文字轉語音 App</h3>
                     <p>比較重要的工作流程、隱私界線、相容性與限制。</p>
                 </a>
                 <a class="mac-guide-card" href="/text-to-audio-file-mac/" hreflang="en">
+                    <img class="mac-card-shot" src="/images/home/guide-audio-file.webp" srcset="/images/home/guide-audio-file-480.webp 480w, /images/home/guide-audio-file.webp 960w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 900px) calc(50vw - 82px), (max-width: 1100px) calc(33vw - 76px), 292px" alt="" width="960" height="600" loading="lazy" decoding="async">
                     <span>音訊檔案 <small class="mac-link-language" aria-label="英文頁面">EN</small></span>
                     <h3>將文字轉語音儲存為音訊檔</h3>
                     <p>使用 Apple 與 Supertonic 語音匯出 WAV 檔，或使用 macOS 的 say 指令。</p>
                 </a>
                 <a class="mac-guide-card" href="/kokoro-tts-mac/" hreflang="en">
+                    <img class="mac-card-shot" src="/images/home/guide-kokoro.webp" srcset="/images/home/guide-kokoro-480.webp 480w, /images/home/guide-kokoro.webp 960w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 900px) calc(50vw - 82px), (max-width: 1100px) calc(33vw - 76px), 292px" alt="" width="960" height="600" loading="lazy" decoding="async">
                     <span>Kokoro 語音 <small class="mac-link-language" aria-label="英文頁面">EN</small></span>
                     <h3>在 Mac 上使用 Kokoro 文字轉語音</h3>
                     <p>在 LoudScript 中下載 Kokoro，無需 Python 即可在配備 Apple 晶片的 Mac 上執行。</p>
                 </a>
                 <a class="mac-guide-card" href="/speechify-alternative-mac/" hreflang="en">
+                    <img class="mac-card-shot" src="/images/home/guide-speechify.webp" srcset="/images/home/guide-speechify-480.webp 480w, /images/home/guide-speechify.webp 960w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 900px) calc(50vw - 82px), (max-width: 1100px) calc(33vw - 76px), 292px" alt="" width="960" height="600" loading="lazy" decoding="async">
                     <span>Speechify 替代方案 <small class="mac-link-language" aria-label="英文頁面">EN</small></span>
                     <h3>免費的 Mac 版 Speechify 替代方案</h3>
                     <p>比較價格、離線使用、選取文字、PDF 與音訊匯出。</p>
                 </a>
                 <a class="mac-guide-card" href="/elevenreader-mac/" hreflang="en">
+                    <img class="mac-card-shot" src="/images/home/guide-elevenreader.webp" srcset="/images/home/guide-elevenreader-480.webp 480w, /images/home/guide-elevenreader.webp 960w" sizes="(max-width: 600px) calc(100vw - 82px), (max-width: 900px) calc(50vw - 82px), (max-width: 1100px) calc(33vw - 76px), 292px" alt="" width="960" height="600" loading="lazy" decoding="async">
                     <span>Mac 上的 ElevenReader <small class="mac-link-language" aria-label="英文頁面">EN</small></span>
                     <h3>在 Mac 上使用 ElevenReader</h3>
                     <p>了解 ElevenReader 目前在 Mac 上提供哪些功能，以及原生朗讀 App 適合哪些情境。</p>
@@ -427,7 +457,7 @@
             </div>
         </section>
 
-        <section class="mac-faq mac-reveal" aria-labelledby="faq-title">
+        <section class="mac-faq" aria-labelledby="faq-title">
             <span class="mac-section-label">常見問題</span>
             <h2 id="faq-title">LoudScript Mac 版常見問題</h2>
             <div class="mac-faq-list">
@@ -458,7 +488,7 @@
             </div>
         </section>
 
-        <section class="mac-final-cta mac-reveal">
+        <section class="mac-final-cta">
             <h2>開始在 Mac 上聆聽。</h2>
             <p>免費直接下載，並已通過 Apple 公證。無需 App Store 帳戶。</p>
             <div class="mac-cta-group" role="group" aria-label="下載 LoudScript Mac 版">
@@ -487,23 +517,5 @@
         </p>
     </footer>
 
-    <script>
-    (function() {
-        var els = document.querySelectorAll('.mac-reveal');
-        if (!('IntersectionObserver' in window)) {
-            els.forEach(function(el) { el.classList.add('mac-visible'); });
-            return;
-        }
-        var observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('mac-visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-        els.forEach(function(el) { observer.observe(el); });
-    })();
-    </script>
 </body>
 </html>

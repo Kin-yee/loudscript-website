@@ -1059,6 +1059,94 @@ body {
     text-align: center;
 }
 
+.mac-demo {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.mac-demo-media {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    margin: 0 0 16px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow:
+        0 24px 64px rgba(0, 0, 0, 0.5),
+        0 0 100px rgba(96, 66, 245, 0.05);
+}
+
+.mac-demo-media picture {
+    display: block;
+    height: 100%;
+}
+
+.mac-demo-media img,
+.mac-demo-media video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* The poster picture stays visible until the first frame plays, so it can serve responsive sizes. */
+.mac-demo-media video {
+    position: absolute;
+    inset: 0;
+    visibility: hidden;
+}
+
+.mac-demo-media.is-started video {
+    visibility: visible;
+}
+
+.mac-demo-toggle {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    background: rgba(16, 14, 24, 0.72);
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.mac-demo-toggle[hidden] {
+    display: none;
+}
+
+.mac-demo-toggle:hover {
+    border-color: #6042f5;
+    background: #6042f5;
+}
+
+.mac-demo-toggle:focus-visible {
+    outline: 3px solid #9580fa;
+    outline-offset: 3px;
+}
+
+.mac-demo-toggle svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+.mac-demo-icon-pause,
+.mac-demo-media.is-playing .mac-demo-icon-play {
+    display: none;
+}
+
+.mac-demo-media.is-playing .mac-demo-icon-pause {
+    display: block;
+}
+
 .mac-workflow > h2 {
     margin: 0 0 40px;
     color: #fff;
@@ -1073,16 +1161,47 @@ body {
 }
 
 .mac-step-card {
+    position: relative;
     padding: 28px 24px;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.06);
     text-align: left;
-    transition: border-color 0.3s;
 }
 
 .mac-step-card:hover {
     border-color: rgba(96, 66, 245, 0.15);
+}
+
+.mac-step-card.is-active {
+    border-color: rgba(149, 128, 250, 0.5);
+    background: rgba(96, 66, 245, 0.08);
+}
+
+.mac-step-seek {
+    padding: 0;
+    color: inherit;
+    font: inherit;
+    text-align: inherit;
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+.mac-step-seek::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+}
+
+.mac-step-seek:focus-visible {
+    outline: none;
+}
+
+.mac-step-seek:focus-visible::after {
+    outline: 3px solid #9580fa;
+    outline-offset: 3px;
 }
 
 .mac-step-num {
@@ -1175,6 +1294,18 @@ body {
     transform: translateY(-2px);
     border-color: rgba(149, 128, 250, 0.4);
     background: rgba(96, 66, 245, 0.06);
+}
+
+.mac-card-shot {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    margin: 0 0 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.04);
 }
 
 .mac-guide-card > span {
@@ -1667,25 +1798,6 @@ body {
     color: rgba(255, 255, 255, 0.5);
 }
 
-/* Scroll Reveal Animation */
-.mac-reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.mac-reveal.mac-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.mac-features .mac-reveal:nth-child(2) { transition-delay: 0.08s; }
-.mac-features .mac-reveal:nth-child(3) { transition-delay: 0.16s; }
-.mac-features .mac-reveal:nth-child(4) { transition-delay: 0.24s; }
-
-.mac-steps .mac-reveal:nth-child(2) { transition-delay: 0.08s; }
-.mac-steps .mac-reveal:nth-child(3) { transition-delay: 0.16s; }
-
 /* Follow the visitor's system appearance while keeping dark mode as the default. */
 @media (prefers-color-scheme: light) {
     body.mac-page {
@@ -1877,6 +1989,29 @@ body {
         border-color: rgba(81, 55, 214, 0.22);
     }
 
+    .mac-step-card.is-active {
+        border-color: rgba(81, 55, 214, 0.42);
+        background: rgba(81, 55, 214, 0.06);
+    }
+
+    .mac-demo-media {
+        background: rgba(255, 255, 255, 0.72);
+        border-color: rgba(23, 20, 30, 0.1);
+        box-shadow:
+            0 24px 64px rgba(34, 27, 55, 0.18),
+            0 0 100px rgba(96, 66, 245, 0.08);
+    }
+
+    .mac-demo-toggle:focus-visible,
+    .mac-step-seek:focus-visible::after {
+        outline-color: #6042f5;
+    }
+
+    .mac-card-shot {
+        border-color: rgba(23, 20, 30, 0.1);
+        background: #fff;
+    }
+
     .mac-faq-list p,
     .seo-lede,
     .seo-section p,
@@ -1991,12 +2126,6 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .mac-reveal {
-        opacity: 1;
-        transform: none;
-        transition: none;
-    }
-
     .release-entry::before,
     .release-version {
         transition: none;
@@ -2042,7 +2171,7 @@ body {
     }
 
     .mac-guide-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
@@ -2118,6 +2247,7 @@ body {
     }
 
     .mac-audience-grid,
+    .mac-guide-grid,
     .seo-related {
         grid-template-columns: 1fr;
     }
@@ -2244,6 +2374,10 @@ body {
 
     .mac-workflow {
         margin: 48px 0;
+    }
+
+    .mac-demo-media {
+        border-radius: 14px;
     }
 
     .mac-footer {
