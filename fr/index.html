@@ -5,6 +5,7 @@
     <script defer data-domain="loudscript.app" src="https://plausible.io/js/script.outbound-links.js"></script>
     <script defer src="/js/language-menu.js?v=bbf7c372f4"></script>
     <script defer src="/js/home-demo.js?v=a99d87672d"></script>
+    <script defer src="/js/overture.js?v=9ad2ea3c4b"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -44,15 +45,15 @@
     <link rel="alternate" hreflang="nl" href="https://loudscript.app/nl/">
     <link rel="alternate" hreflang="x-default" href="https://loudscript.app/">
     <link rel="icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/css/styles.css?v=a29ba84d99">
+    <link rel="stylesheet" href="/css/styles.css?v=8e139ebd3c">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="color-scheme" content="dark light">
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000">
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7fb">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#130F22">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F7F5FF">
 
     <title>Synthèse vocale pour Mac : app gratuite | LoudScript</title>
 
@@ -208,7 +209,7 @@
                 <span class="mac-eyebrow">LoudScript pour Mac</span>
                 <span class="mac-free-badge">GRATUIT</span>
             </div>
-            <h1 class="mac-title">Écoutez n’importe quel texte<br>sur votre Mac</h1>
+            <h1 class="mac-title">Écoutez n’importe quel texte<br>sur votre Mac.</h1>
             <p class="mac-intro">
                 Profitez de la synthèse vocale sur Mac : écoutez du texte sélectionné, des captures d’écran et des PDF avec des voix naturelles tout en travaillant.
             </p>
@@ -221,6 +222,18 @@
                 </a>
             </div>
             <p class="mac-note">Téléchargement DMG direct et notarisé par Apple. Nécessite macOS 15.6 ou une version ultérieure.</p>
+
+            <div class="ov-player" data-state="idle">
+                <button type="button" class="ov-keys" data-label-play="Écouter l’extrait" data-label-stop="Arrêter l’extrait" aria-label="Écouter l’extrait">
+                    <span class="ov-key" data-key="alt"><span class="ov-key-face"><svg viewBox="0 0 24 24"><path d="M3 5h6l6 14h6M14 5h7"/></svg></span></span>
+                    <span class="ov-key" data-key="meta"><span class="ov-key-face"><svg viewBox="0 0 24 24"><path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3"/></svg></span></span>
+                    <span class="ov-key" data-key="r"><span class="ov-key-face">R</span></span>
+                </button>
+                <p class="ov-quote" lang="fr"><span class="ov-quote-text">Bienvenue ! Sélectionnez du texte dans n’importe quelle application, appuyez sur le raccourci, et il vous sera lu à voix haute.</span><span class="ov-quote-lit" aria-hidden="true"></span></p>
+                <div class="ov-voices" role="group" aria-label="Voix de l’extrait" hidden></div>
+                <p class="ov-hint" role="status" data-idle="Appuyez sur ⌥⌘R ou touchez les touches." data-played="C’est tout. Les mêmes touches fonctionnent dans Safari, Mail, les PDF et partout ailleurs." data-error="L’extrait n’a pas pu être lu. Touchez les touches pour réessayer.">Appuyez sur ⌥⌘R ou touchez les touches.</p>
+                <script type="application/json" class="ov-samples">[{"voice":"supertonic","label":"Supertonic","lang":"fr","src":"/audio/supertonic.v3.fr.m4a","text":"Bienvenue ! Sélectionnez du texte dans n’importe quelle application, appuyez sur le raccourci, et il vous sera lu à voix haute.","words":[{"start":0,"end":0.694,"from":0,"to":11},{"start":1.198,"end":1.84,"from":12,"to":24},{"start":1.84,"end":1.98,"from":25,"to":27},{"start":1.98,"end":2.62,"from":28,"to":33},{"start":2.62,"end":2.72,"from":34,"to":38},{"start":2.72,"end":3.12,"from":39,"to":48},{"start":3.12,"end":3.44,"from":49,"to":55},{"start":3.44,"end":4.21,"from":56,"to":68},{"start":4.653,"end":5.04,"from":69,"to":76},{"start":5.04,"end":5.24,"from":77,"to":80},{"start":5.24,"end":5.36,"from":81,"to":83},{"start":5.36,"end":6.071,"from":84,"to":94},{"start":6.564,"end":6.64,"from":95,"to":97},{"start":6.64,"end":6.74,"from":98,"to":100},{"start":6.74,"end":6.86,"from":101,"to":105},{"start":6.86,"end":7.16,"from":106,"to":110},{"start":7.16,"end":7.287,"from":111,"to":113},{"start":7.478,"end":7.74,"from":114,"to":115},{"start":7.74,"end":7.88,"from":116,"to":120},{"start":7.88,"end":8.086,"from":121,"to":127}]},{"voice":"kokoro","label":"Kokoro","lang":"en","src":"/audio/kokoro.82m.en.m4a","text":"Welcome! Select text in any app, press the shortcut, and hear it read aloud.","words":[{"start":0,"end":0.645,"from":0,"to":8},{"start":1.485,"end":1.72,"from":9,"to":15},{"start":1.72,"end":2.06,"from":16,"to":20},{"start":2.06,"end":2.28,"from":21,"to":23},{"start":2.28,"end":2.44,"from":24,"to":27},{"start":2.44,"end":2.746,"from":28,"to":32},{"start":3.017,"end":3.16,"from":33,"to":38},{"start":3.16,"end":3.34,"from":39,"to":42},{"start":3.34,"end":3.852,"from":43,"to":52},{"start":4.037,"end":4.12,"from":53,"to":56},{"start":4.12,"end":4.32,"from":57,"to":61},{"start":4.32,"end":4.42,"from":62,"to":64},{"start":4.42,"end":4.58,"from":65,"to":69},{"start":4.58,"end":5.029,"from":70,"to":76}]}]</script>
+            </div>
 
             <div class="mac-hero-screenshots">
                 <figure class="mac-screenshot mac-screenshot-main">
@@ -238,6 +251,57 @@
             </div>
         </section>
 
+        <section class="mac-ways" aria-labelledby="ways-title">
+            <span class="mac-section-label">Votre touche de lecture</span>
+            <h2 id="ways-title">Un raccourci, deux façons de lire.</h2>
+            <div class="mac-way-list">
+                <article class="mac-way">
+                    <span class="mac-way-icon mac-way-icon-selected"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 4H10a2 2 0 0 1 2 2 2 2 0 0 1 2-2h1.5M8.5 20H10a2 2 0 0 0 2-2 2 2 0 0 0 2 2h1.5M12 6v12M9.5 12h5"/></svg></span>
+                    <div>
+                        <h3>Texte sélectionné</h3>
+                        <p>LoudScript le lit aussitôt.</p>
+                    </div>
+                </article>
+                <article class="mac-way">
+                    <span class="mac-way-icon mac-way-icon-capture"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8.5V7a3 3 0 0 1 3-3h1.5M15.5 4H17a3 3 0 0 1 3 3v1.5M20 15.5V17a3 3 0 0 1-3 3h-1.5M8.5 20H7a3 3 0 0 1-3-3v-1.5"/></svg></span>
+                    <div>
+                        <h3>Rien de sélectionné</h3>
+                        <p>Faites glisser sur n’importe quel texte à l’écran. La première fois, macOS demande l’enregistrement de l’écran.</p>
+                    </div>
+                </article>
+            </div>
+            <ul class="mac-trust">
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/></svg>Lit uniquement avec ⌥⌘R</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>Les voix fonctionnent sur votre Mac</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 5.8v5.4c0 4.4 2.8 8 7 9.8 4.2-1.8 7-5.4 7-9.8V5.8L12 3Z"/></svg>Désactivable à tout moment</li>
+            </ul>
+        </section>
+
+        <section class="mac-voices" aria-labelledby="voices-title">
+            <span class="mac-section-label">Voix locales</span>
+            <h2 id="voices-title">Choisissez une voix.</h2>
+            <p class="mac-section-intro">Les voix d’Apple fonctionnent tout de suite. Les autres s’exécutent entièrement sur votre Mac et se téléchargent en arrière-plan. Appuyez sur lecture pour les écouter d’abord.</p>
+            <div class="mac-voice-grid">
+                <article class="mac-voice-card">
+                    <h3>Apple</h3>
+                    <p>Intégré à macOS avec la meilleure couverture linguistique.</p>
+                    <span class="mac-voice-meta">Intégrée · prête</span>
+                </article>
+                <article class="mac-voice-card mac-voice-card-pick">
+                    <h3>Supertonic</h3>
+                    <p>Voix multilingue rapide avec plusieurs styles.</p>
+                    <span class="mac-voice-meta">Recommandée</span>
+                    <button type="button" class="mac-voice-play" data-voice="supertonic" data-label-play="Écouter un extrait de Supertonic" data-label-stop="Arrêter l’extrait de Supertonic" aria-label="Écouter un extrait de Supertonic" aria-pressed="false" hidden><svg class="mac-voice-icon-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9l7.5-4.5z"/></svg><svg class="mac-voice-icon-stop" viewBox="0 0 16 16" aria-hidden="true"><rect x="4" y="4" width="8" height="8" rx="1.5"/></svg></button>
+                </article>
+                <article class="mac-voice-card">
+                    <h3>Kokoro</h3>
+                    <p>Modèle vocal compact avec des voix en anglais et en mandarin.</p>
+                    <span class="mac-voice-meta">Nécessite une puce Apple</span>
+                    <button type="button" class="mac-voice-play" data-voice="kokoro" data-label-play="Écouter un extrait de Kokoro" data-label-stop="Arrêter l’extrait de Kokoro" aria-label="Écouter un extrait de Kokoro" aria-pressed="false" hidden><svg class="mac-voice-icon-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9l7.5-4.5z"/></svg><svg class="mac-voice-icon-stop" viewBox="0 0 16 16" aria-hidden="true"><rect x="4" y="4" width="8" height="8" rx="1.5"/></svg></button>
+                </article>
+            </div>
+        </section>
+
         <section class="mac-features" aria-label="Fonctionnalités principales">
             <article class="mac-feature-card">
                 <span class="mac-feature-label">Lecture de PDF</span>
@@ -248,11 +312,6 @@
                 <span class="mac-feature-label">OCR de l’écran</span>
                 <h2>Lisez le texte impossible à sélectionner.</h2>
                 <p>Capturez le texte d’images et d’apps, puis écoutez-le.</p>
-            </article>
-            <article class="mac-feature-card">
-                <span class="mac-feature-label">Cinq moteurs vocaux</span>
-                <h2>Choisissez la voix qui vous convient.</h2>
-                <p>Utilisez les voix Apple ou téléchargez Supertonic, Kokoro, PocketTTS ou Phonon.</p>
             </article>
             <article class="mac-feature-card">
                 <span class="mac-feature-label">Lecture en arrière-plan</span>
@@ -351,17 +410,17 @@
                 </figure>
                 <div class="mac-steps">
                     <article class="mac-step-card" data-chapter-start="0" data-chapter-end="4.13">
-                        <span class="mac-step-num">01</span>
+                        <span class="mac-step-dots" aria-hidden="true"><i></i><i></i><i></i></span>
                         <h3>Ajoutez du texte</h3>
                         <p>Sélectionnez du texte, capturez une zone de l’écran, importez un PDF ou saisissez du texte dans LoudScript.</p>
                     </article>
                     <article class="mac-step-card" data-chapter-start="4.13" data-chapter-end="13.3">
-                        <span class="mac-step-num">02</span>
+                        <span class="mac-step-dots" aria-hidden="true"><i></i><i></i><i></i></span>
                         <h3>Écoutez</h3>
                         <p>Choisissez une voix et cliquez sur Lire. La phrase en cours reste surlignée.</p>
                     </article>
                     <article class="mac-step-card" data-chapter-start="13.3" data-chapter-end="16.5">
-                        <span class="mac-step-num">03</span>
+                        <span class="mac-step-dots" aria-hidden="true"><i></i><i></i><i></i></span>
                         <h3>Revenez-y plus tard</h3>
                         <p>Recherchez vos anciennes lectures dans l’historique pour les relire ou les copier.</p>
                     </article>
@@ -489,6 +548,11 @@
         </section>
 
         <section class="mac-final-cta">
+            <div class="ov-keys ov-keys-small" aria-hidden="true">
+                <span class="ov-key" data-key="alt"><span class="ov-key-face"><svg viewBox="0 0 24 24"><path d="M3 5h6l6 14h6M14 5h7"/></svg></span></span>
+                <span class="ov-key" data-key="meta"><span class="ov-key-face"><svg viewBox="0 0 24 24"><path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3"/></svg></span></span>
+                <span class="ov-key" data-key="r"><span class="ov-key-face">R</span></span>
+            </div>
             <h2>Commencez à écouter sur votre Mac.</h2>
             <p>Téléchargement direct, gratuit et notarisé par Apple. Aucun compte App Store requis.</p>
             <div class="mac-cta-group" role="group" aria-label="Télécharger LoudScript pour Mac">

@@ -5,6 +5,7 @@
     <script defer data-domain="loudscript.app" src="https://plausible.io/js/script.outbound-links.js"></script>
     <script defer src="/js/language-menu.js?v=bbf7c372f4"></script>
     <script defer src="/js/home-demo.js?v=a99d87672d"></script>
+    <script defer src="/js/overture.js?v=9ad2ea3c4b"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -44,15 +45,15 @@
     <link rel="alternate" hreflang="nl" href="https://loudscript.app/nl/">
     <link rel="alternate" hreflang="x-default" href="https://loudscript.app/">
     <link rel="icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/css/styles.css?v=a29ba84d99">
+    <link rel="stylesheet" href="/css/styles.css?v=8e139ebd3c">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="color-scheme" content="dark light">
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000">
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7fb">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#130F22">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F7F5FF">
 
     <title>Tekst-naar-spraak voor Mac: gratis app | LoudScript</title>
 
@@ -208,7 +209,7 @@
                 <span class="mac-eyebrow">LoudScript voor Mac</span>
                 <span class="mac-free-badge">GRATIS</span>
             </div>
-            <h1 class="mac-title">Luister naar elke tekst<br>op je Mac</h1>
+            <h1 class="mac-title">Luister naar elke tekst<br>op je Mac.</h1>
             <p class="mac-intro">
                 Gebruik tekst-naar-spraak om naar geselecteerde tekst, schermafbeeldingen en pdf’s te luisteren terwijl je doorwerkt.
             </p>
@@ -221,6 +222,18 @@
                 </a>
             </div>
             <p class="mac-note">Genotariseerde DMG-download. Vereist macOS 15.6 of nieuwer.</p>
+
+            <div class="ov-player" data-state="idle">
+                <button type="button" class="ov-keys" data-label-play="Voorbeeld afspelen" data-label-stop="Voorbeeld stoppen" aria-label="Voorbeeld afspelen">
+                    <span class="ov-key" data-key="alt"><span class="ov-key-face"><svg viewBox="0 0 24 24"><path d="M3 5h6l6 14h6M14 5h7"/></svg></span></span>
+                    <span class="ov-key" data-key="meta"><span class="ov-key-face"><svg viewBox="0 0 24 24"><path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3"/></svg></span></span>
+                    <span class="ov-key" data-key="r"><span class="ov-key-face">R</span></span>
+                </button>
+                <p class="ov-quote" lang="nl"><span class="ov-quote-text">Welkom! Selecteer tekst in een willekeurige app, druk op de sneltoets en de tekst wordt voorgelezen.</span><span class="ov-quote-lit" aria-hidden="true"></span></p>
+                <div class="ov-voices" role="group" aria-label="Stem van het voorbeeld" hidden></div>
+                <p class="ov-hint" role="status" data-idle="Druk op ⌥⌘R of tik op de toetsen." data-played="Dat is alles. Dezelfde toetsen werken in Safari, Mail, pdf’s en overal elders." data-error="Het voorbeeld kon niet worden afgespeeld. Tik op de toetsen om het opnieuw te proberen.">Druk op ⌥⌘R of tik op de toetsen.</p>
+                <script type="application/json" class="ov-samples">[{"voice":"supertonic","label":"Supertonic","lang":"nl","src":"/audio/supertonic.v3.nl.m4a","text":"Welkom! Selecteer tekst in een willekeurige app, druk op de sneltoets en de tekst wordt voorgelezen.","words":[{"start":0,"end":0.601,"from":0,"to":7},{"start":1.091,"end":1.64,"from":8,"to":17},{"start":1.64,"end":2.08,"from":18,"to":23},{"start":2.08,"end":2.24,"from":24,"to":26},{"start":2.24,"end":2.36,"from":27,"to":30},{"start":2.36,"end":3.06,"from":31,"to":43},{"start":3.06,"end":3.382,"from":44,"to":48},{"start":3.867,"end":4.08,"from":49,"to":53},{"start":4.08,"end":4.3,"from":54,"to":56},{"start":4.3,"end":4.4,"from":57,"to":59},{"start":4.4,"end":5.142,"from":60,"to":69},{"start":5.37,"end":5.46,"from":70,"to":72},{"start":5.46,"end":5.58,"from":73,"to":75},{"start":5.58,"end":6,"from":76,"to":81},{"start":6,"end":6.12,"from":82,"to":87},{"start":6.12,"end":6.94,"from":88,"to":100}]},{"voice":"kokoro","label":"Kokoro","lang":"en","src":"/audio/kokoro.82m.en.m4a","text":"Welcome! Select text in any app, press the shortcut, and hear it read aloud.","words":[{"start":0,"end":0.645,"from":0,"to":8},{"start":1.485,"end":1.72,"from":9,"to":15},{"start":1.72,"end":2.06,"from":16,"to":20},{"start":2.06,"end":2.28,"from":21,"to":23},{"start":2.28,"end":2.44,"from":24,"to":27},{"start":2.44,"end":2.746,"from":28,"to":32},{"start":3.017,"end":3.16,"from":33,"to":38},{"start":3.16,"end":3.34,"from":39,"to":42},{"start":3.34,"end":3.852,"from":43,"to":52},{"start":4.037,"end":4.12,"from":53,"to":56},{"start":4.12,"end":4.32,"from":57,"to":61},{"start":4.32,"end":4.42,"from":62,"to":64},{"start":4.42,"end":4.58,"from":65,"to":69},{"start":4.58,"end":5.029,"from":70,"to":76}]}]</script>
+            </div>
 
             <div class="mac-hero-screenshots">
                 <figure class="mac-screenshot mac-screenshot-main">
@@ -238,6 +251,57 @@
             </div>
         </section>
 
+        <section class="mac-ways" aria-labelledby="ways-title">
+            <span class="mac-section-label">Je voorleestoets</span>
+            <h2 id="ways-title">Eén sneltoets, twee manieren om voor te lezen.</h2>
+            <div class="mac-way-list">
+                <article class="mac-way">
+                    <span class="mac-way-icon mac-way-icon-selected"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 4H10a2 2 0 0 1 2 2 2 2 0 0 1 2-2h1.5M8.5 20H10a2 2 0 0 0 2-2 2 2 0 0 0 2 2h1.5M12 6v12M9.5 12h5"/></svg></span>
+                    <div>
+                        <h3>Tekst geselecteerd</h3>
+                        <p>LoudScript leest hem meteen voor.</p>
+                    </div>
+                </article>
+                <article class="mac-way">
+                    <span class="mac-way-icon mac-way-icon-capture"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8.5V7a3 3 0 0 1 3-3h1.5M15.5 4H17a3 3 0 0 1 3 3v1.5M20 15.5V17a3 3 0 0 1-3 3h-1.5M8.5 20H7a3 3 0 0 1-3-3v-1.5"/></svg></span>
+                    <div>
+                        <h3>Niets geselecteerd</h3>
+                        <p>Sleep over tekst op het scherm. De eerste keer vraagt macOS om toegang tot schermopname.</p>
+                    </div>
+                </article>
+            </div>
+            <ul class="mac-trust">
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/></svg>Leest alleen bij ⌥⌘R</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>Stemmen draaien op je Mac</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 5.8v5.4c0 4.4 2.8 8 7 9.8 4.2-1.8 7-5.4 7-9.8V5.8L12 3Z"/></svg>Altijd uit te zetten</li>
+            </ul>
+        </section>
+
+        <section class="mac-voices" aria-labelledby="voices-title">
+            <span class="mac-section-label">Lokale stemmen</span>
+            <h2 id="voices-title">Kies een stem.</h2>
+            <p class="mac-section-intro">De stemmen van Apple werken meteen. De andere draaien volledig op je Mac en worden op de achtergrond gedownload. Klik op afspelen om ze eerst te beluisteren.</p>
+            <div class="mac-voice-grid">
+                <article class="mac-voice-card">
+                    <h3>Apple</h3>
+                    <p>Ingebouwd in macOS met de breedste taalondersteuning.</p>
+                    <span class="mac-voice-meta">Ingebouwd · direct klaar</span>
+                </article>
+                <article class="mac-voice-card mac-voice-card-pick">
+                    <h3>Supertonic</h3>
+                    <p>Snelle meertalige spraak met meerdere stemstijlen.</p>
+                    <span class="mac-voice-meta">Aanbevolen</span>
+                    <button type="button" class="mac-voice-play" data-voice="supertonic" data-label-play="Voorbeeld van Supertonic afspelen" data-label-stop="Voorbeeld van Supertonic stoppen" aria-label="Voorbeeld van Supertonic afspelen" aria-pressed="false" hidden><svg class="mac-voice-icon-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9l7.5-4.5z"/></svg><svg class="mac-voice-icon-stop" viewBox="0 0 16 16" aria-hidden="true"><rect x="4" y="4" width="8" height="8" rx="1.5"/></svg></button>
+                </article>
+                <article class="mac-voice-card">
+                    <h3>Kokoro</h3>
+                    <p>Compacte spraak met Engelse en Mandarijnse stemmen.</p>
+                    <span class="mac-voice-meta">Vereist Apple silicon</span>
+                    <button type="button" class="mac-voice-play" data-voice="kokoro" data-label-play="Voorbeeld van Kokoro afspelen" data-label-stop="Voorbeeld van Kokoro stoppen" aria-label="Voorbeeld van Kokoro afspelen" aria-pressed="false" hidden><svg class="mac-voice-icon-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9l7.5-4.5z"/></svg><svg class="mac-voice-icon-stop" viewBox="0 0 16 16" aria-hidden="true"><rect x="4" y="4" width="8" height="8" rx="1.5"/></svg></button>
+                </article>
+            </div>
+        </section>
+
         <section class="mac-features" aria-label="Belangrijkste functies">
             <article class="mac-feature-card">
                 <span class="mac-feature-label">Pdf’s voorlezen</span>
@@ -248,11 +312,6 @@
                 <span class="mac-feature-label">Scherm-OCR</span>
                 <h2>Lees tekst die je niet kunt selecteren.</h2>
                 <p>Leg tekst uit afbeeldingen en apps vast en luister er vervolgens naar.</p>
-            </article>
-            <article class="mac-feature-card">
-                <span class="mac-feature-label">Vijf spraakengines</span>
-                <h2>Kies de stem die jij prettig vindt.</h2>
-                <p>Gebruik Apple-stemmen of download Supertonic, Kokoro, PocketTTS of Phonon.</p>
             </article>
             <article class="mac-feature-card">
                 <span class="mac-feature-label">Afspelen op de achtergrond</span>
@@ -351,17 +410,17 @@
                 </figure>
                 <div class="mac-steps">
                     <article class="mac-step-card" data-chapter-start="0" data-chapter-end="4.13">
-                        <span class="mac-step-num">01</span>
+                        <span class="mac-step-dots" aria-hidden="true"><i></i><i></i><i></i></span>
                         <h3>Voeg tekst toe</h3>
                         <p>Selecteer tekst, maak een schermafbeelding, importeer een pdf of typ in LoudScript.</p>
                     </article>
                     <article class="mac-step-card" data-chapter-start="4.13" data-chapter-end="13.3">
-                        <span class="mac-step-num">02</span>
+                        <span class="mac-step-dots" aria-hidden="true"><i></i><i></i><i></i></span>
                         <h3>Luister</h3>
                         <p>Kies een stem en druk op Afspelen. De huidige zin blijft gemarkeerd.</p>
                     </article>
                     <article class="mac-step-card" data-chapter-start="13.3" data-chapter-end="16.5">
-                        <span class="mac-step-num">03</span>
+                        <span class="mac-step-dots" aria-hidden="true"><i></i><i></i><i></i></span>
                         <h3>Ga later verder</h3>
                         <p>Vind eerdere voorlezingen in je geschiedenis om ze opnieuw af te spelen of te kopiëren.</p>
                     </article>
@@ -489,6 +548,11 @@
         </section>
 
         <section class="mac-final-cta">
+            <div class="ov-keys ov-keys-small" aria-hidden="true">
+                <span class="ov-key" data-key="alt"><span class="ov-key-face"><svg viewBox="0 0 24 24"><path d="M3 5h6l6 14h6M14 5h7"/></svg></span></span>
+                <span class="ov-key" data-key="meta"><span class="ov-key-face"><svg viewBox="0 0 24 24"><path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3"/></svg></span></span>
+                <span class="ov-key" data-key="r"><span class="ov-key-face">R</span></span>
+            </div>
             <h2>Begin met luisteren op je Mac.</h2>
             <p>Gratis, rechtstreeks en genotariseerd te downloaden. Geen App Store-account nodig.</p>
             <div class="mac-cta-group" role="group" aria-label="Download LoudScript voor Mac">

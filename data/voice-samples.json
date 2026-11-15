@@ -1,0 +1,1566 @@
+{
+ "en": [
+  {
+   "voice": "supertonic",
+   "label": "Supertonic",
+   "lang": "en",
+   "src": "/audio/supertonic.v3.en.m4a",
+   "text": "Welcome! Select text in any app, press the shortcut, and hear it read aloud.",
+   "words": [
+    {
+     "start": 0,
+     "end": 0.629,
+     "from": 0,
+     "to": 8
+    },
+    {
+     "start": 0.973,
+     "end": 1.2,
+     "from": 9,
+     "to": 15
+    },
+    {
+     "start": 1.2,
+     "end": 1.58,
+     "from": 16,
+     "to": 20
+    },
+    {
+     "start": 1.58,
+     "end": 1.8,
+     "from": 21,
+     "to": 23
+    },
+    {
+     "start": 1.8,
+     "end": 1.98,
+     "from": 24,
+     "to": 27
+    },
+    {
+     "start": 1.98,
+     "end": 2.275,
+     "from": 28,
+     "to": 32
+    },
+    {
+     "start": 2.807,
+     "end": 2.96,
+     "from": 33,
+     "to": 38
+    },
+    {
+     "start": 2.96,
+     "end": 3.14,
+     "from": 39,
+     "to": 42
+    },
+    {
+     "start": 3.14,
+     "end": 3.681,
+     "from": 43,
+     "to": 52
+    },
+    {
+     "start": 3.994,
+     "end": 4.1,
+     "from": 53,
+     "to": 56
+    },
+    {
+     "start": 4.1,
+     "end": 4.3,
+     "from": 57,
+     "to": 61
+    },
+    {
+     "start": 4.3,
+     "end": 4.4,
+     "from": 62,
+     "to": 64
+    },
+    {
+     "start": 4.4,
+     "end": 4.56,
+     "from": 65,
+     "to": 69
+    },
+    {
+     "start": 4.56,
+     "end": 5.079,
+     "from": 70,
+     "to": 76
+    }
+   ]
+  },
+  {
+   "voice": "kokoro",
+   "label": "Kokoro",
+   "lang": "en",
+   "src": "/audio/kokoro.82m.en.m4a",
+   "text": "Welcome! Select text in any app, press the shortcut, and hear it read aloud.",
+   "words": [
+    {
+     "start": 0,
+     "end": 0.645,
+     "from": 0,
+     "to": 8
+    },
+    {
+     "start": 1.485,
+     "end": 1.72,
+     "from": 9,
+     "to": 15
+    },
+    {
+     "start": 1.72,
+     "end": 2.06,
+     "from": 16,
+     "to": 20
+    },
+    {
+     "start": 2.06,
+     "end": 2.28,
+     "from": 21,
+     "to": 23
+    },
+    {
+     "start": 2.28,
+     "end": 2.44,
+     "from": 24,
+     "to": 27
+    },
+    {
+     "start": 2.44,
+     "end": 2.746,
+     "from": 28,
+     "to": 32
+    },
+    {
+     "start": 3.017,
+     "end": 3.16,
+     "from": 33,
+     "to": 38
+    },
+    {
+     "start": 3.16,
+     "end": 3.34,
+     "from": 39,
+     "to": 42
+    },
+    {
+     "start": 3.34,
+     "end": 3.852,
+     "from": 43,
+     "to": 52
+    },
+    {
+     "start": 4.037,
+     "end": 4.12,
+     "from": 53,
+     "to": 56
+    },
+    {
+     "start": 4.12,
+     "end": 4.32,
+     "from": 57,
+     "to": 61
+    },
+    {
+     "start": 4.32,
+     "end": 4.42,
+     "from": 62,
+     "to": 64
+    },
+    {
+     "start": 4.42,
+     "end": 4.58,
+     "from": 65,
+     "to": 69
+    },
+    {
+     "start": 4.58,
+     "end": 5.029,
+     "from": 70,
+     "to": 76
+    }
+   ]
+  }
+ ],
+ "de": [
+  {
+   "voice": "supertonic",
+   "label": "Supertonic",
+   "lang": "de",
+   "src": "/audio/supertonic.v3.de.m4a",
+   "text": "Willkommen! Wähle in einer beliebigen App Text aus, drücke das Tastenkürzel, und er wird dir vorgelesen.",
+   "words": [
+    {
+     "start": 0,
+     "end": 0.733,
+     "from": 0,
+     "to": 11
+    },
+    {
+     "start": 1.268,
+     "end": 1.66,
+     "from": 12,
+     "to": 17
+    },
+    {
+     "start": 1.66,
+     "end": 1.8,
+     "from": 18,
+     "to": 20
+    },
+    {
+     "start": 1.8,
+     "end": 2.04,
+     "from": 21,
+     "to": 26
+    },
+    {
+     "start": 2.04,
+     "end": 2.76,
+     "from": 27,
+     "to": 37
+    },
+    {
+     "start": 2.76,
+     "end": 3,
+     "from": 38,
+     "to": 41
+    },
+    {
+     "start": 3,
+     "end": 3.3,
+     "from": 42,
+     "to": 46
+    },
+    {
+     "start": 3.3,
+     "end": 3.879,
+     "from": 47,
+     "to": 51
+    },
+    {
+     "start": 4.114,
+     "end": 4.4,
+     "from": 52,
+     "to": 58
+    },
+    {
+     "start": 4.4,
+     "end": 4.64,
+     "from": 59,
+     "to": 62
+    },
+    {
+     "start": 4.64,
+     "end": 5.643,
+     "from": 63,
+     "to": 76
+    },
+    {
+     "start": 6.075,
+     "end": 6.16,
+     "from": 77,
+     "to": 80
+    },
+    {
+     "start": 6.16,
+     "end": 6.32,
+     "from": 81,
+     "to": 83
+    },
+    {
+     "start": 6.32,
+     "end": 6.5,
+     "from": 84,
+     "to": 88
+    },
+    {
+     "start": 6.5,
+     "end": 6.64,
+     "from": 89,
+     "to": 92
+    },
+    {
+     "start": 6.64,
+     "end": 7.346,
+     "from": 93,
+     "to": 104
+    }
+   ]
+  },
+  {
+   "voice": "kokoro",
+   "label": "Kokoro",
+   "lang": "en",
+   "src": "/audio/kokoro.82m.en.m4a",
+   "text": "Welcome! Select text in any app, press the shortcut, and hear it read aloud.",
+   "words": [
+    {
+     "start": 0,
+     "end": 0.645,
+     "from": 0,
+     "to": 8
+    },
+    {
+     "start": 1.485,
+     "end": 1.72,
+     "from": 9,
+     "to": 15
+    },
+    {
+     "start": 1.72,
+     "end": 2.06,
+     "from": 16,
+     "to": 20
+    },
+    {
+     "start": 2.06,
+     "end": 2.28,
+     "from": 21,
+     "to": 23
+    },
+    {
+     "start": 2.28,
+     "end": 2.44,
+     "from": 24,
+     "to": 27
+    },
+    {
+     "start": 2.44,
+     "end": 2.746,
+     "from": 28,
+     "to": 32
+    },
+    {
+     "start": 3.017,
+     "end": 3.16,
+     "from": 33,
+     "to": 38
+    },
+    {
+     "start": 3.16,
+     "end": 3.34,
+     "from": 39,
+     "to": 42
+    },
+    {
+     "start": 3.34,
+     "end": 3.852,
+     "from": 43,
+     "to": 52
+    },
+    {
+     "start": 4.037,
+     "end": 4.12,
+     "from": 53,
+     "to": 56
+    },
+    {
+     "start": 4.12,
+     "end": 4.32,
+     "from": 57,
+     "to": 61
+    },
+    {
+     "start": 4.32,
+     "end": 4.42,
+     "from": 62,
+     "to": 64
+    },
+    {
+     "start": 4.42,
+     "end": 4.58,
+     "from": 65,
+     "to": 69
+    },
+    {
+     "start": 4.58,
+     "end": 5.029,
+     "from": 70,
+     "to": 76
+    }
+   ]
+  }
+ ],
+ "es": [
+  {
+   "voice": "supertonic",
+   "label": "Supertonic",
+   "lang": "es",
+   "src": "/audio/supertonic.v3.es.m4a",
+   "text": "¡Te damos la bienvenida! Selecciona texto en cualquier aplicación, pulsa el atajo y lo escucharás en voz alta.",
+   "words": [
+    {
+     "start": 0,
+     "end": 0.16,
+     "from": 0,
+     "to": 3
+    },
+    {
+     "start": 0.16,
+     "end": 0.44,
+     "from": 4,
+     "to": 9
+    },
+    {
+     "start": 0.44,
+     "end": 0.62,
+     "from": 10,
+     "to": 12
+    },
+    {
+     "start": 0.62,
+     "end": 1.31,
+     "from": 13,
+     "to": 24
+    },
+    {
+     "start": 1.821,
+     "end": 2.34,
+     "from": 25,
+     "to": 35
+    },
+    {
+     "start": 2.34,
+     "end": 2.74,
+     "from": 36,
+     "to": 41
+    },
+    {
+     "start": 2.74,
+     "end": 3,
+     "from": 42,
+     "to": 44
+    },
+    {
+     "start": 3,
+     "end": 3.32,
+     "from": 45,
+     "to": 54
+    },
+    {
+     "start": 3.32,
+     "end": 4.2,
+     "from": 55,
+     "to": 66
+    },
+    {
+     "start": 4.411,
+     "end": 4.76,
+     "from": 67,
+     "to": 72
+    },
+    {
+     "start": 4.76,
+     "end": 4.88,
+     "from": 73,
+     "to": 75
+    },
+    {
+     "start": 4.88,
+     "end": 5.437,
+     "from": 76,
+     "to": 81
+    },
+    {
+     "start": 5.826,
+     "end": 5.9,
+     "from": 82,
+     "to": 83
+    },
+    {
+     "start": 5.9,
+     "end": 6.04,
+     "from": 84,
+     "to": 86
+    },
+    {
+     "start": 6.04,
+     "end": 6.84,
+     "from": 87,
+     "to": 97
+    },
+    {
+     "start": 6.84,
+     "end": 7,
+     "from": 98,
+     "to": 100
+    },
+    {
+     "start": 7,
+     "end": 7.22,
+     "from": 101,
+     "to": 104
+    },
+    {
+     "start": 7.22,
+     "end": 7.936,
+     "from": 105,
+     "to": 110
+    }
+   ]
+  },
+  {
+   "voice": "kokoro",
+   "label": "Kokoro",
+   "lang": "en",
+   "src": "/audio/kokoro.82m.en.m4a",
+   "text": "Welcome! Select text in any app, press the shortcut, and hear it read aloud.",
+   "words": [
+    {
+     "start": 0,
+     "end": 0.645,
+     "from": 0,
+     "to": 8
+    },
+    {
+     "start": 1.485,
+     "end": 1.72,
+     "from": 9,
+     "to": 15
+    },
+    {
+     "start": 1.72,
+     "end": 2.06,
+     "from": 16,
+     "to": 20
+    },
+    {
+     "start": 2.06,
+     "end": 2.28,
+     "from": 21,
+     "to": 23
+    },
+    {
+     "start": 2.28,
+     "end": 2.44,
+     "from": 24,
+     "to": 27
+    },
+    {
+     "start": 2.44,
+     "end": 2.746,
+     "from": 28,
+     "to": 32
+    },
+    {
+     "start": 3.017,
+     "end": 3.16,
+     "from": 33,
+     "to": 38
+    },
+    {
+     "start": 3.16,
+     "end": 3.34,
+     "from": 39,
+     "to": 42
+    },
+    {
+     "start": 3.34,
+     "end": 3.852,
+     "from": 43,
+     "to": 52
+    },
+    {
+     "start": 4.037,
+     "end": 4.12,
+     "from": 53,
+     "to": 56
+    },
+    {
+     "start": 4.12,
+     "end": 4.32,
+     "from": 57,
+     "to": 61
+    },
+    {
+     "start": 4.32,
+     "end": 4.42,
+     "from": 62,
+     "to": 64
+    },
+    {
+     "start": 4.42,
+     "end": 4.58,
+     "from": 65,
+     "to": 69
+    },
+    {
+     "start": 4.58,
+     "end": 5.029,
+     "from": 70,
+     "to": 76
+    }
+   ]
+  }
+ ],
+ "fr": [
+  {
+   "voice": "supertonic",
+   "label": "Supertonic",
+   "lang": "fr",
+   "src": "/audio/supertonic.v3.fr.m4a",
+   "text": "Bienvenue ! Sélectionnez du texte dans n’importe quelle application, appuyez sur le raccourci, et il vous sera lu à voix haute.",
+   "words": [
+    {
+     "start": 0,
+     "end": 0.694,
+     "from": 0,
+     "to": 11
+    },
+    {
+     "start": 1.198,
+     "end": 1.84,
+     "from": 12,
+     "to": 24
+    },
+    {
+     "start": 1.84,
+     "end": 1.98,
+     "from": 25,
+     "to": 27
+    },
+    {
+     "start": 1.98,
+     "end": 2.62,
+     "from": 28,
+     "to": 33
+    },
+    {
+     "start": 2.62,
+     "end": 2.72,
+     "from": 34,
+     "to": 38
+    },
+    {
+     "start": 2.72,
+     "end": 3.12,
+     "from": 39,
+     "to": 48
+    },
+    {
+     "start": 3.12,
+     "end": 3.44,
+     "from": 49,
+     "to": 55
+    },
+    {
+     "start": 3.44,
+     "end": 4.21,
+     "from": 56,
+     "to": 68
+    },
+    {
+     "start": 4.653,
+     "end": 5.04,
+     "from": 69,
+     "to": 76
+    },
+    {
+     "start": 5.04,
+     "end": 5.24,
+     "from": 77,
+     "to": 80
+    },
+    {
+     "start": 5.24,
+     "end": 5.36,
+     "from": 81,
+     "to": 83
+    },
+    {
+     "start": 5.36,
+     "end": 6.071,
+     "from": 84,
+     "to": 94
+    },
+    {
+     "start": 6.564,
+     "end": 6.64,
+     "from": 95,
+     "to": 97
+    },
+    {
+     "start": 6.64,
+     "end": 6.74,
+     "from": 98,
+     "to": 100
+    },
+    {
+     "start": 6.74,
+     "end": 6.86,
+     "from": 101,
+     "to": 105
+    },
+    {
+     "start": 6.86,
+     "end": 7.16,
+     "from": 106,
+     "to": 110
+    },
+    {
+     "start": 7.16,
+     "end": 7.287,
+     "from": 111,
+     "to": 113
+    },
+    {
+     "start": 7.478,
+     "end": 7.74,
+     "from": 114,
+     "to": 115
+    },
+    {
+     "start": 7.74,
+     "end": 7.88,
+     "from": 116,
+     "to": 120
+    },
+    {
+     "start": 7.88,
+     "end": 8.086,
+     "from": 121,
+     "to": 127
+    }
+   ]
+  },
+  {
+   "voice": "kokoro",
+   "label": "Kokoro",
+   "lang": "en",
+   "src": "/audio/kokoro.82m.en.m4a",
+   "text": "Welcome! Select text in any app, press the shortcut, and hear it read aloud.",
+   "words": [
+    {
+     "start": 0,
+     "end": 0.645,
+     "from": 0,
+     "to": 8
+    },
+    {
+     "start": 1.485,
+     "end": 1.72,
+     "from": 9,
+     "to": 15
+    },
+    {
+     "start": 1.72,
+     "end": 2.06,
+     "from": 16,
+     "to": 20
+    },
+    {
+     "start": 2.06,
+     "end": 2.28,
+     "from": 21,
+     "to": 23
+    },
+    {
+     "start": 2.28,
+     "end": 2.44,
+     "from": 24,
+     "to": 27
+    },
+    {
+     "start": 2.44,
+     "end": 2.746,
+     "from": 28,
+     "to": 32
+    },
+    {
+     "start": 3.017,
+     "end": 3.16,
+     "from": 33,
+     "to": 38
+    },
+    {
+     "start": 3.16,
+     "end": 3.34,
+     "from": 39,
+     "to": 42
+    },
+    {
+     "start": 3.34,
+     "end": 3.852,
+     "from": 43,
+     "to": 52
+    },
+    {
+     "start": 4.037,
+     "end": 4.12,
+     "from": 53,
+     "to": 56
+    },
+    {
+     "start": 4.12,
+     "end": 4.32,
+     "from": 57,
+     "to": 61
+    },
+    {
+     "start": 4.32,
+     "end": 4.42,
+     "from": 62,
+     "to": 64
+    },
+    {
+     "start": 4.42,
+     "end": 4.58,
+     "from": 65,
+     "to": 69
+    },
+    {
+     "start": 4.58,
+     "end": 5.029,
+     "from": 70,
+     "to": 76
+    }
+   ]
+  }
+ ],
+ "nl": [
+  {
+   "voice": "supertonic",
+   "label": "Supertonic",
+   "lang": "nl",
+   "src": "/audio/supertonic.v3.nl.m4a",
+   "text": "Welkom! Selecteer tekst in een willekeurige app, druk op de sneltoets en de tekst wordt voorgelezen.",
+   "words": [
+    {
+     "start": 0,
+     "end": 0.601,
+     "from": 0,
+     "to": 7
+    },
+    {
+     "start": 1.091,
+     "end": 1.64,
+     "from": 8,
+     "to": 17
+    },
+    {
+     "start": 1.64,
+     "end": 2.08,
+     "from": 18,
+     "to": 23
+    },
+    {
+     "start": 2.08,
+     "end": 2.24,
+     "from": 24,
+     "to": 26
+    },
+    {
+     "start": 2.24,
+     "end": 2.36,
+     "from": 27,
+     "to": 30
+    },
+    {
+     "start": 2.36,
+     "end": 3.06,
+     "from": 31,
+     "to": 43
+    },
+    {
+     "start": 3.06,
+     "end": 3.382,
+     "from": 44,
+     "to": 48
+    },
+    {
+     "start": 3.867,
+     "end": 4.08,
+     "from": 49,
+     "to": 53
+    },
+    {
+     "start": 4.08,
+     "end": 4.3,
+     "from": 54,
+     "to": 56
+    },
+    {
+     "start": 4.3,
+     "end": 4.4,
+     "from": 57,
+     "to": 59
+    },
+    {
+     "start": 4.4,
+     "end": 5.142,
+     "from": 60,
+     "to": 69
+    },
+    {
+     "start": 5.37,
+     "end": 5.46,
+     "from": 70,
+     "to": 72
+    },
+    {
+     "start": 5.46,
+     "end": 5.58,
+     "from": 73,
+     "to": 75
+    },
+    {
+     "start": 5.58,
+     "end": 6,
+     "from": 76,
+     "to": 81
+    },
+    {
+     "start": 6,
+     "end": 6.12,
+     "from": 82,
+     "to": 87
+    },
+    {
+     "start": 6.12,
+     "end": 6.94,
+     "from": 88,
+     "to": 100
+    }
+   ]
+  },
+  {
+   "voice": "kokoro",
+   "label": "Kokoro",
+   "lang": "en",
+   "src": "/audio/kokoro.82m.en.m4a",
+   "text": "Welcome! Select text in any app, press the shortcut, and hear it read aloud.",
+   "words": [
+    {
+     "start": 0,
+     "end": 0.645,
+     "from": 0,
+     "to": 8
+    },
+    {
+     "start": 1.485,
+     "end": 1.72,
+     "from": 9,
+     "to": 15
+    },
+    {
+     "start": 1.72,
+     "end": 2.06,
+     "from": 16,
+     "to": 20
+    },
+    {
+     "start": 2.06,
+     "end": 2.28,
+     "from": 21,
+     "to": 23
+    },
+    {
+     "start": 2.28,
+     "end": 2.44,
+     "from": 24,
+     "to": 27
+    },
+    {
+     "start": 2.44,
+     "end": 2.746,
+     "from": 28,
+     "to": 32
+    },
+    {
+     "start": 3.017,
+     "end": 3.16,
+     "from": 33,
+     "to": 38
+    },
+    {
+     "start": 3.16,
+     "end": 3.34,
+     "from": 39,
+     "to": 42
+    },
+    {
+     "start": 3.34,
+     "end": 3.852,
+     "from": 43,
+     "to": 52
+    },
+    {
+     "start": 4.037,
+     "end": 4.12,
+     "from": 53,
+     "to": 56
+    },
+    {
+     "start": 4.12,
+     "end": 4.32,
+     "from": 57,
+     "to": 61
+    },
+    {
+     "start": 4.32,
+     "end": 4.42,
+     "from": 62,
+     "to": 64
+    },
+    {
+     "start": 4.42,
+     "end": 4.58,
+     "from": 65,
+     "to": 69
+    },
+    {
+     "start": 4.58,
+     "end": 5.029,
+     "from": 70,
+     "to": 76
+    }
+   ]
+  }
+ ],
+ "ja": [
+  {
+   "voice": "supertonic",
+   "label": "Supertonic",
+   "lang": "en",
+   "src": "/audio/supertonic.v3.en.m4a",
+   "text": "Welcome! Select text in any app, press the shortcut, and hear it read aloud.",
+   "words": [
+    {
+     "start": 0,
+     "end": 0.629,
+     "from": 0,
+     "to": 8
+    },
+    {
+     "start": 0.973,
+     "end": 1.2,
+     "from": 9,
+     "to": 15
+    },
+    {
+     "start": 1.2,
+     "end": 1.58,
+     "from": 16,
+     "to": 20
+    },
+    {
+     "start": 1.58,
+     "end": 1.8,
+     "from": 21,
+     "to": 23
+    },
+    {
+     "start": 1.8,
+     "end": 1.98,
+     "from": 24,
+     "to": 27
+    },
+    {
+     "start": 1.98,
+     "end": 2.275,
+     "from": 28,
+     "to": 32
+    },
+    {
+     "start": 2.807,
+     "end": 2.96,
+     "from": 33,
+     "to": 38
+    },
+    {
+     "start": 2.96,
+     "end": 3.14,
+     "from": 39,
+     "to": 42
+    },
+    {
+     "start": 3.14,
+     "end": 3.681,
+     "from": 43,
+     "to": 52
+    },
+    {
+     "start": 3.994,
+     "end": 4.1,
+     "from": 53,
+     "to": 56
+    },
+    {
+     "start": 4.1,
+     "end": 4.3,
+     "from": 57,
+     "to": 61
+    },
+    {
+     "start": 4.3,
+     "end": 4.4,
+     "from": 62,
+     "to": 64
+    },
+    {
+     "start": 4.4,
+     "end": 4.56,
+     "from": 65,
+     "to": 69
+    },
+    {
+     "start": 4.56,
+     "end": 5.079,
+     "from": 70,
+     "to": 76
+    }
+   ]
+  },
+  {
+   "voice": "kokoro",
+   "label": "Kokoro",
+   "lang": "en",
+   "src": "/audio/kokoro.82m.en.m4a",
+   "text": "Welcome! Select text in any app, press the shortcut, and hear it read aloud.",
+   "words": [
+    {
+     "start": 0,
+     "end": 0.645,
+     "from": 0,
+     "to": 8
+    },
+    {
+     "start": 1.485,
+     "end": 1.72,
+     "from": 9,
+     "to": 15
+    },
+    {
+     "start": 1.72,
+     "end": 2.06,
+     "from": 16,
+     "to": 20
+    },
+    {
+     "start": 2.06,
+     "end": 2.28,
+     "from": 21,
+     "to": 23
+    },
+    {
+     "start": 2.28,
+     "end": 2.44,
+     "from": 24,
+     "to": 27
+    },
+    {
+     "start": 2.44,
+     "end": 2.746,
+     "from": 28,
+     "to": 32
+    },
+    {
+     "start": 3.017,
+     "end": 3.16,
+     "from": 33,
+     "to": 38
+    },
+    {
+     "start": 3.16,
+     "end": 3.34,
+     "from": 39,
+     "to": 42
+    },
+    {
+     "start": 3.34,
+     "end": 3.852,
+     "from": 43,
+     "to": 52
+    },
+    {
+     "start": 4.037,
+     "end": 4.12,
+     "from": 53,
+     "to": 56
+    },
+    {
+     "start": 4.12,
+     "end": 4.32,
+     "from": 57,
+     "to": 61
+    },
+    {
+     "start": 4.32,
+     "end": 4.42,
+     "from": 62,
+     "to": 64
+    },
+    {
+     "start": 4.42,
+     "end": 4.58,
+     "from": 65,
+     "to": 69
+    },
+    {
+     "start": 4.58,
+     "end": 5.029,
+     "from": 70,
+     "to": 76
+    }
+   ]
+  }
+ ],
+ "zh-Hans": [
+  {
+   "voice": "kokoro",
+   "label": "Kokoro",
+   "lang": "zh-Hans",
+   "src": "/audio/kokoro.82m.zh.m4a",
+   "text": "欢迎！在任意应用中选择文本，按下快捷键，即可听到朗读。",
+   "words": [
+    {
+     "start": 0.13,
+     "end": 0.653,
+     "from": 0,
+     "to": 3
+    },
+    {
+     "start": 1.249,
+     "end": 1.36,
+     "from": 3,
+     "to": 4
+    },
+    {
+     "start": 1.36,
+     "end": 1.78,
+     "from": 4,
+     "to": 6
+    },
+    {
+     "start": 1.78,
+     "end": 2.18,
+     "from": 6,
+     "to": 8
+    },
+    {
+     "start": 2.18,
+     "end": 2.38,
+     "from": 8,
+     "to": 9
+    },
+    {
+     "start": 2.38,
+     "end": 2.82,
+     "from": 9,
+     "to": 11
+    },
+    {
+     "start": 2.82,
+     "end": 3.277,
+     "from": 11,
+     "to": 14
+    },
+    {
+     "start": 3.668,
+     "end": 3.96,
+     "from": 14,
+     "to": 16
+    },
+    {
+     "start": 3.96,
+     "end": 4.664,
+     "from": 16,
+     "to": 20
+    },
+    {
+     "start": 4.846,
+     "end": 5.16,
+     "from": 20,
+     "to": 22
+    },
+    {
+     "start": 5.16,
+     "end": 5.52,
+     "from": 22,
+     "to": 24
+    },
+    {
+     "start": 5.52,
+     "end": 6.144,
+     "from": 24,
+     "to": 27
+    }
+   ]
+  },
+  {
+   "voice": "supertonic",
+   "label": "Supertonic",
+   "lang": "en",
+   "src": "/audio/supertonic.v3.en.m4a",
+   "text": "Welcome! Select text in any app, press the shortcut, and hear it read aloud.",
+   "words": [
+    {
+     "start": 0,
+     "end": 0.629,
+     "from": 0,
+     "to": 8
+    },
+    {
+     "start": 0.973,
+     "end": 1.2,
+     "from": 9,
+     "to": 15
+    },
+    {
+     "start": 1.2,
+     "end": 1.58,
+     "from": 16,
+     "to": 20
+    },
+    {
+     "start": 1.58,
+     "end": 1.8,
+     "from": 21,
+     "to": 23
+    },
+    {
+     "start": 1.8,
+     "end": 1.98,
+     "from": 24,
+     "to": 27
+    },
+    {
+     "start": 1.98,
+     "end": 2.275,
+     "from": 28,
+     "to": 32
+    },
+    {
+     "start": 2.807,
+     "end": 2.96,
+     "from": 33,
+     "to": 38
+    },
+    {
+     "start": 2.96,
+     "end": 3.14,
+     "from": 39,
+     "to": 42
+    },
+    {
+     "start": 3.14,
+     "end": 3.681,
+     "from": 43,
+     "to": 52
+    },
+    {
+     "start": 3.994,
+     "end": 4.1,
+     "from": 53,
+     "to": 56
+    },
+    {
+     "start": 4.1,
+     "end": 4.3,
+     "from": 57,
+     "to": 61
+    },
+    {
+     "start": 4.3,
+     "end": 4.4,
+     "from": 62,
+     "to": 64
+    },
+    {
+     "start": 4.4,
+     "end": 4.56,
+     "from": 65,
+     "to": 69
+    },
+    {
+     "start": 4.56,
+     "end": 5.079,
+     "from": 70,
+     "to": 76
+    }
+   ]
+  }
+ ],
+ "zh-Hant": [
+  {
+   "voice": "kokoro",
+   "label": "Kokoro",
+   "lang": "zh-Hant",
+   "src": "/audio/kokoro.82m.zh.m4a",
+   "text": "歡迎！在任何應用程式中選取文字，按下快捷鍵，即可聽到朗讀。",
+   "words": [
+    {
+     "start": 0.13,
+     "end": 0.653,
+     "from": 0,
+     "to": 3
+    },
+    {
+     "start": 1.249,
+     "end": 1.36,
+     "from": 3,
+     "to": 4
+    },
+    {
+     "start": 1.36,
+     "end": 1.78,
+     "from": 4,
+     "to": 6
+    },
+    {
+     "start": 1.78,
+     "end": 2.18,
+     "from": 6,
+     "to": 10
+    },
+    {
+     "start": 2.18,
+     "end": 2.38,
+     "from": 10,
+     "to": 11
+    },
+    {
+     "start": 2.38,
+     "end": 2.82,
+     "from": 11,
+     "to": 13
+    },
+    {
+     "start": 2.82,
+     "end": 3.277,
+     "from": 13,
+     "to": 16
+    },
+    {
+     "start": 3.668,
+     "end": 3.96,
+     "from": 16,
+     "to": 18
+    },
+    {
+     "start": 3.96,
+     "end": 4.664,
+     "from": 18,
+     "to": 22
+    },
+    {
+     "start": 4.846,
+     "end": 5.16,
+     "from": 22,
+     "to": 24
+    },
+    {
+     "start": 5.16,
+     "end": 5.52,
+     "from": 24,
+     "to": 26
+    },
+    {
+     "start": 5.52,
+     "end": 6.144,
+     "from": 26,
+     "to": 29
+    }
+   ]
+  },
+  {
+   "voice": "supertonic",
+   "label": "Supertonic",
+   "lang": "en",
+   "src": "/audio/supertonic.v3.en.m4a",
+   "text": "Welcome! Select text in any app, press the shortcut, and hear it read aloud.",
+   "words": [
+    {
+     "start": 0,
+     "end": 0.629,
+     "from": 0,
+     "to": 8
+    },
+    {
+     "start": 0.973,
+     "end": 1.2,
+     "from": 9,
+     "to": 15
+    },
+    {
+     "start": 1.2,
+     "end": 1.58,
+     "from": 16,
+     "to": 20
+    },
+    {
+     "start": 1.58,
+     "end": 1.8,
+     "from": 21,
+     "to": 23
+    },
+    {
+     "start": 1.8,
+     "end": 1.98,
+     "from": 24,
+     "to": 27
+    },
+    {
+     "start": 1.98,
+     "end": 2.275,
+     "from": 28,
+     "to": 32
+    },
+    {
+     "start": 2.807,
+     "end": 2.96,
+     "from": 33,
+     "to": 38
+    },
+    {
+     "start": 2.96,
+     "end": 3.14,
+     "from": 39,
+     "to": 42
+    },
+    {
+     "start": 3.14,
+     "end": 3.681,
+     "from": 43,
+     "to": 52
+    },
+    {
+     "start": 3.994,
+     "end": 4.1,
+     "from": 53,
+     "to": 56
+    },
+    {
+     "start": 4.1,
+     "end": 4.3,
+     "from": 57,
+     "to": 61
+    },
+    {
+     "start": 4.3,
+     "end": 4.4,
+     "from": 62,
+     "to": 64
+    },
+    {
+     "start": 4.4,
+     "end": 4.56,
+     "from": 65,
+     "to": 69
+    },
+    {
+     "start": 4.56,
+     "end": 5.079,
+     "from": 70,
+     "to": 76
+    }
+   ]
+  }
+ ]
+}

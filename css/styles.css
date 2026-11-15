@@ -1,508 +1,223 @@
+/* ==========================================
+   Overture
+   The palette, type, and surfaces of the Mac app's first-run onboarding.
+   Every color on the site comes from these tokens.
+   ========================================== */
+
+:root {
+    color-scheme: dark;
+
+    --bg: #130F22;
+    --bg-raised: #1E1933;
+    --glow-violet: rgb(75 51 184 / 0.9);
+    --glow-warm: rgb(237 134 52 / 0.35);
+
+    --text: #F4F1FF;
+    --muted: #B3ABD3;
+    --spoken: #968DBA;
+    --eyebrow: #FFCF9F;
+    --link: #B9A8FF;
+    --trust: #B9A8FF;
+    --waiting: #FFB070;
+    --granted: #5BE39A;
+    --granted-soft: rgb(91 227 154 / 0.16);
+
+    --accent: #ED8634;
+    --accent-bright: #F4984B;
+    --accent-soft: rgb(237 134 52 / 0.14);
+    --accent-line: rgb(237 134 52 / 0.55);
+    --accent-glow: rgb(237 134 52 / 0.45);
+    --on-accent: #FFFFFF;
+
+    --surface: rgb(255 255 255 / 0.05);
+    --surface-strong: rgb(255 255 255 / 0.08);
+    --hairline: rgb(255 255 255 / 0.13);
+    --hairline-strong: rgb(255 255 255 / 0.18);
+    --shade: rgb(6 4 14 / 0.3);
+    --shadow-float: 0 24px 64px rgb(6 4 14 / 0.5);
+
+    /* Keycaps keep their dark plastic in both appearances. */
+    --key-top: #3A3352;
+    --key-bottom: #2A2440;
+    --key-edge: #1C1730;
+    --key-text: #F4F1FF;
+    --key-shadow: rgb(0 0 0 / 0.18);
+
+    --way-selected: linear-gradient(#41CF72, #1F9D55);
+    --way-capture: linear-gradient(#A274FF, #6B3EF0);
+
+    --font-display: ui-rounded, "SF Pro Rounded", system-ui, -apple-system, sans-serif;
+    --font-body: system-ui, -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+    --radius-s: 14px;
+    --radius-m: 20px;
+    --radius-l: 24px;
+}
+
+/* Light appearance: the lavender paper of the onboarding's mock document,
+   ink text, fainter glows, the same orange. Dark stays the default. */
+@media (prefers-color-scheme: light) {
+    :root {
+        color-scheme: light;
+
+        --bg: #F7F5FF;
+        --bg-raised: #FFFFFF;
+        --glow-violet: rgb(124 99 235 / 0.3);
+        --glow-warm: rgb(237 134 52 / 0.28);
+
+        --text: #2A2440;
+        --muted: #5F587F;
+        --spoken: #7F789E;
+        --eyebrow: #A3500E;
+        --link: #5A3FD2;
+        --trust: #6B4EE6;
+        --waiting: #B45A12;
+        --granted: #14713F;
+        --granted-soft: rgb(31 157 85 / 0.14);
+
+        --accent-soft: rgb(237 134 52 / 0.12);
+        --accent-line: rgb(237 134 52 / 0.65);
+
+        --surface: rgb(255 255 255 / 0.72);
+        --surface-strong: #FFFFFF;
+        --hairline: rgb(42 36 64 / 0.12);
+        --hairline-strong: rgb(42 36 64 / 0.2);
+        --shade: rgb(42 36 64 / 0.07);
+        --shadow-float: 0 24px 64px rgb(42 36 64 / 0.18);
+
+        --key-shadow: rgb(42 36 64 / 0.3);
+    }
+}
+
 body {
+    position: relative;
+    min-height: 100vh;
     margin: 0;
     text-align: center;
-    font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background-color: #000000;
+    font-family: var(--font-body);
+    color: var(--text);
+    background-color: var(--bg);
 }
 
-.right {
-    float: right;
+/* The canvas: ink with a violet glow from the top and a warm glow from the bottom. */
+body::before,
+body::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    pointer-events: none;
 }
 
-.left {
-    float: left;
+body::before {
+    top: 0;
+    height: min(1080px, 100%);
+    background: radial-gradient(
+        ellipse 800px 640px at 50% -100px,
+        var(--glow-violet),
+        color-mix(in srgb, var(--glow-violet) 42%, transparent) 46%,
+        transparent
+    );
 }
 
-
-.privacyContent {
-    text-align: left;
-    font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: white;
-    font-size: 1.2em;
-    line-height: 1.3em;
-    margin-left: 10%;
-    margin-right: 10%;
+body::after {
+    bottom: 0;
+    height: min(760px, 100%);
+    background: radial-gradient(
+        ellipse 640px 500px at 50% calc(100% + 90px),
+        var(--glow-warm),
+        color-mix(in srgb, var(--glow-warm) 40%, transparent) 50%,
+        transparent
+    );
 }
 
-.applogo {
-    border-radius: 16px;
-    width: 15%;
-    margin-bottom: 1%;
-}
-
-.link{
-    color: #6042F5;
-    text-decoration: none;
-}
-
-.ctaGroup {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
-}
-
-.platformNote {
-    color: #8b8c9f;
-    opacity: 0.75;
-    margin-top: 20px;
-}
-
-@media only screen and (min-width: 600px) {
-    .head-section {
-        padding-top: 5%;
-        background-color: #000000;
-        padding-bottom: 3%;
-    }
-
-    .footer-section {
-        height: 20%;
-        background-color: #000000;
-    }
-
-    .appstoreLink {
-        font-size: 1.8vw;
-        border-width: 2px;
-        border-color: #6042F5;
-        border-style: solid;
-        color: #6042F5;
-        border-radius: 50px;
-        background-color: none;
-        padding-top: 1%;
-        padding-bottom: 1%;
-        padding-left: 3%;
-        padding-right: 3%;
-        text-decoration: none;
-        transition: 0.5s;
-        font-weight: 700;
-        margin-bottom: 2.5%;
-    }
-
-    .platformNote {
-        font-size: 1.1vw;
-        width: 50%;
-        line-height: 1.4em;
-    }
-
-    .appstoreLink:hover {
-        font-size: 1.8vw;
-        border-width: 2px;
-        border-color: #6042F5;
-        border-style: solid;
-        color: #fff;
-        border-radius: 50px;
-        background-color: #6042F5;
-        padding-top: 1%;
-        padding-bottom: 1%;
-        padding-left: 3%;
-        padding-right: 3%;
-        text-decoration: none;
-        transition: 0.5s;
-        font-weight: 700;
-        margin-bottom: 2.5%;
-    }
-
-    .section {
-        background-color: #000000;
-        z-index: 999;
-        border-radius: 0px;
-    }
-
-    .sectionHeading {
-        color: #fff;
-        line-height: 1em;
-        margin-left: 10%;
-        margin-right: 10%;
-        padding-top: 5%;
-        font-size: 1.5em;
-    }
-
-    .mainHeading {
-        color: #fff;
-        font-size: 5vw;
-        line-height: 0.2em;
-        font-weight: 700;
-    }
-
-    .subHeading {
-        color: #FFF;
-        font-size: 2.5vw;
-        line-height: 1em;
-    }
-
-    .secondarySubHeading {
-        color: #8b8c9f;
-        font-size: 2vw;
-        line-height: 1em;
-        width: 50%;
-        opacity: 0.5;
-        padding-bottom: 2.5%;
-    }
-
-    .threadHeading {
-        color: #fff;
-        line-height: 1em;
-        margin-left: 10%;
-        margin-right: 10%;
-        font-size: 3vw;
-        /* padding-top: auto; */
-    }
-
-    .threadSubHeading,
-    .threadSubHeading1 {
-        color: #8b8c9f;
-        font-size: 2vw;
-        line-height: 1em;
-        padding-bottom: 10%;
-        margin-left: 10%;
-        margin-right: 10%;
-    }
-
-    .threadSubHeading1 {
-        width: 50%;
-        font-size: 2vw;
-    }
-
-    .col {
-        flex: 1;
-        justify-content: center;
-        align-items: center;
-        width: auto;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        vertical-align: middle;
-    }
-
-    .col-text {
-        flex: 1;
-        justify-content: center;
-    }
-
-    .flex-grid {
-        display: flex;
-    }
-
-    .image1 {
-        background-color: #4662F9;
-        object-fit: contain;
-        max-height: 60vh;
-        width: 100%;
-    }
-
-    .image2 {
-        width: 70%;
-    }
-
-    .image3 {
-        background-color: #4662F9;
-        width: 100%;
-        border-radius: 10%;
-    }
-
-    .image3 {
-        background-color: #4662F9;
-        width: 100%;
-        border-radius: 10%;
-    }
-
-    /* .fade-in.one {
-        -webkit-animation-delay: 0.1s;
-        -moz-animation-delay: 0.1s;
-        animation-delay: 0.1s;
-    }
-
-    .fade-in.two {
-        -webkit-animation-delay: 1.2s;
-        -moz-animation-delay: 1.2s;
-        animation-delay: 1.2s;
-    }
-
-    .fade-in.three {
-        -webkit-animation-delay: 1.8s;
-        -moz-animation-delay: 1.8s;
-        animation-delay: 1.8s;
-    }
-
-    .fade-in.four {
-        -webkit-animation-delay: 2.0s;
-        -moz-animation-delay: 2.0s;
-        animation-delay: 2.0s;
-    } */
-
-
-    @-webkit-keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-
-        to {
-            opacity: 1;
-        }
-    }
-
-    @-moz-keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-
-        to {
-            opacity: 1;
-        }
-    }
-
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-
-        to {
-            opacity: 1;
-        }
-    }
-
-
-    .fade-in {
-        opacity: 0;
-        -webkit-animation: fadeIn ease-in 1;
-        -moz-animation: fadeIn ease-in 1;
-        animation: fadeIn ease-in 1;
-
-        -webkit-animation-fill-mode: forwards;
-        -moz-animation-fill-mode: forwards;
-        animation-fill-mode: forwards;
-
-        -webkit-animation-duration: 1s;
-        -moz-animation-duration: 1s;
-        animation-duration: 1s;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    .head-section {
-        padding-top: 15%;
-        background-color: #000000;
-        padding-bottom: 20%;
-    }
-
-    .footer-section {
-        height: 20%;
-        background-color: #000000;
-    }
-
-    .appstoreLink {
-        font-size: 6vw;
-        border-width: 2px;
-        border-color: #6042F5;
-        border-style: solid;
-        color: #6042F5;
-        border-radius: 50px;
-        background-color: none;
-        padding-top: 3%;
-        padding-bottom: 3%;
-        padding-left: 10%;
-        padding-right: 10%;
-        text-decoration: none;
-        transition: 0.5s;
-        font-weight: 700;
-        margin-bottom: 2.5%;
-    }
-
-    .ctaGroup {
-        gap: 12px;
-    }
-
-    .platformNote {
-        width: 90%;
-        font-size: 4.5vw;
-        line-height: 1.4em;
-    }
-
-    .appstoreLink:hover {
-        font-size: 6vw;
-        border-width: 2px;
-        border-color: #6042F5;
-        border-style: solid;
-        color: #FFF;
-        border-radius: 50px;
-        background-color: #6042F5;
-        padding-top: 3%;
-        padding-bottom: 3%;
-        padding-left: 10%;
-        padding-right: 10%;
-        text-decoration: none;
-        transition: 0.5s;
-        font-weight: 700;
-        margin-bottom: 2.5%;
-    }
-
-    .section {
-        border-bottom-width: 2px;
-        border-bottom-color: #6042F5;
-        border-bottom-style: solid;
-
-        padding-top: 5%;
-        background-color: #000000;
-        z-index: 999;
-        border-radius: 0px;
-    }
-
-    .mainHeading {
-        color: #fff;
-        font-size: 16vw;
-        line-height: 0.2em;
-        font-weight: 700;
-        text-align: center;
-    }
-
-    .sectionHeading {
-        color: #fff;
-        line-height: 1em;
-        margin-left: 10%;
-        margin-right: 10%;
-        padding-top: 5%;
-        font-size: 1.5em;
-        text-align: center;
-    }
-
-    .subHeading {
-        color: #FFF;
-        font-size: 8vw;
-        line-height: 1em;
-        width: 90%;
-        text-align: center;
-    }
-
-    .secondarySubHeading {
-        color: #9C9C9C;
-        font-size: 6vw;
-        line-height: 1em;
-        width: 90%;
-        opacity: 0.5;
-        padding-bottom: 10%;
-        text-align: center;
-    }
-
-    .threadHeading {
-        color: #fff;
-        line-height: 1em;
-        margin-left: 10%;
-        margin-right: 10%;
-        padding-top: 5%;
-        font-size: 8vw;
-        text-align: center;
-    }
-
-    .threadSubHeading,
-    .threadSubHeading1 {
-        color: #fff;
-        font-size: 6vw;
-        line-height: 1em;
-        padding-bottom: 10%;
-        opacity: 0.5;
-        text-align: center;
-    }
-
-    .threadSubHeading1 {
-        width: 90%;
-        font-size: 6vw;
-        line-height: 1em;
-        text-align: center;
-    }
-
-    .image1 {
-        background-color: #4662F9;
-        width: 100%;
-    }
-
-    .image2 {
-        margin-top: 5%;
-        width: 100%;
-    }
-
-    /* .fade-in.one {
-        -webkit-animation-delay: 0.1s;
-        -moz-animation-delay: 0.1s;
-        animation-delay: 0.1s;
-    }
-
-    .fade-in.two {
-        -webkit-animation-delay: 1.2s;
-        -moz-animation-delay: 1.2s;
-        animation-delay: 1.2s;
-    }
-
-    .fade-in.three {
-        -webkit-animation-delay: 1.8s;
-        -moz-animation-delay: 1.8s;
-        animation-delay: 1.8s;
-    }
-
-    .fade-in.four {
-        -webkit-animation-delay: 2.0s;
-        -moz-animation-delay: 2.0s;
-        animation-delay: 2.0s;
-    } */
-
-    @-webkit-keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-
-        to {
-            opacity: 1;
-        }
-    }
-
-    @-moz-keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-
-        to {
-            opacity: 1;
-        }
-    }
-
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-
-        to {
-            opacity: 1;
-        }
-    }
-
-
-    /* .fade-in {
-        opacity: 0;
-        -webkit-animation: fadeIn ease-in 1;
-        -moz-animation: fadeIn ease-in 1;
-        animation: fadeIn ease-in 1;
-
-        -webkit-animation-fill-mode: forwards;
-        -moz-animation-fill-mode: forwards;
-        animation-fill-mode: forwards;
-
-        -webkit-animation-duration: 1s;
-        -moz-animation-duration: 1s;
-        animation-duration: 1s;
-    } */
-}
-
-.macPageLink {
-    margin-top: 0;
-    padding-bottom: 2.5%;
+::selection {
+    background: rgb(237 134 52 / 0.4);
 }
 
 /* ==========================================
-   Mac Page
+   Terms and privacy
+   ========================================== */
+
+.head-section {
+    padding: 72px 24px 24px;
+}
+
+.applogo {
+    width: 96px;
+    height: auto;
+    border-radius: 22px;
+}
+
+.subHeading {
+    margin: 20px 0 0;
+    color: var(--text);
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+}
+
+.secondarySubHeading {
+    color: var(--muted);
+    font-size: 1.15rem;
+    line-height: 1.5;
+}
+
+.sectionHeading {
+    margin: 0 10%;
+    padding-top: 40px;
+    color: var(--text);
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    text-align: left;
+}
+
+.privacyContent {
+    margin-left: 10%;
+    margin-right: 10%;
+    color: var(--muted);
+    font-size: 1.08rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.link {
+    color: var(--link);
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+}
+
+.footer-section {
+    height: 96px;
+}
+
+@media (max-width: 600px) {
+    .head-section {
+        padding-top: 48px;
+    }
+
+    .sectionHeading,
+    .privacyContent {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+/* ==========================================
+   Pages
    ========================================== */
 
 .mac-page {
-    color: #fff;
+    color: var(--text);
     text-align: left;
     overflow-x: hidden;
 }
@@ -518,16 +233,31 @@ body {
     max-width: 100%;
 }
 
-.mac-page a:focus-visible {
-    outline: 3px solid #9580fa;
-    outline-offset: 4px;
+/* Japanese has no spaces, so lines break between phrases instead of mid-word. */
+.mac-page:lang(ja) {
+    word-break: auto-phrase;
+    overflow-wrap: anywhere;
+}
+
+.mac-page :focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.mac-page h1,
+.mac-page h2,
+.mac-page h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
 }
 
 /* Shell */
 .mac-shell {
-    max-width: 1100px;
+    max-width: 1120px;
     margin: 0 auto;
-    padding: 32px 24px 0;
+    padding: 28px 24px 0;
 }
 
 /* Navigation */
@@ -536,7 +266,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 8px 0;
-    margin-bottom: 72px;
+    margin-bottom: 64px;
 }
 
 .mac-brand {
@@ -544,9 +274,11 @@ body {
     align-items: center;
     gap: 12px;
     text-decoration: none;
-    color: #fff;
+    color: var(--text);
+    font-family: var(--font-display);
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
+    letter-spacing: -0.02em;
 }
 
 .mac-brand-logo {
@@ -557,35 +289,37 @@ body {
 
 .mac-nav-links {
     display: flex;
-    gap: 8px;
+    gap: 4px;
     flex-wrap: wrap;
     justify-content: flex-end;
 }
 
 .mac-nav-links a {
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--muted);
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 500;
-    padding: 8px 16px;
+    padding: 8px 14px;
     border-radius: 999px;
-    transition: color 0.2s, background 0.2s;
+    transition: color 0.16s ease-out, background-color 0.16s ease-out;
 }
 
 .mac-nav-links a:hover {
-    color: #fff;
-    background: rgba(255, 255, 255, 0.08);
+    color: var(--text);
+    background: var(--surface-strong);
 }
 
 .mac-nav-links .mac-nav-cta {
-    color: #9580fa;
-    border: 1px solid rgba(149, 128, 250, 0.5);
+    margin-left: 8px;
+    color: var(--text);
     font-weight: 600;
+    background: var(--surface-strong);
+    box-shadow: inset 0 0 0 1px var(--hairline-strong);
 }
 
 .mac-nav-links .mac-nav-cta:hover {
-    background: rgba(96, 66, 245, 0.12);
-    color: #b0a0ff;
+    background: var(--accent-soft);
+    box-shadow: inset 0 0 0 1px var(--accent-line);
 }
 
 .mac-language-menu {
@@ -603,18 +337,18 @@ body {
     align-items: center;
     gap: 8px;
     min-height: 36px;
-    padding: 7px 10px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.04);
-    color: rgba(255, 255, 255, 0.58);
-    font-size: 0.78rem;
+    padding: 7px 12px;
+    border: 1px solid var(--hairline);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--muted);
+    font-size: 0.8rem;
     font-weight: 600;
     line-height: 1;
     cursor: pointer;
     list-style: none;
     white-space: nowrap;
-    transition: color 0.2s, border-color 0.2s, background 0.2s;
+    transition: color 0.16s ease-out, border-color 0.16s ease-out, background-color 0.16s ease-out;
 }
 
 .mac-language-menu summary::-webkit-details-marker {
@@ -622,16 +356,10 @@ body {
 }
 
 .mac-language-menu summary:hover,
-.mac-language-menu summary:focus-visible,
 .mac-language-menu details[open] summary {
-    color: #fff;
-    border-color: rgba(149, 128, 250, 0.45);
-    background: rgba(149, 128, 250, 0.1);
-}
-
-.mac-language-menu summary:focus-visible {
-    outline: 3px solid #9580fa;
-    outline-offset: 3px;
+    color: var(--text);
+    border-color: var(--hairline-strong);
+    background: var(--surface-strong);
 }
 
 .mac-language-globe,
@@ -653,7 +381,7 @@ body {
 .mac-language-chevron {
     width: 14px;
     height: 14px;
-    transition: transform 0.2s ease;
+    transition: transform 0.16s ease-out;
 }
 
 .mac-language-menu details[open] .mac-language-chevron {
@@ -664,12 +392,12 @@ body {
     position: absolute;
     top: calc(100% + 8px);
     right: 0;
-    width: 176px;
+    width: 184px;
     padding: 6px;
-    border: 1px solid rgba(255, 255, 255, 0.11);
-    border-radius: 14px;
-    background: #17141e;
-    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.32);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-s);
+    background: var(--bg-raised);
+    box-shadow: var(--shadow-float);
 }
 
 .mac-language-options a {
@@ -679,28 +407,28 @@ body {
     min-height: 38px;
     padding: 8px 10px;
     border-radius: 9px;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.84rem;
+    color: var(--muted);
+    font-size: 0.86rem;
     font-weight: 600;
     text-decoration: none;
 }
 
 .mac-language-options a:hover,
 .mac-language-options a:focus-visible {
-    color: #fff;
-    background: rgba(255, 255, 255, 0.07);
-    outline: none;
+    color: var(--text);
+    background: var(--surface-strong);
 }
 
 .mac-language-options a[aria-current="page"] {
-    color: #fff;
-    background: rgba(149, 128, 250, 0.14);
+    color: var(--text);
+    background: var(--accent-soft);
 }
 
 .mac-language-check {
     width: 16px;
     height: 16px;
     opacity: 0;
+    color: var(--accent);
 }
 
 .mac-language-options a[aria-current="page"] .mac-language-check {
@@ -710,7 +438,7 @@ body {
 .mac-link-language {
     display: inline-block;
     margin-left: 0.2em;
-    color: #9580fa;
+    color: var(--eyebrow);
     font-size: 0.66em;
     font-weight: 800;
     letter-spacing: 0.06em;
@@ -721,46 +449,26 @@ body {
 /* Hero */
 .mac-hero {
     text-align: center;
-    padding-bottom: 80px;
-    position: relative;
+    padding-bottom: 96px;
 }
 
-.mac-hero::before {
-    content: '';
-    position: absolute;
-    top: -120px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: min(700px, 100%);
-    height: 500px;
-    background: radial-gradient(ellipse, rgba(96, 66, 245, 0.07) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
-}
-
-.mac-eyebrow {
-    display: inline-block;
-    position: relative;
-    z-index: 1;
-    margin: 0 0 24px;
-    padding: 6px 18px;
-    border-radius: 999px;
-    background: rgba(96, 66, 245, 0.1);
-    border: 1px solid rgba(96, 66, 245, 0.18);
-    color: #9580fa;
+.mac-eyebrow,
+.mac-section-label {
+    display: block;
+    margin: 0 0 16px;
+    color: var(--eyebrow);
+    font-family: var(--font-display);
     font-size: 0.82rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
+    font-weight: 700;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
 }
 
 .mac-hero-badges {
-    position: relative;
-    z-index: 1;
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 24px;
+    gap: 12px;
+    margin-bottom: 22px;
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -769,56 +477,53 @@ body {
     margin: 0;
 }
 
+/* The onboarding's status pill. */
 .mac-free-badge {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    min-height: 34px;
-    padding: 6px 14px;
+    gap: 7px;
+    padding: 5px 11px;
     border-radius: 999px;
-    background: rgba(255, 191, 87, 0.12);
-    border: 1px solid rgba(255, 191, 87, 0.3);
-    color: #ffcc7a;
-    font-size: 0.82rem;
-    font-weight: 800;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    background: var(--granted-soft);
+    color: var(--granted);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+}
+
+.mac-free-badge::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: currentColor;
 }
 
 .mac-title {
-    position: relative;
-    z-index: 1;
     margin: 0;
-    font-size: clamp(2.8rem, 6vw, 5.2rem);
-    font-weight: 700;
-    line-height: 1;
-    letter-spacing: -0.04em;
-    color: #fff;
+    font-size: clamp(2.75rem, 6.6vw, 5.25rem);
+    line-height: 1.02;
+    color: var(--text);
 }
 
 .mac-intro {
-    position: relative;
-    z-index: 1;
-    max-width: 600px;
+    max-width: 580px;
     margin: 24px auto 0;
-    color: rgba(255, 255, 255, 0.62);
+    color: var(--muted);
     font-size: 1.15rem;
-    line-height: 1.7;
+    line-height: 1.6;
     text-wrap: balance;
 }
 
 .mac-hero .mac-cta-group {
-    position: relative;
-    z-index: 1;
     justify-content: center;
-    margin-top: 36px;
+    align-items: center;
+    margin-top: 34px;
 }
 
 .mac-note {
-    position: relative;
-    z-index: 1;
-    margin: 16px 0 0;
-    color: rgba(255, 255, 255, 0.55);
+    margin: 18px 0 0;
+    color: var(--spoken);
     font-size: 0.9rem;
     text-wrap: balance;
 }
@@ -834,61 +539,260 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 14px 28px;
-    border-radius: 50px;
-    font-size: 1rem;
-    font-weight: 700;
-    text-decoration: none;
-    transition: all 0.3s ease;
+    padding: 13px 24px;
+    border: 0;
+    border-radius: 999px;
     font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.16s ease-out, box-shadow 0.16s ease-out, transform 0.16s ease-out;
+}
+
+.mac-btn:active {
+    transform: translateY(0.5px) scale(0.98);
 }
 
 .mac-btn-primary {
-    background: #6042F5;
-    color: #fff;
-    border: 2px solid #6042F5;
-    box-shadow: 0 8px 32px rgba(96, 66, 245, 0.2);
+    background: var(--accent);
+    color: var(--on-accent);
+    box-shadow: 0 8px 24px var(--accent-glow);
 }
 
 .mac-btn-primary:hover {
-    background: #7258f7;
-    border-color: #7258f7;
-    box-shadow: 0 12px 40px rgba(96, 66, 245, 0.3);
-    transform: translateY(-1px);
+    background: var(--accent-bright);
+    box-shadow: 0 10px 32px var(--accent-glow);
 }
 
 .mac-btn-secondary {
-    color: #9580fa;
-    border: 2px solid #9580fa;
-    background: transparent;
+    color: var(--text);
+    background: var(--surface-strong);
+    box-shadow: inset 0 0 0 1px var(--hairline-strong);
 }
 
 .mac-btn-secondary:hover {
-    background: #6042F5;
-    color: #fff;
+    background: var(--hairline);
 }
 
 .mac-btn-compact {
     padding: 10px 18px;
-    font-size: 0.88rem;
-    font-weight: 600;
-    align-self: center;
+    font-size: 0.9rem;
 }
 
-/* Hero Screenshots */
+/* The one call to action that carries a screen. */
+.mac-hero .mac-btn-primary,
+.mac-final-cta .mac-btn-primary {
+    min-width: 240px;
+    padding: 16px 28px;
+    font-size: 1.0625rem;
+}
+
+/* Reading key: the onboarding's shortcut screen. Pressing the keys plays a
+   voice and lights the sentence word by word. */
+.ov-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 64px;
+}
+
+.ov-keys {
+    --key: 100px;
+    display: inline-flex;
+    gap: calc(var(--key) * 0.13);
+    margin: 0;
+    padding: 0 0 calc(var(--key) * 0.07);
+    border: 0;
+    border-radius: calc(var(--key) * 0.2);
+    background: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+.ov-key {
+    position: relative;
+    display: block;
+    width: var(--key);
+    height: var(--key);
+}
+
+/* The slab under the key. The face sinks onto it when the key goes down. */
+.ov-key::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: calc(var(--key) * 0.2);
+    background: var(--key-edge);
+    box-shadow: inset 0 0 0 0.5px rgb(255 255 255 / 0.1);
+    transform: translateY(7%);
+}
+
+.ov-key-face {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    border: 1px solid transparent;
+    border-radius: calc(var(--key) * 0.2);
+    background:
+        linear-gradient(var(--key-top), var(--key-bottom)) padding-box,
+        linear-gradient(rgb(255 255 255 / 0.28), rgb(255 255 255 / 0.06)) border-box;
+    box-shadow: 0 calc(var(--key) * 0.1) calc(var(--key) * 0.2) var(--key-shadow);
+    color: var(--key-text);
+    font-family: var(--font-display);
+    font-size: calc(var(--key) * 0.42);
+    font-weight: 600;
+    line-height: 1;
+    transition: transform 0.09s ease-out, box-shadow 0.09s ease-out, color 0.09s ease-out;
+}
+
+.ov-key-face::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border: 2px solid var(--accent);
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.09s ease-out;
+}
+
+.ov-key-face svg {
+    width: 46%;
+    height: 46%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.ov-key.is-down .ov-key-face,
+.ov-keys.is-flash .ov-key-face,
+.ov-keys:active .ov-key-face {
+    color: var(--accent);
+    box-shadow: 0 0 calc(var(--key) * 0.4) rgb(237 134 52 / 0.55);
+    transform: translateY(5%);
+}
+
+.ov-key.is-down .ov-key-face::after,
+.ov-keys.is-flash .ov-key-face::after,
+.ov-keys:active .ov-key-face::after {
+    opacity: 1;
+}
+
+.ov-quote {
+    position: relative;
+    max-width: 580px;
+    margin: 32px 0 0;
+    padding: 18px 24px;
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-s);
+    background: var(--surface);
+    color: var(--text);
+    font-family: var(--font-display);
+    font-size: clamp(1.1rem, 1.7vw, 1.3rem);
+    font-weight: 500;
+    line-height: 1.6;
+    text-wrap: balance;
+}
+
+/* The lit sentence is drawn over the real one, which stays in place for
+   screen readers and for pages where the script has not run. */
+.ov-quote-lit {
+    position: absolute;
+    inset: 0;
+    padding: inherit;
+    text-wrap: inherit;
+    pointer-events: none;
+}
+
+.ov-player:not(.is-enhanced) .ov-quote-lit {
+    display: none;
+}
+
+.ov-player.is-enhanced .ov-quote-text {
+    color: transparent;
+}
+
+.ov-sentence {
+    margin: 0 -0.2em;
+    padding: 0.08em 0.2em;
+    border-radius: 0.3em;
+    /* A sentence wraps across lines; each line keeps its own rounded box. */
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
+
+.ov-sentence.is-spoken {
+    color: var(--spoken);
+}
+
+.ov-sentence.is-current {
+    position: relative;
+    background: var(--accent);
+    color: var(--on-accent);
+}
+
+.ov-voices {
+    display: flex;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.ov-voices[hidden] {
+    display: none;
+}
+
+.ov-voice {
+    padding: 7px 15px;
+    border: 0;
+    border-radius: 999px;
+    background: none;
+    box-shadow: inset 0 0 0 1px var(--hairline);
+    color: var(--muted);
+    font-family: inherit;
+    font-size: 0.86rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.16s ease-out, background-color 0.16s ease-out, box-shadow 0.16s ease-out;
+}
+
+.ov-voice:hover {
+    color: var(--text);
+    background: var(--surface-strong);
+}
+
+.ov-voice[aria-pressed="true"] {
+    color: var(--text);
+    background: var(--accent-soft);
+    box-shadow: inset 0 0 0 1.5px var(--accent);
+}
+
+.ov-hint {
+    max-width: 520px;
+    min-height: 1.5em;
+    margin: 18px 0 0;
+    color: var(--muted);
+    font-size: 0.98rem;
+    line-height: 1.5;
+    text-wrap: balance;
+}
+
+/* Screenshots */
 .mac-hero-screenshots {
     position: relative;
-    z-index: 1;
-    max-width: 860px;
-    margin: 56px auto 0;
+    max-width: 880px;
+    margin: 88px auto 0;
 }
 
 .mac-screenshot {
     margin: 0;
-    border-radius: 14px;
+    border-radius: var(--radius-s);
     overflow: hidden;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--surface);
+    border: 1px solid var(--hairline);
 }
 
 .mac-screenshot img {
@@ -901,10 +805,9 @@ body {
     display: block;
 }
 
-.mac-screenshot-main {
-    box-shadow:
-        0 24px 64px rgba(0, 0, 0, 0.5),
-        0 0 100px rgba(96, 66, 245, 0.05);
+.mac-screenshot-main,
+.mac-screenshot-overlay {
+    box-shadow: var(--shadow-float);
 }
 
 .mac-screenshot-overlay {
@@ -913,9 +816,6 @@ body {
     bottom: -28px;
     width: min(46%, 380px);
     border-radius: 12px;
-    box-shadow:
-        0 20px 48px rgba(0, 0, 0, 0.6),
-        0 0 60px rgba(96, 66, 245, 0.06);
 }
 
 .mac-screenshot-constrained {
@@ -924,49 +824,293 @@ body {
     margin: 0 auto;
 }
 
+/* The history capture is a tall strip of the window; show its overview panel. */
+.mac-screenshot-constrained img {
+    aspect-ratio: 760 / 1040;
+    object-fit: cover;
+    object-position: top;
+}
+
+/* Surfaces: white at 5% with a hairline, as on the onboarding canvas. */
+.mac-feature-card,
+.mac-detail-text,
+.mac-detail-img,
+.mac-step-card,
+.mac-audience-card,
+.mac-guide-card,
+.mac-faq-list details,
+.seo-section {
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+}
+
+/* Section headings */
+.mac-ways,
+.mac-voices,
+.mac-workflow,
+.mac-audiences,
+.mac-guides,
+.mac-faq {
+    margin: 112px 0;
+    text-align: center;
+}
+
+.mac-ways {
+    margin-top: 0;
+}
+
+.mac-ways > h2,
+.mac-voices > h2,
+.mac-workflow > h2,
+.mac-audiences > h2,
+.mac-guides > h2,
+.mac-faq > h2 {
+    max-width: 760px;
+    margin: 0 auto 40px;
+    color: var(--text);
+    font-size: clamp(1.9rem, 3.6vw, 2.75rem);
+    line-height: 1.08;
+}
+
+.mac-voices > h2 {
+    margin-bottom: 16px;
+}
+
+.mac-section-intro {
+    max-width: 560px;
+    margin: 0 auto 40px;
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    text-wrap: balance;
+}
+
+/* Two ways to read: the rows of the onboarding's last screen. */
+.mac-way-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.mac-way {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 20px;
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-s);
+    background: var(--surface);
+}
+
+.mac-way-icon {
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    color: #FFFFFF;
+}
+
+.mac-way-icon-selected {
+    background: var(--way-selected);
+}
+
+.mac-way-icon-capture {
+    background: var(--way-capture);
+}
+
+.mac-way-icon svg,
+.mac-trust svg {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.mac-way-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.mac-way h3 {
+    margin: 0 0 3px;
+    color: var(--text);
+    font-size: 1.1rem;
+}
+
+.mac-way p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.mac-trust {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 28px;
+    margin: 28px 0 0;
+    padding: 0;
+    list-style: none;
+    color: var(--muted);
+    font-size: 0.93rem;
+}
+
+.mac-trust li {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mac-trust svg {
+    width: 17px;
+    height: 17px;
+    color: var(--trust);
+}
+
+/* Voices: the cards of the onboarding's "Pick a voice." screen. */
+.mac-voice-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 12px;
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.mac-voice-card {
+    position: relative;
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    min-height: 168px;
+    padding: 20px;
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-s);
+    background: var(--surface);
+}
+
+.mac-voice-card-pick {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+    box-shadow: inset 0 0 0 0.5px var(--accent);
+}
+
+.mac-voice-card h3 {
+    margin: 0 0 6px;
+    color: var(--text);
+    font-size: 1.15rem;
+}
+
+.mac-voice-card p {
+    margin: 0 0 18px;
+    color: var(--muted);
+    font-size: 0.93rem;
+    line-height: 1.5;
+}
+
+.mac-voice-meta {
+    margin-top: auto;
+    padding-right: 48px;
+    color: var(--eyebrow);
+    font-size: 0.86rem;
+    font-weight: 500;
+}
+
+.mac-voice-play {
+    position: absolute;
+    right: 14px;
+    bottom: 13px;
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--on-accent);
+    cursor: pointer;
+    transition: background-color 0.16s ease-out, transform 0.16s ease-out;
+}
+
+.mac-voice-play[hidden] {
+    display: none;
+}
+
+.mac-voice-play:hover {
+    background: var(--accent-bright);
+}
+
+.mac-voice-play:active {
+    transform: scale(0.94);
+}
+
+.mac-voice-play svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+/* The play triangle's visual center sits left of its box. */
+.mac-voice-icon-play {
+    margin-left: 2px;
+}
+
+.mac-voice-icon-stop,
+.mac-voice-play[aria-pressed="true"] .mac-voice-icon-play {
+    display: none;
+}
+
+.mac-voice-play[aria-pressed="true"] {
+    background: #FFFFFF;
+    box-shadow: inset 0 0 0 1px var(--accent-line);
+    color: var(--accent);
+}
+
+.mac-voice-play[aria-pressed="true"] .mac-voice-icon-stop {
+    display: block;
+}
+
 /* Feature Grid */
 .mac-features {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     gap: 16px;
-    margin-bottom: 80px;
+    margin-bottom: 16px;
 }
 
 .mac-feature-card {
-    padding: 28px 24px;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    transition: border-color 0.3s, background 0.3s;
+    padding: 26px 24px;
+    border-radius: var(--radius-m);
 }
 
-.mac-feature-card:hover {
-    border-color: rgba(96, 66, 245, 0.18);
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.mac-feature-label {
+.mac-feature-label,
+.mac-guide-card > span {
     display: block;
-    margin: 0 0 14px;
-    color: #9580fa;
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    margin: 0 0 12px;
+    color: var(--eyebrow);
+    font-size: 0.84rem;
+    font-weight: 600;
 }
 
 .mac-feature-card h2 {
     margin: 0 0 10px;
-    color: #fff;
-    font-size: 1.25rem;
+    color: var(--text);
+    font-size: 1.3rem;
     line-height: 1.2;
-    letter-spacing: -0.01em;
 }
 
 .mac-feature-card p {
     margin: 0;
-    color: rgba(255, 255, 255, 0.58);
-    font-size: 0.93rem;
+    color: var(--muted);
+    font-size: 0.95rem;
     line-height: 1.6;
 }
 
@@ -974,9 +1118,9 @@ body {
 .mac-detail {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 16px;
     align-items: stretch;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .mac-detail-reverse .mac-detail-text {
@@ -989,16 +1133,18 @@ body {
 
 .mac-detail-text,
 .mac-detail-img {
-    border-radius: 24px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-l);
 }
 
 .mac-detail-text {
-    padding: 40px 36px;
+    padding: 44px 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.mac-detail-text .mac-section-label {
+    margin-bottom: 14px;
 }
 
 .mac-detail-img {
@@ -1011,56 +1157,44 @@ body {
 .mac-detail-img .mac-screenshot {
     border: none;
     background: none;
-    box-shadow: none;
     border-radius: 10px;
-    overflow: hidden;
-}
-
-.mac-section-label {
-    display: block;
-    margin: 0 0 14px;
-    color: #9580fa;
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    box-shadow: 0 12px 32px var(--shade);
 }
 
 .mac-detail-text h2 {
     margin: 0 0 16px;
-    color: #fff;
-    font-size: clamp(1.5rem, 2.2vw, 2rem);
-    line-height: 1.15;
-    letter-spacing: -0.02em;
+    color: var(--text);
+    font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+    line-height: 1.12;
 }
 
 .mac-detail-text p {
     margin: 0;
-    color: rgba(255, 255, 255, 0.58);
+    color: var(--muted);
     font-size: 1rem;
-    line-height: 1.7;
+    line-height: 1.65;
 }
 
 .mac-detail-list {
-    margin: 20px 0 0;
+    margin: 22px 0 0;
     padding-left: 20px;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.95rem;
+    color: var(--muted);
+    font-size: 0.97rem;
 }
 
 .mac-detail-list li {
     margin-bottom: 10px;
-    line-height: 1.6;
+    padding-left: 4px;
+    line-height: 1.55;
+}
+
+.mac-detail-list li::marker {
+    color: var(--accent);
 }
 
 /* Workflow */
-.mac-workflow {
-    margin: 80px 0;
-    text-align: center;
-}
-
 .mac-demo {
-    max-width: 860px;
+    max-width: 880px;
     margin: 0 auto;
 }
 
@@ -1068,13 +1202,11 @@ body {
     position: relative;
     aspect-ratio: 16 / 10;
     margin: 0 0 16px;
-    border-radius: 20px;
+    border-radius: var(--radius-m);
     overflow: hidden;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow:
-        0 24px 64px rgba(0, 0, 0, 0.5),
-        0 0 100px rgba(96, 66, 245, 0.05);
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    box-shadow: var(--shadow-float);
 }
 
 .mac-demo-media picture {
@@ -1110,12 +1242,12 @@ body {
     width: 40px;
     height: 40px;
     padding: 0;
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #FFFFFF;
+    border: 1px solid rgb(255 255 255 / 0.2);
     border-radius: 999px;
-    background: rgba(16, 14, 24, 0.72);
+    background: rgb(19 15 34 / 0.72);
     cursor: pointer;
-    transition: background 0.2s, border-color 0.2s;
+    transition: background-color 0.16s ease-out, border-color 0.16s ease-out;
 }
 
 .mac-demo-toggle[hidden] {
@@ -1123,13 +1255,8 @@ body {
 }
 
 .mac-demo-toggle:hover {
-    border-color: #6042f5;
-    background: #6042f5;
-}
-
-.mac-demo-toggle:focus-visible {
-    outline: 3px solid #9580fa;
-    outline-offset: 3px;
+    border-color: var(--accent);
+    background: var(--accent);
 }
 
 .mac-demo-toggle svg {
@@ -1147,13 +1274,6 @@ body {
     display: block;
 }
 
-.mac-workflow > h2 {
-    margin: 0 0 40px;
-    color: #fff;
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
-    letter-spacing: -0.03em;
-}
-
 .mac-steps {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1162,26 +1282,27 @@ body {
 
 .mac-step-card {
     position: relative;
-    padding: 28px 24px;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 24px;
+    border-radius: var(--radius-m);
     text-align: left;
+    transition: border-color 0.16s ease-out, background-color 0.16s ease-out;
 }
 
-.mac-step-card:hover {
-    border-color: rgba(96, 66, 245, 0.15);
+.mac-demo.is-enhanced .mac-step-card:hover {
+    border-color: var(--hairline-strong);
+    background: var(--surface-strong);
 }
 
-.mac-step-card.is-active {
-    border-color: rgba(149, 128, 250, 0.5);
-    background: rgba(96, 66, 245, 0.08);
+.mac-demo.is-enhanced .mac-step-card.is-active {
+    border-color: var(--accent-line);
+    background: var(--accent-soft);
 }
 
 .mac-step-seek {
     padding: 0;
     color: inherit;
     font: inherit;
+    letter-spacing: inherit;
     text-align: inherit;
     border: 0;
     background: none;
@@ -1200,51 +1321,45 @@ body {
 }
 
 .mac-step-seek:focus-visible::after {
-    outline: 3px solid #9580fa;
+    outline: 3px solid var(--accent);
     outline-offset: 3px;
 }
 
-.mac-step-num {
-    display: inline-block;
-    margin-bottom: 16px;
-    color: #9580fa;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
+/* The onboarding's page indicator: a capsule marks where this step sits among the three. */
+.mac-step-dots {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 18px;
+}
+
+.mac-step-dots i {
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: var(--hairline-strong);
+}
+
+.mac-step-card:nth-child(1) .mac-step-dots i:nth-child(1),
+.mac-step-card:nth-child(2) .mac-step-dots i:nth-child(2),
+.mac-step-card:nth-child(3) .mac-step-dots i:nth-child(3) {
+    width: 20px;
+    background: var(--accent);
 }
 
 .mac-step-card h3 {
-    margin: 0 0 10px;
-    color: #fff;
-    font-size: 1.2rem;
+    margin: 0 0 8px;
+    color: var(--text);
+    font-size: 1.25rem;
 }
 
 .mac-step-card p {
     margin: 0;
-    color: rgba(255, 255, 255, 0.58);
-    font-size: 0.93rem;
+    color: var(--muted);
+    font-size: 0.95rem;
     line-height: 1.6;
 }
 
 /* Audiences, guides, and FAQ */
-.mac-audiences,
-.mac-guides,
-.mac-faq {
-    margin: 80px 0;
-    text-align: center;
-}
-
-.mac-audiences > h2,
-.mac-guides > h2,
-.mac-faq > h2 {
-    margin: 0 auto 36px;
-    max-width: 720px;
-    color: #fff;
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
-    line-height: 1.15;
-    letter-spacing: -0.03em;
-}
-
 .mac-audience-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1254,26 +1369,24 @@ body {
 
 .mac-audience-card,
 .mac-guide-card {
-    padding: 28px 24px;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 24px;
+    border-radius: var(--radius-m);
 }
 
 .mac-audience-card h3,
 .mac-guide-card h3 {
-    margin: 0 0 10px;
-    color: #fff;
-    font-size: 1.2rem;
-    line-height: 1.3;
+    margin: 0 0 8px;
+    color: var(--text);
+    font-size: 1.25rem;
+    line-height: 1.25;
 }
 
 .mac-audience-card p,
 .mac-guide-card p {
     margin: 0;
-    color: rgba(255, 255, 255, 0.62);
+    color: var(--muted);
     font-size: 0.95rem;
-    line-height: 1.65;
+    line-height: 1.6;
 }
 
 .mac-guide-grid {
@@ -1287,13 +1400,12 @@ body {
     display: block;
     color: inherit;
     text-decoration: none;
-    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    transition: border-color 0.16s ease-out, background-color 0.16s ease-out;
 }
 
 .mac-guide-card:hover {
-    transform: translateY(-2px);
-    border-color: rgba(149, 128, 250, 0.4);
-    background: rgba(96, 66, 245, 0.06);
+    border-color: var(--accent-line);
+    background: var(--accent-soft);
 }
 
 .mac-card-shot {
@@ -1304,18 +1416,8 @@ body {
     object-fit: cover;
     margin: 0 0 20px;
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    background: rgba(255, 255, 255, 0.04);
-}
-
-.mac-guide-card > span {
-    display: block;
-    margin-bottom: 12px;
-    color: #a998ff;
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    border: 1px solid var(--hairline);
+    background: var(--surface);
 }
 
 .mac-faq-list {
@@ -1325,37 +1427,65 @@ body {
 }
 
 .mac-faq-list details {
-    margin-bottom: 12px;
-    border-radius: 16px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    margin-bottom: 10px;
+    border-radius: var(--radius-s);
 }
 
 .mac-faq-list summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
     padding: 20px 24px;
-    color: #fff;
-    font-weight: 650;
-    line-height: 1.4;
+    border-radius: var(--radius-s);
+    color: var(--text);
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.35;
+    list-style: none;
     cursor: pointer;
 }
 
-.mac-faq-list summary:focus-visible {
-    outline: 3px solid #9580fa;
-    outline-offset: 3px;
+.mac-faq-list summary::-webkit-details-marker {
+    display: none;
+}
+
+.mac-faq-list summary::after {
+    content: "";
+    flex: 0 0 auto;
+    width: 9px;
+    height: 9px;
+    margin: -4px 4px 0;
+    border: solid var(--muted);
+    border-width: 0 2px 2px 0;
+    border-radius: 1px;
+    transform: rotate(45deg);
+    transition: transform 0.16s ease-out;
+}
+
+.mac-faq-list details[open] summary::after {
+    margin-top: 4px;
+    transform: rotate(-135deg);
 }
 
 .mac-faq-list p {
     margin: 0;
     padding: 0 24px 22px;
-    color: rgba(255, 255, 255, 0.68);
-    line-height: 1.7;
+    color: var(--muted);
+    line-height: 1.65;
+}
+
+.mac-faq-list strong {
+    color: var(--text);
+    font-weight: 600;
 }
 
 /* Search-focused guide pages */
 .seo-page {
     max-width: 860px;
     min-width: 0;
-    margin: 0 auto 80px;
+    margin: 0 auto 96px;
 }
 
 .seo-hero {
@@ -1365,7 +1495,7 @@ body {
 
 .seo-breadcrumb {
     margin: 0 0 18px;
-    color: #a998ff;
+    color: var(--eyebrow);
     font-size: 0.9rem;
 }
 
@@ -1375,61 +1505,57 @@ body {
 
 .seo-hero h1 {
     margin: 0;
-    color: #fff;
+    color: var(--text);
     font-size: clamp(2.4rem, 6vw, 4.5rem);
-    line-height: 1.02;
-    letter-spacing: -0.04em;
+    line-height: 1.03;
     overflow-wrap: anywhere;
 }
 
 .seo-lede {
     max-width: 700px;
     margin: 24px auto 0;
-    color: rgba(255, 255, 255, 0.68);
+    color: var(--muted);
     font-size: 1.12rem;
-    line-height: 1.75;
+    line-height: 1.7;
 }
 
 .seo-byline {
-    color: rgba(255, 255, 255, 0.52);
+    color: var(--spoken);
     font-size: 0.88rem;
     margin: 16px 0 0;
 }
 
 .seo-byline a {
-    color: rgba(255, 255, 255, 0.72);
+    color: var(--muted);
     text-decoration: underline;
     text-underline-offset: 0.18em;
 }
 
 .seo-section {
-    margin: 20px 0;
+    margin: 16px 0;
     padding: 36px;
-    border-radius: 24px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: var(--radius-l);
 }
 
 .seo-section h2 {
     margin: 0 0 18px;
-    color: #fff;
+    color: var(--text);
     font-size: clamp(1.5rem, 3vw, 2rem);
-    line-height: 1.2;
-    letter-spacing: -0.02em;
+    line-height: 1.15;
     overflow-wrap: anywhere;
 }
 
 .seo-section h3 {
     margin: 28px 0 10px;
-    color: #fff;
-    font-size: 1.15rem;
+    color: var(--text);
+    font-size: 1.2rem;
 }
 
 .seo-section p,
 .seo-section li {
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--muted);
     font-size: 1rem;
-    line-height: 1.75;
+    line-height: 1.7;
 }
 
 .seo-section p {
@@ -1440,8 +1566,18 @@ body {
     margin-bottom: 0;
 }
 
-.seo-section a {
-    color: #b7aaff;
+.seo-section strong {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.seo-section a:not(.mac-btn) {
+    color: var(--link);
+    text-underline-offset: 0.18em;
+}
+
+.seo-section li::marker {
+    color: var(--accent);
 }
 
 .seo-code {
@@ -1449,21 +1585,134 @@ body {
     margin: 14px 0 20px;
     padding: 14px 16px;
     overflow-x: auto;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--hairline);
     border-radius: 12px;
-    background: rgba(0, 0, 0, 0.28);
-    color: rgba(255, 255, 255, 0.82);
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    background: var(--shade);
+    color: var(--text);
+    font-family: var(--font-mono);
     font-size: 0.84rem;
     line-height: 1.55;
     overflow-wrap: anywhere;
     white-space: pre-wrap;
 }
 
+.seo-steps {
+    margin: 0;
+    padding-left: 24px;
+}
+
+.seo-steps li {
+    margin-bottom: 12px;
+    padding-left: 6px;
+}
+
+.seo-table-wrap {
+    overflow-x: auto;
+}
+
+.seo-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 660px;
+}
+
+.seo-table th,
+.seo-table td {
+    padding: 14px 12px;
+    border-bottom: 1px solid var(--hairline);
+    text-align: left;
+    vertical-align: top;
+}
+
+.seo-table th {
+    color: var(--text);
+    font-size: 0.88rem;
+}
+
+.seo-table td {
+    color: var(--muted);
+    line-height: 1.55;
+}
+
+.seo-figure {
+    margin: 24px auto 8px;
+}
+
+.seo-figure-narrow {
+    max-width: 560px;
+}
+
+.seo-figure img,
+.seo-figure video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-s);
+    border: 1px solid var(--hairline);
+    background: var(--shade);
+}
+
+.seo-figure figcaption {
+    margin-top: 10px;
+    color: var(--spoken);
+    font-size: 0.88rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* Keys named in running text are small keycaps. */
+.seo-section kbd {
+    display: inline-block;
+    padding: 0 7px;
+    border-radius: 6px;
+    background: linear-gradient(var(--key-top), var(--key-bottom));
+    box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.12), 0 2px 0 var(--key-edge);
+    color: var(--key-text);
+    font-family: var(--font-display);
+    font-size: 0.86em;
+    font-weight: 600;
+    line-height: 1.6;
+    white-space: nowrap;
+    vertical-align: 0.06em;
+}
+
+.seo-callout {
+    border-color: var(--accent-line);
+    background: var(--accent-soft);
+}
+
+.seo-section .mac-cta-group {
+    margin: 22px 0 24px;
+}
+
+.seo-related {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.seo-section .seo-related a {
+    padding: 18px;
+    border-radius: var(--radius-s);
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    color: var(--text);
+    font-weight: 500;
+    text-decoration: none;
+    line-height: 1.45;
+    transition: border-color 0.16s ease-out, background-color 0.16s ease-out;
+}
+
+.seo-section .seo-related a:hover {
+    border-color: var(--accent-line);
+    background: var(--accent-soft);
+}
+
 /* Public release changelog */
 .changelog-page {
     max-width: 980px;
-    margin: 0 auto 80px;
+    margin: 0 auto 96px;
 }
 
 .changelog-hero {
@@ -1472,36 +1721,31 @@ body {
     text-align: left;
 }
 
-.changelog-hero .mac-section-label {
-    margin: 0 0 16px;
-}
-
 .changelog-hero h1 {
     margin: 0;
-    color: #fff;
+    color: var(--text);
     font-size: clamp(3rem, 7vw, 5.2rem);
     line-height: 1;
-    letter-spacing: -0.045em;
 }
 
 .changelog-intro {
     margin: 22px 0 0;
     max-width: 560px;
-    color: rgba(255, 255, 255, 0.68);
+    color: var(--muted);
     font-size: 1.12rem;
-    line-height: 1.7;
+    line-height: 1.65;
 }
 
 .changelog-release-count {
     margin: 8px 0 0;
-    color: rgba(255, 255, 255, 0.44);
+    color: var(--spoken);
     font-size: 0.88rem;
     line-height: 1.5;
 }
 
 .changelog-release-count strong {
-    color: #b7aaff;
-    font-weight: 650;
+    color: var(--eyebrow);
+    font-weight: 600;
 }
 
 .release-list {
@@ -1516,13 +1760,13 @@ body {
     bottom: 24px;
     left: 7px;
     width: 1px;
-    background: rgba(183, 170, 255, 0.28);
+    background: var(--hairline-strong);
     content: "";
 }
 
 .release-entry {
     position: relative;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid var(--hairline);
     scroll-margin-top: 32px;
 }
 
@@ -1533,23 +1777,23 @@ body {
     z-index: 1;
     width: 11px;
     height: 11px;
-    border: 2px solid rgba(183, 170, 255, 0.72);
+    border: 2px solid var(--spoken);
     border-radius: 50%;
-    background: #07070a;
-    box-shadow: 0 0 0 6px #07070a;
+    background: var(--bg);
     content: "";
-    transition: border-color 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
+    transition: border-color 0.16s ease-out, background-color 0.16s ease-out, box-shadow 0.16s ease-out;
 }
 
 .release-entry[open]::before {
-    border-color: #b7aaff;
-    background: #8a70ff;
-    box-shadow: 0 0 0 6px #07070a, 0 0 18px rgba(138, 112, 255, 0.46);
+    border-color: var(--accent);
+    background: var(--accent);
+    box-shadow: 0 0 16px var(--accent-glow);
 }
 
 .release-summary {
     display: block;
     padding: 27px 4px 26px;
+    border-radius: 12px;
     cursor: pointer;
     list-style: none;
 }
@@ -1558,15 +1802,8 @@ body {
     display: none;
 }
 
-.release-summary:focus-visible {
-    border-radius: 12px;
-    outline: 3px solid rgba(183, 170, 255, 0.74);
-    outline-offset: 4px;
-}
-
-.release-summary:hover .release-version,
-.release-summary:focus-visible .release-version {
-    color: #c8beff;
+.release-summary:hover .release-version {
+    color: var(--eyebrow);
 }
 
 .release-header {
@@ -1594,28 +1831,28 @@ body {
 }
 
 .release-version {
-    color: #fff;
-    font-size: 1.28rem;
+    color: var(--text);
+    font-family: var(--font-display);
+    font-size: 1.3rem;
     font-weight: 700;
     letter-spacing: -0.02em;
-    transition: color 160ms ease;
+    transition: color 0.16s ease-out;
 }
 
 .release-latest {
-    padding: 4px 9px;
-    border: 1px solid rgba(149, 128, 250, 0.3);
+    padding: 4px 10px;
     border-radius: 999px;
-    color: #b7aaff;
-    background: rgba(96, 66, 245, 0.12);
+    color: var(--granted);
+    background: var(--granted-soft);
     font-size: 0.7rem;
     font-weight: 700;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
 }
 
 .release-header time {
     flex: 0 0 auto;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--spoken);
     font-size: 0.9rem;
     font-weight: 500;
 }
@@ -1624,9 +1861,9 @@ body {
     display: inline-flex;
     justify-content: flex-end;
     min-width: 76px;
-    color: rgba(255, 255, 255, 0.54);
+    color: var(--spoken);
     font-size: 0.78rem;
-    font-weight: 650;
+    font-weight: 600;
     letter-spacing: 0.02em;
 }
 
@@ -1654,139 +1891,33 @@ body {
 .release-notes li {
     margin: 10px 0;
     padding-left: 4px;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--muted);
     line-height: 1.65;
 }
 
 .release-notes li::marker {
-    color: #8a70ff;
+    color: var(--accent);
 }
 
-.seo-steps {
-    margin: 0;
-    padding-left: 24px;
-}
-
-.seo-steps li {
-    margin-bottom: 12px;
-    padding-left: 6px;
-}
-
-.seo-table-wrap {
-    overflow-x: auto;
-}
-
-.seo-table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 660px;
-}
-
-.seo-table th,
-.seo-table td {
-    padding: 14px 12px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    text-align: left;
-    vertical-align: top;
-}
-
-.seo-table th {
-    color: #fff;
-    font-size: 0.88rem;
-}
-
-.seo-table td {
-    color: rgba(255, 255, 255, 0.68);
-    line-height: 1.55;
-}
-
-.seo-figure {
-    margin: 24px auto 8px;
-}
-
-.seo-figure-narrow {
-    max-width: 560px;
-}
-
-.seo-figure img,
-.seo-figure video {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(0, 0, 0, 0.2);
-}
-
-.seo-figure figcaption {
-    margin-top: 10px;
-    color: rgba(255, 255, 255, 0.52);
-    font-size: 0.88rem;
-    line-height: 1.5;
-    text-align: center;
-}
-
-.seo-section kbd {
-    padding: 1px 6px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 6px;
-    background: rgba(255, 255, 255, 0.06);
-    font-family: inherit;
-    font-size: 0.9em;
-    white-space: nowrap;
-}
-
-.seo-callout {
-    border-color: rgba(149, 128, 250, 0.28);
-    background: rgba(96, 66, 245, 0.07);
-}
-
-.seo-section .mac-cta-group {
-    margin: 22px 0 24px;
-}
-
-.seo-related {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-    margin-top: 20px;
-}
-
-.seo-related a {
-    padding: 18px;
-    border-radius: 14px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    color: #fff;
-    text-decoration: none;
-    line-height: 1.45;
-}
-
-.seo-related a:hover {
-    border-color: rgba(149, 128, 250, 0.4);
-}
-
-/* Final CTA */
+/* Final CTA: the closing screen, over the warm glow. */
 .mac-final-cta {
+    margin-top: 112px;
+    padding: 24px 0 96px;
     text-align: center;
-    padding: 56px 32px;
-    border-radius: 28px;
-    background: rgba(96, 66, 245, 0.04);
-    border: 1px solid rgba(96, 66, 245, 0.1);
 }
 
 .mac-final-cta h2 {
-    margin: 0 0 12px;
-    color: #fff;
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
-    letter-spacing: -0.03em;
+    margin: 0 0 14px;
+    color: var(--text);
+    font-size: clamp(2.1rem, 4.4vw, 3.4rem);
+    line-height: 1.05;
 }
 
 .mac-final-cta p {
     margin: 0 auto 32px;
     max-width: 520px;
-    color: rgba(255, 255, 255, 0.58);
-    font-size: 1rem;
+    color: var(--muted);
+    font-size: 1.05rem;
     line-height: 1.6;
 }
 
@@ -1794,12 +1925,31 @@ body {
     justify-content: center;
 }
 
+.ov-keys-small {
+    --key: 60px;
+    margin-bottom: 30px;
+    cursor: default;
+}
+
+/* On the download page the same block is the download card. */
+.seo-page .mac-final-cta {
+    margin: 16px 0;
+    padding: 48px 32px;
+    border: 1px solid var(--accent-line);
+    border-radius: var(--radius-l);
+    background: var(--accent-soft);
+}
+
+.seo-page .mac-final-cta h2 {
+    font-size: clamp(1.8rem, 3.4vw, 2.5rem);
+}
+
 /* Footer */
 .mac-footer {
-    max-width: 1100px;
+    max-width: 1120px;
     margin: 0 auto;
-    padding: 40px 24px 48px;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 36px 24px 48px;
+    border-top: 1px solid var(--hairline);
     text-align: center;
 }
 
@@ -1807,390 +1957,49 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 24px;
-    margin-bottom: 16px;
+    gap: 10px 24px;
+    margin-bottom: 18px;
 }
 
 .mac-footer-links a {
-    color: rgba(255, 255, 255, 0.58);
+    color: var(--muted);
     text-decoration: none;
     font-size: 0.9rem;
-    transition: color 0.2s;
+    transition: color 0.16s ease-out;
 }
 
 .mac-footer-links a:hover {
-    color: rgba(255, 255, 255, 0.65);
+    color: var(--text);
 }
 
 .mac-footer-credit {
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--spoken);
     font-size: 0.85rem;
     margin: 0;
 }
 
 .mac-footer-credit a {
-    color: rgba(255, 255, 255, 0.62);
+    color: var(--muted);
     text-decoration: underline;
     text-underline-offset: 0.18em;
 }
 
 .mac-footer-credit a:hover {
-    color: rgba(255, 255, 255, 0.5);
-}
-
-/* Follow the visitor's system appearance while keeping dark mode as the default. */
-@media (prefers-color-scheme: light) {
-    body.mac-page {
-        color-scheme: light;
-        color: #17141e;
-        background-color: #f7f7fb;
-    }
-
-    .mac-page a:focus-visible,
-    .mac-faq-list summary:focus-visible,
-    .release-summary:focus-visible {
-        outline-color: #6042f5;
-    }
-
-    .mac-brand,
-    .mac-title,
-    .mac-feature-card h2,
-    .mac-detail-text h2,
-    .mac-workflow > h2,
-    .mac-step-card h3,
-    .mac-audiences > h2,
-    .mac-guides > h2,
-    .mac-faq > h2,
-    .mac-audience-card h3,
-    .mac-guide-card h3,
-    .mac-faq-list summary,
-    .seo-hero h1,
-    .seo-section h2,
-    .seo-section h3,
-    .seo-table th,
-    .seo-related a,
-    .mac-final-cta h2 {
-        color: #17141e;
-    }
-
-    .mac-nav-links a {
-        color: rgba(23, 20, 30, 0.66);
-    }
-
-    .mac-nav-links a:hover {
-        color: #17141e;
-        background: rgba(23, 20, 30, 0.06);
-    }
-
-    .mac-language-menu summary {
-        border-color: rgba(23, 20, 30, 0.1);
-        background: rgba(23, 20, 30, 0.035);
-    }
-
-    .mac-language-menu summary {
-        color: rgba(23, 20, 30, 0.62);
-    }
-
-    .mac-language-menu summary:hover,
-    .mac-language-menu summary:focus-visible,
-    .mac-language-menu details[open] summary {
-        color: #17141e;
-        border-color: rgba(81, 55, 214, 0.38);
-        background: rgba(81, 55, 214, 0.08);
-    }
-
-    .mac-language-options {
-        border-color: rgba(23, 20, 30, 0.1);
-        background: #fff;
-        box-shadow: 0 18px 50px rgba(23, 20, 30, 0.16);
-    }
-
-    .mac-language-options a {
-        color: rgba(23, 20, 30, 0.7);
-    }
-
-    .mac-language-options a:hover,
-    .mac-language-options a:focus-visible {
-        color: #17141e;
-        background: rgba(23, 20, 30, 0.055);
-    }
-
-    .mac-language-options a[aria-current="page"] {
-        color: #17141e;
-        background: rgba(81, 55, 214, 0.1);
-    }
-
-    .mac-nav-links .mac-nav-cta,
-    .mac-eyebrow,
-    .mac-feature-label,
-    .mac-section-label,
-    .mac-step-num,
-    .mac-link-language,
-    .seo-breadcrumb {
-        color: #5137d6;
-    }
-
-    .mac-guide-card > span {
-        color: #5a42d5;
-    }
-
-    .mac-nav-links .mac-nav-cta {
-        border-color: rgba(81, 55, 214, 0.4);
-    }
-
-    .mac-nav-links .mac-nav-cta:hover {
-        color: #4129bd;
-        background: rgba(81, 55, 214, 0.08);
-    }
-
-    .mac-hero::before {
-        background: radial-gradient(ellipse, rgba(96, 66, 245, 0.1) 0%, transparent 70%);
-    }
-
-    .mac-eyebrow {
-        background: rgba(81, 55, 214, 0.08);
-        border-color: rgba(81, 55, 214, 0.18);
-    }
-
-    .mac-free-badge {
-        color: #8a5200;
-        background: rgba(190, 114, 0, 0.08);
-        border-color: rgba(138, 82, 0, 0.22);
-    }
-
-    .mac-intro,
-    .mac-audience-card p,
-    .mac-guide-card p {
-        color: rgba(23, 20, 30, 0.68);
-    }
-
-    .mac-note,
-    .mac-feature-card p,
-    .mac-detail-text p,
-    .mac-detail-list,
-    .mac-step-card p,
-    .mac-final-cta p,
-    .mac-footer-links a {
-        color: rgba(23, 20, 30, 0.6);
-    }
-
-    .mac-footer-links a:hover,
-    .mac-footer-credit a {
-        color: rgba(23, 20, 30, 0.72);
-    }
-
-    .mac-footer-credit {
-        color: rgba(23, 20, 30, 0.6);
-    }
-
-    .mac-footer-credit a:hover {
-        color: rgba(23, 20, 30, 0.72);
-    }
-
-    .mac-screenshot {
-        background: rgba(255, 255, 255, 0.72);
-        border-color: rgba(23, 20, 30, 0.1);
-    }
-
-    .mac-screenshot-main {
-        box-shadow:
-            0 24px 64px rgba(34, 27, 55, 0.18),
-            0 0 100px rgba(96, 66, 245, 0.08);
-    }
-
-    .mac-screenshot-overlay {
-        box-shadow:
-            0 20px 48px rgba(34, 27, 55, 0.22),
-            0 0 60px rgba(96, 66, 245, 0.08);
-    }
-
-    .mac-feature-card,
-    .mac-detail-text,
-    .mac-detail-img,
-    .mac-step-card,
-    .mac-audience-card,
-    .mac-guide-card,
-    .mac-faq-list details,
-    .seo-section,
-    .seo-related a {
-        background: rgba(255, 255, 255, 0.82);
-        border-color: rgba(23, 20, 30, 0.08);
-        box-shadow: 0 1px 2px rgba(34, 27, 55, 0.03);
-    }
-
-    .mac-feature-card:hover,
-    .mac-guide-card:hover {
-        background: #fff;
-        border-color: rgba(81, 55, 214, 0.24);
-    }
-
-    .mac-step-card:hover,
-    .seo-related a:hover {
-        border-color: rgba(81, 55, 214, 0.22);
-    }
-
-    .mac-step-card.is-active {
-        border-color: rgba(81, 55, 214, 0.42);
-        background: rgba(81, 55, 214, 0.06);
-    }
-
-    .mac-demo-media {
-        background: rgba(255, 255, 255, 0.72);
-        border-color: rgba(23, 20, 30, 0.1);
-        box-shadow:
-            0 24px 64px rgba(34, 27, 55, 0.18),
-            0 0 100px rgba(96, 66, 245, 0.08);
-    }
-
-    .mac-demo-toggle:focus-visible,
-    .mac-step-seek:focus-visible::after {
-        outline-color: #6042f5;
-    }
-
-    .mac-card-shot {
-        border-color: rgba(23, 20, 30, 0.1);
-        background: #fff;
-    }
-
-    .mac-faq-list p,
-    .seo-lede,
-    .seo-section p,
-    .seo-section li,
-    .seo-table td {
-        color: rgba(23, 20, 30, 0.7);
-    }
-
-    .seo-byline {
-        color: rgba(23, 20, 30, 0.6);
-    }
-
-    .seo-byline a {
-        color: rgba(23, 20, 30, 0.74);
-    }
-
-    .seo-section a {
-        color: #5137d6;
-    }
-
-    .seo-figure img,
-    .seo-figure video {
-        border-color: rgba(23, 20, 30, 0.1);
-        background: #efedf7;
-    }
-
-    .seo-figure figcaption {
-        color: rgba(23, 20, 30, 0.6);
-    }
-
-    .seo-section kbd {
-        border-color: rgba(23, 20, 30, 0.16);
-        background: #fff;
-    }
-
-    .seo-code {
-        color: #282331;
-        background: #efedf7;
-        border-color: rgba(23, 20, 30, 0.12);
-    }
-
-    .seo-section .mac-btn-primary,
-    .seo-section .mac-btn-primary:hover {
-        color: #fff;
-    }
-
-    .changelog-hero h1,
-    .release-version {
-        color: #17141e;
-    }
-
-    .changelog-intro,
-    .release-notes li {
-        color: rgba(23, 20, 30, 0.7);
-    }
-
-    .changelog-release-count {
-        color: rgba(23, 20, 30, 0.5);
-    }
-
-    .changelog-release-count strong {
-        color: #5137d6;
-    }
-
-    .release-list::before {
-        background: rgba(81, 55, 214, 0.2);
-    }
-
-    .release-entry {
-        border-color: rgba(23, 20, 30, 0.1);
-    }
-
-    .release-entry::before {
-        border-color: rgba(81, 55, 214, 0.56);
-        background: #f7f7fb;
-        box-shadow: 0 0 0 6px #f7f7fb;
-    }
-
-    .release-entry[open]::before {
-        border-color: #6042f5;
-        background: #6042f5;
-        box-shadow: 0 0 0 6px #f7f7fb, 0 0 16px rgba(96, 66, 245, 0.24);
-    }
-
-    .release-latest {
-        color: #5137d6;
-        background: rgba(81, 55, 214, 0.06);
-        border-color: rgba(81, 55, 214, 0.18);
-    }
-
-    .release-header time {
-        color: rgba(23, 20, 30, 0.55);
-    }
-
-    .release-disclosure {
-        color: rgba(23, 20, 30, 0.56);
-    }
-
-    .release-summary:hover .release-version,
-    .release-summary:focus-visible .release-version {
-        color: #5137d6;
-    }
-
-    .seo-table th,
-    .seo-table td {
-        border-color: rgba(23, 20, 30, 0.1);
-    }
-
-    .seo-callout,
-    .mac-final-cta {
-        background: rgba(81, 55, 214, 0.05);
-        border-color: rgba(81, 55, 214, 0.14);
-    }
-
-    .mac-btn-secondary {
-        color: #5137d6;
-        border-color: #6042f5;
-    }
-
-    .mac-btn-secondary:hover {
-        color: #fff;
-    }
-
-    .mac-footer {
-        border-color: rgba(23, 20, 30, 0.08);
-    }
+    color: var(--text);
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .release-entry::before,
-    .release-version {
+    .mac-page *,
+    .mac-page *::before,
+    .mac-page *::after {
         transition: none;
     }
-}
 
-/* Responsive — Tablet */
-@media (max-width: 1100px) {
-    .mac-features {
-        grid-template-columns: repeat(2, 1fr);
+    /* Keys still light, but they do not travel. */
+    .ov-key.is-down .ov-key-face,
+    .ov-keys.is-flash .ov-key-face,
+    .ov-keys:active .ov-key-face {
+        transform: none;
     }
 }
 
@@ -2223,6 +2032,15 @@ body {
 
     .mac-steps {
         grid-template-columns: 1fr;
+    }
+
+    .mac-voice-card {
+        grid-column: span 3;
+    }
+
+    .mac-voice-card:nth-child(1) {
+        grid-column: 1 / -1;
+        min-height: 0;
     }
 
     .mac-guide-grid {
@@ -2266,22 +2084,67 @@ body {
 
     .mac-nav-links .mac-nav-cta {
         grid-column: 1 / -1;
+        margin-left: 0;
     }
 
     .mac-hero {
-        padding-bottom: 48px;
+        padding-bottom: 64px;
     }
 
     .mac-title {
-        font-size: 2.5rem;
+        font-size: 2.6rem;
     }
 
     .mac-intro {
+        font-size: 1.02rem;
+    }
+
+    .ov-player {
+        margin-top: 48px;
+    }
+
+    .mac-ways,
+    .mac-voices {
+        margin: 72px 0;
+    }
+
+    .mac-ways {
+        margin-top: 0;
+    }
+
+    .mac-way-list {
+        grid-template-columns: 1fr;
+    }
+
+    .mac-trust {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mac-voice-card {
+        grid-column: 1 / -1;
+        min-height: 0;
+    }
+
+    .mac-section-intro {
+        margin-bottom: 28px;
         font-size: 1rem;
     }
 
+    .ov-keys {
+        --key: 80px;
+    }
+
+    .ov-quote {
+        padding: 16px 18px;
+    }
+
+    .ov-hint {
+        min-height: 3em;
+    }
+
     .mac-hero-screenshots {
-        margin-top: 40px;
+        margin-top: 56px;
     }
 
     .mac-screenshot-overlay {
@@ -2290,21 +2153,33 @@ body {
         width: min(58%, 260px);
     }
 
-    .mac-features {
-        grid-template-columns: 1fr;
-        margin-bottom: 48px;
-    }
-
+    .mac-workflow,
     .mac-audiences,
     .mac-guides,
     .mac-faq {
-        margin: 48px 0;
+        margin: 72px 0;
+    }
+
+    .mac-ways > h2,
+    .mac-workflow > h2,
+    .mac-audiences > h2,
+    .mac-guides > h2,
+    .mac-faq > h2 {
+        margin-bottom: 28px;
     }
 
     .mac-audience-grid,
     .mac-guide-grid,
     .seo-related {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .mac-faq-list summary {
+        padding: 18px 20px;
+    }
+
+    .mac-faq-list p {
+        padding: 0 20px 20px;
     }
 
     .seo-section {
@@ -2347,11 +2222,6 @@ body {
         left: -30px;
         width: 9px;
         height: 9px;
-        box-shadow: 0 0 0 5px #07070a;
-    }
-
-    .release-entry[open]::before {
-        box-shadow: 0 0 0 5px #07070a, 0 0 14px rgba(138, 112, 255, 0.42);
     }
 
     .release-summary {
@@ -2370,11 +2240,11 @@ body {
     }
 
     .release-version {
-        font-size: 1.08rem;
+        font-size: 1.1rem;
     }
 
     .release-latest {
-        padding: 3px 7px;
+        padding: 3px 8px;
         font-size: 0.62rem;
     }
 
@@ -2392,16 +2262,6 @@ body {
         padding-left: 19px;
     }
 
-    @media (prefers-color-scheme: light) {
-        .release-entry::before {
-            box-shadow: 0 0 0 5px #f7f7fb;
-        }
-
-        .release-entry[open]::before {
-            box-shadow: 0 0 0 5px #f7f7fb, 0 0 14px rgba(96, 66, 245, 0.2);
-        }
-    }
-
     .mac-btn {
         width: 100%;
     }
@@ -2414,8 +2274,12 @@ body {
         width: 100%;
     }
 
+    .mac-hero .mac-cta-group {
+        flex-direction: column;
+    }
+
     .mac-detail-text {
-        padding: 24px 20px;
+        padding: 28px 22px;
     }
 
     .mac-detail-img {
@@ -2423,16 +2287,17 @@ body {
     }
 
     .mac-final-cta {
-        padding: 40px 20px;
-        border-radius: 22px;
+        margin-top: 72px;
+        padding-bottom: 72px;
     }
 
-    .mac-workflow {
-        margin: 48px 0;
+    .seo-page .mac-final-cta {
+        padding: 36px 20px;
+        border-radius: 18px;
     }
 
     .mac-demo-media {
-        border-radius: 14px;
+        border-radius: var(--radius-s);
     }
 
     .mac-footer {
