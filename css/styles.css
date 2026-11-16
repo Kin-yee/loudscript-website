@@ -2103,6 +2103,15 @@ body::after {
 
 /* Responsive — Mobile */
 @media (max-width: 600px) {
+    /* Center the note on the whole badge row so even a hidden tooltip stays on-screen. */
+    .mac-hero-badges {
+        position: relative;
+    }
+
+    .mac-beta-badge {
+        position: static;
+    }
+
     .mac-shell {
         padding: 20px 16px 0;
     }
