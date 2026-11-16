@@ -30,6 +30,8 @@
   "fallback.englishPage": "Página en inglés",
   "hero.eyebrow": "LoudScript para Mac",
   "hero.free": "GRATIS",
+  "hero.beta": "BETA",
+  "hero.betaNote": "Todavía en beta: las cosas pueden cambiar mucho y algunas partes quizá aún no funcionen.",
   "hero.title": "Escucha cualquier texto<br>en tu Mac.",
   "hero.intro": "Convierte texto a voz en tu Mac: escucha texto seleccionado, capturas de pantalla y PDF con voces naturales mientras sigues trabajando.",
   "hero.platformAria": "Plataformas de LoudScript",

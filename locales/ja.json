@@ -30,6 +30,8 @@
   "fallback.englishPage": "英語ページ",
   "hero.eyebrow": "Mac版LoudScript",
   "hero.free": "無料",
+  "hero.beta": "ベータ版",
+  "hero.betaNote": "現在ベータ版です。内容が大きく変わったり、一部が正しく動かなかったりする場合があります。",
   "hero.title": "Mac上のあらゆるテキストを<br>音声で聞く。",
   "hero.intro": "Macのテキスト読み上げをもっと便利に。選択したテキスト、スクリーンショット、PDFを自然な音声で聞きながら作業を続けられます。",
   "hero.platformAria": "LoudScript対応プラットフォーム",
