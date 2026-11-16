@@ -1,14 +1,14 @@
 {
   "siteLastModified": "2026-11-16",
   "latestMacRelease": {
-    "version": "0.1.48",
-    "build": "50",
+    "version": "0.1.49",
+    "build": "51",
     "released": "2026-11-16",
     "releasedDisplay": "16 November 2026",
-    "fileSizeBytes": 49968688,
-    "fileSizeDisplay": "50.0 MB",
-    "sha256": "5605fdcce6c1b5987f8b6450e58f3691425581e5a177776cce67b5ba11f88bec",
-    "downloadUrl": "https://github.com/hoyelam/loudscript-website/releases/download/loudscript-mac-v0.1.48/LoudScript-0.1.48.dmg",
-    "changelogAnchor": "#version-0-1-48"
+    "fileSizeBytes": 50079247,
+    "fileSizeDisplay": "50.1 MB",
+    "sha256": "cc02d5124047dd4bfac2dc9d365c8c44a16c904f1890c1f4e674b86126b475a9",
+    "downloadUrl": "https://github.com/hoyelam/loudscript-website/releases/download/loudscript-mac-v0.1.49/LoudScript-0.1.49.dmg",
+    "changelogAnchor": "#version-0-1-49"
   }
 }
