@@ -1,0 +1,33 @@
+name: Site validation
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '24'
+      # Validate the committed site first; rebuilding must not hide stale output.
+      - name: Validate committed release metadata and pages
+        run: node scripts/validate-localized-site.mjs
+      - name: Build and validate the site
+        run: npm test
+      - name: Run image and sitemap regression tests
+        run: node --test scripts/test-*.mjs
+      - name: Validate the custom 404 page
+        run: python3 scripts/test-404.py
+      - name: Check generated files are committed
+        run: git diff --exit-code
