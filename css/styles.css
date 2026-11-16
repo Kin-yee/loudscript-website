@@ -18,6 +18,7 @@
     --eyebrow: #FFCF9F;
     --link: #B9A8FF;
     --trust: #B9A8FF;
+    --trust-soft: rgb(185 168 255 / 0.16);
     --waiting: #FFB070;
     --granted: #5BE39A;
     --granted-soft: rgb(91 227 154 / 0.16);
@@ -72,6 +73,7 @@
         --eyebrow: #A3500E;
         --link: #5A3FD2;
         --trust: #6B4EE6;
+        --trust-soft: rgb(107 78 230 / 0.12);
         --waiting: #B45A12;
         --granted: #14713F;
         --granted-soft: rgb(31 157 85 / 0.14);
@@ -497,6 +499,56 @@ body::after {
     height: 7px;
     border-radius: 50%;
     background: currentColor;
+}
+
+/* Same pill in violet; hover, focus, or tap reveals the note below it. */
+.mac-beta-badge {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 11px;
+    border-radius: 999px;
+    background: var(--trust-soft);
+    color: var(--trust);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    cursor: help;
+}
+
+.mac-beta-badge:focus-visible {
+    outline: 2px solid var(--trust);
+    outline-offset: 2px;
+}
+
+.mac-beta-note {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    z-index: 10;
+    width: max-content;
+    max-width: min(260px, calc(100vw - 32px));
+    padding: 9px 12px;
+    border: 1px solid var(--hairline-strong);
+    border-radius: 12px;
+    background: var(--bg-raised);
+    box-shadow: var(--shadow-float);
+    color: var(--text);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: normal;
+    line-height: 1.45;
+    text-align: center;
+    transform: translateX(-50%);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.15s ease, visibility 0.15s;
+}
+
+.mac-beta-badge:hover .mac-beta-note,
+.mac-beta-badge:focus .mac-beta-note {
+    visibility: visible;
+    opacity: 1;
 }
 
 .mac-title {
